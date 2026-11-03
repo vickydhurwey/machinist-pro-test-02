@@ -1,209 +1,470 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#070b14">
-
+  <meta name="theme-color" content="#080d16">
+  <meta name="description" content="MACHINIST PRO - ITI Machinist Students ke liye Hindi Learning Platform">
   <title>MACHINIST PRO | ITI Learning Platform</title>
-
-  <meta name="description" content="MACHINIST PRO - A digital learning platform for ITI Machinist students.">
-
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --bg: #080d16;
+      --panel: rgba(255,255,255,.055);
+      --border: rgba(255,255,255,.11);
+      --cyan: #00d9ff;
+      --muted: #a4b0c2;
+      --white: #f4f8ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 10% 0%,rgba(0,217,255,.13),transparent 35%),
+        radial-gradient(ellipse at 90% 30%,rgba(36,95,180,.12),transparent 35%),
+        var(--bg);
+      color: var(--white);
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(8,13,22,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-content {
+      max-width: 1150px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span { color: var(--cyan); }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav a:hover { color: var(--cyan); }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .hero {
+      padding: 55px 25px;
+      margin-top: 20px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: linear-gradient(120deg,rgba(0,217,255,.12),rgba(255,255,255,.025));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-tag {
+      color: var(--cyan);
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px,7vw,65px);
+      margin: 16px 0;
+      line-height: 1.08;
+    }
+
+    .hero h1 span { color: var(--cyan); }
+
+    .hero p {
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 600px;
+      font-size: 15px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 13px 21px;
+      border-radius: 10px;
+      background: var(--cyan);
+      color: #001018;
+      font-weight: bold;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+      margin: 22px 0 35px;
+    }
+
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      color: var(--cyan);
+      margin-bottom: 5px;
+    }
+
+    .stat span { color: var(--muted); font-size: 12px; }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 35px 0 18px;
+    }
+
+    .section-heading h2 { margin: 0; font-size: 23px; }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 5px 0 0;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 15px 17px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: white;
+      outline: none;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .search-box:focus { border-color: var(--cyan); }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 16px;
+    }
+
+    .module-card {
+      display: block;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: var(--panel);
+      transition: .25s ease;
+      min-height: 175px;
+    }
+
+    .module-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--cyan);
+      background: rgba(0,217,255,.075);
+    }
+
+    .module-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: rgba(0,217,255,.11);
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .module-card h3 { margin: 0 0 9px; font-size: 17px; }
+
+    .module-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .module-card .open {
+      color: var(--cyan);
+      font-size: 12px;
+      margin-top: 15px;
+      display: block;
+    }
+
+    .notice {
+      padding: 20px;
+      margin: 35px 0;
+      border-radius: 16px;
+      border: 1px solid rgba(0,217,255,.25);
+      background: rgba(0,217,255,.06);
+      line-height: 1.7;
+    }
+
+    .notice h3 { margin-top: 0; color: var(--cyan); }
+
+    .footer {
+      text-align: center;
+      padding: 30px 15px;
+      margin-top: 40px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .bottom-nav { display: none; }
+
+    @media(max-width:800px) {
+      .module-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .nav { gap: 12px; }
+    }
+
+    @media(max-width:520px) {
+      .header-content { padding: 14px; }
+      .nav { display: none; }
+      .container { padding: 14px; }
+      .hero { padding: 38px 19px; }
+      .stats { gap: 8px; }
+      .stat { padding: 13px 5px; }
+      .stat strong { font-size: 20px; }
+      .stat span { font-size: 10px; }
+      .module-grid { gap: 10px; }
+      .module-card { padding: 15px; min-height: 165px; }
+      .module-card h3 { font-size: 15px; }
+      .module-card p { font-size: 12px; }
+      .bottom-nav {
+        display: flex;
+        position: fixed;
+        z-index: 60;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        justify-content: space-around;
+        padding: 12px 5px calc(12px + env(safe-area-inset-bottom));
+        background: rgba(8,13,22,.96);
+        backdrop-filter: blur(18px);
+        border-top: 1px solid var(--border);
+      }
+      .bottom-nav a {
+        text-align: center;
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .bottom-nav span {
+        display: block;
+        font-size: 19px;
+        margin-bottom: 4px;
+      }
+      body { padding-bottom: 75px; }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-content">
-      <a href="index.html" class="logo">
-        ⚙ MACHINIST <span>PRO</span>
-      </a>
+<header class="header">
+  <div class="header-content">
+    <a href="index.html" class="logo">⚙ MACHINIST <span>PRO</span></a>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#modules">Modules</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
 
-      <div class="header-tag">
-        ITI DIGITAL LEARNING PLATFORM
+<main class="container">
+
+  <section class="hero" id="home">
+    <div class="hero-tag">ITI MACHINIST LEARNING PLATFORM</div>
+    <h1>LEARN.<br><span>PRACTICE.</span><br>MASTER.</h1>
+    <p>
+      ITI Machinist विद्यार्थियों के लिए एक डिजिटल लर्निंग प्लेटफॉर्म।
+      यहाँ Theory Notes, Machine Knowledge, Calculations, Online Tests,
+      Technical Drawing और Workshop Safety की जानकारी हिंदी में प्राप्त करें।
+    </p>
+    <a href="#modules" class="hero-button">Explore Modules →</a>
+  </section>
+
+  <section class="stats">
+    <div class="stat">
+      <strong>09</strong>
+      <span>Learning Modules</span>
+    </div>
+    <div class="stat">
+      <strong>Hindi</strong>
+      <span>Learning Language</span>
+    </div>
+    <div class="stat">
+      <strong>24/7</strong>
+      <span>Learn Anytime</span>
+    </div>
+  </section>
+
+  <section id="modules">
+    <div class="section-heading">
+      <div>
+        <h2>⚙ Learning Modules</h2>
+        <p>अपना विषय चुनें और सीखना शुरू करें।</p>
       </div>
     </div>
-  </header>
 
-  <main class="container">
+    <input
+      type="search"
+      id="moduleSearch"
+      class="search-box"
+      placeholder="🔍 Module खोजें... जैसे CNC, Safety, Notes"
+      aria-label="Search modules"
+    >
 
-    <!-- WELCOME -->
-    <section class="welcome glass">
-      <small>WELCOME TO MACHINIST PRO</small>
+    <div class="module-grid" id="moduleGrid">
 
-      <h1>Learn. Practice. <span style="color:#00d9ff;">Master.</span></h1>
+      <a class="module-card" href="pages/notes.html">
+        <div class="module-icon">📘</div>
+        <h3>Digital Notes</h3>
+        <p>Machinist Theory के महत्वपूर्ण नोट्स और जानकारी हिंदी में।</p>
+        <span class="open">Open Module →</span>
+      </a>
 
-      <p>
-        Your digital workshop for ITI Machinist learning.
-        Explore machines, technical knowledge, formulas,
-        workshop safety and practical skills.
-      </p>
-    </section>
+      <a class="module-card" href="pages/machines.html">
+        <div class="module-icon">⚙️</div>
+        <h3>Machine Library</h3>
+        <p>Lathe, Milling, Grinding और CNC मशीनों का परिचय।</p>
+        <span class="open">Open Module →</span>
+      </a>
 
-    <!-- HERO -->
-    <section class="hero glass">
-      <div class="hero-icon">⚙️</div>
+      <a class="module-card" href="pages/calculator.html">
+        <div class="module-icon">🧮</div>
+        <h3>Formula Calculator</h3>
+        <p>Workshop और Machinist Calculation के जरूरी सूत्र।</p>
+        <span class="open">Open Module →</span>
+      </a>
 
-      <h2>THE FUTURE OF MACHINIST LEARNING</h2>
+      <a class="module-card" href="pages/tests.html">
+        <div class="module-icon">📝</div>
+        <h3>Online Tests</h3>
+        <p>अपनी तैयारी जाँचें और प्रश्नों का अभ्यास करें।</p>
+        <span class="open">Start Test →</span>
+      </a>
 
-      <p>
-        Learn machining technology with digital notes,
-        machine guides, technical drawings and interactive tests.
-      </p>
-    </section>
+      <a class="module-card" href="pages/tools.html">
+        <div class="module-icon">🔧</div>
+        <h3>Tool Guide</h3>
+        <p>Measuring, Cutting और Holding Tools की जानकारी।</p>
+        <span class="open">Open Module →</span>
+      </a>
 
-    <!-- STATS -->
-    <section class="section">
-      <div class="section-heading">
-        <h2>Your Learning Dashboard</h2>
-        <span>STUDENT ZONE</span>
-      </div>
+      <a class="module-card" href="pages/drawing.html">
+        <div class="module-icon">📐</div>
+        <h3>Technical Drawing</h3>
+        <p>Engineering Drawing, Lines, Symbols और Projection।</p>
+        <span class="open">Open Module →</span>
+      </a>
 
-      <div class="stats">
+      <a class="module-card" href="pages/safety.html">
+        <div class="module-icon">🦺</div>
+        <h3>Workshop Safety</h3>
+        <p>PPE, 5S, Fire Safety और Workshop के सुरक्षा नियम।</p>
+        <span class="open">Open Module →</span>
+      </a>
 
-        <div class="stat-card glass">
-          <strong>08+</strong>
-          <p>Learning Modules</p>
-        </div>
+      <a class="module-card" href="pages/career.html">
+        <div class="module-icon">🚀</div>
+        <h3>Career Guide</h3>
+        <p>ITI के बाद नौकरी, Apprenticeship और आगे की पढ़ाई।</p>
+        <span class="open">Explore Career →</span>
+      </a>
 
-        <div class="stat-card glass">
-          <strong>01</strong>
-          <p>ITI Trade</p>
-        </div>
+      <a class="module-card" href="pages/notes.html">
+        <div class="module-icon">🎓</div>
+        <h3>Student Learning</h3>
+        <p>अपनी Machinist पढ़ाई को व्यवस्थित करें और Notes दोहराएँ।</p>
+        <span class="open">Start Learning →</span>
+      </a>
 
-        <div class="stat-card glass">
-          <strong>24/7</strong>
-          <p>Learning Access</p>
-        </div>
+    </div>
 
-      </div>
-    </section>
+    <p id="noResults" style="display:none;text-align:center;color:#a4b0c2;padding:20px;">
+      कोई Module नहीं मिला।
+    </p>
+  </section>
 
-    <!-- LEARNING MODULES -->
-    <section class="section" id="modules">
+  <section class="notice" id="about">
+    <h3>💡 About MACHINIST PRO</h3>
+    <p>
+      MACHINIST PRO एक विद्यार्थी-केंद्रित Learning Project है।
+      इसका उद्देश्य ITI Machinist विद्यार्थियों को तकनीकी विषयों,
+      मशीनों और Workshop से जुड़ी जानकारी सरल हिंदी में उपलब्ध कराना है।
+    </p>
+    <p>
+      नियमित अभ्यास करें, Practical Skills बढ़ाएँ और अपने लक्ष्य की ओर आगे बढ़ें।
+    </p>
+  </section>
 
-      <div class="section-heading">
-        <h2>Explore Modules</h2>
-        <span>LEARNING LIBRARY</span>
-      </div>
+</main>
 
-      <input
-        type="search"
-        class="search-box"
-        placeholder="🔍 Search notes, machines, formulas..."
-        aria-label="Search learning modules"
-      >
+<footer class="footer">
+  <strong>⚙ MACHINIST PRO</strong>
+  <p>Learn • Practice • Grow</p>
+  <p>Made for ITI Machinist Students</p>
+  <p>© 2026 MACHINIST PRO</p>
+</footer>
 
-      <div class="modules">
+<nav class="bottom-nav">
+  <a href="#home"><span>⌂</span>Home</a>
+  <a href="#modules"><span>▦</span>Modules</a>
+  <a href="#about"><span>ⓘ</span>About</a>
+</nav>
 
-        <a href="pages/notes.html" class="module-card glass">
-          <div class="module-icon">📚</div>
-          <h3>Digital Notes</h3>
-          <p>Machinist theory notes and study material.</p>
-        </a>
+<script>
+  const searchInput = document.getElementById("moduleSearch");
+  const moduleCards = document.querySelectorAll(".module-card");
+  const noResults = document.getElementById("noResults");
 
-        <a href="pages/machines.html" class="module-card glass">
-          <div class="module-icon">⚙️</div>
-          <h3>Machine Library</h3>
-          <p>Learn machine parts, working and applications.</p>
-        </a>
+  searchInput.addEventListener("input", function () {
+    const query = this.value.toLowerCase().trim();
+    let visibleCount = 0;
 
-        <a href="pages/calculator.html" class="module-card glass">
-          <div class="module-icon">🧮</div>
-          <h3>Formula Calculator</h3>
-          <p>Important machining formulas and calculations.</p>
-        </a>
+    moduleCards.forEach(card => {
+      const matches = card.textContent.toLowerCase().includes(query);
+      card.style.display = matches ? "" : "none";
+      if (matches) visibleCount++;
+    });
 
-        <a href="pages/tests.html" class="module-card glass">
-          <div class="module-icon">📝</div>
-          <h3>Online Tests</h3>
-          <p>Practice MCQs and test your knowledge.</p>
-        </a>
-
-        <a href="pages/tools.html" class="module-card glass">
-          <div class="module-icon">🔧</div>
-          <h3>Tool Guide</h3>
-          <p>Cutting tools, measuring tools and accessories.</p>
-        </a>
-
-        <a href="pages/drawing.html" class="module-card glass">
-          <div class="module-icon">📐</div>
-          <h3>Technical Drawing</h3>
-          <p>Engineering drawing and machine diagrams.</p>
-        </a>
-
-        <a href="pages/safety.html" class="module-card glass">
-          <div class="module-icon">🦺</div>
-          <h3>Workshop Safety</h3>
-          <p>Safety rules, PPE and workshop practices.</p>
-        </a>
-
-        <a href="pages/career.html" class="module-card glass">
-          <div class="module-icon">🎓</div>
-          <h3>Career Guide</h3>
-          <p>ITI career options and skill development.</p>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- FEATURED -->
-    <section class="section">
-      <div class="section-heading">
-        <h2>About Platform</h2>
-        <span>OUR MISSION</span>
-      </div>
-
-      <div class="notice glass">
-        <h3>Built for Machinist Students ⚙️</h3>
-
-        <p>
-          MACHINIST PRO is designed to make technical education
-          easier and more accessible. Our goal is to bring notes,
-          machine knowledge, calculations and practice material
-          together in one digital platform.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>⚙ MACHINIST PRO</p>
-    <p>ITI Machinist Digital Learning Platform</p>
-    <p>© <span id="currentYear">2026</span> MACHINIST PRO. All Rights Reserved.</p>
-  </footer>
-
-  <!-- BOTTOM NAVIGATION -->
-  <nav class="bottom-nav">
-
-    <a href="index.html" class="active">
-      <span>⌂</span>
-      Home
-    </a>
-
-    <a href="#modules">
-      <span>▦</span>
-      Modules
-    </a>
-
-    <a href="pages/notes.html">
-      <span>📚</span>
-      Notes
-    </a>
-
-    <a href="pages/tests.html">
-      <span>✎</span>
-      Tests
-    </a>
-
-  </nav>
-
-  <script src="script.js"></script>
+    noResults.style.display = visibleCount === 0 ? "block" : "none";
+  });
+</script>
 
 </body>
 </html>

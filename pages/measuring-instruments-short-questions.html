@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Measuring Instruments - Short Questions | MACHINIST PRO</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  background:#08111f;
+  color:#f1f5f9;
+  font-family:Arial,sans-serif;
+  padding:18px;
+}
+
+.container{max-width:800px;margin:auto}
+
+header{
+  text-align:center;
+  padding:22px 10px;
+}
+
+header h1{
+  color:#64e6a5;
+  font-size:25px;
+}
+
+header p{
+  color:#aab7c8;
+  margin-top:10px;
+  line-height:1.6;
+}
+
+.info{
+  background:#111e30;
+  border:1px solid #263a50;
+  border-radius:12px;
+  padding:15px;
+  margin:15px 0 22px;
+  color:#cbd5e1;
+  line-height:1.8;
+}
+
+.question{
+  background:#111e30;
+  border:1px solid #263a50;
+  border-radius:12px;
+  padding:17px;
+  margin-bottom:14px;
+}
+
+.number{
+  color:#64e6a5;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:9px;
+}
+
+.question h3{
+  font-size:16px;
+  line-height:1.6;
+  margin-bottom:12px;
+}
+
+.answer{
+  display:none;
+  background:#172c2b;
+  border-left:3px solid #64e6a5;
+  padding:13px;
+  border-radius:7px;
+  color:#d9f7e8;
+  line-height:1.8;
+  font-size:14px;
+  margin-top:12px;
+}
+
+button{
+  background:#64e6a5;
+  color:#08111f;
+  border:none;
+  padding:10px 15px;
+  border-radius:7px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  color:#8090a5;
+  margin:30px 0 15px;
+  font-size:13px;
+}
+
+.back{
+  display:inline-block;
+  color:#64e6a5;
+  text-decoration:none;
+  margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <h1>📏 Measuring Instruments</h1>
+  <p>MACHINIST PRO – ITI Machinist 1st Year</p>
+  <p>महत्वपूर्ण लघु उत्तरीय प्रश्न एवं उत्तर</p>
+</header>
+
+<div class="info">
+  <b>कुल प्रश्न:</b> 20<br>
+  <b>विषय:</b> Measuring Instruments<br>
+  <b>निर्देश:</b> पहले प्रश्न पढ़ें, फिर Show Answer पर क्लिक करके उत्तर देखें।
+</div>
+
+<div id="questions"></div>
+
+<footer>
+  <p>© 2026 MACHINIST PRO</p>
+  <p>Learn • Practice • Improve</p>
+  <a class="back" href="notes.html">← Back to Notes</a>
+</footer>
+
+</div>
+
+<script>
+const data = [
+[
+"मापन (Measurement) किसे कहते हैं?",
+"किसी वस्तु की लंबाई, चौड़ाई, ऊँचाई या अन्य मात्रा को किसी निश्चित मानक से तुलना करके ज्ञात करना मापन कहलाता है।"
+],
+[
+"Measuring Instruments क्या होते हैं?",
+"वे उपकरण जिनकी सहायता से किसी वस्तु का आकार, लंबाई, मोटाई, व्यास या कोण मापा जाता है, Measuring Instruments कहलाते हैं।"
+],
+[
+"Steel Rule का उपयोग क्या है?",
+"Steel Rule का उपयोग वस्तु की सामान्य लंबाई और चौड़ाई मापने के लिए किया जाता है।"
+],
+[
+"Vernier Caliper क्या है?",
+"Vernier Caliper एक मापने वाला उपकरण है, जिससे बाहरी माप, अंदरूनी माप और गहराई मापी जाती है।"
+],
+[
+"Vernier Caliper के मुख्य भाग कौन-कौन से हैं?",
+"मुख्य भाग हैं – Main Scale, Vernier Scale, Outside Jaws, Inside Jaws, Depth Rod और Locking Screw।"
+],
+[
+"Least Count किसे कहते हैं?",
+"किसी मापक यंत्र द्वारा मापी जा सकने वाली सबसे छोटी माप को Least Count कहते हैं।"
+],
+[
+"Micrometer क्या है?",
+"Micrometer एक सटीक मापक यंत्र है, जिसका उपयोग छोटी मोटाई और व्यास मापने के लिए किया जाता है।"
+],
+[
+"Outside Micrometer का उपयोग क्या है?",
+"इसका उपयोग किसी वस्तु का बाहरी व्यास या मोटाई मापने के लिए किया जाता है।"
+],
+[
+"Inside Micrometer का उपयोग क्या है?",
+"इसका उपयोग छेद या किसी वस्तु के अंदरूनी व्यास को मापने के लिए किया जाता है।"
+],
+[
+"Depth Micrometer क्या मापता है?",
+"Depth Micrometer का उपयोग छेद, खाँचे और सतह की गहराई मापने के लिए किया जाता है।"
+],
+[
+"Try Square का उपयोग क्या है?",
+"Try Square का उपयोग किसी वस्तु के 90 डिग्री समकोण की जाँच करने के लिए किया जाता है।"
+],
+[
+"Feeler Gauge क्या है?",
+"Feeler Gauge पतली धातु की पत्तियों का सेट होता है, जिसका उपयोग दो सतहों के बीच का छोटा Gap मापने के लिए किया जाता है।"
+],
+[
+"Radius Gauge का उपयोग क्या है?",
+"Radius Gauge का उपयोग किसी वस्तु के अंदरूनी या बाहरी गोलाई की त्रिज्या जाँचने के लिए किया जाता है।"
+],
+[
+"Screw Pitch Gauge क्या मापता है?",
+"Screw Pitch Gauge का उपयोग स्क्रू या बोल्ट की चूड़ी की पिच जाँचने के लिए किया जाता है।"
+],
+[
+"Dial Indicator का उपयोग क्या है?",
+"Dial Indicator का उपयोग बहुत छोटे विस्थापन, सतह की असमानता और रन-आउट की जाँच करने के लिए किया जाता है।"
+],
+[
+"Bevel Protractor क्या मापता है?",
+"Bevel Protractor का उपयोग किसी वस्तु के कोण को मापने और जाँचने के लिए किया जाता है।"
+],
+[
+"Slip Gauge क्या है?",
+"Slip Gauge सटीक माप वाले कठोर ब्लॉक होते हैं, जिनका उपयोग मापन यंत्रों की जाँच और सेटिंग में किया जाता है।"
+],
+[
+"Parallax Error क्या है?",
+"जब माप को आँख की गलत स्थिति से देखा जाता है और रीडिंग गलत दिखाई देती है, तो उसे Parallax Error कहते हैं।"
+],
+[
+"Zero Error क्या है?",
+"जब किसी मापक यंत्र को शून्य स्थिति में रखने पर भी वह शून्य रीडिंग नहीं दिखाता, तो उसे Zero Error कहते हैं।"
+],
+[
+"सटीक मापन के लिए किन बातों का ध्यान रखना चाहिए?",
+"यंत्र साफ और सही स्थिति में होना चाहिए। माप लेते समय सही दबाव रखें, आँख को सही दिशा में रखें और Zero Error की जाँच करें।"
+]
+];
+
+const container = document.getElementById("questions");
+
+data.forEach((item,index)=>{
+  const card=document.createElement("div");
+  card.className="question";
+
+  const number=document.createElement("div");
+  number.className="number";
+  number.textContent="QUESTION "+String(index+1).padStart(2,"0");
+
+  const heading=document.createElement("h3");
+  heading.textContent=(index+1)+". "+item[0];
+
+  const button=document.createElement("button");
+  button.textContent="Show Answer";
+
+  const answer=document.createElement("div");
+  answer.className="answer";
+  answer.textContent="उत्तर: "+item[1];
+
+  button.addEventListener("click",()=>{
+    const isVisible=answer.style.display==="block";
+    answer.style.display=isVisible?"none":"block";
+    button.textContent=isVisible?"Show Answer":"Hide Answer";
+  });
+
+  card.append(number,heading,button,answer);
+  container.appendChild(card);
+});
+</script>
+
+</body>
+</html>

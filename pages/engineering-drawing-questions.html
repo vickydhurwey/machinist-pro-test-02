@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering Drawing Question Bank | MACHINIST PRO</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#08111f;color:#eaf2ff;font-family:Arial,sans-serif;line-height:1.7}
+header{background:#101d30;padding:22px 16px;border-bottom:1px solid #263750}
+header a{color:#64e6a5;text-decoration:none}
+header h1{font-size:23px;margin:12px 0 4px}
+header p{color:#aab8ca;font-size:14px}
+.container{max-width:850px;margin:auto;padding:16px}
+.question{background:#111f32;border:1px solid #263750;border-radius:12px;padding:16px;margin:14px 0}
+.question h3{font-size:16px;margin:0 0 12px}
+.option{display:block;background:#0b1727;border:1px solid #34465e;padding:9px 11px;border-radius:8px;margin:7px 0;color:#d0dbea;font-size:14px}
+.answer{display:none;background:#142b2b;border-left:4px solid #64e6a5;padding:10px;margin-top:10px;border-radius:7px;color:#b7f5d5}
+button{background:#64e6a5;color:#08111f;border:0;border-radius:7px;padding:9px 13px;font-weight:bold;margin-top:10px}
+footer{text-align:center;color:#8191a8;padding:25px}
+</style>
+</head>
+<body>
+
+<header>
+<a href="notes.html">← वापस Notes पर जाएं</a>
+<h1>📐 Engineering Drawing – Question Bank</h1>
+<p>Machinist First Year | 40 महत्वपूर्ण MCQ</p>
+</header>
+
+<main class="container" id="quiz"></main>
+<footer>MACHINIST PRO | Practice Questions</footer>
+
+<script>
+const questions = [
+["Engineering Drawing का मुख्य उद्देश्य क्या है?",["विचारों को चित्र द्वारा स्पष्ट करना","धातु गर्म करना","बिजली बनाना","मशीन चलाना"],0],
+["Engineering Drawing को किस नाम से जाना जाता है?",["इंजीनियर की भाषा","गणित की भाषा","कंप्यूटर भाषा","संगीत भाषा"],0],
+["ड्राइंग में क्षैतिज रेखा को क्या कहते हैं?",["Horizontal Line","Vertical Line","Hidden Line","Centre Line"],0],
+["ड्राइंग में खड़ी रेखा को क्या कहते हैं?",["Vertical Line","Horizontal Line","Dimension Line","Section Line"],0],
+["वस्तु की दिखाई देने वाली बाहरी किनारों के लिए कौन-सी रेखा उपयोग होती है?",["मोटी Continuous Line","पतली Dashed Line","Centre Line","Freehand Line"],0],
+["छिपे हुए किनारों को दिखाने के लिए कौन-सी रेखा उपयोग होती है?",["Dashed Line","मोटी Continuous Line","Centre Line","Dimension Line"],0],
+["Centre Line सामान्यतः किस प्रकार की होती है?",["लंबी और छोटी डैश वाली पतली रेखा","मोटी लगातार रेखा","केवल बिंदीदार रेखा","लहरदार रेखा"],0],
+["Dimension Line का उपयोग किसलिए होता है?",["माप दिखाने के लिए","वस्तु काटने के लिए","छेद बनाने के लिए","रंग भरने के लिए"],0],
+["Extension Line का उपयोग किसलिए होता है?",["माप की सीमा दिखाने के लिए","केंद्र दिखाने के लिए","छिपा भाग दिखाने के लिए","कटिंग करने के लिए"],0],
+["Engineering Drawing में सामान्यतः किसका उपयोग होता है?",["स्केल","हथौड़ा","प्लायर","ड्रिल"],0],
+["T-Square का उपयोग किसलिए किया जाता है?",["क्षैतिज रेखा खींचने के लिए","वृत्त बनाने के लिए","कोण मापने के लिए","छेद बनाने के लिए"],0],
+["Set Square का उपयोग किसलिए होता है?",["विशेष कोणों की रेखाएँ खींचने के लिए","लंबाई मापने के लिए","व्यास काटने के लिए","धातु पकड़ने के लिए"],0],
+["Protractor का उपयोग किसलिए किया जाता है?",["कोण मापने के लिए","लंबाई मापने के लिए","वजन मापने के लिए","गहराई मापने के लिए"],0],
+["Compass का उपयोग किसलिए होता है?",["वृत्त और चाप बनाने के लिए","सीधी रेखा काटने के लिए","मोटाई मापने के लिए","छेद करने के लिए"],0],
+["Divider का मुख्य उपयोग क्या है?",["दूरी स्थानांतरित करने और भागों में बांटने के लिए","वृत्त काटने के लिए","कोण मापने के लिए","धातु पीसने के लिए"],0],
+["ड्राइंग शीट का सामान्य A4 आकार क्या है?",["210 × 297 mm","297 × 420 mm","420 × 594 mm","594 × 841 mm"],0],
+["A3 शीट का आकार कितना होता है?",["210 × 297 mm","297 × 420 mm","420 × 594 mm","841 × 1189 mm"],1],
+["Orthographic Projection में कितने मुख्य दृश्य हो सकते हैं?",["एक","दो","तीन","छह"],2],
+["Front View किस दिशा से वस्तु को देखने पर प्राप्त होता है?",["सामने से","ऊपर से","नीचे से","पीछे से"],0],
+["Top View किस दिशा से देखने पर प्राप्त होता है?",["ऊपर से","सामने से","बाईं ओर से","पीछे से"],0],
+["Side View किस दिशा से प्राप्त होता है?",["बगल से","ऊपर से","नीचे से","सामने से"],0],
+["First Angle Projection में वस्तु किसके बीच होती है?",["प्रेक्षक और तल के बीच","प्रेक्षक के पीछे","दोनों तल के बाहर","केवल ऊपर"],0],
+["Third Angle Projection में वस्तु कहाँ होती है?",["प्रेक्षक और तल के बीच नहीं, बल्कि प्रेक्षक के विपरीत ओर तल के पीछे","प्रेक्षक और तल के बीच","केवल नीचे","केवल बाईं ओर"],0],
+["Isometric Drawing में अक्षों के बीच कोण कितना होता है?",["90°","120°","60°","45°"],1],
+["Isometric Drawing में ऊर्ध्वाधर अक्ष किस दिशा में होता है?",["सीधा ऊपर-नीचे","तिरछा","क्षैतिज","वक्र"],0],
+["Scale का उपयोग क्यों किया जाता है?",["वस्तु को अनुपात में छोटा या बड़ा दिखाने के लिए","धातु काटने के लिए","कोण गर्म करने के लिए","मोटाई बदलने के लिए"],0],
+["Full Scale का अनुपात क्या होता है?",["1:1","1:2","2:1","1:10"],0],
+["Reducing Scale का उदाहरण कौन-सा है?",["1:2","2:1","5:1","10:1"],0],
+["Enlarging Scale का उदाहरण कौन-सा है?",["2:1","1:2","1:5","1:10"],0],
+["Dimensioning में Arrow Head का उपयोग किसलिए होता है?",["माप रेखा के सिरों को दर्शाने के लिए","वस्तु का रंग बताने के लिए","केंद्र बनाने के लिए","शीट काटने के लिए"],0],
+["Radius को किस अक्षर से दर्शाते हैं?",["R","D","L","W"],0],
+["Diameter को किस चिन्ह से दर्शाते हैं?",["Ø","R","±","%"],0],
+["वृत्त के केंद्र को दिखाने के लिए कौन-सी रेखा उपयोग होती है?",["Centre Line","Hidden Line","Dimension Line","Border Line"],0],
+["Sectional View का उपयोग क्यों किया जाता है?",["अंदरूनी बनावट दिखाने के लिए","बाहरी रंग दिखाने के लिए","वजन मापने के लिए","लंबाई बढ़ाने के लिए"],0],
+["Hatching Lines सामान्यतः किसे दर्शाती हैं?",["कटे हुए भाग की सतह","छिपे हुए किनारे","केंद्र","माप"],0],
+["Freehand Sketch किससे बनाई जाती है?",["बिना ड्राइंग उपकरण के हाथ से","केवल कंप्यूटर से","केवल मशीन से","केवल स्केल से"],0],
+["Drawing में Title Block में क्या जानकारी होती है?",["ड्राइंग का नाम और संबंधित विवरण","केवल रंग","केवल वजन","केवल कीमत"],0],
+["BIS का पूरा नाम क्या है?",["Bureau of Indian Standards","Basic Indian System","Board of Industrial Science","Bureau of International Studies"],0],
+["Engineering Drawing में mm का अर्थ क्या है?",["मिलीमीटर","मीटर","माइक्रोमीटर","मिलीग्राम"],0],
+["अच्छी Engineering Drawing की विशेषता क्या है?",["स्पष्टता और सही माप","अस्पष्ट रेखाएँ","बिना माप के चित्र","अनियमित चिन्ह"],0]
+];
+
+const quiz=document.getElementById("quiz");
+
+questions.forEach((q,i)=>{
+ const box=document.createElement("section");
+ box.className="question";
+
+ const title=document.createElement("h3");
+ title.textContent=(i+1)+". "+q[0];
+ box.appendChild(title);
+
+ q[1].forEach((option,j)=>{
+  const div=document.createElement("div");
+  div.className="option";
+  div.textContent=String.fromCharCode(65+j)+". "+option;
+  box.appendChild(div);
+ });
+
+ const btn=document.createElement("button");
+ btn.textContent="Show Answer";
+
+ const answer=document.createElement("div");
+ answer.className="answer";
+ answer.textContent="सही उत्तर: "+String.fromCharCode(65+q[2])+". "+q[1][q[2]];
+
+ btn.addEventListener("click",()=>{
+  const visible=answer.style.display==="block";
+  answer.style.display=visible?"none":"block";
+  btn.textContent=visible?"Show Answer":"Hide Answer";
+ });
+
+ box.appendChild(btn);
+ box.appendChild(answer);
+ quiz.appendChild(box);
+});
+</script>
+
+</body>
+</html>

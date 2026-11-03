@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b14">
+  <title>Formula Calculator | MACHINIST PRO</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .page-intro {
+      padding: 24px;
+      margin: 25px 0;
+      border-radius: 22px;
+    }
+
+    .page-intro h1 {
+      margin: 12px 0;
+      font-size: 26px;
+    }
+
+    .page-intro p,
+    .formula-card p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .formula-card {
+      padding: 20px;
+      border-radius: 19px;
+      margin-bottom: 16px;
+    }
+
+    .formula-card h2 {
+      color: var(--cyan);
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .formula {
+      background: rgba(0, 217, 255, 0.08);
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 12px;
+      margin: 12px 0;
+      color: var(--green);
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .calculator-input {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 13px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: rgba(255,255,255,0.06);
+      color: white;
+      outline: none;
+    }
+
+    .calculator-input:focus {
+      border-color: var(--cyan);
+    }
+
+    .calculator-input::placeholder {
+      color: var(--muted);
+    }
+
+    .calc-button {
+      width: 100%;
+      padding: 13px;
+      border: 0;
+      border-radius: 11px;
+      background: linear-gradient(100deg, #00d9ff, #66aaff);
+      color: #001018;
+      font-weight: 800;
+      margin-top: 8px;
+    }
+
+    .result {
+      display: none;
+      margin-top: 14px;
+      padding: 15px;
+      border-radius: 12px;
+      background: rgba(37, 230, 162, 0.09);
+      border: 1px solid rgba(37, 230, 162, 0.35);
+      color: var(--green);
+      line-height: 1.7;
+    }
+
+    .formula-list {
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 20px 0;
+      color: var(--cyan);
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-content">
+    <a href="../index.html" class="logo">
+      ⚙ MACHINIST <span>PRO</span>
+    </a>
+    <div class="header-tag">FORMULA CALCULATOR</div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="page-intro glass">
+    <small style="color:#00d9ff;">ITI MACHINIST FIRST YEAR</small>
+    <h1>🧮 सूत्र एवं गणना</h1>
+    <p>
+      मशीनिस्ट ट्रेड में उपयोग होने वाले महत्वपूर्ण
+      गणितीय और मशीनिंग सूत्र यहाँ सीखें और कैलकुलेटर
+      की सहायता से उदाहरण हल करें।
+    </p>
+  </section>
+
+  <!-- CUTTING SPEED -->
+  <section class="formula-card glass">
+    <h2>01. कटिंग स्पीड (Cutting Speed)</h2>
+
+    <p>
+      कटिंग स्पीड वह गति है जिससे कटिंग टूल के संपर्क
+      में जॉब की सतह घूमती या आगे बढ़ती है।
+    </p>
+
+    <div class="formula">
+      V = (π × D × N) / 1000
+    </div>
+
+    <p>
+      V = कटिंग स्पीड (मीटर/मिनट)<br>
+      D = जॉब का व्यास (मिलीमीटर)<br>
+      N = स्पिंडल की गति (RPM)
+    </p>
+  </section>
+
+  <!-- RPM CALCULATOR -->
+  <section class="formula-card glass">
+    <h2>02. स्पिंडल स्पीड (RPM Calculator)</h2>
+
+    <p>
+      कटिंग स्पीड और जॉब का व्यास डालकर RPM निकालें।
+    </p>
+
+    <div class="formula">
+      N = (1000 × V) / (π × D)
+    </div>
+
+    <input
+      class="calculator-input"
+      type="number"
+      id="cuttingSpeed"
+      placeholder="कटिंग स्पीड V (मीटर/मिनट)"
+      min="0"
+      step="any"
+    >
+
+    <input
+      class="calculator-input"
+      type="number"
+      id="diameter"
+      placeholder="जॉब का व्यास D (मिलीमीटर)"
+      min="0"
+      step="any"
+    >
+
+    <button class="calc-button" onclick="calculateRPM()">
+      RPM निकालें
+    </button>
+
+    <div class="result" id="rpmResult" aria-live="polite"></div>
+  </section>
+
+  <!-- FEED RATE -->
+  <section class="formula-card glass">
+    <h2>03. फीड रेट (Feed Rate)</h2>
+
+    <p>
+      फीड रेट वह दूरी है जो कटिंग टूल या जॉब
+      एक मिनट में तय करता है।
+    </p>
+
+    <div class="formula">
+      F = f × N
+    </div>
+
+    <p>
+      F = फीड रेट (मिलीमीटर/मिनट)<br>
+      f = फीड (मिलीमीटर/चक्कर)<br>
+      N = RPM
+    </p>
+
+    <input
+      class="calculator-input"
+      type="number"
+      id="feed"
+      placeholder="फीड f (मिलीमीटर/चक्कर)"
+      min="0"
+      step="any"
+    >
+
+    <input
+      class="calculator-input"
+      type="number"
+      id="feedRPM"
+      placeholder="RPM"
+      min="0"
+      step="any"
+    >
+
+    <button class="calc-button" onclick="calculateFeed()">
+      फीड रेट निकालें
+    </button>
+
+    <div class="result" id="feedResult" aria-live="polite"></div>
+  </section>
+
+  <!-- MACHINING TIME -->
+  <section class="formula-card glass">
+    <h2>04. मशीनिंग समय (Machining Time)</h2>
+
+    <p>
+      किसी मशीनिंग कार्य को पूरा करने में लगने वाले
+      समय को मशीनिंग समय कहते हैं।
+    </p>
+
+    <div class="formula">
+      T = L / (f × N)
+    </div>
+
+    <p>
+      T = समय (मिनट)<br>
+      L = मशीनिंग लंबाई (मिलीमीटर)<br>
+      f = फीड (मिलीमीटर/चक्कर)<br>
+      N = RPM
+    </p>
+
+    <input
+      class="calculator-input"
+      type="number"
+      id="length"
+      placeholder="मशीनिंग लंबाई L (मिलीमीटर)"
+      min="0"
+      step="any"
+    >
+
+    <input
+      class="calculator-input"
+      type="number"
+      id="timeFeed"
+      placeholder="फीड f (मिलीमीटर/चक्कर)"
+      min="0"
+      step="any"
+    >
+
+    <input
+      class="calculator-input"
+      type="number"
+      id="timeRPM"
+      placeholder="RPM"
+      min="0"
+      step="any"
+    >
+
+    <button class="calc-button" onclick="calculateTime()">
+      समय निकालें
+    </button>
+
+    <div class="result" id="timeResult" aria-live="polite"></div>
+  </section>
+
+  <!-- OTHER FORMULAS -->
+  <section class="formula-card glass">
+    <h2>05. महत्वपूर्ण गणितीय सूत्र</h2>
+
+    <ul class="formula-list">
+      <li>आयत का क्षेत्रफल = लंबाई × चौड़ाई</li>
+      <li>वर्ग का क्षेत्रफल = भुजा × भुजा</li>
+      <li>त्रिभुज का क्षेत्रफल = ½ × आधार × ऊँचाई</li>
+      <li>वृत्त का क्षेत्रफल = π × r²</li>
+      <li>वृत्त की परिधि = 2 × π × r</li>
+      <li>घन का आयतन = भुजा³</li>
+      <li>बेलन का आयतन = π × r² × h</li>
+      <li>प्रतिशत = (प्राप्त मान / कुल मान) × 100</li>
+    </ul>
+  </section>
+
+  <a href="../index.html" class="back-link">
+    ← मुख्य पेज पर जाएँ
+  </a>
+
+</main>
+
+<footer class="footer">
+  <p>⚙ MACHINIST PRO</p>
+  <p>ITI Machinist Digital Learning Platform</p>
+</footer>
+
+<script src="../script.js"></script>
+
+<script>
+  function getNumber(id) {
+    return Number(document.getElementById(id).value);
+  }
+
+  function showResult(id, message) {
+    const box = document.getElementById(id);
+    box.style.display = "block";
+    box.textContent = message;
+  }
+
+  function validPositive(...values) {
+    return values.every(value => Number.isFinite(value) && value > 0);
+  }
+
+  function calculateRPM() {
+    const speed = getNumber("cuttingSpeed");
+    const diameter = getNumber("diameter");
+
+    if (!validPositive(speed, diameter)) {
+      showResult("rpmResult", "कृपया दोनों मान शून्य से अधिक दर्ज करें।");
+      return;
+    }
+
+    const rpm = (1000 * speed) / (Math.PI * diameter);
+
+    showResult(
+      "rpmResult",
+      "उत्तर: " + rpm.toFixed(2) + " RPM"
+    );
+  }
+
+  function calculateFeed() {
+    const feed = getNumber("feed");
+    const rpm = getNumber("feedRPM");
+
+    if (!validPositive(feed, rpm)) {
+      showResult("feedResult", "कृपया दोनों मान शून्य से अधिक दर्ज करें।");
+      return;
+    }
+
+    const result = feed * rpm;
+
+    showResult(
+      "feedResult",
+      "उत्तर: " + result.toFixed(2) + " मिलीमीटर/मिनट"
+    );
+  }
+
+  function calculateTime() {
+    const length = getNumber("length");
+    const feed = getNumber("timeFeed");
+    const rpm = getNumber("timeRPM");
+
+    if (!validPositive(length, feed, rpm)) {
+      showResult("timeResult", "कृपया सभी मान शून्य से अधिक दर्ज करें।");
+      return;
+    }
+
+    const time = length / (feed * rpm);
+
+    showResult(
+      "timeResult",
+      "उत्तर: " + time.toFixed(3) + " मिनट"
+    );
+  }
+</script>
+
+</body>
+</html>

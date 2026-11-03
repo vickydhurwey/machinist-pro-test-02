@@ -1,97 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#08111f">
-<title>Digital Notes | MACHINIST PRO</title>
+<title>Machinist Notes | MACHINIST PRO</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
 body{
   font-family:Arial,sans-serif;
   background:#08111f;
-  color:#eaf2fa;
-  min-height:100vh;
-  line-height:1.7;
+  color:#f1f5f9;
+  padding:20px;
 }
 
 header{
   text-align:center;
-  padding:35px 15px;
-  background:linear-gradient(135deg,#102c3d,#08111f);
-  border-bottom:1px solid #263b50;
-}
-
-.logo{
-  color:#64e6a5;
-  font-size:13px;
-  font-weight:bold;
-  letter-spacing:3px;
+  padding:25px 10px;
 }
 
 header h1{
   color:#64e6a5;
-  font-size:30px;
-  margin:12px 0;
+  font-size:28px;
 }
 
 header p{
-  color:#a9bacb;
-  font-size:14px;
+  color:#aab7c8;
+  margin-top:10px;
 }
 
-.container{
-  max-width:950px;
-  margin:auto;
-  padding:22px 15px 45px;
-}
-
-.page-heading{margin-bottom:22px}
-
-.page-heading h2{
-  font-size:24px;
-  margin:12px 0;
-}
-
-.page-heading p{
-  color:#a9bacb;
-  font-size:14px;
-  line-height:1.7;
-}
-
-.section-heading{
+.section-title{
+  margin:28px 0 15px;
   color:#64e6a5;
-  font-size:19px;
-  margin:25px 0 15px;
-  border-left:4px solid #64e6a5;
-  padding-left:12px;
+  font-size:21px;
 }
 
-.topic-grid{
+.notes-grid{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:14px;
+  grid-template-columns:1fr;
+  gap:15px;
 }
 
-.topic-link{
-  display:block;
-  color:inherit;
-  text-decoration:none;
-}
-
-.topic-card{
-  height:100%;
-  padding:20px;
-  border:1px solid #263b50;
-  border-radius:18px;
-  background:linear-gradient(145deg,#14263a,#101c2c);
+.card{
+  background:#111e30;
+  border:1px solid #263a50;
+  border-radius:15px;
+  padding:18px;
   transition:0.3s;
 }
 
-.topic-card:hover{
+.card:hover{
   border-color:#64e6a5;
   transform:translateY(-3px);
 }
@@ -100,66 +63,51 @@ header p{
   color:#64e6a5;
   font-size:12px;
   font-weight:bold;
-  letter-spacing:1px;
-  margin-bottom:10px;
-}
-
-.topic-card h3{
-  font-size:17px;
   margin-bottom:9px;
 }
 
-.topic-card p{
-  color:#a9bacb;
-  font-size:13px;
-  line-height:1.7;
+.card h3{
+  font-size:19px;
+  margin-bottom:9px;
 }
 
-.note-label{
-  display:inline-block;
-  margin-top:15px;
-  color:#64e6a5;
-  font-size:13px;
-  font-weight:bold;
+.card p{
+  color:#aab7c8;
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:15px;
 }
 
-.syllabus-card{
-  background:linear-gradient(135deg,#153c35,#102b38);
-  border:1px solid #64e6a5;
+.links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 }
 
-.syllabus-card h3{color:#64e6a5}
-
-.question-card{
-  background:linear-gradient(135deg,#24334a,#142b3c);
-  border:1px solid #4d8d80;
-}
-
-.question-card h3{color:#64e6a5}
-
-.back{
-  display:inline-block;
-  margin-top:30px;
-  padding:11px 18px;
-  color:#07131b;
-  background:#64e6a5;
-  border-radius:8px;
+.links a{
   text-decoration:none;
+  padding:10px 13px;
+  border-radius:8px;
+  font-size:13px;
   font-weight:bold;
+}
+
+.notes-link{
+  background:#64e6a5;
+  color:#08111f;
+}
+
+.quiz-link{
+  background:#20334b;
+  color:#64e6a5;
+  border:1px solid #3b526d;
 }
 
 footer{
   text-align:center;
-  padding:25px 15px;
-  border-top:1px solid #263b50;
-  color:#8195a9;
-  font-size:12px;
-}
-
-@media(max-width:550px){
-  header h1{font-size:25px}
-  .topic-grid{grid-template-columns:1fr}
-  .page-heading h2{font-size:21px}
+  color:#8090a5;
+  margin-top:35px;
+  font-size:13px;
 }
 </style>
 </head>
@@ -167,133 +115,108 @@ footer{
 <body>
 
 <header>
-  <div class="logo">MACHINIST PRO</div>
-  <h1>⚙️ Digital Notes</h1>
-  <p>ITI Machinist First Year Study Portal</p>
+  <h1>⚙️ MACHINIST PRO</h1>
+  <p>ITI Machinist 1st Year – Complete Study Notes</p>
 </header>
 
-<main class="container">
+<h2 class="section-title">📚 Study Material</h2>
 
-  <div class="page-heading">
-    <h2>📚 अध्ययन सामग्री</h2>
-    <p>
-      ITI Machinist प्रथम वर्ष के सभी महत्वपूर्ण विषयों
-      के नोट्स, प्रश्न-उत्तर और अध्ययन सामग्री यहाँ पढ़ें।
-    </p>
+<div class="notes-grid">
+
+  <div class="card">
+    <div class="topic-number">SPECIAL SECTION</div>
+    <h3>📖 Complete Syllabus</h3>
+    <p>Machinist 1st Year का पूरा सिलेबस और विषयों की जानकारी।</p>
+    <div class="links">
+      <a class="notes-link" href="syllabus.html">Read Syllabus →</a>
+    </div>
   </div>
 
-  <h2 class="section-heading">📖 Complete Syllabus</h2>
-
-  <div class="topic-grid">
-    <a href="syllabus.html" class="topic-link">
-      <div class="topic-card syllabus-card">
-        <div class="topic-number">COMPLETE SYLLABUS</div>
-        <h3>📚 Machinist 1st Year Syllabus</h3>
-        <p>
-          प्रथम वर्ष का पूरा सिलेबस,
-          Trade Theory, Practical, Drawing
-          और Workshop Calculation।
-        </p>
-        <span class="note-label">View Complete Syllabus →</span>
-      </div>
-    </a>
+  <div class="card">
+    <div class="topic-number">TOPIC 01</div>
+    <h3>📏 Measuring Instruments</h3>
+    <p>मापने वाले औजार, Vernier Caliper, Micrometer और उनके उपयोग।</p>
+    <div class="links">
+      <a class="notes-link" href="measuring-instruments.html">Read Notes →</a>
+      <a class="quiz-link" href="measuring-instruments-questions.html">Question Bank →</a>
+    </div>
   </div>
 
-  <h2 class="section-heading">⚙️ Machinist Topics</h2>
-
-  <div class="topic-grid">
-
-    <a href="measuring-instruments.html" class="topic-link">
-      <div class="topic-card">
-        <div class="topic-number">TOPIC 01</div>
-        <h3>📏 Measuring Instruments</h3>
-        <p>Vernier Caliper, Micrometer और मापन उपकरणों के उपयोग।</p>
-        <span class="note-label">Read Notes →</span>
-      </div>
-    </a>
-
-    <a href="measuring-instruments-questions.html" class="topic-link">
-      <div class="topic-card question-card">
-        <div class="topic-number">QUESTION BANK 01</div>
-        <h3>📝 Measuring Instruments MCQ</h3>
-        <p>40 बहुविकल्पीय प्रश्न, चार विकल्प और सही उत्तर।</p>
-        <span class="note-label">Start Practice →</span>
-      </div>
-    </a>
-
-    <a href="lathe-machine.html" class="topic-link">
-      <div class="topic-card">
-        <div class="topic-number">TOPIC 02</div>
-        <h3>⚙️ Lathe Machine</h3>
-        <p>लेथ मशीन के मुख्य भाग, कार्यप्रणाली और मशीनिंग ऑपरेशन।</p>
-        <span class="note-label">Read Notes →</span>
-      </div>
-    </a>
-
-    <a href="drilling-machine.html" class="topic-link">
-      <div class="topic-card">
-        <div class="topic-number">TOPIC 03</div>
-        <h3>🔩 Drilling Machine</h3>
-        <p>ड्रिलिंग मशीन के भाग, प्रकार और उपयोग।</p>
-        <span class="note-label">Read Notes →</span>
-      </div>
-    </a>
-
-    <a href="grinding-machine.html" class="topic-link">
-      <div class="topic-card">
-        <div class="topic-number">TOPIC 04</div>
-        <h3>🛠️ Grinding Machine</h3>
-        <p>ग्राइंडिंग मशीन, Grinding Wheel और उनके उपयोग।</p>
-        <span class="note-label">Read Notes →</span>
-      </div>
-    </a>
-
-    <a href="engineering-drawing.html" class="topic-link">
-      <div class="topic-card">
-        <div class="topic-number">TOPIC 05</div>
-        <h3>📐 Engineering Drawing</h3>
-        <p>लाइन, स्केल, Dimensioning और Projection।</p>
-        <span class="note-label">Read Notes →</span>
-      </div>
-    </a>
-
-    <a href="workshop-calculation.html" class="topic-link">
-      <div class="topic-card">
-        <div class="topic-number">TOPIC 06</div>
-        <h3>🧮 Workshop Calculation</h3>
-        <p>गणित, क्षेत्रफल, आयतन और मशीनिंग गणनाएँ।</p>
-        <span class="note-label">Read Notes →</span>
-      </div>
-    </a>
-
-    <a href="workshop-safety.html" class="topic-link">
-      <div class="topic-card">
-        <div class="topic-number">TOPIC 07</div>
-        <h3>🦺 Workshop Safety</h3>
-        <p>सुरक्षा नियम, PPE, अग्निशामक यंत्र और प्राथमिक उपचार।</p>
-        <span class="note-label">Read Notes →</span>
-      </div>
-    </a>
-
-    <a href="cutting-tools.html" class="topic-link">
-      <div class="topic-card">
-        <div class="topic-number">TOPIC 08</div>
-        <h3>🔧 Cutting Tools</h3>
-        <p>कटिंग टूल के प्रकार, कोण, सामग्री और उपयोग।</p>
-        <span class="note-label">Read Notes →</span>
-      </div>
-    </a>
-
+  <div class="card">
+    <div class="topic-number">TOPIC 02</div>
+    <h3>⚙️ Lathe Machine</h3>
+    <p>लेथ मशीन के मुख्य भाग, कार्यप्रणाली और मशीनिंग ऑपरेशन।</p>
+    <div class="links">
+      <a class="notes-link" href="lathe-machine.html">Read Notes →</a>
+      <a class="quiz-link" href="lathe-machine-questions.html">Question Bank →</a>
+    </div>
   </div>
 
-  <a href="../index.html" class="back">← Home पर जाएँ</a>
+  <div class="card">
+    <div class="topic-number">TOPIC 03</div>
+    <h3>🔩 Drilling Machine</h3>
+    <p>ड्रिलिंग मशीन के प्रकार, भाग, ड्रिल और ड्रिलिंग ऑपरेशन।</p>
+    <div class="links">
+      <a class="notes-link" href="drilling-machine.html">Read Notes →</a>
+      <a class="quiz-link" href="drilling-machine-questions.html">Question Bank →</a>
+    </div>
+  </div>
 
-</main>
+  <div class="card">
+    <div class="topic-number">TOPIC 04</div>
+    <h3>🛠️ Grinding Machine</h3>
+    <p>ग्राइंडिंग मशीन, ग्राइंडिंग व्हील, प्रकार और उपयोग।</p>
+    <div class="links">
+      <a class="notes-link" href="grinding-machine.html">Read Notes →</a>
+      <a class="quiz-link" href="grinding-machine-questions.html">Question Bank →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-number">TOPIC 05</div>
+    <h3>📐 Engineering Drawing</h3>
+    <p>ड्राइंग के प्रकार, रेखाएँ, स्केल, प्रोजेक्शन और डायमेंशन।</p>
+    <div class="links">
+      <a class="notes-link" href="engineering-drawing.html">Read Notes →</a>
+      <a class="quiz-link" href="engineering-drawing-questions.html">Question Bank →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-number">TOPIC 06</div>
+    <h3>🧮 Workshop Calculation</h3>
+    <p>गणितीय सूत्र, क्षेत्रफल, आयतन, प्रतिशत और मशीनिंग गणना।</p>
+    <div class="links">
+      <a class="notes-link" href="workshop-calculation.html">Read Notes →</a>
+      <a class="quiz-link" href="workshop-calculation-questions.html">Question Bank →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-number">TOPIC 07</div>
+    <h3>🦺 Workshop Safety</h3>
+    <p>सुरक्षा नियम, PPE, अग्निशामक यंत्र, 5S और प्राथमिक उपचार।</p>
+    <div class="links">
+      <a class="notes-link" href="workshop-safety.html">Read Notes →</a>
+      <a class="quiz-link" href="workshop-safety-questions.html">Question Bank →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="topic-number">TOPIC 08</div>
+    <h3>🔧 Cutting Tools</h3>
+    <p>कटिंग टूल्स के प्रकार, टूल मटेरियल, टूल एंगल और कटिंग स्पीड।</p>
+    <div class="links">
+      <a class="notes-link" href="cutting-tools.html">Read Notes →</a>
+      <a class="quiz-link" href="cutting-tools-questions.html">Question Bank →</a>
+    </div>
+  </div>
+
+</div>
 
 <footer>
-  <p>⚙️ MACHINIST PRO</p>
+  <p>© 2026 MACHINIST PRO</p>
   <p>Learn • Practice • Improve</p>
-  <p>ITI Machinist First Year</p>
 </footer>
 
 </body>

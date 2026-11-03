@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b14">
+<title>कार्यशाला सुरक्षा | MACHINIST PRO</title>
+<link rel="stylesheet" href="../style.css">
+
+<style>
+.safety-intro,.safety-card {
+  padding:22px;
+  border-radius:20px;
+  margin:20px 0;
+}
+.safety-intro h1 {
+  font-size:26px;
+  margin:12px 0;
+}
+.safety-intro p,.safety-card p {
+  color:var(--muted);
+  line-height:1.8;
+}
+.safety-card h2 {
+  color:var(--cyan);
+  font-size:19px;
+  margin-bottom:12px;
+}
+.safety-card h3 {
+  margin:14px 0 7px;
+  font-size:15px;
+}
+.safety-card ul {
+  padding-left:20px;
+  color:var(--muted);
+  line-height:1.9;
+}
+.safety-tag {
+  display:inline-block;
+  padding:6px 11px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  color:var(--cyan);
+  font-size:12px;
+  margin-bottom:12px;
+}
+.safety-search {
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.06);
+  color:white;
+  outline:none;
+  margin:15px 0;
+}
+.safety-search::placeholder { color:var(--muted); }
+.warning {
+  border-color:rgba(255,100,100,.4);
+  background:rgba(255,70,70,.06);
+}
+.warning h2 { color:#ff8585; }
+.no-result {
+  display:none;
+  text-align:center;
+  color:var(--muted);
+  padding:20px;
+}
+.back-link {
+  display:inline-block;
+  margin:20px 0;
+  color:var(--cyan);
+}
+.safety-table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:12px;
+  font-size:13px;
+}
+.safety-table th,.safety-table td {
+  border:1px solid var(--border);
+  padding:11px;
+  text-align:left;
+}
+.safety-table th { color:var(--cyan); }
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-content">
+    <a href="../index.html" class="logo">⚙ MACHINIST <span>PRO</span></a>
+    <div class="header-tag">WORKSHOP SAFETY</div>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="safety-intro glass">
+  <small style="color:#00d9ff;">ITI MACHINIST FIRST YEAR</small>
+  <h1>🦺 कार्यशाला सुरक्षा</h1>
+  <p>
+    वर्कशॉप में काम करते समय दुर्घटनाओं से बचने,
+    मशीनों का सुरक्षित उपयोग करने और कार्यस्थल को
+    साफ-सुथरा रखने के नियम हिंदी में सीखें।
+  </p>
+</section>
+
+<input
+  type="search"
+  class="safety-search"
+  id="safetySearch"
+  placeholder="विषय खोजें... जैसे PPE, Fire, 5S"
+  aria-label="सुरक्षा विषय खोजें"
+>
+
+<section class="safety-card glass searchable">
+  <span class="safety-tag">परिचय</span>
+  <h2>01. कार्यशाला सुरक्षा क्या है?</h2>
+  <p>
+    कार्यशाला सुरक्षा का अर्थ है मशीनों, औजारों और
+    उपकरणों का उपयोग करते समय स्वयं तथा दूसरों को
+    दुर्घटनाओं से सुरक्षित रखना।
+  </p>
+  <h3>मुख्य उद्देश्य</h3>
+  <ul>
+    <li>दुर्घटनाओं को रोकना।</li>
+    <li>मशीन और उपकरणों की सुरक्षा करना।</li>
+    <li>स्वच्छ और सुरक्षित वातावरण बनाए रखना।</li>
+    <li>काम करने वाले व्यक्तियों की सुरक्षा करना।</li>
+  </ul>
+</section>
+
+<section class="safety-card glass searchable">
+  <span class="safety-tag">व्यक्तिगत सुरक्षा</span>
+  <h2>02. PPE क्या है?</h2>
+  <p>
+    PPE का पूरा नाम Personal Protective Equipment है।
+    हिंदी में इसे व्यक्तिगत सुरक्षा उपकरण कहते हैं।
+  </p>
+  <h3>PPE के प्रमुख प्रकार</h3>
+  <ul>
+    <li>Safety Goggles – आँखों की सुरक्षा।</li>
+    <li>Safety Shoes – पैरों की सुरक्षा।</li>
+    <li>Helmet – सिर की सुरक्षा।</li>
+    <li>Ear Plug – कानों की सुरक्षा।</li>
+    <li>Face Shield – चेहरे की सुरक्षा।</li>
+    <li>Apron – शरीर और कपड़ों की सुरक्षा।</li>
+    <li>Respirator – उपयुक्त प्रकार के धूल या धुएँ से श्वसन सुरक्षा।</li>
+  </ul>
+</section>
+
+<section class="safety-card glass searchable">
+  <span class="safety-tag">सुरक्षा नियम</span>
+  <h2>03. वर्कशॉप के सामान्य सुरक्षा नियम</h2>
+  <ul>
+    <li>काम के अनुसार PPE पहनें।</li>
+    <li>मशीन चलाने से पहले उसकी स्थिति जाँचें।</li>
+    <li>मशीन चलने पर जॉब को हाथ से न पकड़ें।</li>
+    <li>चलती मशीन से चिप्स हाथ से न हटाएँ।</li>
+    <li>मशीन बंद होने के बाद ही सफाई और समायोजन करें।</li>
+    <li>फर्श पर तेल और पानी न फैलने दें।</li>
+    <li>बिना प्रशिक्षण के मशीन न चलाएँ।</li>
+    <li>ढीले कपड़े, टाई और आभूषण मशीन के पास न पहनें।</li>
+  </ul>
+</section>
+
+<section class="safety-card glass searchable">
+  <span class="safety-tag">आग से सुरक्षा</span>
+  <h2>04. आग के प्रकार (Classes of Fire)</h2>
+  <p>आग को जलने वाले पदार्थ के आधार पर अलग-अलग वर्गों में बाँटा जाता है।</p>
+
+  <table class="safety-table">
+    <tr>
+      <th>वर्ग</th>
+      <th>आग का पदार्थ</th>
+      <th>उदाहरण</th>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>ठोस ज्वलनशील पदार्थ</td>
+      <td>लकड़ी, कागज, कपड़ा</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>ज्वलनशील तरल पदार्थ</td>
+      <td>पेट्रोल, पेंट, तेल</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>ज्वलनशील गैस</td>
+      <td>एलपीजी, प्रोपेन</td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td>ज्वलनशील धातु</td>
+      <td>मैग्नीशियम, सोडियम</td>
+    </tr>
+    <tr>
+      <td>Electrical</td>
+      <td>विद्युत उपकरणों में लगी आग</td>
+      <td>विद्युत पैनल, मोटर</td>
+    </tr>
+    <tr>
+      <td>F / K</td>
+      <td>खाना पकाने का तेल और वसा</td>
+      <td>डीप फ्रायर का तेल</td>
+    </tr>
+  </table>
+
+  <p style="margin-top:12px;">
+    ध्यान दें: आग के वर्गों के नाम और वर्गीकरण देश के मानक के अनुसार अलग हो सकते हैं।
+    भारत में विद्युत आग को प्रायः Class E के रूप में भी पढ़ाया जाता है।
+  </p>
+</section>
+
+<section class="safety-card glass searchable">
+  <span class="safety-tag">अग्निशामक यंत्र</span>
+  <h2>05. अग्निशामक यंत्र (Fire Extinguisher)</h2>
+  <p>आग बुझाने के लिए अलग-अलग प्रकार के अग्निशामक यंत्र उपयोग किए जाते हैं।</p>
+
+  <h3>1. Water Extinguisher</h3>
+  <p>मुख्यतः Class A की आग के लिए। विद्युत या ज्वलनशील तरल की आग पर उपयोग नहीं करना चाहिए।</p>
+
+  <h3>2. Foam Extinguisher</h3>
+  <p>उपयुक्त Class A और Class B की आग के लिए।</p>
+
+  <h3>3. CO₂ Extinguisher</h3>
+  <p>उपयुक्त विद्युत उपकरणों और Class B की आग के लिए।</p>
+
+  <h3>4. ABC Dry Powder</h3>
+  <p>Class A, B और C की आग के लिए उपयुक्त रेटिंग वाला ABC पाउडर इस्तेमाल किया जाता है।</p>
+
+  <h3>5. D Class Powder</h3>
+  <p>विशेष ज्वलनशील धातुओं की आग के लिए विशेष पाउडर इस्तेमाल होता है।</p>
+
+  <h3>6. Wet Chemical</h3>
+  <p>खाना पकाने के तेल और वसा की आग के लिए।</p>
+</section>
+
+<section class="safety-card glass searchable warning">
+  <span class="safety-tag">महत्वपूर्ण चेतावनी</span>
+  <h2>06. विद्युत आग लगने पर क्या करें?</h2>
+  <ul>
+    <li>सुरक्षित हो तो मुख्य बिजली सप्लाई बंद करवाएँ।</li>
+    <li>विद्युत आग पर पानी का उपयोग न करें।</li>
+    <li>उपयुक्त रेटिंग वाले CO₂ या अन्य स्वीकृत अग्निशामक का उपयोग केवल प्रशिक्षित व्यक्ति करे।</li>
+    <li>आग फैलने पर तुरंत बाहर निकलें और आपातकालीन सहायता बुलाएँ।</li>
+    <li>भारत में अग्निशमन सहायता के लिए 101 या एकीकृत आपातकालीन नंबर 112 पर संपर्क करें।</li>
+  </ul>
+</section>
+
+<section class="safety-card glass searchable">
+  <span class="safety-tag">5S पद्धति</span>
+  <h2>07. 5S क्या है?</h2>
+  <p>5S कार्यस्थल को व्यवस्थित, साफ और सुरक्षित रखने की जापानी पद्धति है।</p>
+  <ul>
+    <li><b>1. Seiri (छँटाई):</b> जरूरी और गैर-जरूरी वस्तुओं को अलग करना।</li>
+    <li><b>2. Seiton (व्यवस्थित करना):</b> हर वस्तु का निश्चित स्थान बनाना।</li>
+    <li><b>3. Seiso (सफाई):</b> कार्यस्थल और मशीन की सफाई।</li>
+    <li><b>4. Seiketsu (मानकीकरण):</b> सफाई और व्यवस्था के नियम बनाए रखना।</li>
+    <li><b>5. Shitsuke (अनुशासन):</b> नियमों का नियमित पालन करना।</li>
+  </ul>
+</section>
+
+<section class="safety-card glass searchable">
+  <span class="safety-tag">प्राथमिक उपचार</span>
+  <h2>08. प्राथमिक उपचार (First Aid)</h2>
+  <p>दुर्घटना होने पर चिकित्सा सहायता आने तक दी जाने वाली शुरुआती सहायता को प्राथमिक उपचार कहते हैं।</p>
+  <ul>
+    <li>सबसे पहले अपनी और घायल व्यक्ति की सुरक्षा सुनिश्चित करें।</li>
+    <li>गंभीर दुर्घटना में तुरंत 112 पर सहायता बुलाएँ।</li>
+    <li>रक्तस्राव होने पर साफ कपड़े या ड्रेसिंग से दबाव दें।</li>
+    <li>जलने पर प्रभावित स्थान को साफ, ठंडे बहते पानी से ठंडा करें।</li>
+    <li>गंभीर चोट वाले व्यक्ति को अनावश्यक रूप से न हिलाएँ।</li>
+    <li>प्रशिक्षण के बिना चिकित्सा प्रक्रिया न करें।</li>
+  </ul>
+</section>
+
+<section class="safety-card glass searchable">
+  <span class="safety-tag">मशीन सुरक्षा</span>
+  <h2>09. मशीन पर काम करते समय सुरक्षा</h2>
+  <ul>
+    <li>मशीन के सभी गार्ड सही जगह पर होने चाहिए।</li>
+    <li>मशीन शुरू करने से पहले आसपास की जगह साफ रखें।</li>
+    <li>चलती मशीन के पास हाथ न ले जाएँ।</li>
+    <li>मशीन में खराबी होने पर उसे बंद करके प्रशिक्षक को बताएँ।</li>
+    <li>सफाई और रखरखाव से पहले मशीन को सुरक्षित रूप से अलग करें।</li>
+  </ul>
+</section>
+
+<section class="safety-card glass searchable">
+  <span class="safety-tag">सुरक्षा संकेत</span>
+  <h2>10. सुरक्षा संकेतों के प्रकार</h2>
+  <ul>
+    <li>लाल – निषेध और अग्निशमन उपकरण।</li>
+    <li>पीला – चेतावनी और खतरे का संकेत।</li>
+    <li>नीला – अनिवार्य निर्देश।</li>
+    <li>हरा – सुरक्षित रास्ता और प्राथमिक उपचार।</li>
+  </ul>
+</section>
+
+<section class="safety-card glass searchable">
+  <span class="safety-tag">याद रखने योग्य बातें</span>
+  <h2>11. परीक्षा के महत्वपूर्ण प्रश्न</h2>
+  <ul>
+    <li>PPE का पूरा नाम क्या है?</li>
+    <li>5S के पाँच चरण कौन-कौन से हैं?</li>
+    <li>Class A आग किन पदार्थों से लगती है?</li>
+    <li>CO₂ अग्निशामक का उपयोग कहाँ होता है?</li>
+    <li>विद्युत आग पर पानी क्यों नहीं डालना चाहिए?</li>
+    <li>वर्कशॉप में Safety Shoes क्यों पहनते हैं?</li>
+  </ul>
+</section>
+
+<p class="no-result" id="noResult">
+  कोई विषय नहीं मिला। दूसरा शब्द खोजें।
+</p>
+
+<a href="../index.html" class="back-link">← मुख्य पेज पर जाएँ</a>
+
+</main>
+
+<footer class="footer">
+  <p>⚙ MACHINIST PRO</p>
+  <p>ITI Machinist Digital Learning Platform</p>
+</footer>
+
+<script>
+const searchInput = document.getElementById("safetySearch");
+const cards = document.querySelectorAll(".searchable");
+const noResult = document.getElementById("noResult");
+
+searchInput.addEventListener("input",function() {
+  const value = this.value.trim().toLowerCase();
+  let count = 0;
+
+  cards.forEach(card => {
+    const match = card.textContent.toLowerCase().includes(value);
+    card.style.display = match ? "block" : "none";
+    if(match) count++;
+  });
+
+  noResult.style.display = count === 0 ? "block" : "none";
+});
+</script>
+
+</body>
+</html>

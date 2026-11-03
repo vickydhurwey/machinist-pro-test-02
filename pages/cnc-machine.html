@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CNC Machine | Machinist Notes</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#08111f;
+  color:#eaf2ff;
+  line-height:1.8;
+  padding:18px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+header{
+  text-align:center;
+  padding:35px 15px;
+  background:linear-gradient(135deg,#174b45,#10243c);
+  border-radius:18px;
+  margin-bottom:25px;
+}
+
+.topic{
+  color:#64e6a5;
+  font-weight:bold;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+header h1{
+  color:#64e6a5;
+  font-size:29px;
+}
+
+header p{
+  color:#c8d8e8;
+  margin-top:8px;
+}
+
+.back{
+  display:inline-block;
+  color:#64e6a5;
+  text-decoration:none;
+  margin-bottom:20px;
+  border:1px solid #64e6a5;
+  padding:8px 15px;
+  border-radius:8px;
+}
+
+section{
+  background:#111e30;
+  border:1px solid #263b55;
+  border-radius:14px;
+  padding:20px;
+  margin-bottom:18px;
+}
+
+h2{
+  color:#64e6a5;
+  font-size:21px;
+  margin-bottom:12px;
+  border-bottom:1px solid #30465e;
+  padding-bottom:7px;
+}
+
+h3{
+  color:#8fcaff;
+  margin:14px 0 6px;
+}
+
+p{
+  margin-bottom:10px;
+}
+
+ul,ol{
+  padding-left:23px;
+  margin-bottom:10px;
+}
+
+li{
+  margin-bottom:7px;
+}
+
+.highlight{
+  background:#173b37;
+  border-left:4px solid #64e6a5;
+  padding:12px;
+  border-radius:7px;
+  margin:12px 0;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+th,td{
+  border:1px solid #3b5068;
+  padding:10px;
+  text-align:left;
+}
+
+th{
+  background:#1b3b45;
+  color:#64e6a5;
+}
+
+.question{
+  background:#17283c;
+  padding:13px;
+  border-radius:9px;
+  margin:12px 0;
+}
+
+.question b{
+  color:#8fcaff;
+}
+
+footer{
+  text-align:center;
+  color:#91a5bb;
+  padding:20px 5px;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <div class="topic">TOPIC 16</div>
+  <h1>💻 CNC Machine</h1>
+  <p>Computer Numerical Control Machine</p>
+  <p>मशीनिस्ट ट्रेड – प्रथम वर्ष</p>
+</header>
+
+<a href="notes.html" class="back">← वापस Notes पर जाएँ</a>
+
+<section>
+<h2>1. CNC मशीन क्या है?</h2>
+<p>
+CNC का पूरा नाम <b>Computer Numerical Control</b> है।
+यह एक ऐसी मशीन है जिसे कंप्यूटर में दिए गए प्रोग्राम और निर्देशों की सहायता से नियंत्रित किया जाता है।
+</p>
+<p>
+इस मशीन में टूल की गति, दिशा और मशीनिंग से संबंधित गतिविधियों को प्रोग्राम के अनुसार नियंत्रित किया जाता है।
+</p>
+<div class="highlight">
+<b>सरल भाषा में:</b> CNC मशीन वह मशीन है जो कंप्यूटर प्रोग्राम के अनुसार काम करती है।
+</div>
+</section>
+
+<section>
+<h2>2. CNC का पूरा नाम</h2>
+<p><b>C – Computer</b> = कंप्यूटर</p>
+<p><b>N – Numerical</b> = संख्यात्मक</p>
+<p><b>C – Control</b> = नियंत्रण</p>
+</section>
+
+<section>
+<h2>3. CNC मशीन का कार्य सिद्धांत</h2>
+<p>
+CNC मशीन कंप्यूटर प्रोग्राम में दिए गए निर्देशों के आधार पर कार्य करती है।
+प्रोग्राम मशीन कंट्रोल यूनिट तक पहुँचता है। कंट्रोल यूनिट निर्देशों के अनुसार मशीन के अलग-अलग भागों को नियंत्रित करती है।
+</p>
+<ol>
+<li>मशीन के लिए प्रोग्राम तैयार किया जाता है।</li>
+<li>प्रोग्राम मशीन में दिया जाता है।</li>
+<li>कंट्रोल यूनिट निर्देशों को समझती है।</li>
+<li>मशीन की गति और गतिविधियाँ नियंत्रित होती हैं।</li>
+<li>मशीन प्रोग्राम के अनुसार कार्य करती है।</li>
+</ol>
+</section>
+
+<section>
+<h2>4. CNC मशीन के मुख्य भाग</h2>
+
+<h3>1. Input Device</h3>
+<p>इसकी सहायता से मशीन में प्रोग्राम या निर्देश दिए जाते हैं।</p>
+
+<h3>2. Machine Control Unit (MCU)</h3>
+<p>यह CNC मशीन का नियंत्रण भाग है। यह प्रोग्राम के निर्देशों के अनुसार मशीन को नियंत्रित करता है।</p>
+
+<h3>3. Drive System</h3>
+<p>यह मशीन के अक्षों और अन्य नियंत्रित भागों की गति में सहायता करता है।</p>
+
+<h3>4. Feedback System</h3>
+<p>यह मशीन की स्थिति और गति से संबंधित जानकारी कंट्रोल यूनिट तक पहुँचाता है।</p>
+
+<h3>5. Machine Tool</h3>
+<p>यह वास्तविक मशीनिंग कार्य करने वाला भाग होता है।</p>
+
+<h3>6. Display Unit</h3>
+<p>इसमें प्रोग्राम, मशीन की स्थिति और अन्य जानकारी दिखाई देती है।</p>
+
+<h3>7. Tool Magazine</h3>
+<p>कुछ CNC मशीनों में अलग-अलग टूल रखने के लिए टूल मैगजीन होती है।</p>
+</section>
+
+<section>
+<h2>5. CNC मशीन के प्रकार</h2>
+<ol>
+<li><b>CNC Lathe Machine:</b> बेलनाकार जॉब की मशीनिंग के लिए।</li>
+<li><b>CNC Milling Machine:</b> विभिन्न सतहों और आकृतियों की मशीनिंग के लिए।</li>
+<li><b>CNC Drilling Machine:</b> छेद बनाने के लिए।</li>
+<li><b>CNC Grinding Machine:</b> सतह की फिनिशिंग और ग्राइंडिंग के लिए।</li>
+<li><b>CNC Machining Center:</b> एक ही मशीन में कई प्रकार के मशीनिंग कार्य करने के लिए।</li>
+</ol>
+</section>
+
+<section>
+<h2>6. CNC प्रोग्रामिंग क्या है?</h2>
+<p>
+CNC प्रोग्रामिंग वह प्रक्रिया है जिसमें मशीन को काम करने के लिए विशेष कोड और निर्देश दिए जाते हैं।
+इन निर्देशों में टूल की गति, दिशा और मशीन के कार्य से संबंधित जानकारी होती है।
+</p>
+
+<h3>प्रोग्रामिंग के मुख्य कोड</h3>
+<table>
+<tr>
+<th>कोड</th>
+<th>कार्य</th>
+</tr>
+<tr>
+<td>G-Code</td>
+<td>मशीन की गति और गतिविधियों से संबंधित निर्देश।</td>
+</tr>
+<tr>
+<td>M-Code</td>
+<td>मशीन के सहायक कार्यों से संबंधित निर्देश।</td>
+</tr>
+</table>
+
+<h3>कुछ सामान्य G-Code</h3>
+<table>
+<tr><th>कोड</th><th>अर्थ</th></tr>
+<tr><td>G00</td><td>तेज स्थिति परिवर्तन (Rapid Positioning)</td></tr>
+<tr><td>G01</td><td>सीधी रेखा में नियंत्रित गति</td></tr>
+<tr><td>G02</td><td>घड़ी की दिशा में गोलाकार गति</td></tr>
+<tr><td>G03</td><td>घड़ी की विपरीत दिशा में गोलाकार गति</td></tr>
+</table>
+
+<h3>कुछ सामान्य M-Code</h3>
+<table>
+<tr><th>कोड</th><th>अर्थ</th></tr>
+<tr><td>M03</td><td>स्पिंडल घड़ी की दिशा में चालू</td></tr>
+<tr><td>M04</td><td>स्पिंडल विपरीत दिशा में चालू</td></tr>
+<tr><td>M05</td><td>स्पिंडल बंद</td></tr>
+<tr><td>M08</td><td>कूलेंट चालू</td></tr>
+<tr><td>M09</td><td>कूलेंट बंद</td></tr>
+<tr><td>M30</td><td>प्रोग्राम समाप्त और रीसेट</td></tr>
+</table>
+
+<div class="highlight">
+ध्यान दें: G-Code और M-Code का अर्थ तथा उपयोग मशीन के कंट्रोलर के अनुसार बदल सकता है।
+</div>
+</section>
+
+<section>
+<h2>7. CNC मशीन के लाभ</h2>
+<ul>
+<li>उत्पादन की गति बढ़ती है।</li>
+<li>मशीनिंग में अच्छी सटीकता मिलती है।</li>
+<li>एक जैसे पार्ट बार-बार बनाए जा सकते हैं।</li>
+<li>जटिल आकार बनाना आसान होता है।</li>
+<li>मानवीय गलती कम हो सकती है।</li>
+<li>उत्पादन की गुणवत्ता में सुधार होता है।</li>
+</ul>
+</section>
+
+<section>
+<h2>8. CNC मशीन की हानियाँ</h2>
+<ul>
+<li>मशीन की शुरुआती लागत अधिक होती है।</li>
+<li>रखरखाव का खर्च अधिक हो सकता है।</li>
+<li>प्रोग्रामिंग का ज्ञान आवश्यक होता है।</li>
+<li>खराबी आने पर विशेषज्ञ की आवश्यकता पड़ सकती है।</li>
+<li>बिजली और इलेक्ट्रॉनिक सिस्टम पर निर्भरता होती है।</li>
+</ul>
+</section>
+
+<section>
+<h2>9. CNC मशीन के उपयोग</h2>
+<ul>
+<li>ऑटोमोबाइल उद्योग में।</li>
+<li>हवाई जहाज के पार्ट बनाने में।</li>
+<li>मोल्ड और डाई बनाने में।</li>
+<li>मशीन के पुर्जे बनाने में।</li>
+<li>इलेक्ट्रॉनिक उपकरणों के पार्ट बनाने में।</li>
+<li>विभिन्न धातुओं की सटीक मशीनिंग में।</li>
+</ul>
+</section>
+
+<section>
+<h2>10. CNC मशीन पर सुरक्षा सावधानियाँ</h2>
+<ul>
+<li>मशीन केवल प्रशिक्षक या अधिकृत व्यक्ति की देखरेख में चलाएँ।</li>
+<li>सुरक्षा चश्मा और आवश्यक सुरक्षा उपकरण पहनें।</li>
+<li>ढीले कपड़े और खुले बाल मशीन से दूर रखें।</li>
+<li>मशीन के चलने पर घूमते टूल या जॉब को हाथ न लगाएँ।</li>
+<li>माप लेने या सफाई करने से पहले मशीन को सुरक्षित रूप से रोकें।</li>
+<li>मशीन के सुरक्षा गार्ड बंद रखें।</li>
+</ul>
+</section>
+
+<section>
+<h2>11. परीक्षा के लिए महत्वपूर्ण प्रश्न-उत्तर</h2>
+
+<div class="question">
+<b>प्रश्न 1. CNC का पूरा नाम क्या है?</b>
+<p>उत्तर: Computer Numerical Control.</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 2. CNC मशीन क्या है?</b>
+<p>उत्तर: कंप्यूटर प्रोग्राम द्वारा नियंत्रित मशीन को CNC मशीन कहते हैं।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 3. CNC मशीन का मुख्य कार्य क्या है?</b>
+<p>उत्तर: प्रोग्राम के अनुसार सटीक मशीनिंग करना।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 4. CNC मशीन का मुख्य नियंत्रण भाग कौन-सा है?</b>
+<p>उत्तर: Machine Control Unit (MCU).</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 5. G-Code क्या है?</b>
+<p>उत्तर: यह मशीन की गति और गतिविधियों से संबंधित निर्देश देने वाला कोड है।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 6. M-Code क्या है?</b>
+<p>उत्तर: यह मशीन के सहायक कार्यों को नियंत्रित करने वाला कोड है।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 7. CNC मशीन में Input Device का क्या कार्य है?</b>
+<p>उत्तर: मशीन में प्रोग्राम और निर्देश देना।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 8. MCU का पूरा नाम क्या है?</b>
+<p>उत्तर: Machine Control Unit.</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 9. CNC मशीन में Feedback System का क्या कार्य है?</b>
+<p>उत्तर: मशीन की स्थिति और गति की जानकारी कंट्रोल यूनिट तक पहुँचाना।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 10. CNC Lathe Machine का उपयोग किस लिए होता है?</b>
+<p>उत्तर: बेलनाकार जॉब की मशीनिंग के लिए।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 11. CNC Milling Machine का उपयोग किस लिए होता है?</b>
+<p>उत्तर: विभिन्न सतहों और आकृतियों की मशीनिंग के लिए।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 12. G00 कोड का क्या अर्थ है?</b>
+<p>उत्तर: तेज स्थिति परिवर्तन (Rapid Positioning).</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 13. G01 कोड का क्या अर्थ है?</b>
+<p>उत्तर: सीधी रेखा में नियंत्रित गति।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 14. M03 कोड का क्या कार्य है?</b>
+<p>उत्तर: स्पिंडल को घड़ी की दिशा में चालू करना।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 15. M05 कोड का क्या कार्य है?</b>
+<p>उत्तर: स्पिंडल को बंद करना।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 16. CNC मशीन का एक लाभ बताइए।</b>
+<p>उत्तर: CNC मशीन से सटीक और एक जैसे पार्ट बनाए जा सकते हैं।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 17. CNC मशीन की एक हानि बताइए।</b>
+<p>उत्तर: इसकी शुरुआती लागत अधिक होती है।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 18. Tool Magazine का क्या कार्य है?</b>
+<p>उत्तर: अलग-अलग टूल को रखने के लिए।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 19. CNC मशीन का उपयोग किस उद्योग में होता है?</b>
+<p>उत्तर: ऑटोमोबाइल, एयरोस्पेस और मशीन निर्माण उद्योग में।</p>
+</div>
+
+<div class="question">
+<b>प्रश्न 20. CNC मशीन में सुरक्षा क्यों आवश्यक है?</b>
+<p>उत्तर: दुर्घटनाओं से बचने और सुरक्षित कार्य करने के लिए।</p>
+</div>
+
+</section>
+
+<footer>
+<p>© Machinist 1st Year Notes</p>
+<p>Made for ITI Students ⚙️</p>
+</footer>
+
+</div>
+</body>
+</html>

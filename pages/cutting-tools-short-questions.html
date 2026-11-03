@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cutting Tools Short Questions | MACHINIST PRO</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#08111f;color:#f1f5f9;font-family:Arial,sans-serif;padding:18px}
+.container{max-width:800px;margin:auto}
+header{text-align:center;padding:22px 10px}
+header h1{color:#64e6a5;font-size:25px}
+header p{color:#aab7c8;margin-top:10px;line-height:1.6}
+.info{background:#111e30;border:1px solid #263a50;border-radius:12px;padding:15px;margin:15px 0 22px;color:#cbd5e1;line-height:1.8}
+.question{background:#111e30;border:1px solid #263a50;border-radius:12px;padding:17px;margin-bottom:14px}
+.number{color:#64e6a5;font-size:12px;font-weight:bold;margin-bottom:9px}
+.question h3{font-size:16px;line-height:1.6;margin-bottom:12px}
+.answer{display:none;background:#172c2b;border-left:3px solid #64e6a5;padding:13px;border-radius:7px;color:#d9f7e8;line-height:1.8;font-size:14px;margin-top:12px}
+button{background:#64e6a5;color:#08111f;border:none;padding:10px 15px;border-radius:7px;font-weight:bold;cursor:pointer}
+footer{text-align:center;color:#8090a5;margin:30px 0 15px;font-size:13px}
+.back{display:inline-block;color:#64e6a5;text-decoration:none;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>🛠️ Cutting Tools</h1>
+<p>MACHINIST PRO – ITI Machinist 1st Year</p>
+<p>महत्वपूर्ण लघु उत्तरीय प्रश्न एवं उत्तर</p>
+</header>
+
+<div class="info">
+<b>कुल प्रश्न:</b> 20<br>
+<b>विषय:</b> Cutting Tools<br>
+<b>निर्देश:</b> प्रश्न पढ़ें और Show Answer पर क्लिक करके उत्तर देखें।
+</div>
+
+<div id="questions"></div>
+
+<footer>
+<p>© 2026 MACHINIST PRO</p>
+<p>Learn • Practice • Improve</p>
+<a class="back" href="notes.html">← Back to Notes</a>
+</footer>
+
+</div>
+
+<script>
+const data=[
+["Cutting Tool क्या है?","जिस औजार की सहायता से किसी वर्कपीस से अतिरिक्त धातु हटाई जाती है, उसे Cutting Tool कहते हैं।"],
+
+["Machining क्या है?","किसी वर्कपीस से कटिंग टूल की सहायता से अतिरिक्त पदार्थ हटाकर आवश्यक आकार और माप प्राप्त करने की प्रक्रिया Machining कहलाती है।"],
+
+["Single Point Cutting Tool क्या है?","जिस कटिंग टूल में मुख्य रूप से एक ही कटिंग एज होती है, उसे Single Point Cutting Tool कहते हैं। उदाहरण – Lathe Tool।"],
+
+["Multi Point Cutting Tool क्या है?","जिस कटिंग टूल में एक से अधिक कटिंग एज होती हैं, उसे Multi Point Cutting Tool कहते हैं। उदाहरण – Milling Cutter और Grinding Wheel।"],
+
+["Lathe Tool का उपयोग क्या है?","Lathe Tool का उपयोग लेथ मशीन पर टर्निंग, फेसिंग और अन्य कटिंग ऑपरेशन करने के लिए किया जाता है।"],
+
+["Drill Bit क्या है?","Drill Bit एक कटिंग टूल है जिसका उपयोग वर्कपीस में गोल छेद बनाने के लिए किया जाता है।"],
+
+["Reamer क्या है?","Reamer का उपयोग पहले से बने छेद को सही आकार और बेहतर सतह फिनिश देने के लिए किया जाता है।"],
+
+["Tap क्या है?","Tap एक कटिंग टूल है जिसका उपयोग छेद के अंदर Internal Thread बनाने के लिए किया जाता है।"],
+
+["Die क्या है?","Die का उपयोग किसी रॉड या बेलनाकार वर्कपीस की बाहरी सतह पर External Thread बनाने के लिए किया जाता है।"],
+
+["Milling Cutter क्या है?","Milling Cutter एक Multi Point Cutting Tool है जिसका उपयोग Milling Machine पर धातु काटने और आकार देने के लिए किया जाता है।"],
+
+["Cutting Edge क्या है?","कटिंग टूल का वह धारदार भाग जो वर्कपीस से धातु हटाता है, Cutting Edge कहलाता है।"],
+
+["Rake Angle क्या है?","टूल के उस कोण को Rake Angle कहते हैं जो चिप बनने और चिप के बहने की प्रक्रिया को प्रभावित करता है।"],
+
+["Clearance Angle क्या है?","टूल के फ्लैंक और वर्कपीस की मशीन की गई सतह के बीच रखा गया कोण Clearance Angle कहलाता है।"],
+
+["Cutting Speed क्या है?","कटिंग के दौरान वर्कपीस या कटिंग एज की कटिंग सतह पर होने वाली गति को Cutting Speed कहते हैं। इसे सामान्यतः m/min में व्यक्त करते हैं।"],
+
+["Feed क्या है?","एक चक्कर या एक स्ट्रोक में कटिंग टूल द्वारा आगे बढ़ने की दूरी को Feed कहते हैं। इसकी इकाई ऑपरेशन के अनुसार mm/rev या mm/stroke हो सकती है।"],
+
+["Depth of Cut क्या है?","एक कट में वर्कपीस से हटाई जाने वाली धातु की गहराई को Depth of Cut कहते हैं। Turning में यह सामान्यतः mm में मापी जाती है।"],
+
+["Cutting Fluid क्या है?","Machining के दौरान गर्मी कम करने, घर्षण घटाने और चिप हटाने में सहायता करने वाले द्रव को Cutting Fluid कहते हैं।"],
+
+["HSS का पूरा नाम क्या है?","HSS का पूरा नाम High Speed Steel है। इसका उपयोग कई प्रकार के कटिंग टूल बनाने में किया जाता है।"],
+
+["Carbide Tool क्या है?","Carbide Tool कठोर कार्बाइड पदार्थों से बना कटिंग टूल होता है। यह सामान्यतः अधिक कठोरता और घिसाव प्रतिरोध के लिए जाना जाता है।"],
+
+["Tool Wear क्या है?","काम करते समय कटिंग टूल की धार धीरे-धीरे घिसने या खराब होने की प्रक्रिया को Tool Wear कहते हैं।"]
+];
+
+const container=document.getElementById("questions");
+
+data.forEach((item,index)=>{
+  const card=document.createElement("div");
+  card.className="question";
+
+  const number=document.createElement("div");
+  number.className="number";
+  number.textContent="QUESTION "+String(index+1).padStart(2,"0");
+
+  const heading=document.createElement("h3");
+  heading.textContent=(index+1)+". "+item[0];
+
+  const button=document.createElement("button");
+  button.textContent="Show Answer";
+
+  const answer=document.createElement("div");
+  answer.className="answer";
+  answer.textContent="उत्तर: "+item[1];
+
+  button.addEventListener("click",()=>{
+    const visible=answer.style.display==="block";
+    answer.style.display=visible?"none":"block";
+    button.textContent=visible?"Show Answer":"Hide Answer";
+  });
+
+  card.append(number,heading,button,answer);
+  container.appendChild(card);
+});
+</script>
+
+</body>
+</html>

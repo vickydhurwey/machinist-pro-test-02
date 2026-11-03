@@ -2,569 +2,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080e18">
-<title>MACHINIST PRO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b14">
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>MACHINIST PRO | ITI Learning Platform</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <meta name="description" content="MACHINIST PRO - A digital learning platform for ITI Machinist students.">
 
-:root {
-  --cyan: #00d9ff;
-  --blue: #4285ff;
-  --glass: rgba(255,255,255,.055);
-  --border: rgba(255,255,255,.12);
-  --text: #eaf5ff;
-  --muted: #8b9bad;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  color: var(--text);
-  min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 10% 10%, #12334b 0%, transparent 45%),
-    radial-gradient(ellipse at 90% 80%, #102b4c 0%, transparent 45%),
-    #080e18;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: .15;
-  background-image:
-    linear-gradient(rgba(0,217,255,.12) 1px, transparent 1px),
-    linear-gradient(90deg,rgba(0,217,255,.12) 1px,transparent 1px);
-  background-size: 40px 40px;
-}
-
-.glass {
-  background: rgba(255,255,255,.055);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 35px rgba(0,0,0,.18);
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  padding: 15px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border);
-  background: rgba(8,14,24,.75);
-  backdrop-filter: blur(25px);
-}
-
-.logo {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 19px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.logo span {
-  color: var(--cyan);
-}
-
-.profile {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.avatar {
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: linear-gradient(135deg,#00d9ff,#2865ff);
-  color: #06101b;
-  font-weight: 800;
-}
-
-.container {
-  max-width: 1250px;
-  margin: auto;
-  padding: 30px 5% 100px;
-}
-
-.welcome {
-  margin-bottom: 25px;
-}
-
-.welcome small {
-  color: var(--cyan);
-  letter-spacing: 2px;
-  font-size: 11px;
-}
-
-.welcome h1 {
-  font-size: clamp(25px,5vw,38px);
-  margin: 10px 0;
-}
-
-.welcome h1 span {
-  color: var(--cyan);
-}
-
-.welcome p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-.hero {
-  position: relative;
-  overflow: hidden;
-  padding: 28px;
-  border-radius: 22px;
-  margin-bottom: 30px;
-  background:
-    linear-gradient(110deg,rgba(0,217,255,.14),rgba(30,70,130,.10)),
-    rgba(255,255,255,.04);
-}
-
-.hero h2 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(20px,4vw,30px);
-  margin-bottom: 12px;
-}
-
-.hero p {
-  max-width: 520px;
-  color: #a9bfd1;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.hero-icon {
-  position: absolute;
-  right: 25px;
-  top: 25px;
-  font-size: 85px;
-  opacity: .16;
-}
-
-.section-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 28px 0 16px;
-}
-
-.section-title h2 {
-  font-size: 17px;
-}
-
-.section-title span {
-  color: var(--cyan);
-  font-size: 11px;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 12px;
-}
-
-.stat {
-  padding: 18px 12px;
-  border-radius: 16px;
-}
-
-.stat .icon {
-  font-size: 23px;
-}
-
-.stat h3 {
-  font-size: 23px;
-  margin: 12px 0 5px;
-  color: var(--cyan);
-}
-
-.stat p {
-  font-size: 11px;
-  color: var(--muted);
-}
-
-.modules {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 13px;
-}
-
-.module {
-  min-height: 130px;
-  padding: 17px;
-  border-radius: 17px;
-  cursor: pointer;
-  transition: .3s;
-  color: white;
-  text-align: left;
-  font-family: inherit;
-}
-
-.module:hover {
-  transform: translateY(-5px);
-  border-color: var(--cyan);
-  background: rgba(0,217,255,.10);
-}
-
-.module .icon {
-  font-size: 27px;
-  margin-bottom: 15px;
-}
-
-.module h3 {
-  font-size: 13px;
-  margin-bottom: 6px;
-}
-
-.module p {
-  font-size: 10px;
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-.search {
-  width: 100%;
-  padding: 15px;
-  margin-top: 22px;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  outline: none;
-  color: white;
-  background: rgba(255,255,255,.05);
-  font-size: 13px;
-}
-
-.search:focus {
-  border-color: var(--cyan);
-}
-
-.search::placeholder {
-  color: #8091a3;
-}
-
-.notice {
-  padding: 19px;
-  border-radius: 16px;
-  margin-top: 27px;
-  line-height: 1.8;
-}
-
-.notice h3 {
-  font-size: 14px;
-  color: var(--cyan);
-  margin-bottom: 7px;
-}
-
-.notice p {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-footer {
-  text-align: center;
-  padding: 25px 10px;
-  color: var(--muted);
-  font-size: 11px;
-  border-top: 1px solid var(--border);
-}
-
-footer strong {
-  color: var(--cyan);
-}
-
-.bottom-nav {
-  position: fixed;
-  z-index: 30;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(92%,450px);
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 8px;
-  border-radius: 20px;
-  background: rgba(13,27,43,.88);
-  backdrop-filter: blur(25px);
-  border: 1px solid var(--border);
-}
-
-.bottom-nav button {
-  background: none;
-  border: none;
-  color: var(--muted);
-  font-size: 10px;
-  cursor: pointer;
-  display: grid;
-  gap: 5px;
-  justify-items: center;
-}
-
-.bottom-nav button.active {
-  color: var(--cyan);
-}
-
-.bottom-nav b {
-  font-size: 19px;
-}
-
-.toast {
-  position: fixed;
-  bottom: 90px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #102a3b;
-  border: 1px solid var(--cyan);
-  color: white;
-  padding: 13px 20px;
-  border-radius: 12px;
-  font-size: 12px;
-  z-index: 50;
-  display: none;
-  width: max-content;
-  max-width: 90%;
-}
-
-@media(max-width:600px) {
-  .modules {
-    grid-template-columns: repeat(2,1fr);
-  }
-  .stats {
-    gap: 8px;
-  }
-  .stat {
-    padding: 13px 9px;
-  }
-  .stat h3 {
-    font-size: 19px;
-  }
-  .hero {
-    padding: 23px 18px;
-  }
-  .hero-icon {
-    font-size: 60px;
-  }
-}
-
-@media(min-width:900px) {
-  .container {
-    padding-top: 45px;
-  }
-  .modules {
-    grid-template-columns: repeat(4,1fr);
-  }
-}
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-  <div class="logo">⚙ MACHINIST<span> PRO</span></div>
-  <div class="profile">
-    <span>STUDENT PORTAL</span>
-    <div class="avatar">MP</div>
-  </div>
-</header>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        ⚙ MACHINIST <span>PRO</span>
+      </a>
 
-<main class="container">
-
-  <section class="welcome">
-    <small>MECHANICAL ENGINEERING / ITI</small>
-    <h1>Welcome to <span>Machinist Pro.</span></h1>
-    <p>Your complete digital learning space for Machinist students.</p>
-  </section>
-
-  <section class="hero glass">
-    <div class="hero-icon">⚙</div>
-    <small style="color:#00d9ff;letter-spacing:2px">
-      THE FUTURE OF MACHINING
-    </small>
-    <h2>LEARN. BUILD. CREATE.</h2>
-    <p>
-      Explore machines, understand engineering concepts,
-      improve your technical knowledge and develop
-      professional machining skills.
-    </p>
-  </section>
-
-  <div class="section-title">
-    <h2>Dashboard Overview</h2>
-    <span>YOUR LEARNING SPACE</span>
-  </div>
-
-  <section class="stats">
-    <div class="stat glass">
-      <div class="icon">📚</div>
-      <h3>01</h3>
-      <p>Study Year</p>
+      <div class="header-tag">
+        ITI DIGITAL LEARNING PLATFORM
+      </div>
     </div>
-    <div class="stat glass">
-      <div class="icon">⚙️</div>
-      <h3>12+</h3>
-      <p>Learning Topics</p>
-    </div>
-    <div class="stat glass">
-      <div class="icon">📝</div>
-      <h3>MCQ</h3>
-      <p>Practice Tests</p>
-    </div>
-  </section>
+  </header>
 
-  <div class="section-title">
-    <h2>Explore Modules</h2>
-    <span>ALL FEATURES</span>
-  </div>
+  <main class="container">
 
-  <input
-    type="search"
-    class="search"
-    id="search"
-    placeholder="⌕ Search notes, machines, formulas..."
-  >
+    <!-- WELCOME -->
+    <section class="welcome glass">
+      <small>WELCOME TO MACHINIST PRO</small>
 
-  <section class="modules" id="modules">
+      <h1>Learn. Practice. <span style="color:#00d9ff;">Master.</span></h1>
 
-    <button class="module glass" data-name="notes theory study">
-      <div class="icon">📖</div>
-      <h3>Digital Notes</h3>
-      <p>Chapter-wise theory & study material</p>
-    </button>
+      <p>
+        Your digital workshop for ITI Machinist learning.
+        Explore machines, technical knowledge, formulas,
+        workshop safety and practical skills.
+      </p>
+    </section>
 
-    <button class="module glass" data-name="machines lathe milling grinder">
-      <div class="icon">⚙️</div>
-      <h3>Machine Library</h3>
-      <p>Machine parts, functions & working</p>
-    </button>
+    <!-- HERO -->
+    <section class="hero glass">
+      <div class="hero-icon">⚙️</div>
 
-    <button class="module glass" data-name="formula calculator rpm speed">
-      <div class="icon">🧮</div>
-      <h3>Formula Calculator</h3>
-      <p>Machining formulas & calculations</p>
-    </button>
+      <h2>THE FUTURE OF MACHINIST LEARNING</h2>
 
-    <button class="module glass" data-name="test quiz mcq questions">
-      <div class="icon">📝</div>
-      <h3>Online Tests</h3>
-      <p>MCQ practice & knowledge checks</p>
-    </button>
+      <p>
+        Learn machining technology with digital notes,
+        machine guides, technical drawings and interactive tests.
+      </p>
+    </section>
 
-    <button class="module glass" data-name="tools instruments measuring">
-      <div class="icon">🔩</div>
-      <h3>Tool Guide</h3>
-      <p>Measuring instruments & cutting tools</p>
-    </button>
+    <!-- STATS -->
+    <section class="section">
+      <div class="section-heading">
+        <h2>Your Learning Dashboard</h2>
+        <span>STUDENT ZONE</span>
+      </div>
 
-    <button class="module glass" data-name="diagrams drawing engineering">
-      <div class="icon">📐</div>
-      <h3>Technical Drawing</h3>
-      <p>Engineering diagrams & illustrations</p>
-    </button>
+      <div class="stats">
 
-    <button class="module glass" data-name="safety workshop 5s">
-      <div class="icon">🦺</div>
-      <h3>Workshop Safety</h3>
-      <p>Safety rules, PPE & 5S</p>
-    </button>
+        <div class="stat-card glass">
+          <strong>08+</strong>
+          <p>Learning Modules</p>
+        </div>
 
-    <button class="module glass" data-name="career jobs apprenticeship">
-      <div class="icon">🎓</div>
-      <h3>Career Guide</h3>
-      <p>Jobs, apprenticeship & skills</p>
-    </button>
+        <div class="stat-card glass">
+          <strong>01</strong>
+          <p>ITI Trade</p>
+        </div>
 
-  </section>
+        <div class="stat-card glass">
+          <strong>24/7</strong>
+          <p>Learning Access</p>
+        </div>
 
-  <section class="notice glass">
-    <h3>⚡ TECHNICAL KNOWLEDGE HUB</h3>
-    <p>
-      A learning platform designed for ITI Machinist students.
-      Learn the fundamentals of machining, workshop technology,
-      measurement and mechanical engineering.
-    </p>
-  </section>
+      </div>
+    </section>
 
-</main>
+    <!-- LEARNING MODULES -->
+    <section class="section" id="modules">
 
-<footer>
-  <strong>⚙ MACHINIST PRO</strong>
-  <p style="margin-top:8px">
-    Built for the Machinist Community
-  </p>
-  <p style="margin-top:5px">Version 1.0</p>
-</footer>
+      <div class="section-heading">
+        <h2>Explore Modules</h2>
+        <span>LEARNING LIBRARY</span>
+      </div>
 
-<nav class="bottom-nav">
-  <button class="active" onclick="goHome(this)">
-    <b>⌂</b>Home
-  </button>
-  <button onclick="showMessage('Learning Modules')">
-    <b>▦</b>Learn
-  </button>
-  <button onclick="showMessage('Practice Tests')">
-    <b>✎</b>Tests
-  </button>
-  <button onclick="showMessage('Student Profile')">
-    <b>◎</b>Profile
-  </button>
-</nav>
+      <input
+        type="search"
+        class="search-box"
+        placeholder="🔍 Search notes, machines, formulas..."
+        aria-label="Search learning modules"
+      >
 
-<div class="toast" id="toast"></div>
+      <div class="modules">
 
-<script>
-const toast = document.getElementById("toast");
+        <a href="pages/notes.html" class="module-card glass">
+          <div class="module-icon">📚</div>
+          <h3>Digital Notes</h3>
+          <p>Machinist theory notes and study material.</p>
+        </a>
 
-function showMessage(name) {
-  toast.textContent = name + " — Coming Soon!";
-  toast.style.display = "block";
-  setTimeout(() => toast.style.display = "none", 2200);
-}
+        <a href="pages/machines.html" class="module-card glass">
+          <div class="module-icon">⚙️</div>
+          <h3>Machine Library</h3>
+          <p>Learn machine parts, working and applications.</p>
+        </a>
 
-function goHome(button) {
-  document.querySelectorAll(".bottom-nav button")
-    .forEach(b => b.classList.remove("active"));
-  button.classList.add("active");
-  window.scrollTo({top:0,behavior:"smooth"});
-}
+        <a href="pages/calculator.html" class="module-card glass">
+          <div class="module-icon">🧮</div>
+          <h3>Formula Calculator</h3>
+          <p>Important machining formulas and calculations.</p>
+        </a>
 
-document.querySelectorAll(".module").forEach(module => {
-  module.addEventListener("click", () => {
-    showMessage(module.querySelector("h3").textContent);
-  });
-});
+        <a href="pages/tests.html" class="module-card glass">
+          <div class="module-icon">📝</div>
+          <h3>Online Tests</h3>
+          <p>Practice MCQs and test your knowledge.</p>
+        </a>
 
-document.getElementById("search").addEventListener("input", e => {
-  const value = e.target.value.toLowerCase();
+        <a href="pages/tools.html" class="module-card glass">
+          <div class="module-icon">🔧</div>
+          <h3>Tool Guide</h3>
+          <p>Cutting tools, measuring tools and accessories.</p>
+        </a>
 
-  document.querySelectorAll(".module").forEach(module => {
-    const text = (
-      module.dataset.name + " " + module.innerText
-    ).toLowerCase();
+        <a href="pages/drawing.html" class="module-card glass">
+          <div class="module-icon">📐</div>
+          <h3>Technical Drawing</h3>
+          <p>Engineering drawing and machine diagrams.</p>
+        </a>
 
-    module.style.display = text.includes(value) ? "" : "none";
-  });
-});
-</script>
+        <a href="pages/safety.html" class="module-card glass">
+          <div class="module-icon">🦺</div>
+          <h3>Workshop Safety</h3>
+          <p>Safety rules, PPE and workshop practices.</p>
+        </a>
+
+        <a href="pages/career.html" class="module-card glass">
+          <div class="module-icon">🎓</div>
+          <h3>Career Guide</h3>
+          <p>ITI career options and skill development.</p>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="section">
+      <div class="section-heading">
+        <h2>About Platform</h2>
+        <span>OUR MISSION</span>
+      </div>
+
+      <div class="notice glass">
+        <h3>Built for Machinist Students ⚙️</h3>
+
+        <p>
+          MACHINIST PRO is designed to make technical education
+          easier and more accessible. Our goal is to bring notes,
+          machine knowledge, calculations and practice material
+          together in one digital platform.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>⚙ MACHINIST PRO</p>
+    <p>ITI Machinist Digital Learning Platform</p>
+    <p>© <span id="currentYear">2026</span> MACHINIST PRO. All Rights Reserved.</p>
+  </footer>
+
+  <!-- BOTTOM NAVIGATION -->
+  <nav class="bottom-nav">
+
+    <a href="index.html" class="active">
+      <span>⌂</span>
+      Home
+    </a>
+
+    <a href="#modules">
+      <span>▦</span>
+      Modules
+    </a>
+
+    <a href="pages/notes.html">
+      <span>📚</span>
+      Notes
+    </a>
+
+    <a href="pages/tests.html">
+      <span>✎</span>
+      Tests
+    </a>
+
+  </nav>
+
+  <script src="script.js"></script>
 
 </body>
 </html>

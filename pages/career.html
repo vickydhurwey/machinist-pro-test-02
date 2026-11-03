@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Guide | MACHINIST PRO</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .career-hero {
+      padding: 30px 20px;
+      margin: 22px 0;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(0,220,255,.13), rgba(0,0,0,.15));
+    }
+    .career-hero h1 { margin: 0 0 10px; }
+    .career-hero p { color: var(--muted); line-height: 1.7; }
+    .career-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 15px;
+      margin: 18px 0 28px;
+    }
+    .career-card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,.035);
+    }
+    .career-card h3 { margin-top: 0; }
+    .career-card p, .career-card li {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .career-card ul { padding-left: 20px; }
+    .career-section { margin: 28px 0; }
+    .career-section h2 { margin-bottom: 12px; }
+    .career-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+    }
+    .career-table th, .career-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .career-table th { color: var(--cyan); }
+    .career-note {
+      padding: 15px;
+      border-left: 3px solid var(--cyan);
+      background: rgba(0,220,255,.07);
+      border-radius: 8px;
+      line-height: 1.7;
+      margin: 15px 0;
+    }
+    .career-search {
+      width: 100%;
+      padding: 13px 15px;
+      margin: 15px 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.05);
+      color: inherit;
+      outline: none;
+    }
+    .career-search:focus { border-color: var(--cyan); }
+    @media(max-width:600px) {
+      .career-table { font-size: 13px; }
+      .career-table th, .career-table td { padding: 9px 6px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="../index.html" class="logo">⚙ MACHINIST <span>PRO</span></a>
+      <a href="../index.html">← Home</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="career-hero">
+      <h1>🚀 Machinist Career Guide</h1>
+      <p>
+        ITI Machinist ट्रेड पूरा करने के बाद आपके पास सरकारी नौकरी,
+        प्राइवेट इंडस्ट्री, अप्रेंटिसशिप और आगे की पढ़ाई के कई विकल्प होते हैं।
+        यहाँ अपने करियर की शुरुआत समझें।
+      </p>
+    </section>
+
+    <section class="career-section">
+      <h2>🎯 ITI Machinist के बाद करियर विकल्प</h2>
+      <input class="career-search" id="careerSearch"
+        type="search" placeholder="करियर विकल्प खोजें...">
+
+      <div class="career-grid" id="careerGrid">
+        <article class="career-card">
+          <h3>🏭 CNC Operator</h3>
+          <p>Computer Numerical Control मशीन चलाना, जॉब सेट करना और मशीन की निगरानी करना।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>⚙️ Machine Operator</h3>
+          <p>Lathe, Drilling, Milling और Grinding मशीनों पर काम करना।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>📏 Quality Inspector</h3>
+          <p>Vernier Caliper, Micrometer और अन्य उपकरणों से जॉब की माप जाँचना।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>🔧 Tool Room Technician</h3>
+          <p>टूल, डाई, जिग और फिक्स्चर के निर्माण तथा रखरखाव में काम करना।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>🏢 Production Technician</h3>
+          <p>फैक्ट्री में उत्पादन प्रक्रिया और मशीनों के संचालन में सहयोग करना।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>🛠️ Maintenance Technician</h3>
+          <p>मशीनों की जाँच, नियमित रखरखाव और खराबी की पहचान करना।</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="career-section">
+      <h2>🏛️ सरकारी नौकरी के अवसर</h2>
+      <div class="career-grid">
+        <article class="career-card">
+          <h3>Railway</h3>
+          <p>Railway की संबंधित तकनीकी भर्तियों और Apprentice पदों के लिए आवेदन कर सकते हैं। पात्रता भर्ती के अनुसार होती है।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>Defence Sector</h3>
+          <p>सरकारी रक्षा प्रतिष्ठानों और ऑर्डिनेंस से जुड़े तकनीकी पदों की भर्ती देख सकते हैं।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>Government Factories</h3>
+          <p>सरकारी कारखानों और औद्योगिक संस्थानों में Machinist या संबंधित ट्रेड के पद देख सकते हैं।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>Apprenticeship</h3>
+          <p>सरकारी और निजी संस्थानों में ट्रेनिंग लेकर व्यावहारिक अनुभव प्राप्त कर सकते हैं।</p>
+        </article>
+      </div>
+      <div class="career-note">
+        <strong>ध्यान दें:</strong> ITI प्रमाणपत्र होने से नौकरी अपने आप नहीं मिलती।
+        हर भर्ती की आयु, योग्यता, ट्रेड, चयन प्रक्रिया और अन्य शर्तें अलग हो सकती हैं।
+        आवेदन से पहले आधिकारिक नोटिफिकेशन जरूर पढ़ें।
+      </div>
+    </section>
+
+    <section class="career-section">
+      <h2>📚 आगे की पढ़ाई</h2>
+      <div class="career-grid">
+        <article class="career-card">
+          <h3>Apprenticeship</h3>
+          <p>ITI के बाद उद्योग में प्रशिक्षण लेकर वास्तविक मशीनों पर अनुभव प्राप्त करें।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>Diploma Engineering</h3>
+          <p>Mechanical Engineering Diploma में प्रवेश के विकल्प और पात्रता अपने राज्य के नियमों के अनुसार जाँचें।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>Advanced CNC Training</h3>
+          <p>CNC Programming, CAD/CAM और आधुनिक मशीनों का प्रशिक्षण लें।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>Specialized Skills</h3>
+          <p>Metrology, Precision Machining और Quality Control जैसे क्षेत्रों में कौशल बढ़ाएँ।</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="career-section">
+      <h2>🧰 जरूरी Skills</h2>
+      <div class="career-card">
+        <ul>
+          <li>Lathe और Milling मशीन का ज्ञान</li>
+          <li>Drilling और Grinding का व्यावहारिक ज्ञान</li>
+          <li>Vernier Caliper और Micrometer से माप लेना</li>
+          <li>Engineering Drawing पढ़ना</li>
+          <li>Basic CNC Programming</li>
+          <li>Workshop Safety और 5S</li>
+          <li>Technical Maths और Measurement</li>
+          <li>समस्या पहचानना और टीम में काम करना</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="career-section">
+      <h2>🗺️ करियर की तैयारी का रोडमैप</h2>
+      <div class="career-grid">
+        <article class="career-card">
+          <h3>01 — ITI पूरा करें</h3>
+          <p>Theory, Practical और Workshop Safety की मजबूत तैयारी करें।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>02 — Skills बढ़ाएँ</h3>
+          <p>मशीन संचालन, माप और Drawing का अभ्यास करें।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>03 — अनुभव लें</h3>
+          <p>Apprenticeship या योग्यतानुसार शुरुआती नौकरी के अवसर देखें।</p>
+        </article>
+
+        <article class="career-card">
+          <h3>04 — नौकरी के लिए आवेदन</h3>
+          <p>Resume तैयार करें और आधिकारिक भर्ती पोर्टल पर आवेदन करें।</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="career-section">
+      <h2>🔗 उपयोगी आधिकारिक वेबसाइट</h2>
+      <div class="career-card">
+        <p><a href="https://www.apprenticeshipindia.gov.in/" target="_blank" rel="noopener">Apprenticeship India — अप्रेंटिसशिप</a></p>
+        <p><a href="https://www.ncs.gov.in/" target="_blank" rel="noopener">National Career Service — नौकरी पोर्टल</a></p>
+        <p><a href="https://www.rrbapply.gov.in/" target="_blank" rel="noopener">Railway Recruitment — रेलवे भर्ती</a></p>
+        <p><a href="https://www.dgt.gov.in/" target="_blank" rel="noopener">DGT — ITI और कौशल विकास</a></p>
+      </div>
+    </section>
+
+    <div class="career-note">
+      <strong>याद रखें:</strong> एक अच्छा Machinist बनने के लिए केवल मशीन चलाना
+      काफी नहीं है। सही माप, Drawing, Safety और Practical अनुभव भी जरूरी हैं।
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>⚙ MACHINIST PRO | Learn • Practice • Grow</p>
+    <p>Made for ITI Machinist Students</p>
+  </footer>
+
+  <script>
+    const search = document.getElementById("careerSearch");
+    const cards = document.querySelectorAll("#careerGrid .career-card");
+
+    search.addEventListener("input", () => {
+      const value = search.value.toLowerCase().trim();
+
+      cards.forEach(card => {
+        card.style.display = card.textContent.toLowerCase().includes(value)
+          ? ""
+          : "none";
+      });
+    });
+  </script>
+</body>
+</html>

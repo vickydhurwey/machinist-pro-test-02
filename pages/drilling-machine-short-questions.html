@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drilling Machine Short Questions | MACHINIST PRO</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#08111f;color:#f1f5f9;font-family:Arial,sans-serif;padding:18px}
+.container{max-width:800px;margin:auto}
+header{text-align:center;padding:22px 10px}
+header h1{color:#64e6a5;font-size:25px}
+header p{color:#aab7c8;margin-top:10px;line-height:1.6}
+.info{background:#111e30;border:1px solid #263a50;border-radius:12px;padding:15px;margin:15px 0 22px;color:#cbd5e1;line-height:1.8}
+.question{background:#111e30;border:1px solid #263a50;border-radius:12px;padding:17px;margin-bottom:14px}
+.number{color:#64e6a5;font-size:12px;font-weight:bold;margin-bottom:9px}
+.question h3{font-size:16px;line-height:1.6;margin-bottom:12px}
+.answer{display:none;background:#172c2b;border-left:3px solid #64e6a5;padding:13px;border-radius:7px;color:#d9f7e8;line-height:1.8;font-size:14px;margin-top:12px}
+button{background:#64e6a5;color:#08111f;border:none;padding:10px 15px;border-radius:7px;font-weight:bold;cursor:pointer}
+footer{text-align:center;color:#8090a5;margin:30px 0 15px;font-size:13px}
+.back{display:inline-block;color:#64e6a5;text-decoration:none;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>🔩 Drilling Machine</h1>
+<p>MACHINIST PRO – ITI Machinist 1st Year</p>
+<p>महत्वपूर्ण लघु उत्तरीय प्रश्न एवं उत्तर</p>
+</header>
+
+<div class="info">
+<b>कुल प्रश्न:</b> 20<br>
+<b>विषय:</b> Drilling Machine<br>
+<b>निर्देश:</b> प्रश्न पढ़ें और Show Answer पर क्लिक करके उत्तर देखें।
+</div>
+
+<div id="questions"></div>
+
+<footer>
+<p>© 2026 MACHINIST PRO</p>
+<p>Learn • Practice • Improve</p>
+<a class="back" href="notes.html">← Back to Notes</a>
+</footer>
+
+</div>
+
+<script>
+const data=[
+["Drilling Machine क्या है?","ड्रिलिंग मशीन एक मशीन टूल है, जिसका उपयोग वर्कपीस में गोल छेद बनाने के लिए किया जाता है।"],
+["Drilling का क्या अर्थ है?","ड्रिलिंग वह मशीनिंग प्रक्रिया है जिसमें घूमती हुई ड्रिल की सहायता से ठोस पदार्थ में गोल छेद बनाया जाता है।"],
+["Drilling Machine का मुख्य कार्य क्या है?","इसका मुख्य कार्य धातु, लकड़ी या अन्य उपयुक्त पदार्थों में आवश्यक आकार के छेद बनाना है।"],
+["Drilling Machine के मुख्य भाग कौन-कौन से हैं?","मुख्य भाग हैं – Base, Column, Table, Drill Head, Spindle, Chuck और Feed Handle।"],
+["Base का क्या कार्य है?","Base मशीन का निचला आधार होता है। यह मशीन को सहारा और स्थिरता प्रदान करता है।"],
+["Column क्या होता है?","Column एक मजबूत खड़ा भाग होता है, जो मशीन के अन्य भागों को सहारा देता है।"],
+["Drill Head का क्या कार्य है?","Drill Head में स्पिंडल और गति देने की व्यवस्था होती है। यह ड्रिल को घुमाने में मदद करता है।"],
+["Spindle क्या है?","Spindle मशीन का घूमने वाला भाग है, जो ड्रिल या टूल को पकड़कर घुमाता है।"],
+["Drill Chuck का क्या कार्य है?","Drill Chuck का उपयोग ड्रिल बिट को पकड़ने के लिए किया जाता है।"],
+["Drilling Machine के प्रमुख प्रकार कौन-कौन से हैं?","प्रमुख प्रकार हैं – Portable Drilling Machine, Sensitive Drilling Machine, Upright Drilling Machine, Radial Drilling Machine और Gang Drilling Machine।"],
+["Portable Drilling Machine क्या है?","यह हल्की और एक स्थान से दूसरे स्थान पर ले जाने योग्य मशीन होती है। इसका उपयोग अलग-अलग स्थानों पर छेद करने के लिए किया जाता है।"],
+["Radial Drilling Machine क्या है?","इस मशीन में ड्रिल हेड एक रेडियल आर्म पर चलता है। इसका उपयोग बड़े और भारी वर्कपीस में छेद करने के लिए किया जाता है।"],
+["Drill Bit क्या है?","Drill Bit एक कटिंग टूल है, जिसका उपयोग वर्कपीस में छेद बनाने के लिए किया जाता है।"],
+["Twist Drill क्या है?","Twist Drill एक सामान्य ड्रिल है, जिसमें दो हेलिकल ग्रूव होते हैं। इसका उपयोग छेद बनाने के लिए किया जाता है।"],
+["Reaming क्या है?","Reaming पहले से बने छेद को सही आकार और बेहतर सतह फिनिश देने की प्रक्रिया है।"],
+["Countersinking क्या है?","Countersinking में छेद के ऊपरी भाग पर शंकु आकार की जगह बनाई जाती है, जिससे Countersunk Screw का सिर बैठ सके।"],
+["Counterboring क्या है?","Counterboring में पहले से बने छेद के ऊपरी भाग को बेलनाकार आकार में बड़ा किया जाता है, ताकि बोल्ट या स्क्रू का सिर अंदर बैठ सके।"],
+["Tapping क्या है?","Tapping में Tap नामक टूल से पहले से बने छेद के अंदर चूड़ियाँ यानी Internal Threads बनाई जाती हैं।"],
+["Cutting Fluid का क्या उपयोग है?","Cutting Fluid कटिंग के दौरान गर्मी और घर्षण कम करने तथा टूल और वर्कपीस की स्थिति सुधारने में मदद करता है।"],
+["Drilling Machine पर काम करते समय कौन-सी सावधानियाँ रखनी चाहिए?","सुरक्षा चश्मा पहनें, वर्कपीस को उचित क्लैम्प से पकड़ें, घूमती ड्रिल से दूरी रखें, मशीन बंद किए बिना चिप्स न हटाएँ और चक की चाबी निकालना न भूलें।"]
+];
+
+const container=document.getElementById("questions");
+
+data.forEach((item,index)=>{
+  const card=document.createElement("div");
+  card.className="question";
+
+  const number=document.createElement("div");
+  number.className="number";
+  number.textContent="QUESTION "+String(index+1).padStart(2,"0");
+
+  const heading=document.createElement("h3");
+  heading.textContent=(index+1)+". "+item[0];
+
+  const button=document.createElement("button");
+  button.textContent="Show Answer";
+
+  const answer=document.createElement("div");
+  answer.className="answer";
+  answer.textContent="उत्तर: "+item[1];
+
+  button.addEventListener("click",()=>{
+    const visible=answer.style.display==="block";
+    answer.style.display=visible?"none":"block";
+    button.textContent=visible?"Show Answer":"Hide Answer";
+  });
+
+  card.append(number,heading,button,answer);
+  container.appendChild(card);
+});
+</script>
+
+</body>
+</html>

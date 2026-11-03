@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08111f">
+<title>Measuring Instruments MCQ | MACHINIST PRO</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#08111f;
+  color:#edf4fb;
+  font-family:Arial,sans-serif;
+  line-height:1.7;
+}
+header{
+  text-align:center;
+  padding:30px 15px;
+  background:linear-gradient(135deg,#123a3b,#08111f);
+  border-bottom:1px solid #294554;
+}
+header h1{color:#64e6a5;font-size:25px;margin:10px}
+header p{color:#b3c2d1;font-size:13px}
+.container{max-width:850px;margin:auto;padding:20px 14px}
+.info{
+  background:#102437;
+  border:1px solid #294554;
+  padding:15px;
+  border-radius:12px;
+  margin-bottom:20px;
+}
+.info strong{color:#64e6a5}
+.question{
+  background:#102033;
+  border:1px solid #294054;
+  border-radius:13px;
+  padding:16px;
+  margin-bottom:14px;
+}
+.question h3{font-size:15px;margin-bottom:12px}
+.options{list-style:none}
+.options li{
+  background:#172b40;
+  padding:10px 12px;
+  border-radius:8px;
+  margin:7px 0;
+  font-size:14px;
+  border:1px solid transparent;
+}
+.options li.correct{
+  background:#173d32;
+  border-color:#64e6a5;
+  color:#64e6a5;
+}
+.options li.wrong{
+  background:#40252b;
+  border-color:#ed7777;
+}
+.answer-btn{
+  border:0;
+  background:#64e6a5;
+  color:#07131b;
+  padding:9px 14px;
+  border-radius:7px;
+  font-weight:bold;
+  margin-top:10px;
+  cursor:pointer;
+}
+.answer{
+  display:none;
+  color:#64e6a5;
+  background:#17382f;
+  padding:10px;
+  border-radius:8px;
+  margin-top:10px;
+  font-size:14px;
+}
+.back{
+  display:inline-block;
+  color:#07131b;
+  background:#64e6a5;
+  text-decoration:none;
+  padding:11px 18px;
+  border-radius:8px;
+  font-weight:bold;
+  margin:20px 0;
+}
+footer{
+  text-align:center;
+  color:#8195a9;
+  padding:20px;
+  border-top:1px solid #294054;
+  font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div style="color:#64e6a5;font-size:12px;font-weight:bold;letter-spacing:2px">
+    MACHINIST PRO • QUESTION BANK
+  </div>
+  <h1>📏 Measuring Instruments</h1>
+  <p>ITI Machinist First Year | MCQ Practice Set 01</p>
+</header>
+
+<main class="container">
+
+<div class="info">
+  <strong>कुल प्रश्न:</strong> 40 MCQ<br>
+  <strong>विषय:</strong> Measuring Instruments<br>
+  <strong>निर्देश:</strong> पहले प्रश्न हल करें, फिर Show Answer दबाकर उत्तर देखें।
+</div>
+
+<div id="questions"></div>
+
+<a class="back" href="measuring-instruments.html">
+  ← वापस Notes पर जाएँ
+</a>
+
+</main>
+
+<footer>
+  <p>⚙️ MACHINIST PRO</p>
+  <p>Learn • Practice • Improve</p>
+</footer>
+
+<script>
+const questions = [
+["मापन का मुख्य उद्देश्य क्या है?",["वस्तु का रंग जानना","वस्तु का आकार एवं माप जानना","वस्तु का वजन बढ़ाना","वस्तु को गर्म करना"],1],
+["Steel Rule का उपयोग किसलिए होता है?",["लंबाई मापने के लिए","तापमान मापने के लिए","वजन मापने के लिए","दाब मापने के लिए"],0],
+["Vernier Caliper से क्या मापा जा सकता है?",["केवल तापमान","केवल वजन","बाहरी, आंतरिक और गहराई","केवल समय"],2],
+["Micrometer का मुख्य उपयोग क्या है?",["सटीक माप लेना","बिजली मापना","तापमान मापना","गति मापना"],0],
+["Least Count का अर्थ क्या है?",["सबसे बड़ा माप","सबसे छोटा माप जिसे उपकरण माप सके","कुल लंबाई","औसत लंबाई"],1],
+["एक सामान्य Metric Vernier Caliper का Least Count कितना हो सकता है?",["1 mm","0.5 mm","0.02 mm","2 mm"],2],
+["Outside Micrometer का उपयोग किसलिए होता है?",["बाहरी व्यास या मोटाई मापने के लिए","गहराई मापने के लिए","तापमान मापने के लिए","कोण मापने के लिए"],0],
+["Inside Micrometer का उपयोग किसलिए होता है?",["बाहरी लंबाई","आंतरिक माप","वजन","तापमान"],1],
+["Depth Micrometer किसे मापता है?",["गहराई","बाहरी व्यास","तापमान","कोण"],0],
+["Try Square का उपयोग किसकी जाँच के लिए होता है?",["90° कोण","वजन","गति","तापमान"],0],
+["Vernier Caliper के मुख्य भागों में कौन शामिल है?",["Main Scale और Vernier Scale","केवल मोटर","केवल गियर","केवल स्प्रिंग"],0],
+["Micrometer में Ratchet का कार्य क्या है?",["समान मापन दबाव बनाए रखना","मशीन चलाना","वस्तु काटना","तापमान बढ़ाना"],0],
+["Micrometer में Spindle किस भाग को छूता है?",["मापी जाने वाली वस्तु","फर्श","मोटर","बेल्ट"],0],
+["Anvil किस उपकरण का भाग है?",["Micrometer","Hammer","Hacksaw","Drill"],0],
+["Dial Test Indicator का उपयोग किसलिए होता है?",["छोटे विचलन की जाँच","वजन मापना","तापमान मापना","बिजली मापना"],0],
+["Bevel Protractor किसे मापता है?",["कोण","वजन","तापमान","दाब"],0],
+["Feeler Gauge का उपयोग किसलिए होता है?",["दो सतहों के बीच छोटा Gap मापना","लंबाई काटना","छेद करना","वजन मापना"],0],
+["Radius Gauge किसे जाँचता है?",["त्रिज्या","तापमान","वजन","गति"],0],
+["Screw Pitch Gauge का उपयोग किसलिए होता है?",["Thread Pitch जाँचने के लिए","छेद की गहराई","वस्तु का वजन","कोण काटने"],0],
+["Slip Gauge को किस नाम से भी जाना जाता है?",["Gauge Block","Cutting Tool","Drill Bit","Hammer"],0],
+["Vernier Caliper में Main Scale कहाँ होता है?",["मुख्य बॉडी पर","हैंडल के अंदर","मोटर पर","बेस के नीचे"],0],
+["Micrometer में Sleeve पर कौन-सा Scale होता है?",["Main Scale","Temperature Scale","Weight Scale","Speed Scale"],0],
+["Zero Error कब होता है?",["जब बंद करने पर शून्य रीडिंग न मिले","जब उपकरण नया हो","जब वस्तु गर्म हो","जब रोशनी कम हो"],0],
+["Positive Zero Error में क्या होता है?",["उपकरण शून्य से अधिक रीडिंग दिखाता है","उपकरण हमेशा शून्य दिखाता है","उपकरण बंद हो जाता है","कोई माप नहीं होता"],0],
+["Negative Zero Error में क्या होता है?",["उपकरण शून्य से कम रीडिंग दिखाता है","शून्य से अधिक रीडिंग","माप दोगुना होता है","कोई अंतर नहीं होता"],0],
+["माप लेते समय उपकरण कैसा होना चाहिए?",["साफ और सही स्थिति में","गंदा","टूटा हुआ","जंग लगा हुआ"],0],
+["Parallax Error किस कारण हो सकता है?",["गलत दृष्टि कोण से रीडिंग लेने पर","उपकरण साफ करने पर","माप लिखने पर","उपकरण रखने पर"],0],
+["Micrometer की सामान्य रीडिंग में कौन-से भाग जोड़े जाते हैं?",["Sleeve और Thimble Reading","वजन और तापमान","लंबाई और रंग","कोण और समय"],0],
+["Vernier Caliper का उपयोग किसके लिए किया जा सकता है?",["छेद की गहराई मापने के लिए","केवल तापमान","केवल वजन","केवल गति"],0],
+["Surface Plate का उपयोग किसलिए किया जाता है?",["समतल Reference Surface देने के लिए","धातु काटने के लिए","गर्म करने के लिए","ड्रिल चलाने के लिए"],0],
+["Height Gauge का उपयोग किसलिए किया जाता है?",["ऊँचाई मापने और Marking के लिए","तापमान मापने","वजन मापने","गति मापने"],0],
+["Comparator का मुख्य कार्य क्या है?",["माप की तुलना करना","धातु काटना","वस्तु गर्म करना","छेद करना"],0],
+["मापन उपकरणों को कहाँ रखना चाहिए?",["साफ और सुरक्षित स्थान पर","पानी में","धूल में","मशीन के नीचे"],0],
+["माप लेने से पहले किसकी जाँच करनी चाहिए?",["Zero Setting","वस्तु का रंग","कमरे की ऊँचाई","मशीन की आवाज"],0],
+["एक Millimetre में कितने Micrometre होते हैं?",["10","100","1000","10000"],2],
+["एक Centimetre में कितने Millimetre होते हैं?",["1","10","100","1000"],1],
+["Vernier Caliper में Depth Rod का उपयोग किसलिए होता है?",["गहराई मापने के लिए","कोण मापने के लिए","वजन मापने के लिए","थ्रेड काटने के लिए"],0],
+["Micrometer को अधिक कसने से क्या समस्या हो सकती है?",["गलत रीडिंग या उपकरण को नुकसान","रीडिंग हमेशा सही होगी","वस्तु का वजन बढ़ेगा","तापमान घटेगा"],0],
+["सटीक मापन के लिए किसकी आवश्यकता होती है?",["सही उपकरण और सही मापन विधि","केवल अनुमान","टूटा हुआ उपकरण","गंदा उपकरण"],0],
+["Vernier Caliper का Least Count किस पर निर्भर करता है?",["Main Scale और Vernier Scale के विभाजनों पर","वस्तु के रंग पर","उपकरण के वजन पर","कमरे के तापमान पर"],0]
+];
+
+const container = document.getElementById("questions");
+
+questions.forEach((q,i)=>{
+  const box=document.createElement("section");
+  box.className="question";
+
+  const heading=document.createElement("h3");
+  heading.textContent=(i+1)+". "+q[0];
+  box.appendChild(heading);
+
+  const list=document.createElement("ul");
+  list.className="options";
+
+  q[1].forEach((option,j)=>{
+    const li=document.createElement("li");
+    li.textContent=String.fromCharCode(65+j)+". "+option;
+    list.appendChild(li);
+  });
+
+  box.appendChild(list);
+
+  const button=document.createElement("button");
+  button.className="answer-btn";
+  button.textContent="Show Answer";
+
+  const answer=document.createElement("div");
+  answer.className="answer";
+  answer.textContent="सही उत्तर: "+
+    String.fromCharCode(65+q[2])+". "+q[1][q[2]];
+
+  button.addEventListener("click",()=>{
+    answer.style.display=
+      answer.style.display==="block"?"none":"block";
+    button.textContent=
+      answer.style.display==="block"?"Hide Answer":"Show Answer";
+  });
+
+  box.appendChild(button);
+  box.appendChild(answer);
+  container.appendChild(box);
+});
+</script>
+
+</body>
+</html>

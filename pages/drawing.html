@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b14">
+<title>तकनीकी चित्रकला | MACHINIST PRO</title>
+<link rel="stylesheet" href="../style.css">
+
+<style>
+.drawing-intro,.drawing-card {
+  padding:22px;
+  border-radius:20px;
+  margin:20px 0;
+}
+.drawing-intro h1 {
+  font-size:26px;
+  margin:12px 0;
+}
+.drawing-intro p,.drawing-card p {
+  color:var(--muted);
+  line-height:1.8;
+}
+.drawing-card h2 {
+  color:var(--cyan);
+  font-size:19px;
+  margin-bottom:13px;
+}
+.drawing-card h3 {
+  font-size:15px;
+  margin:14px 0 7px;
+}
+.drawing-card ul {
+  padding-left:20px;
+  color:var(--muted);
+  line-height:1.9;
+}
+.drawing-tag {
+  display:inline-block;
+  padding:6px 11px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  color:var(--cyan);
+  font-size:12px;
+  margin-bottom:12px;
+}
+.drawing-search {
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.06);
+  color:white;
+  outline:none;
+  margin:15px 0;
+}
+.drawing-search::placeholder { color:var(--muted); }
+.drawing-visual {
+  background:rgba(0,217,255,.06);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  margin:15px 0;
+  overflow:hidden;
+}
+.drawing-visual svg {
+  display:block;
+  width:100%;
+  height:auto;
+}
+.drawing-visual text {
+  fill:#dcecff;
+  font-size:12px;
+}
+.drawing-visual line,.drawing-visual rect,.drawing-visual circle,.drawing-visual path {
+  stroke:#00d9ff;
+  stroke-width:2;
+  fill:none;
+}
+.drawing-visual .thin {
+  stroke:#a9b7ca;
+  stroke-width:1;
+}
+.drawing-visual .hidden-line {
+  stroke:#a9b7ca;
+  stroke-width:1.5;
+  stroke-dasharray:5 4;
+}
+.no-result {
+  display:none;
+  text-align:center;
+  color:var(--muted);
+  padding:20px;
+}
+.back-link {
+  display:inline-block;
+  margin:20px 0;
+  color:var(--cyan);
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-content">
+    <a href="../index.html" class="logo">⚙ MACHINIST <span>PRO</span></a>
+    <div class="header-tag">TECHNICAL DRAWING</div>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="drawing-intro glass">
+  <small style="color:#00d9ff;">ITI MACHINIST FIRST YEAR</small>
+  <h1>📐 तकनीकी चित्रकला</h1>
+  <p>
+    इंजीनियरिंग ड्राइंग के मूल सिद्धांत, रेखाओं के प्रकार,
+    ज्यामितीय आकृतियाँ, प्रोजेक्शन और डायमेंशन की जानकारी
+    आसान हिंदी भाषा में सीखें।
+  </p>
+</section>
+
+<input
+  type="search"
+  class="drawing-search"
+  id="drawingSearch"
+  placeholder="विषय खोजें... जैसे Projection, Scale, Line"
+  aria-label="ड्राइंग विषय खोजें"
+>
+
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">परिचय</span>
+  <h2>01. इंजीनियरिंग ड्राइंग क्या है?</h2>
+  <p>
+    इंजीनियरिंग ड्राइंग एक ऐसी तकनीकी भाषा है जिसके माध्यम
+    से किसी मशीन, पार्ट या वस्तु का आकार, माप और बनावट
+    चित्र द्वारा दर्शाई जाती है।
+  </p>
+  <h3>इसके मुख्य उपयोग</h3>
+  <ul>
+    <li>मशीन के पार्ट का आकार समझना।</li>
+    <li>पार्ट की लंबाई, चौड़ाई और ऊँचाई जानना।</li>
+    <li>निर्माण कार्य से पहले डिजाइन तैयार करना।</li>
+    <li>वर्कशॉप में सही माप के अनुसार काम करना।</li>
+  </ul>
+</section>
+
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">रेखाएँ</span>
+  <h2>02. रेखाओं के प्रकार (Types of Lines)</h2>
+  <p>इंजीनियरिंग ड्राइंग में अलग-अलग उद्देश्य के लिए अलग-अलग रेखाओं का उपयोग किया जाता है।</p>
+
+  <div class="drawing-visual">
+    <svg viewBox="0 0 320 190" role="img" aria-label="रेखाओं के प्रकार का उदाहरण">
+      <text x="8" y="18">1. Continuous line</text>
+      <line x1="10" y1="30" x2="300" y2="30"/>
+      <text x="8" y="65">2. Dashed line</text>
+      <line class="hidden-line" x1="10" y1="77" x2="300" y2="77"/>
+      <text x="8" y="112">3. Centre line</text>
+      <path class="thin" stroke-dasharray="14 4 3 4" d="M10 124 H300"/>
+      <text x="8" y="159">4. Dimension line</text>
+      <path class="thin" d="M10 172 H300 M10 167 L10 177 M300 167 L300 177"/>
+    </svg>
+  </div>
+
+  <ul>
+    <li><b>Continuous Thick Line:</b> वस्तु की दिखाई देने वाली बाहरी सीमा।</li>
+    <li><b>Continuous Thin Line:</b> माप और प्रोजेक्शन रेखाएँ।</li>
+    <li><b>Dashed Line:</b> छिपे हुए किनारे दर्शाने के लिए।</li>
+    <li><b>Centre Line:</b> वृत्त या बेलन की केंद्र रेखा।</li>
+    <li><b>Dimension Line:</b> माप दर्शाने के लिए।</li>
+  </ul>
+</section>
+
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">ज्यामिति</span>
+  <h2>03. ज्यामितीय आकृतियाँ (Geometrical Shapes)</h2>
+  <p>ड्राइंग में विभिन्न आकृतियों को समझना बहुत आवश्यक है।</p>
+
+  <div class="drawing-visual">
+    <svg viewBox="0 0 320 140" role="img" aria-label="ज्यामितीय आकृतियाँ">
+      <rect x="15" y="25" width="65" height="65"/>
+      <circle cx="160" cy="57" r="33"/>
+      <path d="M240 90 L275 25 L310 90 Z"/>
+      <text x="22" y="115">वर्ग</text>
+      <text x="139" y="115">वृत्त</text>
+      <text x="260" y="115">त्रिभुज</text>
+    </svg>
+  </div>
+
+  <ul>
+    <li>वर्ग (Square)</li>
+    <li>आयत (Rectangle)</li>
+    <li>वृत्त (Circle)</li>
+    <li>त्रिभुज (Triangle)</li>
+    <li>अर्धवृत्त (Semicircle)</li>
+    <li>दीर्घवृत्त (Ellipse)</li>
+  </ul>
+</section>
+
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">स्केल</span>
+  <h2>04. स्केल (Scale)</h2>
+  <p>
+    जब किसी वस्तु का वास्तविक आकार ड्राइंग शीट पर छोटा
+    या बड़ा करके दिखाया जाता है, तो इसके लिए स्केल का
+    उपयोग किया जाता है।
+  </p>
+  <h3>स्केल के प्रकार</h3>
+  <ul>
+    <li><b>Full Scale (1:1):</b> ड्राइंग और वास्तविक आकार बराबर।</li>
+    <li><b>Reducing Scale (1:2):</b> ड्राइंग वास्तविक आकार से छोटी।</li>
+    <li><b>Enlarging Scale (2:1):</b> ड्राइंग वास्तविक आकार से बड़ी।</li>
+  </ul>
+  <div class="drawing-visual">
+    <svg viewBox="0 0 320 125" role="img" aria-label="स्केल के उदाहरण">
+      <text x="8" y="17">Full Scale 1:1</text>
+      <rect x="8" y="25" width="100" height="20"/>
+      <text x="135" y="17">Reducing 1:2</text>
+      <rect x="135" y="25" width="50" height="20"/>
+      <text x="8" y="75">Enlarging 2:1</text>
+      <rect x="8" y="83" width="200" height="20"/>
+    </svg>
+  </div>
+</section>
+
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">प्रोजेक्शन</span>
+  <h2>05. प्रोजेक्शन (Projection)</h2>
+  <p>
+    किसी त्रि-आयामी वस्तु को दो-आयामी ड्राइंग शीट पर
+    दिखाने की विधि को प्रोजेक्शन कहते हैं।
+  </p>
+  <h3>मुख्य प्रकार</h3>
+  <ul>
+    <li><b>First Angle Projection:</b> प्रथम कोण प्रक्षेपण।</li>
+    <li><b>Third Angle Projection:</b> तृतीय कोण प्रक्षेपण।</li>
+    <li><b>Isometric Projection:</b> वस्तु को तीन दिशाओं में दिखाने की विधि।</li>
+    <li><b>Orthographic Projection:</b> अलग-अलग सामने, ऊपर और साइड के दृश्य।</li>
+  </ul>
+  <div class="drawing-visual">
+    <svg viewBox="0 0 320 150" role="img" aria-label="ऑर्थोग्राफिक दृश्य का उदाहरण">
+      <rect x="10" y="12" width="90" height="48"/>
+      <text x="28" y="42">ऊपर</text>
+      <rect x="10" y="78" width="90" height="48"/>
+      <text x="28" y="108">सामने</text>
+      <rect x="160" y="78" width="90" height="48"/>
+      <text x="180" y="108">साइड</text>
+    </svg>
+  </div>
+</section>
+
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">आइसोमेट्रिक</span>
+  <h2>06. आइसोमेट्रिक ड्राइंग (Isometric Drawing)</h2>
+  <p>
+    आइसोमेट्रिक ड्राइंग में किसी वस्तु के तीन आयाम
+    एक ही चित्र में दिखाए जाते हैं।
+  </p>
+  <h3>मुख्य विशेषताएँ</h3>
+  <ul>
+    <li>तीन मुख्य अक्ष होते हैं।</li>
+    <li>तीनों अक्षों के बीच 120° का कोण होता है।</li>
+    <li>लंबाई, चौड़ाई और ऊँचाई एक ही चित्र में दिखाई जाती है।</li>
+  </ul>
+  <div class="drawing-visual">
+    <svg viewBox="0 0 320 180" role="img" aria-label="आइसोमेट्रिक घन का उदाहरण">
+      <path d="M160 15 L245 60 L160 105 L75 60 Z"/>
+      <path d="M75 60 V145 L160 175 V105"/>
+      <path d="M245 60 V145 L160 175"/>
+      <path class="thin" d="M160 15 V105"/>
+    </svg>
+  </div>
+</section>
+
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">डायमेंशन</span>
+  <h2>07. डायमेंशन (Dimensioning)</h2>
+  <p>
+    किसी वस्तु की लंबाई, चौड़ाई, ऊँचाई, व्यास और कोण
+    को संख्याओं तथा रेखाओं द्वारा दर्शाने की प्रक्रिया
+    को डायमेंशन कहते हैं।
+  </p>
+  <h3>मुख्य भाग</h3>
+  <ul>
+    <li>Dimension Line – माप रेखा।</li>
+    <li>Extension Line – विस्तार रेखा।</li>
+    <li>Arrow Head – तीर का निशान।</li>
+    <li>Dimension Figure – माप की संख्या।</li>
+  </ul>
+</section>
+
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">ड्राइंग शीट</span>
+  <h2>08. ड्राइंग शीट और बॉर्डर</h2>
+  <p>तकनीकी ड्राइंग बनाने के लिए निर्धारित आकार की शीट का उपयोग किया जाता है।</p>
+  <ul>
+    <li>A0 – 841 × 1189 mm</li>
+    <li>A1 – 594 × 841 mm</li>
+    <li>A2 – 420 × 594 mm</li>
+    <li>A3 – 297 × 420 mm</li>
+    <li>A4 – 210 × 297 mm</li>
+  </ul>
+  <p>शीट पर बॉर्डर और टाइटल ब्लॉक निर्धारित प्रारूप के अनुसार बनाए जाते हैं।</p>
+</section>
+
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">सुरक्षा और नियम</span>
+  <h2>09. ड्राइंग बनाते समय ध्यान रखें</h2>
+  <ul>
+    <li>ड्राइंग शीट साफ रखें।</li>
+    <li>सही स्केल और पेंसिल का उपयोग करें।</li>
+    <li>माप स्पष्ट और सही लिखें।</li>
+    <li>अलग-अलग रेखाओं के लिए निर्धारित लाइन प्रकार अपनाएँ।</li>
+    <li>ड्राइंग में अनावश्यक रेखाएँ न बनाएँ।</li>
+  </ul>
+</section>
+
+<p class="no-result" id="noResult">
+  कोई विषय नहीं मिला। दूसरा शब्द खोजें।
+</p>
+
+<a href="../index.html" class="back-link">← मुख्य पेज पर जाएँ</a>
+
+</main>
+
+<footer class="footer">
+  <p>⚙ MACHINIST PRO</p>
+  <p>ITI Machinist Digital Learning Platform</p>
+</footer>
+
+<script>
+const searchInput = document.getElementById("drawingSearch");
+const cards = document.querySelectorAll(".searchable");
+const noResult = document.getElementById("noResult");
+
+searchInput.addEventListener("input", function() {
+  const value = this.value.trim().toLowerCase();
+  let count = 0;
+
+  cards.forEach(card => {
+    const match = card.textContent.toLowerCase().includes(value);
+    card.style.display = match ? "block" : "none";
+    if(match) count++;
+  });
+
+  noResult.style.display = count === 0 ? "block" : "none";
+});
+</script>
+
+</body>
+</html>

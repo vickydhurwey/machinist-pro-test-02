@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering Drawing Short Questions | MACHINIST PRO</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#08111f;color:#f1f5f9;font-family:Arial,sans-serif;padding:18px}
+.container{max-width:800px;margin:auto}
+header{text-align:center;padding:22px 10px}
+header h1{color:#64e6a5;font-size:25px}
+header p{color:#aab7c8;margin-top:10px;line-height:1.6}
+.info{background:#111e30;border:1px solid #263a50;border-radius:12px;padding:15px;margin:15px 0 22px;color:#cbd5e1;line-height:1.8}
+.question{background:#111e30;border:1px solid #263a50;border-radius:12px;padding:17px;margin-bottom:14px}
+.number{color:#64e6a5;font-size:12px;font-weight:bold;margin-bottom:9px}
+.question h3{font-size:16px;line-height:1.6;margin-bottom:12px}
+.answer{display:none;background:#172c2b;border-left:3px solid #64e6a5;padding:13px;border-radius:7px;color:#d9f7e8;line-height:1.8;font-size:14px;margin-top:12px}
+button{background:#64e6a5;color:#08111f;border:none;padding:10px 15px;border-radius:7px;font-weight:bold;cursor:pointer}
+footer{text-align:center;color:#8090a5;margin:30px 0 15px;font-size:13px}
+.back{display:inline-block;color:#64e6a5;text-decoration:none;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>📐 Engineering Drawing</h1>
+<p>MACHINIST PRO – ITI Machinist 1st Year</p>
+<p>महत्वपूर्ण लघु उत्तरीय प्रश्न एवं उत्तर</p>
+</header>
+
+<div class="info">
+<b>कुल प्रश्न:</b> 20<br>
+<b>विषय:</b> Engineering Drawing<br>
+<b>निर्देश:</b> प्रश्न पढ़ें और Show Answer पर क्लिक करके उत्तर देखें।
+</div>
+
+<div id="questions"></div>
+
+<footer>
+<p>© 2026 MACHINIST PRO</p>
+<p>Learn • Practice • Improve</p>
+<a class="back" href="notes.html">← Back to Notes</a>
+</footer>
+
+</div>
+
+<script>
+const data=[
+["Engineering Drawing क्या है?","किसी वस्तु की आकृति, आकार और माप को निश्चित नियमों तथा संकेतों की सहायता से कागज पर दर्शाना Engineering Drawing कहलाता है।"],
+["Engineering Drawing का क्या महत्व है?","इससे किसी मशीन के भाग की आकृति, माप, निर्माण संबंधी जानकारी और अन्य आवश्यक विवरण समझने में मदद मिलती है।"],
+["Drawing Instruments क्या होते हैं?","ड्राइंग बनाने और मापने के लिए उपयोग किए जाने वाले उपकरण Drawing Instruments कहलाते हैं। जैसे – ड्राइंग बोर्ड, T-Square, Set Square और Compass।"],
+["T-Square का उपयोग क्या है?","T-Square का उपयोग ड्राइंग शीट पर क्षैतिज यानी Horizontal रेखाएँ खींचने के लिए किया जाता है।"],
+["Set Square क्या है?","Set Square एक त्रिकोणीय उपकरण है, जिसका उपयोग 30°, 45°, 60° और 90° के कोणों की रेखाएँ खींचने के लिए किया जाता है।"],
+["Compass का उपयोग क्या है?","Compass का उपयोग वृत्त और चाप (Arc) बनाने के लिए किया जाता है।"],
+["Scale क्या है?","Scale एक मापक उपकरण है, जिसका उपयोग ड्राइंग में दूरी मापने और निर्धारित अनुपात में रेखाएँ बनाने के लिए किया जाता है।"],
+["Dimensioning किसे कहते हैं?","ड्राइंग में किसी वस्तु की लंबाई, चौड़ाई, ऊँचाई, व्यास और कोण जैसी मापों को लिखने की प्रक्रिया Dimensioning कहलाती है।"],
+["Object Line क्या होती है?","Object Line एक मोटी लगातार रेखा होती है, जो वस्तु की दिखाई देने वाली बाहरी किनारों और आकृति को दर्शाती है।"],
+["Hidden Line क्या होती है?","Hidden Line पतली टूटी हुई रेखा होती है, जो वस्तु के छिपे हुए किनारों और भागों को दर्शाती है।"],
+["Centre Line क्या होती है?","Centre Line का उपयोग वृत्त, छेद और सममित आकृतियों के केंद्र या अक्ष को दर्शाने के लिए किया जाता है।"],
+["Orthographic Projection क्या है?","यह एक ऐसी ड्राइंग विधि है जिसमें वस्तु को अलग-अलग समकोणीय दिशाओं से देखकर Front View, Top View और Side View बनाया जाता है।"],
+["Isometric Drawing क्या है?","Isometric Drawing में किसी वस्तु के तीन आयामों को एक ही चित्र में दिखाया जाता है। इसमें तीन मुख्य अक्षों के बीच 120° का कोण होता है।"],
+["First Angle Projection क्या है?","First Angle Projection में वस्तु को प्रेक्षक और प्रक्षेपण तल के बीच रखा जाता है। इसमें Top View, Front View के नीचे बनाया जाता है।"],
+["Third Angle Projection क्या है?","Third Angle Projection में प्रक्षेपण तल को प्रेक्षक और वस्तु के बीच माना जाता है। इसमें Top View, Front View के ऊपर बनाया जाता है।"],
+["Drawing Sheet क्या होती है?","Drawing Sheet वह कागज होता है जिस पर तकनीकी चित्र बनाए जाते हैं। इसके मानक आकार A0, A1, A2, A3 और A4 होते हैं।"],
+["Title Block क्या होता है?","Title Block ड्राइंग शीट का वह भाग है जिसमें ड्राइंग का नाम, स्केल, तारीख, ड्राइंग नंबर और बनाने वाले की जानकारी लिखी जाती है।"],
+["Hatching क्या है?","Sectional Drawing में काटे गए भाग की सामग्री को दिखाने के लिए समानांतर पतली रेखाएँ खींचना Hatching कहलाता है।"],
+["Sectional View क्या है?","Sectional View में वस्तु को काल्पनिक रूप से काटकर उसके अंदरूनी भागों को स्पष्ट रूप से दिखाया जाता है।"],
+["Engineering Drawing बनाते समय किन बातों का ध्यान रखना चाहिए?","रेखाओं की मोटाई और प्रकार सही रखें, माप स्पष्ट लिखें, सही स्केल अपनाएँ और ड्राइंग को साफ-सुथरा बनाएँ।"]
+];
+
+const container=document.getElementById("questions");
+
+data.forEach((item,index)=>{
+  const card=document.createElement("div");
+  card.className="question";
+
+  const number=document.createElement("div");
+  number.className="number";
+  number.textContent="QUESTION "+String(index+1).padStart(2,"0");
+
+  const heading=document.createElement("h3");
+  heading.textContent=(index+1)+". "+item[0];
+
+  const button=document.createElement("button");
+  button.textContent="Show Answer";
+
+  const answer=document.createElement("div");
+  answer.className="answer";
+  answer.textContent="उत्तर: "+item[1];
+
+  button.addEventListener("click",()=>{
+    const visible=answer.style.display==="block";
+    answer.style.display=visible?"none":"block";
+    button.textContent=visible?"Show Answer":"Hide Answer";
+  });
+
+  card.append(number,heading,button,answer);
+  container.appendChild(card);
+});
+</script>
+
+</body>
+</html>

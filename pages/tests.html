@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b14">
+<title>ऑनलाइन टेस्ट | MACHINIST PRO</title>
+<link rel="stylesheet" href="../style.css">
+
+<style>
+.test-intro,.question-card,.result-card {
+  padding:22px;
+  border-radius:20px;
+  margin:20px 0;
+}
+.test-intro h1 { margin:12px 0; font-size:27px; }
+.test-intro p { color:var(--muted); line-height:1.8; }
+.question-card h3 { font-size:16px; line-height:1.7; margin-bottom:15px; }
+.question-number { color:var(--cyan); font-size:12px; margin-bottom:10px; }
+.option {
+  display:block;
+  padding:14px;
+  margin:9px 0;
+  border:1px solid var(--border);
+  border-radius:12px;
+  color:var(--text);
+  cursor:pointer;
+}
+.option input { margin-right:10px; accent-color:#00d9ff; }
+.option:has(input:checked) {
+  border-color:var(--cyan);
+  background:rgba(0,217,255,.09);
+}
+.submit-btn {
+  width:100%;
+  padding:15px;
+  border:0;
+  border-radius:12px;
+  color:#001018;
+  font-weight:800;
+  background:linear-gradient(100deg,#00d9ff,#66aaff);
+  margin:15px 0;
+}
+.progress-box {
+  height:8px;
+  background:rgba(255,255,255,.08);
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:16px;
+}
+.progress-bar {
+  height:100%;
+  width:0%;
+  background:var(--cyan);
+  transition:.3s;
+}
+.result-card {
+  display:none;
+  border:1px solid var(--green);
+  background:rgba(37,230,162,.08);
+  line-height:1.9;
+}
+.result-card h2 { color:var(--green); }
+.review-item {
+  padding:14px;
+  margin:10px 0;
+  border-radius:12px;
+  background:rgba(255,255,255,.05);
+  font-size:13px;
+  line-height:1.8;
+}
+.correct { color:var(--green); }
+.wrong { color:#ff8b8b; }
+.back-link {
+  display:inline-block;
+  margin:20px 0;
+  color:var(--cyan);
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-content">
+    <a href="../index.html" class="logo">⚙ MACHINIST <span>PRO</span></a>
+    <div class="header-tag">ONLINE TEST</div>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="test-intro glass">
+  <small style="color:#00d9ff;">ITI MACHINIST FIRST YEAR</small>
+  <h1>📝 ऑनलाइन टेस्ट</h1>
+  <p>
+    Machinist ट्रेड के महत्वपूर्ण प्रश्न हल करें।
+    प्रत्येक प्रश्न में एक सही उत्तर चुनें।
+    टेस्ट पूरा होने पर अपना परिणाम और सही उत्तर देखें।
+  </p>
+  <p style="margin-top:12px;color:#00d9ff;">
+    कुल प्रश्न: 20 | प्रत्येक प्रश्न: 1 अंक
+  </p>
+  <div class="progress-box">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+  <p id="progressText">0 / 20 प्रश्न हल किए गए</p>
+</section>
+
+<form id="quizForm">
+  <div id="questions"></div>
+  <button type="submit" class="submit-btn">टेस्ट सबमिट करें</button>
+</form>
+
+<section class="result-card glass" id="result" aria-live="polite">
+  <h2>📊 आपका परिणाम</h2>
+  <h3 id="score"></h3>
+  <p id="percentage"></p>
+  <p id="feedback"></p>
+  <div id="answerReview"></div>
+  <button class="submit-btn" type="button" onclick="restartQuiz()">
+    दोबारा टेस्ट दें
+  </button>
+</section>
+
+<a href="../index.html" class="back-link">← मुख्य पेज पर जाएँ</a>
+
+</main>
+
+<footer class="footer">
+  <p>⚙ MACHINIST PRO</p>
+  <p>ITI Machinist Digital Learning Platform</p>
+</footer>
+
+<script>
+const quiz = [
+  {
+    q:"लेथ मशीन का मुख्य कार्य क्या है?",
+    options:["जॉब को घुमाकर धातु काटना","वेल्डिंग करना","रंग करना","धातु पिघलाना"],
+    answer:0,
+    explanation:"लेथ मशीन में जॉब घूमता है और कटिंग टूल धातु हटाता है।"
+  },
+  {
+    q:"वर्नियर कैलिपर का उपयोग किसलिए होता है?",
+    options:["तापमान मापने","लंबाई और व्यास मापने","वजन मापने","दाब मापने"],
+    answer:1,
+    explanation:"इससे बाहरी, भीतरी और गहराई का मापन किया जाता है।"
+  },
+  {
+    q:"माइक्रोमीटर का उपयोग किसलिए होता है?",
+    options:["बिजली मापने","तापमान मापने","छोटी मोटाई और व्यास मापने","वजन मापने"],
+    answer:2,
+    explanation:"माइक्रोमीटर छोटे माप को अधिक सटीकता से मापता है।"
+  },
+  {
+    q:"ड्रिलिंग मशीन का मुख्य कार्य क्या है?",
+    options:["छेद बनाना","रंग करना","जॉब मोड़ना","धातु जोड़ना"],
+    answer:0,
+    explanation:"ड्रिलिंग मशीन का मुख्य काम जॉब में गोल छेद बनाना है।"
+  },
+  {
+    q:"ग्राइंडिंग व्हील किस काम आता है?",
+    options:["मापने","धातु घिसने","वेल्डिंग","छेद भरने"],
+    answer:1,
+    explanation:"ग्राइंडिंग व्हील अपघर्षक कणों से धातु हटाता है।"
+  },
+  {
+    q:"लेथ मशीन में जॉब सामान्यतः किसमें पकड़ा जाता है?",
+    options:["चक","हथौड़ा","स्केल","फाइल"],
+    answer:0,
+    explanation:"चक का उपयोग जॉब को पकड़ने के लिए होता है।"
+  },
+  {
+    q:"स्पिंडल स्पीड की इकाई क्या है?",
+    options:["मीटर","किलोग्राम","RPM","लीटर"],
+    answer:2,
+    explanation:"RPM का अर्थ Revolutions Per Minute है।"
+  },
+  {
+    q:"PPE का पूरा नाम क्या है?",
+    options:["Personal Protective Equipment","Power Production Engine","Personal Power Element","Public Protection Energy"],
+    answer:0,
+    explanation:"PPE का अर्थ व्यक्तिगत सुरक्षा उपकरण है।"
+  },
+  {
+    q:"स्टील रूल का उपयोग किसलिए होता है?",
+    options:["लंबाई मापने","वजन मापने","तापमान मापने","बिजली मापने"],
+    answer:0,
+    explanation:"स्टील रूल एक लंबाई मापने वाला उपकरण है।"
+  },
+  {
+    q:"फाइल का उपयोग किसलिए किया जाता है?",
+    options:["धातु की सतह घिसने","छेद करने","जॉब गर्म करने","रंग करने"],
+    answer:0,
+    explanation:"फाइल से धातु की सतह को घिसकर आकार और फिनिश दिया जाता है।"
+  },
+  {
+    q:"मिलिंग मशीन में कौन-सा टूल उपयोग होता है?",
+    options:["मिलिंग कटर","पेंट ब्रश","हथौड़ा","प्लास"],
+    answer:0,
+    explanation:"मिलिंग कटर घूमकर जॉब से धातु हटाता है।"
+  },
+  {
+    q:"स्लॉटिंग मशीन में टूल किस दिशा में चलता है?",
+    options:["ऊपर-नीचे","केवल गोल","केवल तिरछा","बिना गति"],
+    answer:0,
+    explanation:"स्लॉटिंग मशीन में रैम और टूल सामान्यतः ऊर्ध्वाधर दिशा में चलते हैं।"
+  },
+  {
+    q:"ट्राई स्क्वायर का उपयोग किसलिए होता है?",
+    options:["90° कोण जाँचने","तापमान मापने","वजन मापने","गति मापने"],
+    answer:0,
+    explanation:"ट्राई स्क्वायर से समकोण जाँचा जाता है।"
+  },
+  {
+    q:"CNC का पूरा नाम क्या है?",
+    options:["Computer Numerical Control","Central Number Control","Computer New Circuit","Control Number Computer"],
+    answer:0,
+    explanation:"CNC का पूरा नाम Computer Numerical Control है।"
+  },
+  {
+    q:"कटिंग टूल का मुख्य कार्य क्या है?",
+    options:["धातु हटाना","जॉब रंगना","जॉब धोना","जॉब उठाना"],
+    answer:0,
+    explanation:"कटिंग टूल जॉब से अतिरिक्त धातु हटाता है।"
+  },
+  {
+    q:"फायर एक्सटिंग्विशर का उपयोग किसलिए होता है?",
+    options:["आग बुझाने","मशीन चलाने","मापने","वेल्डिंग करने"],
+    answer:0,
+    explanation:"फायर एक्सटिंग्विशर का उपयोग उपयुक्त प्रकार की आग बुझाने में होता है।"
+  },
+  {
+    q:"नर्लिंग ऑपरेशन का उद्देश्य क्या है?",
+    options:["पकड़ के लिए पैटर्न बनाना","छेद बनाना","जॉब काटना","धातु पिघलाना"],
+    answer:0,
+    explanation:"नर्लिंग से सतह पर पकड़ के लिए पैटर्न बनाया जाता है।"
+  },
+  {
+    q:"लेथ मशीन में लीड स्क्रू का प्रमुख उपयोग क्या है?",
+    options:["थ्रेड कटिंग में","पेंटिंग में","वजन मापने में","सफाई में"],
+    answer:0,
+    explanation:"लीड स्क्रू थ्रेड काटने के लिए कैरिज की गति नियंत्रित करता है।"
+  },
+  {
+    q:"ग्राइंडिंग मशीन में मुख्य कटिंग माध्यम क्या है?",
+    options:["अपघर्षक कण","पानी","लकड़ी","प्लास्टिक"],
+    answer:0,
+    explanation:"ग्राइंडिंग व्हील के अपघर्षक कण धातु हटाते हैं।"
+  },
+  {
+    q:"5S का संबंध किससे है?",
+    options:["कार्यस्थल की व्यवस्था और सफाई","केवल गणित","बिजली उत्पादन","वेल्डिंग"],
+    answer:0,
+    explanation:"5S कार्यस्थल को व्यवस्थित, स्वच्छ और सुरक्षित रखने की पद्धति है।"
+  }
+];
+
+const questionContainer = document.getElementById("questions");
+
+quiz.forEach((item,index) => {
+  const card = document.createElement("div");
+  card.className = "question-card glass";
+
+  const number = document.createElement("div");
+  number.className = "question-number";
+  number.textContent = "प्रश्न " + (index + 1);
+
+  const title = document.createElement("h3");
+  title.textContent = item.q;
+
+  card.appendChild(number);
+  card.appendChild(title);
+
+  item.options.forEach((option,i) => {
+    const label = document.createElement("label");
+    label.className = "option";
+
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "question" + index;
+    radio.value = i;
+    radio.addEventListener("change", updateProgress);
+
+    label.appendChild(radio);
+    label.appendChild(document.createTextNode(option));
+    card.appendChild(label);
+  });
+
+  questionContainer.appendChild(card);
+});
+
+function updateProgress() {
+  let answered = 0;
+
+  quiz.forEach((item,index) => {
+    if(document.querySelector(
+      'input[name="question' + index + '"]:checked'
+    )) {
+      answered++;
+    }
+  });
+
+  document.getElementById("progressBar").style.width =
+    (answered / quiz.length * 100) + "%";
+
+  document.getElementById("progressText").textContent =
+    answered + " / " + quiz.length + " प्रश्न हल किए गए";
+}
+
+document.getElementById("quizForm").addEventListener("submit",function(e) {
+  e.preventDefault();
+
+  let score = 0;
+  let review = "";
+
+  quiz.forEach((item,index) => {
+    const selected = document.querySelector(
+      'input[name="question' + index + '"]:checked'
+    );
+
+    const selectedAnswer = selected ? Number(selected.value) : -1;
+    const isCorrect = selectedAnswer === item.answer;
+
+    if(isCorrect) score++;
+
+    review += `
+      <div class="review-item">
+        <strong>प्रश्न ${index + 1}: ${item.q}</strong><br>
+        <span class="${isCorrect ? "correct" : "wrong"}">
+          आपका उत्तर: ${selectedAnswer === -1 ? "उत्तर नहीं दिया" : item.options[selectedAnswer]}
+        </span><br>
+        <span class="correct">
+          सही उत्तर: ${item.options[item.answer]}
+        </span><br>
+        <span>${item.explanation}</span>
+      </div>
+    `;
+  });
+
+  const percentage = (score / quiz.length) * 100;
+
+  document.getElementById("score").textContent =
+    "आपके अंक: " + score + " / " + quiz.length;
+
+  document.getElementById("percentage").textContent =
+    "प्रतिशत: " + percentage.toFixed(0) + "%";
+
+  document.getElementById("feedback").textContent =
+    percentage >= 80 ? "बहुत अच्छा! आपका प्रदर्शन शानदार है।" :
+    percentage >= 50 ? "अच्छा प्रयास! थोड़ी और तैयारी करें।" :
+    "अभ्यास जारी रखें और अपने नोट्स दोबारा पढ़ें।";
+
+  document.getElementById("answerReview").innerHTML = review;
+  document.getElementById("result").style.display = "block";
+  document.getElementById("result").scrollIntoView({behavior:"smooth"});
+});
+
+function restartQuiz() {
+  document.getElementById("quizForm").reset();
+  document.getElementById("result").style.display = "none";
+  document.getElementById("answerReview").innerHTML = "";
+  updateProgress();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>

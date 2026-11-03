@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b14">
+<title>औजारों की जानकारी | MACHINIST PRO</title>
+<link rel="stylesheet" href="../style.css">
+
+<style>
+.tool-intro,.tool-card {
+  padding:22px;
+  border-radius:20px;
+  margin:20px 0;
+}
+.tool-intro h1 {
+  font-size:26px;
+  margin:12px 0;
+}
+.tool-intro p,.tool-card p {
+  color:var(--muted);
+  line-height:1.8;
+}
+.tool-card h2 {
+  color:var(--cyan);
+  font-size:19px;
+  margin-bottom:12px;
+}
+.tool-card h3 {
+  margin:14px 0 6px;
+  font-size:15px;
+}
+.tool-tag {
+  display:inline-block;
+  padding:6px 10px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  color:var(--cyan);
+  font-size:12px;
+  margin-bottom:12px;
+}
+.tool-search {
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.06);
+  color:white;
+  outline:none;
+  margin:15px 0;
+}
+.tool-search::placeholder { color:var(--muted); }
+.tool-card ul {
+  padding-left:20px;
+  color:var(--muted);
+  line-height:1.9;
+}
+.tool-formula {
+  padding:13px;
+  margin:12px 0;
+  border-radius:12px;
+  background:rgba(0,217,255,.08);
+  color:var(--green);
+  text-align:center;
+  font-weight:700;
+}
+.back-link {
+  display:inline-block;
+  margin:20px 0;
+  color:var(--cyan);
+}
+.no-result {
+  display:none;
+  text-align:center;
+  padding:25px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-content">
+    <a href="../index.html" class="logo">⚙ MACHINIST <span>PRO</span></a>
+    <div class="header-tag">TOOL GUIDE</div>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="tool-intro glass">
+  <small style="color:#00d9ff;">ITI MACHINIST FIRST YEAR</small>
+  <h1>🔧 औजारों की जानकारी</h1>
+  <p>
+    मशीनिस्ट ट्रेड में उपयोग होने वाले मापन औजार,
+    कटिंग टूल और वर्कशॉप उपकरणों के नाम,
+    कार्य तथा उपयोग हिंदी में सीखें।
+  </p>
+</section>
+
+<input
+  type="search"
+  class="tool-search"
+  id="toolSearch"
+  placeholder="औजार खोजें... जैसे Vernier, Micrometer"
+  aria-label="औजार खोजें"
+>
+
+<!-- MEASURING TOOLS -->
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">मापन औजार</span>
+  <h2>01. वर्नियर कैलिपर (Vernier Caliper)</h2>
+  <p>यह एक सटीक मापन उपकरण है, जिसका उपयोग बाहरी व्यास, भीतरी व्यास और गहराई मापने के लिए किया जाता है।</p>
+  <h3>मुख्य भाग</h3>
+  <ul>
+    <li>मुख्य स्केल (Main Scale)</li>
+    <li>वर्नियर स्केल (Vernier Scale)</li>
+    <li>बाहरी मापन जबड़े</li>
+    <li>भीतरी मापन जबड़े</li>
+    <li>डेप्थ रॉड</li>
+  </ul>
+  <h3>उपयोग</h3>
+  <p>शाफ्ट का बाहरी व्यास, छेद का भीतरी व्यास और गहराई मापने में।</p>
+</div>
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">मापन औजार</span>
+  <h2>02. माइक्रोमीटर (Micrometer)</h2>
+  <p>माइक्रोमीटर का उपयोग छोटी मोटाई और व्यास को अधिक सटीकता से मापने के लिए किया जाता है।</p>
+  <h3>मुख्य भाग</h3>
+  <ul>
+    <li>फ्रेम (Frame)</li>
+    <li>एनविल (Anvil)</li>
+    <li>स्पिंडल (Spindle)</li>
+    <li>स्लीव (Sleeve)</li>
+    <li>थिम्बल (Thimble)</li>
+    <li>रैचेट स्टॉप (Ratchet Stop)</li>
+  </ul>
+  <h3>उपयोग</h3>
+  <p>छोटी मोटाई, तार का व्यास और मशीनिंग जॉब का व्यास मापने में।</p>
+</div>
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">मापन औजार</span>
+  <h2>03. स्टील रूल (Steel Rule)</h2>
+  <p>स्टील रूल एक सामान्य लंबाई मापने वाला उपकरण है। यह स्टील से बनाया जाता है।</p>
+  <h3>उपयोग</h3>
+  <ul>
+    <li>छोटी और सामान्य लंबाई मापना।</li>
+    <li>जॉब पर माप की मार्किंग करना।</li>
+    <li>मिलीमीटर और सेंटीमीटर में मापन करना।</li>
+  </ul>
+</div>
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">मापन औजार</span>
+  <h2>04. ट्राई स्क्वायर (Try Square)</h2>
+  <p>ट्राई स्क्वायर का उपयोग जॉब की सतह पर 90 डिग्री का कोण जाँचने के लिए किया जाता है।</p>
+  <h3>मुख्य भाग</h3>
+  <ul>
+    <li>ब्लेड (Blade)</li>
+    <li>स्टॉक (Stock)</li>
+  </ul>
+  <h3>उपयोग</h3>
+  <p>समकोण जाँचना और मार्किंग के समय सीधी रेखा बनाना।</p>
+</div>
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">मापन औजार</span>
+  <h2>05. डायल इंडिकेटर (Dial Indicator)</h2>
+  <p>यह एक सटीक मापन उपकरण है, जिसका उपयोग बहुत छोटे विस्थापन या सतह की असमानता जाँचने के लिए होता है।</p>
+  <h3>उपयोग</h3>
+  <ul>
+    <li>जॉब की रनआउट जाँचना।</li>
+    <li>मशीन की अलाइनमेंट जाँचना।</li>
+    <li>सतह की असमानता की जाँच करना।</li>
+  </ul>
+</div>
+
+<!-- MARKING TOOLS -->
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">मार्किंग औजार</span>
+  <h2>06. स्क्राइबर (Scriber)</h2>
+  <p>स्क्राइबर एक नुकीला मार्किंग टूल है, जिसका उपयोग धातु की सतह पर रेखाएँ खींचने के लिए किया जाता है।</p>
+  <h3>उपयोग</h3>
+  <p>मार्किंग और लेआउट कार्य में धातु पर पतली रेखाएँ बनाना।</p>
+</div>
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">मार्किंग औजार</span>
+  <h2>07. डिवाइडर (Divider)</h2>
+  <p>डिवाइडर में दो नुकीले पैर होते हैं। इसका उपयोग दूरी स्थानांतरित करने और वृत्त या चाप बनाने के लिए किया जाता है।</p>
+  <h3>उपयोग</h3>
+  <ul>
+    <li>वृत्त बनाना।</li>
+    <li>दूरी को एक स्थान से दूसरे स्थान पर ले जाना।</li>
+    <li>समान भागों में दूरी बाँटना।</li>
+  </ul>
+</div>
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">मार्किंग औजार</span>
+  <h2>08. डॉट पंच (Dot Punch)</h2>
+  <p>डॉट पंच का उपयोग मार्किंग की रेखाओं पर छोटे निशान बनाने के लिए किया जाता है, ताकि रेखाएँ स्पष्ट रहें।</p>
+</div>
+
+<!-- CUTTING TOOLS -->
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">कटिंग औजार</span>
+  <h2>09. हैक्सॉ (Hacksaw)</h2>
+  <p>हैक्सॉ का उपयोग धातु की छड़, पाइप और अन्य धातु सामग्री को काटने के लिए किया जाता है।</p>
+  <h3>मुख्य भाग</h3>
+  <ul>
+    <li>फ्रेम (Frame)</li>
+    <li>ब्लेड (Blade)</li>
+    <li>हैंडल (Handle)</li>
+    <li>ब्लेड पिन (Blade Pin)</li>
+  </ul>
+</div>
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">कटिंग औजार</span>
+  <h2>10. कोल्ड छेनी (Cold Chisel)</h2>
+  <p>कोल्ड छेनी का उपयोग ठंडी धातु को काटने या अतिरिक्त धातु हटाने के लिए किया जाता है।</p>
+  <h3>मुख्य प्रकार</h3>
+  <ul>
+    <li>फ्लैट छेनी</li>
+    <li>क्रॉस कट छेनी</li>
+    <li>राउंड नोज छेनी</li>
+    <li>डायमंड पॉइंट छेनी</li>
+  </ul>
+</div>
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">कटिंग औजार</span>
+  <h2>11. सिंगल पॉइंट कटिंग टूल</h2>
+  <p>इस टूल में एक मुख्य कटिंग पॉइंट होता है। इसका उपयोग लेथ मशीन पर टर्निंग और अन्य कटिंग कार्यों में किया जाता है।</p>
+  <h3>मुख्य उपयोग</h3>
+  <ul>
+    <li>टर्निंग</li>
+    <li>फेसिंग</li>
+    <li>थ्रेड कटिंग</li>
+    <li>ग्रूविंग</li>
+  </ul>
+</div>
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">कटिंग औजार</span>
+  <h2>12. ट्विस्ट ड्रिल (Twist Drill)</h2>
+  <p>ट्विस्ट ड्रिल एक घूमने वाला कटिंग टूल है, जिसका उपयोग जॉब में गोल छेद बनाने के लिए होता है।</p>
+  <h3>मुख्य भाग</h3>
+  <ul>
+    <li>शैंक (Shank)</li>
+    <li>बॉडी (Body)</li>
+    <li>फ्लूट (Flute)</li>
+    <li>पॉइंट (Point)</li>
+    <li>लिप (Lip)</li>
+  </ul>
+</div>
+
+<!-- HOLDING TOOLS -->
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">जॉब पकड़ने वाले औजार</span>
+  <h2>13. मशीन वाइस (Machine Vice)</h2>
+  <p>मशीन वाइस का उपयोग मशीन पर काम करते समय जॉब को मजबूती से पकड़ने के लिए किया जाता है।</p>
+  <h3>उपयोग</h3>
+  <p>ड्रिलिंग, मिलिंग और अन्य मशीनिंग कार्यों में जॉब पकड़ना।</p>
+</div>
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">जॉब पकड़ने वाले औजार</span>
+  <h2>14. लेथ चक (Lathe Chuck)</h2>
+  <p>लेथ चक का उपयोग लेथ मशीन के स्पिंडल पर जॉब को पकड़ने के लिए किया जाता है।</p>
+  <h3>प्रमुख प्रकार</h3>
+  <ul>
+    <li>थ्री जॉ चक</li>
+    <li>फोर जॉ चक</li>
+    <li>कोलेट चक</li>
+  </ul>
+</div>
+
+<!-- GENERAL TOOLS -->
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">सामान्य औजार</span>
+  <h2>15. फाइल (File)</h2>
+  <p>फाइल का उपयोग धातु की सतह से थोड़ी मात्रा में अतिरिक्त सामग्री हटाने और सतह को फिनिश करने के लिए किया जाता है।</p>
+  <h3>मुख्य प्रकार</h3>
+  <ul>
+    <li>फ्लैट फाइल</li>
+    <li>राउंड फाइल</li>
+    <li>हाफ राउंड फाइल</li>
+    <li>स्क्वायर फाइल</li>
+    <li>ट्रायंगुलर फाइल</li>
+  </ul>
+</div>
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">सामान्य औजार</span>
+  <h2>16. बॉल पीन हैमर (Ball Peen Hammer)</h2>
+  <p>इस हथौड़े का उपयोग धातु के काम, हल्की चोट लगाने और सामान्य फिटिंग कार्यों में किया जाता है।</p>
+  <h3>मुख्य भाग</h3>
+  <ul>
+    <li>फेस (Face)</li>
+    <li>बॉल पीन (Ball Peen)</li>
+    <li>हैंडल (Handle)</li>
+  </ul>
+</div>
+
+<div class="tool-card glass searchable">
+  <span class="tool-tag">सामान्य औजार</span>
+  <h2>17. टैप और डाई (Tap and Die)</h2>
+  <p>टैप और डाई का उपयोग हाथ से थ्रेड बनाने के लिए किया जाता है।</p>
+  <ul>
+    <li>टैप: छेद के अंदर आंतरिक थ्रेड बनाता है।</li>
+    <li>डाई: रॉड या शाफ्ट के बाहर बाहरी थ्रेड बनाती है।</li>
+  </ul>
+</div>
+
+<section class="tool-card glass">
+  <h2>⚠️ औजारों के उपयोग में सुरक्षा</h2>
+  <ul>
+    <li>काम के अनुसार सुरक्षा चश्मा पहनें।</li>
+    <li>क्षतिग्रस्त औजारों का उपयोग न करें।</li>
+    <li>मापने वाले औजारों को साफ और सुरक्षित रखें।</li>
+    <li>मशीन पर काम करते समय प्रशिक्षक के निर्देशों का पालन करें।</li>
+    <li>चलती मशीन के पास ढीले कपड़े या आभूषण न पहनें।</li>
+  </ul>
+</section>
+
+<p class="no-result" id="noResult">कोई औजार नहीं मिला। दूसरा नाम खोजें।</p>
+
+<a href="../index.html" class="back-link">← मुख्य पेज पर जाएँ</a>
+
+</main>
+
+<footer class="footer">
+  <p>⚙ MACHINIST PRO</p>
+  <p>ITI Machinist Digital Learning Platform</p>
+</footer>
+
+<script>
+const searchInput = document.getElementById("toolSearch");
+const toolCards = document.querySelectorAll(".searchable");
+const noResult = document.getElementById("noResult");
+
+searchInput.addEventListener("input", function() {
+  const searchValue = this.value.trim().toLowerCase();
+  let visibleCount = 0;
+
+  toolCards.forEach(card => {
+    const matches = card.textContent.toLowerCase().includes(searchValue);
+    card.style.display = matches ? "block" : "none";
+    if(matches) visibleCount++;
+  });
+
+  noResult.style.display = visibleCount === 0 ? "block" : "none";
+});
+</script>
+
+</body>
+</html>

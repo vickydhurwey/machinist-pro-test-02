@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cutting Tools Question Bank | MACHINIST PRO</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#08111f;color:#eaf2ff;font-family:Arial,sans-serif;line-height:1.7}
+header{background:#101d30;padding:22px 16px;border-bottom:1px solid #263750}
+header a{color:#64e6a5;text-decoration:none}
+header h1{font-size:23px;margin:12px 0 4px}
+header p{color:#aab8ca;font-size:14px}
+.container{max-width:850px;margin:auto;padding:16px}
+.question{background:#111f32;border:1px solid #263750;border-radius:12px;padding:16px;margin:14px 0}
+.question h3{font-size:16px;margin:0 0 12px}
+.option{display:block;background:#0b1727;border:1px solid #34465e;padding:9px 11px;border-radius:8px;margin:7px 0;color:#d0dbea;font-size:14px}
+.answer{display:none;background:#142b2b;border-left:4px solid #64e6a5;padding:10px;margin-top:10px;border-radius:7px;color:#b7f5d5}
+button{background:#64e6a5;color:#08111f;border:0;border-radius:7px;padding:9px 13px;font-weight:bold;margin-top:10px}
+footer{text-align:center;color:#8191a8;padding:25px}
+</style>
+</head>
+<body>
+
+<header>
+<a href="notes.html">← वापस Notes पर जाएं</a>
+<h1>🔧 Cutting Tools – Question Bank</h1>
+<p>Machinist First Year | 40 महत्वपूर्ण MCQ</p>
+</header>
+
+<main class="container" id="quiz"></main>
+<footer>MACHINIST PRO | Practice Questions</footer>
+
+<script>
+const questions = [
+["Cutting Tool का मुख्य कार्य क्या है?",["धातु से अतिरिक्त पदार्थ हटाना","धातु जोड़ना","धातु गर्म करना","माप लेना"],0],
+["Single Point Cutting Tool में कितने मुख्य कटिंग पॉइंट होते हैं?",["एक","दो","तीन","चार"],0],
+["Multi Point Cutting Tool में कितने कटिंग पॉइंट होते हैं?",["एक","एक से अधिक","केवल दो","कोई नहीं"],1],
+["लेथ मशीन में सामान्यतः कौन-सा टूल उपयोग होता है?",["Single Point Tool","Twist Drill","Tap","Reamer"],0],
+["ड्रिलिंग में कौन-सा कटिंग टूल उपयोग होता है?",["Twist Drill","Turning Tool","Parting Tool","Boring Bar"],0],
+["मिलिंग मशीन में कौन-सा टूल उपयोग होता है?",["Milling Cutter","Tap","Die","Centre Punch"],0],
+["Rake Angle किससे संबंधित है?",["चिप बनने और बहने की प्रक्रिया","मशीन का वजन","टूल की लंबाई","वर्कपीस का रंग"],0],
+["Clearance Angle का उद्देश्य क्या है?",["टूल के पीछे और वर्कपीस के बीच रगड़ कम करना","टूल का वजन बढ़ाना","मशीन रोकना","चिप गर्म करना"],0],
+["Cutting Edge किसे कहते हैं?",["टूल का वह किनारा जो पदार्थ काटता है","टूल का हैंडल","टूल का पिछला भाग","टूल का रंग"],0],
+["Tool Nose Radius किस भाग से संबंधित है?",["टूल की नोक","टूल का हैंडल","टूल की लंबाई","मशीन का बेड"],0],
+["HSS का पूरा नाम क्या है?",["High Speed Steel","High Strength Surface","Heavy Speed System","High Standard Steel"],0],
+["HSS का उपयोग किसलिए होता है?",["कटिंग टूल बनाने में","मशीन का आधार बनाने में","कूलेंट बनाने में","मापने के लिए"],0],
+["Carbide Tool की एक प्रमुख विशेषता क्या है?",["उच्च कठोरता और गर्मी सहने की क्षमता","बहुत कम कठोरता","केवल लकड़ी काटना","पानी में घुलना"],0],
+["Ceramic Cutting Tool की विशेषता क्या है?",["उच्च तापमान पर कठोरता बनाए रखना","बहुत नरम होना","केवल हाथ से चलना","चुंबकीय होना"],0],
+["Diamond Tool का उपयोग किसमें किया जा सकता है?",["उपयुक्त परिस्थितियों में अच्छी फिनिशिंग","केवल लकड़ी जोड़ने में","केवल वेल्डिंग में","केवल हथौड़ा बनाने में"],0],
+["Tool Wear का अर्थ क्या है?",["उपयोग के कारण टूल का घिसना","टूल का रंग बदलना","टूल का वजन बढ़ना","टूल का लंबा होना"],0],
+["Crater Wear सामान्यतः कहाँ होता है?",["टूल के Rake Face पर","टूल के हैंडल पर","टूल पोस्ट पर","मशीन के बेड पर"],0],
+["Flank Wear कहाँ होता है?",["टूल के Flank Face पर","टूल के हैंडल पर","टूल के ऊपर","मशीन के आधार पर"],0],
+["Cutting Speed का संबंध किससे है?",["कटिंग एज पर वर्कपीस की सापेक्ष गति","टूल का वजन","मशीन की ऊँचाई","कूलेंट की मात्रा"],0],
+["Cutting Speed की सामान्य इकाई क्या है?",["m/min","kg","Newton","Watt"],0],
+["Feed का अर्थ क्या है?",["प्रति चक्कर या प्रति दाँत टूल का आगे बढ़ना","मशीन का वजन","टूल का रंग","वर्कपीस की मोटाई"],0],
+["Depth of Cut का अर्थ क्या है?",["एक पास में हटाई जाने वाली सामग्री की गहराई","टूल की कुल लंबाई","मशीन की ऊँचाई","वर्कपीस का वजन"],0],
+["Cutting Fluid का मुख्य उपयोग क्या है?",["ठंडा करने और स्नेहन में सहायता करना","टूल का रंग बदलना","वर्कपीस का वजन बढ़ाना","मशीन की गति रोकना"],0],
+["Chip Breaker का उपयोग किसलिए होता है?",["चिप को नियंत्रित और छोटे भागों में तोड़ने के लिए","टूल पकड़ने के लिए","मशीन रोकने के लिए","माप लेने के लिए"],0],
+["Continuous Chip सामान्यतः किस सामग्री में बन सकती है?",["डक्टाइल सामग्री","बहुत भंगुर सामग्री","केवल कांच","केवल सिरेमिक"],0],
+["Discontinuous Chip सामान्यतः किससे संबंधित हो सकती है?",["भंगुर सामग्री या कुछ कटिंग परिस्थितियाँ","केवल रबर","केवल प्लास्टिक","केवल लकड़ी"],0],
+["Built Up Edge क्या है?",["टूल की कटिंग एज पर चिपके पदार्थ का जमाव","टूल का हैंडल","मशीन का गार्ड","वर्कपीस का छेद"],0],
+["Tool Life का अर्थ क्या है?",["टूल के उपयोगी कटिंग समय की अवधि","टूल की कुल लंबाई","टूल का वजन","टूल की कीमत"],0],
+["Tool Life को प्रभावित करने वाला कारक कौन-सा है?",["Cutting Speed","टूल का रंग","मशीन का ब्रांड","वर्कशॉप की दीवार"],0],
+["Reamer का उपयोग किसलिए किया जाता है?",["पहले से बने छेद को सही आकार और फिनिश देना","बाहरी चूड़ी बनाना","धातु जोड़ना","वर्कपीस पकड़ना"],0],
+["Tap का उपयोग किसलिए किया जाता है?",["आंतरिक चूड़ी काटना","बाहरी चूड़ी काटना","सतह पीसना","व्यास मापना"],0],
+["Die का उपयोग किसलिए किया जाता है?",["बाहरी चूड़ी काटना","आंतरिक चूड़ी काटना","छेद बड़ा करना","सतह समतल करना"],0],
+["Boring Tool का उपयोग किसलिए होता है?",["पहले से बने छेद को बड़ा या सही करना","बाहरी चूड़ी बनाना","धातु जोड़ना","सतह रंगना"],0],
+["Parting Tool का उपयोग किसलिए होता है?",["वर्कपीस को काटकर अलग करना","छेद बनाना","चूड़ी बनाना","माप लेना"],0],
+["Facing Tool का उपयोग किसलिए किया जाता है?",["वर्कपीस के सिरे को समतल करना","छेद बड़ा करना","बाहरी चूड़ी बनाना","धातु जोड़ना"],0],
+["Turning Tool का उपयोग किसलिए होता है?",["बाहरी व्यास कम करने के लिए","आंतरिक चूड़ी बनाने के लिए","छेद बंद करने के लिए","सतह पर रंग लगाने के लिए"],0],
+["Drill Tool का मुख्य कार्य क्या है?",["छेद बनाना","बाहरी चूड़ी बनाना","सतह समतल करना","धातु जोड़ना"],0],
+["Milling Cutter में कितने कटिंग एज हो सकते हैं?",["एक से अधिक","केवल एक","कोई नहीं","हमेशा दो"],0],
+["कटिंग टूल को सही ढंग से पकड़ने का क्या लाभ है?",["सुरक्षित और सही मशीनिंग में सहायता","टूल का वजन बढ़ाना","बिजली बचाना","वर्कपीस का रंग बदलना"],0],
+["कटिंग टूल की जांच और रखरखाव क्यों जरूरी है?",["सही कटिंग और सुरक्षित कार्य के लिए","टूल का रंग बदलने के लिए","मशीन का वजन बढ़ाने के लिए","काम रोकने के लिए"],0]
+];
+
+const quiz=document.getElementById("quiz");
+
+questions.forEach((q,i)=>{
+ const box=document.createElement("section");
+ box.className="question";
+
+ const title=document.createElement("h3");
+ title.textContent=(i+1)+". "+q[0];
+ box.appendChild(title);
+
+ q[1].forEach((option,j)=>{
+  const div=document.createElement("div");
+  div.className="option";
+  div.textContent=String.fromCharCode(65+j)+". "+option;
+  box.appendChild(div);
+ });
+
+ const btn=document.createElement("button");
+ btn.textContent="Show Answer";
+
+ const answer=document.createElement("div");
+ answer.className="answer";
+ answer.textContent="सही उत्तर: "+String.fromCharCode(65+q[2])+". "+q[1][q[2]];
+
+ btn.addEventListener("click",()=>{
+  const visible=answer.style.display==="block";
+  answer.style.display=visible?"none":"block";
+  btn.textContent=visible?"Show Answer":"Hide Answer";
+ });
+
+ box.appendChild(btn);
+ box.appendChild(answer);
+ quiz.appendChild(box);
+});
+</script>
+
+</body>
+</html>

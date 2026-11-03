@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop Safety Short Questions | MACHINIST PRO</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#08111f;color:#f1f5f9;font-family:Arial,sans-serif;padding:18px}
+.container{max-width:800px;margin:auto}
+header{text-align:center;padding:22px 10px}
+header h1{color:#64e6a5;font-size:25px}
+header p{color:#aab7c8;margin-top:10px;line-height:1.6}
+.info{background:#111e30;border:1px solid #263a50;border-radius:12px;padding:15px;margin:15px 0 22px;color:#cbd5e1;line-height:1.8}
+.question{background:#111e30;border:1px solid #263a50;border-radius:12px;padding:17px;margin-bottom:14px}
+.number{color:#64e6a5;font-size:12px;font-weight:bold;margin-bottom:9px}
+.question h3{font-size:16px;line-height:1.6;margin-bottom:12px}
+.answer{display:none;background:#172c2b;border-left:3px solid #64e6a5;padding:13px;border-radius:7px;color:#d9f7e8;line-height:1.8;font-size:14px;margin-top:12px}
+button{background:#64e6a5;color:#08111f;border:none;padding:10px 15px;border-radius:7px;font-weight:bold;cursor:pointer}
+footer{text-align:center;color:#8090a5;margin:30px 0 15px;font-size:13px}
+.back{display:inline-block;color:#64e6a5;text-decoration:none;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>🦺 Workshop Safety</h1>
+<p>MACHINIST PRO – ITI Machinist 1st Year</p>
+<p>महत्वपूर्ण लघु उत्तरीय प्रश्न एवं उत्तर</p>
+</header>
+
+<div class="info">
+<b>कुल प्रश्न:</b> 20<br>
+<b>विषय:</b> Workshop Safety<br>
+<b>निर्देश:</b> प्रश्न पढ़ें और Show Answer पर क्लिक करके उत्तर देखें।
+</div>
+
+<div id="questions"></div>
+
+<footer>
+<p>© 2026 MACHINIST PRO</p>
+<p>Learn • Practice • Improve</p>
+<a class="back" href="notes.html">← Back to Notes</a>
+</footer>
+
+</div>
+
+<script>
+const data=[
+["Workshop Safety क्या है?","वर्कशॉप में काम करते समय दुर्घटनाओं और चोटों से बचने के लिए अपनाए जाने वाले नियमों और सावधानियों को Workshop Safety कहते हैं।"],
+
+["दुर्घटना (Accident) क्या है?","ऐसी अनियोजित घटना जिसके कारण व्यक्ति को चोट, मशीन को नुकसान या संपत्ति की हानि हो सकती है, दुर्घटना कहलाती है।"],
+
+["खतरा (Hazard) क्या है?","ऐसी स्थिति या वस्तु जिसमें चोट, बीमारी या नुकसान पहुँचाने की संभावना हो, खतरा कहलाती है।"],
+
+["PPE का पूरा नाम क्या है?","PPE का पूरा नाम Personal Protective Equipment है। इसे व्यक्तिगत सुरक्षा उपकरण कहते हैं।"],
+
+["सुरक्षा चश्मे का क्या उपयोग है?","सुरक्षा चश्मा आँखों को धूल, छोटे कणों और उड़ने वाले मलबे से बचाने में मदद करता है।"],
+
+["सुरक्षा जूते क्यों पहने जाते हैं?","सुरक्षा जूते पैरों को भारी वस्तुओं, गिरने वाली चीजों और कुछ कार्यस्थलीय खतरों से बचाने के लिए पहने जाते हैं।"],
+
+["Machine Guard क्या है?","मशीन के खतरनाक घूमने वाले या चलने वाले भागों को ढकने वाली सुरक्षा व्यवस्था को Machine Guard कहते हैं।"],
+
+["5S क्या है?","5S कार्यस्थल को व्यवस्थित और साफ रखने की जापानी पद्धति है। इसके पाँच चरण हैं – Seiri, Seiton, Seiso, Seiketsu और Shitsuke।"],
+
+["Housekeeping क्या है?","कार्यस्थल को साफ, व्यवस्थित और सुरक्षित रखने की प्रक्रिया को Housekeeping कहते हैं।"],
+
+["अग्निशामक यंत्र क्या है?","आग पर नियंत्रण पाने के लिए उपयोग किए जाने वाले उपकरण को अग्निशामक यंत्र या Fire Extinguisher कहते हैं।"],
+
+["Class A की आग किन पदार्थों में लगती है?","Class A की आग सामान्य ठोस पदार्थों जैसे लकड़ी, कागज और कपड़े में लगती है।"],
+
+["Class B की आग किन पदार्थों में लगती है?","Class B की आग ज्वलनशील तरल पदार्थों जैसे पेट्रोल, डीजल और पेंट में लगती है।"],
+
+["Class C की आग किससे संबंधित है?","भारत में सामान्य अग्नि वर्गीकरण के अनुसार Class C आग ज्वलनशील गैसों से संबंधित होती है। विद्युत उपकरणों में लगी आग के लिए उचित विद्युत-सुरक्षित अग्निशामक का चयन करना चाहिए।"],
+
+["विद्युत सुरक्षा के लिए क्या सावधानी रखनी चाहिए?","गीले हाथों से विद्युत उपकरण नहीं छूने चाहिए। खराब तारों और खुले कनेक्शनों से दूर रहना चाहिए तथा खराबी की सूचना जिम्मेदार व्यक्ति को देनी चाहिए।"],
+
+["First Aid क्या है?","दुर्घटना या अचानक बीमारी होने पर चिकित्सा सहायता मिलने से पहले दी जाने वाली शुरुआती सहायता को First Aid कहते हैं।"],
+
+["Emergency Stop Button क्या है?","Emergency Stop Button मशीन को आपात स्थिति में रोकने के लिए दिया गया विशेष बटन होता है।"],
+
+["Warning Sign क्या है?","Warning Sign ऐसे सुरक्षा संकेत होते हैं जो किसी संभावित खतरे के बारे में चेतावनी देते हैं।"],
+
+["मशीन पर काम करते समय ढीले कपड़े क्यों नहीं पहनने चाहिए?","ढीले कपड़े मशीन के घूमने वाले भागों में फँस सकते हैं, इसलिए उचित फिटिंग वाले कपड़े पहनने चाहिए।"],
+
+["मशीन के Metal Chips को हाथ से क्यों नहीं हटाना चाहिए?","धातु के चिप्स नुकीले हो सकते हैं और हाथों को चोट पहुँचा सकते हैं। इन्हें हटाने के लिए उपयुक्त ब्रश या चिप हटाने वाले उपकरण का उपयोग प्रशिक्षित व्यक्ति की देखरेख में करना चाहिए।"],
+
+["वर्कशॉप में दुर्घटना होने पर क्या करना चाहिए?","काम रोककर क्षेत्र को सुरक्षित करना चाहिए, जिम्मेदार प्रशिक्षक या अधिकारी को तुरंत सूचना देनी चाहिए और आवश्यकता पड़ने पर आपातकालीन सहायता बुलानी चाहिए।"]
+];
+
+const container=document.getElementById("questions");
+
+data.forEach((item,index)=>{
+  const card=document.createElement("div");
+  card.className="question";
+
+  const number=document.createElement("div");
+  number.className="number";
+  number.textContent="QUESTION "+String(index+1).padStart(2,"0");
+
+  const heading=document.createElement("h3");
+  heading.textContent=(index+1)+". "+item[0];
+
+  const button=document.createElement("button");
+  button.textContent="Show Answer";
+
+  const answer=document.createElement("div");
+  answer.className="answer";
+  answer.textContent="उत्तर: "+item[1];
+
+  button.addEventListener("click",()=>{
+    const visible=answer.style.display==="block";
+    answer.style.display=visible?"none":"block";
+    button.textContent=visible?"Show Answer":"Hide Answer";
+  });
+
+  card.append(number,heading,button,answer);
+  container.appendChild(card);
+});
+</script>
+
+</body>
+</html>

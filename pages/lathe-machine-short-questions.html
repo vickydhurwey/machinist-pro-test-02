@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lathe Machine Short Questions | MACHINIST PRO</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#08111f;color:#f1f5f9;font-family:Arial,sans-serif;padding:18px}
+.container{max-width:800px;margin:auto}
+header{text-align:center;padding:22px 10px}
+header h1{color:#64e6a5;font-size:25px}
+header p{color:#aab7c8;margin-top:10px;line-height:1.6}
+.info{background:#111e30;border:1px solid #263a50;border-radius:12px;padding:15px;margin:15px 0 22px;color:#cbd5e1;line-height:1.8}
+.question{background:#111e30;border:1px solid #263a50;border-radius:12px;padding:17px;margin-bottom:14px}
+.number{color:#64e6a5;font-size:12px;font-weight:bold;margin-bottom:9px}
+.question h3{font-size:16px;line-height:1.6;margin-bottom:12px}
+.answer{display:none;background:#172c2b;border-left:3px solid #64e6a5;padding:13px;border-radius:7px;color:#d9f7e8;line-height:1.8;font-size:14px;margin-top:12px}
+button{background:#64e6a5;color:#08111f;border:none;padding:10px 15px;border-radius:7px;font-weight:bold;cursor:pointer}
+footer{text-align:center;color:#8090a5;margin:30px 0 15px;font-size:13px}
+.back{display:inline-block;color:#64e6a5;text-decoration:none;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>⚙️ Lathe Machine</h1>
+<p>MACHINIST PRO – ITI Machinist 1st Year</p>
+<p>महत्वपूर्ण लघु उत्तरीय प्रश्न एवं उत्तर</p>
+</header>
+
+<div class="info">
+<b>कुल प्रश्न:</b> 20<br>
+<b>विषय:</b> Lathe Machine<br>
+<b>निर्देश:</b> प्रश्न पढ़ें और Show Answer पर क्लिक करके उत्तर देखें।
+</div>
+
+<div id="questions"></div>
+
+<footer>
+<p>© 2026 MACHINIST PRO</p>
+<p>Learn • Practice • Improve</p>
+<a class="back" href="notes.html">← Back to Notes</a>
+</footer>
+
+</div>
+
+<script>
+const data=[
+["Lathe Machine क्या है?","लेथ मशीन एक मशीन टूल है, जिसका उपयोग घूमते हुए वर्कपीस से कटिंग टूल द्वारा धातु हटाकर आवश्यक आकार बनाने के लिए किया जाता है।"],
+["लेथ मशीन का मुख्य कार्य क्या है?","बेलनाकार सतह बनाना, फेसिंग, टर्निंग, ड्रिलिंग, थ्रेड कटिंग और अन्य मशीनिंग कार्य करना इसका मुख्य कार्य है।"],
+["लेथ मशीन किस सिद्धांत पर कार्य करती है?","इसमें वर्कपीस को स्पिंडल द्वारा घुमाया जाता है और कटिंग टूल को नियंत्रित गति से वर्कपीस के संपर्क में लाकर धातु हटाई जाती है।"],
+["लेथ मशीन के मुख्य भाग कौन-कौन से हैं?","मुख्य भाग हैं – Bed, Headstock, Tailstock, Carriage, Lead Screw, Feed Rod और Chuck।"],
+["Bed का क्या कार्य है?","Bed मशीन का आधार होता है। यह मशीन के मुख्य भागों को सहारा देता है और उनकी सही स्थिति बनाए रखने में मदद करता है।"],
+["Headstock का क्या कार्य है?","Headstock में मुख्य स्पिंडल और गति परिवर्तन की व्यवस्था होती है। यह वर्कपीस को घुमाने में मदद करता है।"],
+["Tailstock का क्या कार्य है?","Tailstock लंबे वर्कपीस को सहारा देने तथा ड्रिल और अन्य टूल पकड़ने के लिए उपयोग किया जाता है।"],
+["Carriage क्या है?","Carriage कटिंग टूल को पकड़ता है और उसे वर्कपीस की लंबाई तथा अन्य दिशाओं में नियंत्रित गति देता है।"],
+["Chuck क्या होता है?","Chuck एक वर्क होल्डिंग उपकरण है, जिसका उपयोग वर्कपीस को पकड़ने के लिए किया जाता है।"],
+["Facing Operation क्या है?","Facing में वर्कपीस के सिरे से धातु हटाकर समतल सतह बनाई जाती है।"],
+["Turning Operation क्या है?","Turning में वर्कपीस की बाहरी सतह से धातु हटाकर उसका व्यास कम किया जाता है।"],
+["Taper Turning क्या है?","Taper Turning में वर्कपीस पर शंकु जैसी सतह बनाई जाती है, जिसमें व्यास धीरे-धीरे बदलता है।"],
+["Thread Cutting क्या है?","Thread Cutting में वर्कपीस की बाहरी या अंदरूनी सतह पर निश्चित पिच वाली चूड़ियाँ बनाई जाती हैं।"],
+["Knurling Operation क्या है?","Knurling में वर्कपीस की सतह पर उभरा हुआ पैटर्न बनाया जाता है, जिससे पकड़ बेहतर होती है।"],
+["Drilling Operation लेथ पर कैसे किया जाता है?","लेथ पर सामान्यतः ड्रिल को टेलस्टॉक में पकड़कर घूमते हुए वर्कपीस में छेद बनाया जाता है।"],
+["Boring Operation क्या है?","Boring में पहले से बने छेद को बड़ा करने और उसकी अंदरूनी सतह को सुधारने का कार्य किया जाता है।"],
+["Parting Off क्या है?","Parting Off में विशेष कटिंग टूल की सहायता से वर्कपीस के एक हिस्से को मुख्य भाग से अलग किया जाता है।"],
+["Lead Screw का क्या कार्य है?","Lead Screw मुख्य रूप से थ्रेड कटिंग के समय कैरिज को स्पिंडल के साथ निश्चित अनुपात में चलाने के लिए उपयोग होता है।"],
+["Feed Rod का क्या कार्य है?","Feed Rod सामान्य मशीनिंग कार्यों में कैरिज और क्रॉस-स्लाइड को ऑटोमैटिक फीड देने में मदद करता है।"],
+["लेथ मशीन पर काम करते समय कौन-सी सावधानियाँ रखनी चाहिए?","सुरक्षा चश्मा पहनें, वर्कपीस और टूल की सही पकड़ सुनिश्चित करें, Chuck Key हटाएँ, घूमते भागों से दूरी रखें और मशीन चलते समय माप या सफाई न करें।"]
+];
+
+const container=document.getElementById("questions");
+
+data.forEach((item,index)=>{
+  const card=document.createElement("div");
+  card.className="question";
+
+  const number=document.createElement("div");
+  number.className="number";
+  number.textContent="QUESTION "+String(index+1).padStart(2,"0");
+
+  const heading=document.createElement("h3");
+  heading.textContent=(index+1)+". "+item[0];
+
+  const button=document.createElement("button");
+  button.textContent="Show Answer";
+
+  const answer=document.createElement("div");
+  answer.className="answer";
+  answer.textContent="उत्तर: "+item[1];
+
+  button.addEventListener("click",()=>{
+    const visible=answer.style.display==="block";
+    answer.style.display=visible?"none":"block";
+    button.textContent=visible?"Show Answer":"Hide Answer";
+  });
+
+  card.append(number,heading,button,answer);
+  container.appendChild(card);
+});
+</script>
+</body>
+</html>

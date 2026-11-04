@@ -2,233 +2,384 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Planer Machine | Machinist Notes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b14">
+  <meta name="description" content="ITI Machinist Planer Machine Notes in Hindi">
+  <title>प्लेनर मशीन | MACHINIST PRO</title>
+  <link rel="stylesheet" href="../style.css">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#08111f;color:#eaf2ff;line-height:1.8;padding:18px}
-.container{max-width:900px;margin:auto}
-header{text-align:center;padding:35px 15px;background:linear-gradient(135deg,#174b45,#10243c);border-radius:18px;margin-bottom:25px}
-header h1{color:#64e6a5;font-size:28px}
-header p{color:#cbd5e1;margin-top:8px}
-.topic{color:#64e6a5;font-size:13px;letter-spacing:2px}
-section{background:#111e30;border:1px solid #263b55;border-radius:14px;padding:20px;margin-bottom:18px}
-h2{color:#64e6a5;font-size:21px;margin-bottom:12px;border-bottom:1px solid #30445d;padding-bottom:7px}
-h3{color:#8ccfff;margin-top:12px}
-p,li{color:#d5deeb}
-ul,ol{padding-left:22px}
-.highlight{background:#172d3b;border-left:4px solid #64e6a5;padding:12px;border-radius:8px;margin-top:12px}
-.question{padding:12px 0;border-bottom:1px solid #30445d}
-.question:last-child{border-bottom:none}
-.back{display:inline-block;text-decoration:none;color:#08111f;background:#64e6a5;padding:11px 22px;border-radius:9px;font-weight:bold;margin:10px 0 25px}
-table{width:100%;border-collapse:collapse;margin-top:10px}
-td,th{border:1px solid #34516d;padding:9px;text-align:left}
-th{color:#64e6a5;background:#192d43}
-footer{text-align:center;color:#8494a8;padding:20px;font-size:13px}
-</style>
+  <style>
+    .notes-intro {
+      padding: 24px;
+      margin: 25px 0;
+      border-radius: 22px;
+    }
+
+    .notes-intro h1 {
+      margin: 12px 0;
+      font-size: 27px;
+    }
+
+    .notes-intro p,
+    .note-card p {
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .note-card {
+      padding: 21px;
+      margin-bottom: 17px;
+      border-radius: 18px;
+    }
+
+    .note-card h2 {
+      color: var(--cyan);
+      font-size: 19px;
+      margin-bottom: 13px;
+    }
+
+    .note-card h3 {
+      color: var(--green);
+      font-size: 15px;
+      margin: 15px 0 7px;
+    }
+
+    .note-card ul,
+    .note-card ol {
+      padding-left: 22px;
+      color: var(--muted);
+      line-height: 2;
+    }
+
+    .highlight {
+      padding: 13px;
+      margin: 12px 0;
+      border-left: 3px solid var(--green);
+      background: rgba(100,230,165,.07);
+      border-radius: 8px;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .qa {
+      padding: 13px;
+      margin: 10px 0;
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .qa strong {
+      color: var(--green);
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .qa p {
+      margin: 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 18px 0;
+      color: var(--cyan);
+    }
+
+    @media(max-width:600px) {
+      .notes-intro h1 {
+        font-size: 23px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
 
-<header>
-<div class="topic">TOPIC 14</div>
-<h1>⚙️ Planer Machine</h1>
-<p>प्लेनर मशीन – आसान हिंदी में संपूर्ण नोट्स</p>
+<header class="header">
+  <div class="container header-content">
+    <a href="../index.html" class="logo">
+      ⚙ MACHINIST <span>PRO</span>
+    </a>
+    <div class="header-tag">मशीन नोट्स</div>
+  </div>
 </header>
 
-<a href="notes.html" class="back">← वापस Notes पर जाएँ</a>
+<main class="container">
 
-<section>
-<h2>1. प्लेनर मशीन का परिचय</h2>
-<p>प्लेनर मशीन एक मशीन टूल है जिसका उपयोग बड़े और भारी जॉब की समतल, कोणीय तथा विभिन्न आकार की सतहें बनाने के लिए किया जाता है।</p>
-<p>इस मशीन में जॉब को टेबल पर मजबूती से पकड़ा जाता है। टेबल जॉब के साथ आगे-पीछे चलती है और कटिंग टूल को आवश्यक फीड दिया जाता है।</p>
-<div class="highlight">
-<strong>परिभाषा:</strong> प्लेनर मशीन वह मशीन है जिसमें जॉब को टेबल पर पकड़कर आगे-पीछे चलाया जाता है और स्थिर टूल द्वारा धातु काटी जाती है।
-</div>
-</section>
+  <section class="notes-intro glass">
+    <small style="color:#00d9ff;">ITI MACHINIST FIRST YEAR</small>
+    <h1>🏭 प्लेनर मशीन (Planer Machine)</h1>
+    <p>
+      इस अध्याय में प्लेनर मशीन का परिचय, कार्य सिद्धांत,
+      मुख्य भाग, प्रकार, ऑपरेशन, उपयोग और सुरक्षा नियम
+      आसान हिंदी भाषा में समझेंगे।
+    </p>
+  </section>
 
-<section>
-<h2>2. प्लेनर मशीन का कार्य सिद्धांत</h2>
-<p>प्लेनर मशीन में वर्कपीस को टेबल पर सुरक्षित रूप से पकड़ा जाता है। टेबल आगे की ओर चलती है, तब कटिंग टूल जॉब से धातु हटाता है। वापसी की चाल में सामान्यतः कटिंग नहीं होती।</p>
-<ol>
-<li>जॉब को टेबल पर मजबूती से पकड़ा जाता है।</li>
-<li>कटिंग टूल को टूल हेड में लगाया जाता है।</li>
-<li>टेबल जॉब के साथ आगे बढ़ती है।</li>
-<li>आगे की चाल में कटिंग होती है।</li>
-<li>टेबल वापस आती है।</li>
-<li>अगली कटिंग के लिए टूल को फीड दिया जाता है।</li>
-</ol>
-</section>
+  <section class="note-card glass">
+    <h2>01. प्लेनर मशीन का परिचय</h2>
+    <p>
+      प्लेनर मशीन एक मशीन टूल है जिसका उपयोग बड़े और भारी
+      जॉब की समतल तथा अन्य सतहों की मशीनिंग करने के लिए
+      किया जाता है।
+    </p>
+    <p>
+      इस मशीन में जॉब को टेबल पर मजबूती से बाँधा जाता है।
+      टेबल जॉब के साथ आगे-पीछे चलती है और स्थिर टूल हेड
+      में लगा कटिंग टूल धातु हटाता है।
+    </p>
+    <div class="highlight">
+      <strong>याद रखें:</strong> प्लेनर मशीन में मुख्य कटिंग गति
+      जॉब और टेबल को मिलती है, जबकि शेपर मशीन में मुख्य
+      कटिंग गति रैम और टूल को मिलती है।
+    </div>
+  </section>
 
-<section>
-<h2>3. प्लेनर मशीन के मुख्य भाग</h2>
+  <section class="note-card glass">
+    <h2>02. कार्य करने का सिद्धांत (Working Principle)</h2>
+    <p>
+      प्लेनर मशीन प्रत्यागामी गति (Reciprocating Motion)
+      के सिद्धांत पर काम करती है।
+    </p>
+    <ol>
+      <li>सबसे पहले जॉब को मशीन टेबल पर मजबूती से बाँधा जाता है।</li>
+      <li>कटिंग टूल को आवश्यक ऊँचाई और स्थिति पर सेट किया जाता है।</li>
+      <li>मशीन की टेबल जॉब के साथ आगे की ओर चलती है।</li>
+      <li>आगे की चाल में कटिंग टूल जॉब से धातु हटाता है।</li>
+      <li>वापसी की चाल में सामान्यतः कटिंग नहीं होती।</li>
+      <li>हर स्ट्रोक के बाद टूल को फीड दिया जाता है।</li>
+    </ol>
+    <div class="highlight">
+      आगे की चाल = कटिंग स्ट्रोक<br>
+      वापसी की चाल = रिटर्न स्ट्रोक
+    </div>
+  </section>
 
-<h3>1. Bed (बेड)</h3>
-<p>यह मशीन का भारी आधार होता है। इसके ऊपर टेबल चलती है।</p>
+  <section class="note-card glass">
+    <h2>03. प्लेनर मशीन के मुख्य भाग</h2>
 
-<h3>2. Table (टेबल)</h3>
-<p>इस पर बड़े और भारी जॉब को पकड़ा जाता है। यह आगे-पीछे चलती है।</p>
+    <h3>1. बेड (Bed)</h3>
+    <p>यह मशीन का मजबूत आधार होता है। इसके ऊपर टेबल चलने के लिए गाइड वे बने होते हैं।</p>
 
-<h3>3. Column (कॉलम)</h3>
-<p>यह मशीन के दोनों ओर लगा मुख्य भाग है। यह टूल हेड को सहारा देता है।</p>
+    <h3>2. टेबल (Table)</h3>
+    <p>टेबल पर जॉब को क्लैम्प की सहायता से बाँधा जाता है। यह आगे-पीछे चलती है।</p>
 
-<h3>4. Cross Rail (क्रॉस रेल)</h3>
-<p>यह दोनों कॉलम के बीच लगी होती है और टूल हेड को सहारा देती है।</p>
+    <h3>3. कॉलम (Column)</h3>
+    <p>मशीन के दोनों ओर लगे मजबूत भाग, जिन पर क्रॉस रेल को सहारा मिलता है।</p>
 
-<h3>5. Tool Head (टूल हेड)</h3>
-<p>यह कटिंग टूल को पकड़ता है और उसकी स्थिति समायोजित करने में मदद करता है।</p>
+    <h3>4. क्रॉस रेल (Cross Rail)</h3>
+    <p>यह दोनों कॉलम के बीच लगी होती है। इस पर टूल हेड को ऊपर-नीचे सेट किया जाता है।</p>
 
-<h3>6. Side Tool Head (साइड टूल हेड)</h3>
-<p>यह मशीन के किनारे लगा होता है और साइड सतहों की मशीनिंग में उपयोग होता है।</p>
+    <h3>5. टूल हेड (Tool Head)</h3>
+    <p>इसमें कटिंग टूल लगाया जाता है। इसे आवश्यक दिशा और स्थिति में सेट किया जा सकता है।</p>
 
-<h3>7. Drive Mechanism (ड्राइव मैकेनिज्म)</h3>
-<p>यह टेबल को आगे-पीछे चलाने के लिए गति प्रदान करता है।</p>
+    <h3>6. साइड टूल हेड (Side Tool Head)</h3>
+    <p>कुछ प्लेनर मशीनों में यह कॉलम के किनारे लगा होता है और साइड सतह की मशीनिंग में उपयोग होता है।</p>
 
-<h3>8. Feed Mechanism (फीड मैकेनिज्म)</h3>
-<p>यह कटिंग के दौरान टूल को आवश्यक फीड देता है।</p>
-</section>
+    <h3>7. ड्राइव मैकेनिज्म (Drive Mechanism)</h3>
+    <p>यह टेबल को आगे-पीछे चलाने के लिए शक्ति प्रदान करता है।</p>
 
-<section>
-<h2>4. प्लेनर मशीन के प्रकार</h2>
+    <h3>8. गाइड वे (Guide Ways)</h3>
+    <p>ये टेबल को सही दिशा में चलने में सहायता करते हैं।</p>
+  </section>
 
-<h3>1. Double Housing Planer</h3>
-<p>इसमें टेबल के दोनों ओर दो मजबूत कॉलम होते हैं। यह भारी जॉब की मशीनिंग के लिए उपयोगी है।</p>
+  <section class="note-card glass">
+    <h2>04. प्लेनर मशीन के प्रकार</h2>
 
-<h3>2. Open Side Planer</h3>
-<p>इसमें एक ओर कॉलम होता है। इसका उपयोग चौड़े जॉब की मशीनिंग में किया जा सकता है।</p>
+    <h3>1. डबल हाउसिंग प्लेनर (Double Housing Planer)</h3>
+    <p>इसमें दोनों तरफ दो मजबूत कॉलम होते हैं और उनके बीच क्रॉस रेल लगी होती है।</p>
 
-<h3>3. Pit Type Planer</h3>
-<p>इसमें टेबल एक निश्चित स्थान पर रहती है और मशीन के अन्य भाग जॉब के सापेक्ष गति करते हैं।</p>
+    <h3>2. ओपन साइड प्लेनर (Open Side Planer)</h3>
+    <p>इसमें एक तरफ कॉलम होता है। इसका उपयोग चौड़े जॉब की मशीनिंग में किया जा सकता है।</p>
 
-<h3>4. Edge Type Planer</h3>
-<p>इसका उपयोग प्लेटों के किनारों की मशीनिंग के लिए किया जाता है।</p>
+    <h3>3. पिट प्लेनर (Pit Planer)</h3>
+    <p>इसमें भारी और बड़े जॉब की मशीनिंग के लिए टेबल पिट के अंदर व्यवस्थित होती है।</p>
 
-<h3>5. Divided Table Planer</h3>
-<p>इसमें टेबल को अलग-अलग भागों में बाँटा जाता है, जिससे विशेष प्रकार के जॉब पर कार्य किया जा सकता है।</p>
-</section>
+    <h3>4. एज प्लेनर (Edge Planer)</h3>
+    <p>इसका उपयोग बड़ी प्लेटों के किनारों की मशीनिंग करने के लिए किया जाता है।</p>
 
-<section>
-<h2>5. प्लेनर मशीन के ऑपरेशन</h2>
-<ul>
-<li><strong>Plain Planing:</strong> समतल सतह बनाना।</li>
-<li><strong>Vertical Planing:</strong> ऊर्ध्वाधर सतह बनाना।</li>
-<li><strong>Angular Planing:</strong> कोणीय सतह बनाना।</li>
-<li><strong>Slotting:</strong> खाँचे बनाना।</li>
-<li><strong>Grooving:</strong> जॉब में नाली बनाना।</li>
-<li><strong>Step Planing:</strong> सीढ़ीनुमा सतह बनाना।</li>
-</ul>
-</section>
+    <h3>5. डिवाइडेड टेबल प्लेनर (Divided Table Planer)</h3>
+    <p>इसमें टेबल के अलग-अलग भाग होते हैं, जिससे कुछ मशीनों में लोडिंग और मशीनिंग का काम साथ-साथ किया जा सकता है।</p>
+  </section>
 
-<section>
-<h2>6. प्लेनर मशीन और शेपर मशीन में अंतर</h2>
-<table>
-<tr><th>प्लेनर मशीन</th><th>शेपर मशीन</th></tr>
-<tr><td>इसमें जॉब चलता है।</td><td>इसमें टूल चलता है।</td></tr>
-<tr><td>बड़े और भारी जॉब के लिए उपयोगी है।</td><td>छोटे और मध्यम जॉब के लिए उपयोगी है।</td></tr>
-<tr><td>कई टूल हेड हो सकते हैं।</td><td>आमतौर पर एक टूल हेड होता है।</td></tr>
-<tr><td>टेबल आगे-पीछे चलती है।</td><td>रैम आगे-पीछे चलता है।</td></tr>
-</table>
-</section>
+  <section class="note-card glass">
+    <h2>05. प्लेनर मशीन पर किए जाने वाले ऑपरेशन</h2>
+    <ul>
+      <li><strong>प्लेन सरफेसिंग:</strong> समतल सतह बनाना।</li>
+      <li><strong>वर्टिकल सरफेसिंग:</strong> खड़ी सतह की मशीनिंग करना।</li>
+      <li><strong>एंगुलर सरफेसिंग:</strong> कोणीय सतह बनाना।</li>
+      <li><strong>स्लॉटिंग:</strong> जॉब में स्लॉट या खाँचा बनाना।</li>
+      <li><strong>गाइड वे मशीनिंग:</strong> गाइड वे जैसी सतहों की मशीनिंग करना।</li>
+      <li><strong>स्टेप मशीनिंग:</strong> अलग-अलग स्तर वाली सतह बनाना।</li>
+    </ul>
+  </section>
 
-<section>
-<h2>7. प्लेनर मशीन के उपयोग</h2>
-<ul>
-<li>बड़े और भारी जॉब की समतल सतह बनाने में।</li>
-<li>मशीन बेड की सतह तैयार करने में।</li>
-<li>बड़े मशीन पार्ट्स की मशीनिंग में।</li>
-<li>कोणीय और ऊर्ध्वाधर सतह बनाने में।</li>
-<li>बड़े स्लॉट और खाँचे बनाने में।</li>
-<li>मशीनों के आधार और फ्रेम की मशीनिंग में।</li>
-</ul>
-</section>
+  <section class="note-card glass">
+    <h2>06. कटिंग टूल (Cutting Tool)</h2>
+    <p>
+      प्लेनर मशीन में सामान्यतः सिंगल पॉइंट कटिंग टूल
+      का उपयोग किया जाता है।
+    </p>
+    <h3>टूल की सामग्री</h3>
+    <ul>
+      <li>हाई कार्बन स्टील (High Carbon Steel)</li>
+      <li>हाई स्पीड स्टील (HSS)</li>
+      <li>सीमेंटेड कार्बाइड (Cemented Carbide)</li>
+    </ul>
+    <p>
+      टूल का चयन जॉब की सामग्री, कटिंग स्पीड और आवश्यक
+      फिनिश के अनुसार किया जाता है।
+    </p>
+  </section>
 
-<section>
-<h2>8. प्लेनर मशीन के लाभ</h2>
-<ul>
-<li>बड़े और भारी जॉब की मशीनिंग कर सकती है।</li>
-<li>लंबी और चौड़ी सतहें बनाई जा सकती हैं।</li>
-<li>एक से अधिक टूल हेड का उपयोग संभव है।</li>
-<li>मजबूत बनावट के कारण भारी कार्यों के लिए उपयोगी है।</li>
-</ul>
-</section>
+  <section class="note-card glass">
+    <h2>07. प्लेनर मशीन के उपयोग</h2>
+    <ul>
+      <li>बड़े और भारी जॉब की समतल सतह बनाने में।</li>
+      <li>मशीन बेड की गाइड वे बनाने में।</li>
+      <li>बड़ी प्लेटों की मशीनिंग में।</li>
+      <li>वर्टिकल और कोणीय सतह बनाने में।</li>
+      <li>बड़े मशीन पार्ट्स की मरम्मत और निर्माण में।</li>
+      <li>औद्योगिक मशीनों के बड़े पुर्जे बनाने में।</li>
+    </ul>
+  </section>
 
-<section>
-<h2>9. प्लेनर मशीन की सीमाएँ</h2>
-<ul>
-<li>मशीन का आकार बड़ा होता है।</li>
-<li>इसे अधिक जगह की आवश्यकता होती है।</li>
-<li>इसकी प्रारंभिक लागत अधिक हो सकती है।</li>
-<li>छोटे जॉब के लिए हमेशा उपयुक्त नहीं होती।</li>
-</ul>
-</section>
+  <section class="note-card glass">
+    <h2>08. प्लेनर मशीन के फायदे</h2>
+    <ul>
+      <li>बड़े और भारी जॉब की मशीनिंग की जा सकती है।</li>
+      <li>लंबी समतल सतह बनाई जा सकती है।</li>
+      <li>एक से अधिक टूल हेड का उपयोग संभव है।</li>
+      <li>मजबूत निर्माण के कारण भारी कट लिया जा सकता है।</li>
+    </ul>
 
-<section>
-<h2>10. सुरक्षा सावधानियाँ</h2>
-<ul>
-<li>मशीन चलाने से पहले प्रशिक्षक के निर्देशों का पालन करें।</li>
-<li>जॉब को टेबल पर सुरक्षित रूप से पकड़ें।</li>
-<li>चलती टेबल से सुरक्षित दूरी बनाए रखें।</li>
-<li>मशीन चलते समय चिप्स हाथ से न हटाएँ।</li>
-<li>सेफ्टी गॉगल्स पहनें।</li>
-<li>ढीले कपड़े और खुले बाल मशीन से दूर रखें।</li>
-<li>सफाई और समायोजन से पहले मशीन बंद करें।</li>
-</ul>
-</section>
+    <h3>सीमाएँ (Limitations)</h3>
+    <ul>
+      <li>मशीन का आकार बड़ा होता है।</li>
+      <li>अधिक जगह की आवश्यकता होती है।</li>
+      <li>छोटे जॉब के लिए यह कम उपयोगी हो सकती है।</li>
+      <li>वापसी स्ट्रोक में सामान्यतः कटिंग नहीं होती।</li>
+    </ul>
+  </section>
 
-<section>
-<h2>11. महत्वपूर्ण प्रश्न एवं उत्तर</h2>
+  <section class="note-card glass">
+    <h2>09. शेपर और प्लेनर मशीन में अंतर</h2>
+    <ul>
+      <li><strong>शेपर:</strong> कटिंग टूल आगे-पीछे चलता है।</li>
+      <li><strong>प्लेनर:</strong> जॉब टेबल के साथ आगे-पीछे चलता है।</li>
+      <li><strong>शेपर:</strong> सामान्यतः छोटे और मध्यम जॉब के लिए उपयोगी है।</li>
+      <li><strong>प्लेनर:</strong> बड़े और भारी जॉब के लिए उपयोगी है।</li>
+      <li><strong>शेपर:</strong> सामान्यतः एक टूल हेड होता है।</li>
+      <li><strong>प्लेनर:</strong> एक से अधिक टूल हेड हो सकते हैं।</li>
+    </ul>
+  </section>
 
-<div class="question"><strong>प्रश्न 1. प्लेनर मशीन क्या है?</strong><p>उत्तर: यह मशीन बड़े जॉब की सतहों की मशीनिंग के लिए उपयोग की जाती है।</p></div>
+  <section class="note-card glass">
+    <h2>10. सुरक्षा सावधानियाँ (Safety Precautions)</h2>
+    <ul>
+      <li>मशीन चलाने से पहले जॉब को अच्छी तरह क्लैम्प करें।</li>
+      <li>कटिंग टूल को सही तरीके से टूल हेड में लगाएँ।</li>
+      <li>चलती हुई टेबल और जॉब से सुरक्षित दूरी रखें।</li>
+      <li>मशीन चलते समय माप या सेटिंग न करें।</li>
+      <li>चिप्स को हाथ से न हटाएँ, उचित ब्रश या उपकरण का उपयोग करें।</li>
+      <li>आँखों की सुरक्षा के लिए सेफ्टी गॉगल्स पहनें।</li>
+      <li>ढीले कपड़े और खुले बाल मशीन से दूर रखें।</li>
+      <li>सफाई या रखरखाव से पहले मशीन बंद करें।</li>
+    </ul>
+  </section>
 
-<div class="question"><strong>प्रश्न 2. प्लेनर मशीन में कौन चलता है?</strong><p>उत्तर: टेबल जॉब के साथ आगे-पीछे चलती है।</p></div>
+  <section class="note-card glass">
+    <h2>11. महत्वपूर्ण प्रश्न एवं उत्तर</h2>
 
-<div class="question"><strong>प्रश्न 3. प्लेनर मशीन में जॉब कहाँ पकड़ा जाता है?</strong><p>उत्तर: टेबल पर।</p></div>
+    <div class="qa">
+      <strong>प्रश्न 1. प्लेनर मशीन क्या है?</strong>
+      <p>यह एक मशीन टूल है जिसका उपयोग बड़े और भारी जॉब की सतह की मशीनिंग में किया जाता है।</p>
+    </div>
 
-<div class="question"><strong>प्रश्न 4. प्लेनर मशीन किस प्रकार के जॉब के लिए उपयोगी है?</strong><p>उत्तर: बड़े और भारी जॉब के लिए।</p></div>
+    <div class="qa">
+      <strong>प्रश्न 2. प्लेनर मशीन किस सिद्धांत पर काम करती है?</strong>
+      <p>यह प्रत्यागामी गति (Reciprocating Motion) के सिद्धांत पर काम करती है।</p>
+    </div>
 
-<div class="question"><strong>प्रश्न 5. प्लेनर मशीन का आधार क्या कहलाता है?</strong><p>उत्तर: बेड।</p></div>
+    <div class="qa">
+      <strong>प्रश्न 3. प्लेनर मशीन में मुख्य कटिंग गति किसे मिलती है?</strong>
+      <p>जॉब और टेबल को मुख्य कटिंग गति मिलती है।</p>
+    </div>
 
-<div class="question"><strong>प्रश्न 6. क्रॉस रेल का क्या कार्य है?</strong><p>उत्तर: टूल हेड को सहारा देना।</p></div>
+    <div class="qa">
+      <strong>प्रश्न 4. प्लेनर मशीन में जॉब कहाँ बाँधा जाता है?</strong>
+      <p>मशीन की टेबल पर।</p>
+    </div>
 
-<div class="question"><strong>प्रश्न 7. टूल हेड का क्या कार्य है?</strong><p>उत्तर: कटिंग टूल को पकड़ना।</p></div>
+    <div class="qa">
+      <strong>प्रश्न 5. प्लेनर मशीन में कौन-सा टूल प्रयोग होता है?</strong>
+      <p>सामान्यतः सिंगल पॉइंट कटिंग टूल।</p>
+    </div>
 
-<div class="question"><strong>प्रश्न 8. प्लेनर मशीन में कटिंग किस चाल में होती है?</strong><p>उत्तर: सामान्यतः टेबल की आगे जाने वाली चाल में।</p></div>
+    <div class="qa">
+      <strong>प्रश्न 6. क्रॉस रेल का क्या काम है?</strong>
+      <p>यह टूल हेड को सहारा देती है और उसकी ऊँचाई सेट करने में मदद करती है।</p>
+    </div>
 
-<div class="question"><strong>प्रश्न 9. प्लेनर मशीन में कितने टूल हेड हो सकते हैं?</strong><p>उत्तर: एक से अधिक टूल हेड हो सकते हैं।</p></div>
+    <div class="qa">
+      <strong>प्रश्न 7. बेड का क्या काम है?</strong>
+      <p>यह मशीन को मजबूत आधार देता है और टेबल के लिए गाइड वे प्रदान करता है।</p>
+    </div>
 
-<div class="question"><strong>प्रश्न 10. डबल हाउसिंग प्लेनर में कितने कॉलम होते हैं?</strong><p>उत्तर: दो कॉलम होते हैं।</p></div>
+    <div class="qa">
+      <strong>प्रश्न 8. कटिंग स्ट्रोक किसे कहते हैं?</strong>
+      <p>जिस स्ट्रोक में टूल जॉब से धातु हटाता है, उसे कटिंग स्ट्रोक कहते हैं।</p>
+    </div>
 
-<div class="question"><strong>प्रश्न 11. ओपन साइड प्लेनर में कितने कॉलम होते हैं?</strong><p>उत्तर: एक कॉलम होता है।</p></div>
+    <div class="qa">
+      <strong>प्रश्न 9. प्लेनर मशीन किस प्रकार के जॉब के लिए उपयोगी है?</strong>
+      <p>बड़े और भारी जॉब के लिए।</p>
+    </div>
 
-<div class="question"><strong>प्रश्न 12. प्लेनर और शेपर में मुख्य अंतर क्या है?</strong><p>उत्तर: प्लेनर में जॉब चलता है, जबकि शेपर में टूल चलता है।</p></div>
+    <div class="qa">
+      <strong>प्रश्न 10. प्लेनर और शेपर में मुख्य अंतर क्या है?</strong>
+      <p>प्लेनर में जॉब चलता है, जबकि शेपर में कटिंग टूल चलता है।</p>
+    </div>
 
-<div class="question"><strong>प्रश्न 13. प्लेनर मशीन का एक उपयोग बताइए।</strong><p>उत्तर: मशीन बेड की सतह बनाने में।</p></div>
+    <div class="qa">
+      <strong>प्रश्न 11. प्लेनर मशीन में कितने टूल हेड हो सकते हैं?</strong>
+      <p>मशीन के प्रकार के अनुसार एक या एक से अधिक टूल हेड हो सकते हैं।</p>
+    </div>
 
-<div class="question"><strong>प्रश्न 14. साइड टूल हेड का उपयोग कहाँ होता है?</strong><p>उत्तर: जॉब की साइड सतह की मशीनिंग में।</p></div>
+    <div class="qa">
+      <strong>प्रश्न 12. प्लेनर मशीन का एक मुख्य उपयोग बताइए।</strong>
+      <p>बड़ी समतल सतहों की मशीनिंग करना।</p>
+    </div>
+  </section>
 
-<div class="question"><strong>प्रश्न 15. फीड मैकेनिज्म का क्या कार्य है?</strong><p>उत्तर: टूल को आवश्यक फीड देना।</p></div>
+  <section class="note-card glass">
+    <h2>12. महत्वपूर्ण शब्द (Technical Terms)</h2>
+    <ul>
+      <li>Planer Machine — प्लेनर मशीन</li>
+      <li>Bed — आधार</li>
+      <li>Table — टेबल</li>
+      <li>Column — कॉलम</li>
+      <li>Cross Rail — क्रॉस रेल</li>
+      <li>Tool Head — टूल हेड</li>
+      <li>Cutting Stroke — कटिंग स्ट्रोक</li>
+      <li>Return Stroke — वापसी स्ट्रोक</li>
+      <li>Feed — फीड</li>
+      <li>Depth of Cut — कट की गहराई</li>
+    </ul>
+  </section>
 
-<div class="question"><strong>प्रश्न 16. प्लेनर मशीन का एक लाभ बताइए।</strong><p>उत्तर: बड़े और भारी जॉब की मशीनिंग कर सकती है।</p></div>
+  <a href="machines.html" class="back-link">← मशीन लाइब्रेरी पर वापस जाएँ</a>
+  <br>
+  <a href="notes.html" class="back-link">← सभी नोट्स पर वापस जाएँ</a>
 
-<div class="question"><strong>प्रश्न 17. प्लेनर मशीन में टेबल किस पर चलती है?</strong><p>उत्तर: बेड पर बनी गाइड-वे पर।</p></div>
+</main>
 
-<div class="question"><strong>प्रश्न 18. प्लेनर मशीन में कौन-सा टूल उपयोग होता है?</strong><p>उत्तर: सिंगल पॉइंट कटिंग टूल।</p></div>
-
-<div class="question"><strong>प्रश्न 19. प्लेनर मशीन में सुरक्षा के लिए क्या पहनना चाहिए?</strong><p>उत्तर: सेफ्टी गॉगल्स और आवश्यक सुरक्षा उपकरण।</p></div>
-
-<div class="question"><strong>प्रश्न 20. प्लेनर मशीन का मुख्य कार्य क्या है?</strong><p>उत्तर: बड़े जॉब की समतल, कोणीय और अन्य सतहें बनाना।</p></div>
-
-</section>
-
-<a href="notes.html" class="back">← वापस Notes पर जाएँ</a>
-
-<footer>
-© Machinist First Year Notes
+<footer class="footer">
+  <p>⚙ MACHINIST PRO</p>
+  <p>ITI Machinist Digital Learning Platform</p>
 </footer>
 
-</div>
+<script src="../script.js"></script>
 </body>
 </html>

@@ -2,182 +2,455 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaper Machine | Machinist Notes</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#08111f;color:#eaf2ff;line-height:1.8;padding:18px}
-.container{max-width:900px;margin:auto}
-header{text-align:center;padding:35px 15px;background:linear-gradient(135deg,#493b75,#10243c);border-radius:18px;margin-bottom:25px}
-header h1{color:#c7a7ff;font-size:28px}
-header p{color:#cbd5e1;margin-top:8px}
-.topic{color:#64e6a5;font-size:13px;letter-spacing:2px}
-section{background:#111e30;border:1px solid #263b55;border-radius:14px;padding:20px;margin-bottom:18px}
-h2{color:#c7a7ff;font-size:21px;margin-bottom:12px;border-bottom:1px solid #30445d;padding-bottom:7px}
-h3{color:#8ccfff;margin-top:12px}
-p,li{color:#d5deeb}
-ul,ol{padding-left:22px}
-.highlight{background:#1b3048;border-left:4px solid #c7a7ff;padding:12px;border-radius:8px;margin-top:12px}
-.question{padding:12px 0;border-bottom:1px solid #30445d}
-.back{display:inline-block;text-decoration:none;color:#08111f;background:#c7a7ff;padding:11px 22px;border-radius:9px;font-weight:bold;margin:10px 0 25px}
-table{width:100%;border-collapse:collapse;margin-top:10px}
-td,th{border:1px solid #34516d;padding:9px;text-align:left}
-th{color:#c7a7ff;background:#192d43}
-footer{text-align:center;color:#8494a8;padding:20px;font-size:13px}
-</style>
-</head>
-<body>
-<div class="container">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b14">
+  <title>Shaper Machine Notes | MACHINIST PRO</title>
+  <link rel="stylesheet" href="../style.css">
 
-<header>
-<div class="topic">TOPIC 13</div>
-<h1>⚙️ Shaper Machine</h1>
-<p>शेपर मशीन – आसान हिंदी में संपूर्ण नोट्स</p>
+  <style>
+    .topic-hero {
+      padding: 24px;
+      margin: 25px 0;
+      border-radius: 22px;
+    }
+
+    .topic-hero h1 {
+      font-size: 27px;
+      margin: 12px 0;
+    }
+
+    .topic-hero p,
+    .topic-card p {
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .topic-card {
+      padding: 20px;
+      border-radius: 18px;
+      margin-bottom: 16px;
+    }
+
+    .topic-card h2 {
+      color: var(--cyan);
+      font-size: 19px;
+      margin-bottom: 12px;
+    }
+
+    .topic-card h3 {
+      font-size: 15px;
+      margin: 15px 0 7px;
+    }
+
+    .topic-card ul,
+    .topic-card ol {
+      padding-left: 22px;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
+    }
+
+    .highlight {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .formula {
+      padding: 13px;
+      margin: 12px 0;
+      border-radius: 12px;
+      background: rgba(100,230,165,.08);
+      border: 1px solid var(--border);
+      color: var(--green);
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 20px 0;
+      color: var(--cyan);
+    }
+
+    .topic-label {
+      display: inline-block;
+      padding: 6px 11px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--green);
+      font-size: 11px;
+    }
+
+    .qa {
+      border-bottom: 1px solid var(--border);
+      padding: 13px 0;
+    }
+
+    .qa:last-child {
+      border-bottom: none;
+    }
+
+    .qa strong {
+      color: var(--cyan);
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-content">
+    <a href="../index.html" class="logo">
+      ⚙ MACHINIST <span>PRO</span>
+    </a>
+    <div class="header-tag">SHAPER MACHINE</div>
+  </div>
 </header>
 
-<a href="notes.html" class="back">← वापस Notes पर जाएँ</a>
+<main class="container">
 
-<section>
-<h2>1. शेपर मशीन का परिचय</h2>
-<p>शेपर मशीन एक मशीन टूल है जिसका उपयोग धातु की समतल, कोणीय और विभिन्न आकार की सतहें बनाने के लिए किया जाता है। इसमें सिंगल पॉइंट कटिंग टूल आगे-पीछे चलता है और जॉब को आवश्यकतानुसार फीड दिया जाता है।</p>
-<div class="highlight"><strong>परिभाषा:</strong> शेपर मशीन वह मशीन है जिसमें आगे-पीछे चलने वाले सिंगल पॉइंट कटिंग टूल द्वारा जॉब से धातु हटाई जाती है।</div>
-</section>
+  <section class="topic-hero glass">
+    <small style="color:#00d9ff;">ITI MACHINIST FIRST YEAR</small>
+    <h1>⚙️ शेपर मशीन (Shaper Machine)</h1>
+    <p>
+      शेपर मशीन की परिभाषा, कार्य सिद्धांत, मुख्य भाग,
+      प्रकार, उपयोग, कटिंग प्रक्रिया और सुरक्षा नियमों की
+      संपूर्ण जानकारी आसान हिंदी भाषा में।
+    </p>
+    <span class="topic-label">TOPIC 09 | MACHINE STUDY</span>
+  </section>
 
-<section>
-<h2>2. कार्य सिद्धांत</h2>
-<p>शेपर मशीन में मोटर की शक्ति ड्राइव मैकेनिज्म के माध्यम से रैम तक पहुँचती है। रैम के साथ लगा टूल आगे की चाल में धातु काटता है। वापसी की चाल में सामान्यतः कटिंग नहीं होती। प्रत्येक स्ट्रोक के बाद जॉब को फीड दिया जाता है।</p>
-<ol>
-<li>जॉब को टेबल पर मजबूती से पकड़ा जाता है।</li>
-<li>कटिंग टूल को टूल हेड में लगाया जाता है।</li>
-<li>रैम आगे चलता है और धातु काटता है।</li>
-<li>रैम वापस आता है।</li>
-<li>जॉब को आवश्यक फीड दिया जाता है।</li>
-<li>यह प्रक्रिया आवश्यक सतह मिलने तक दोहराई जाती है।</li>
-</ol>
-</section>
+  <!-- INTRODUCTION -->
+  <section class="topic-card glass">
+    <h2>01. शेपर मशीन का परिचय</h2>
+    <p>
+      शेपर मशीन एक मशीन टूल है जिसका उपयोग धातु की
+      समतल, कोणीय और विभिन्न आकार की सतह बनाने के लिए
+      किया जाता है।
+    </p>
+    <p>
+      इसमें कटिंग टूल रैम के साथ आगे-पीछे चलता है।
+      कटिंग स्ट्रोक के दौरान धातु कटती है और रिटर्न स्ट्रोक
+      में टूल वापस अपनी स्थिति में आता है।
+    </p>
+    <h3>सरल परिभाषा</h3>
+    <p class="highlight">
+      शेपर मशीन वह मशीन है जिसमें कटिंग टूल आगे-पीछे
+      गति करके जॉब से धातु हटाता है।
+    </p>
+  </section>
 
-<section>
-<h2>3. शेपर मशीन के मुख्य भाग</h2>
-<h3>1. Base (बेस)</h3><p>यह मशीन का निचला भाग है और पूरी मशीन को सहारा देता है।</p>
-<h3>2. Column (कॉलम)</h3><p>यह मशीन का मुख्य खड़ा भाग है। इसमें ड्राइव मैकेनिज्म लगा होता है।</p>
-<h3>3. Cross Rail (क्रॉस रेल)</h3><p>यह टेबल को ऊपर-नीचे समायोजित करने में सहायता करती है।</p>
-<h3>4. Saddle (सैडल)</h3><p>यह टेबल को सहारा देता है और उसे आवश्यक दिशा में चलाने में मदद करता है।</p>
-<h3>5. Table (टेबल)</h3><p>इस पर जॉब को वाइस या क्लैंप की सहायता से पकड़ा जाता है।</p>
-<h3>6. Ram (रैम)</h3><p>यह आगे-पीछे चलने वाला भाग है। इसके साथ टूल हेड जुड़ा होता है।</p>
-<h3>7. Tool Head (टूल हेड)</h3><p>यह कटिंग टूल को पकड़ता है और आवश्यक कोण पर सेट किया जा सकता है।</p>
-<h3>8. Clapper Box (क्लैपर बॉक्स)</h3><p>यह वापसी की चाल में टूल को जॉब से ऊपर उठने देता है, जिससे टूल की रगड़ कम होती है।</p>
-<h3>9. Tool Post (टूल पोस्ट)</h3><p>इसमें कटिंग टूल को पकड़ा जाता है।</p>
-<h3>10. Vice (वाइस)</h3><p>इसका उपयोग जॉब को मजबूती से पकड़ने के लिए किया जाता है।</p>
-</section>
+  <!-- WORKING PRINCIPLE -->
+  <section class="topic-card glass">
+    <h2>02. कार्य करने का सिद्धांत (Working Principle)</h2>
+    <p>
+      शेपर मशीन रेसिप्रोकेटिंग मोशन के सिद्धांत पर कार्य करती है।
+      इसमें टूल आगे और पीछे चलता है तथा जॉब को टेबल पर
+      मजबूती से रखा जाता है।
+    </p>
+    <h3>कार्य करने की प्रक्रिया</h3>
+    <ol>
+      <li>जॉब को मशीन टेबल पर सुरक्षित रूप से रखा जाता है।</li>
+      <li>कटिंग टूल को टूल हेड में लगाया जाता है।</li>
+      <li>मशीन चालू होने पर रैम आगे-पीछे गति करता है।</li>
+      <li>आगे के कटिंग स्ट्रोक में टूल धातु हटाता है।</li>
+      <li>वापसी स्ट्रोक में टूल सामान्यतः धातु नहीं काटता।</li>
+      <li>प्रत्येक स्ट्रोक के बाद फीड देकर अगली कटिंग की जाती है।</li>
+    </ol>
+    <div class="formula">
+      कटिंग स्ट्रोक + रिटर्न स्ट्रोक = एक पूरा चक्र
+    </div>
+  </section>
 
-<section>
-<h2>4. Forward Stroke और Return Stroke</h2>
-<table>
-<tr><th>Forward Stroke</th><th>Return Stroke</th></tr>
-<tr><td>रैम आगे की ओर चलता है।</td><td>रैम वापस आता है।</td></tr>
-<tr><td>इसमें मुख्य कटिंग होती है।</td><td>सामान्यतः कटिंग नहीं होती।</td></tr>
-<tr><td>कटिंग प्रतिरोध अधिक होता है।</td><td>वापसी की चाल तेज हो सकती है।</td></tr>
-</table>
-</section>
+  <!-- MAIN PARTS -->
+  <section class="topic-card glass">
+    <h2>03. शेपर मशीन के मुख्य भाग (Main Parts)</h2>
 
-<section>
-<h2>5. शेपर मशीन के प्रकार</h2>
-<h3>1. Horizontal Shaper</h3><p>इसमें रैम क्षैतिज दिशा में चलता है।</p>
-<h3>2. Vertical Shaper</h3><p>इसमें रैम ऊर्ध्वाधर दिशा में चलता है। इसका उपयोग स्लॉट और की-वे बनाने में किया जाता है।</p>
-<h3>3. Universal Shaper</h3><p>इसमें टेबल को विभिन्न कोणों पर समायोजित किया जा सकता है।</p>
-<h3>4. Crank Type Shaper</h3><p>इसमें क्रैंक मैकेनिज्म द्वारा रैम को आगे-पीछे चलाया जाता है।</p>
-<h3>5. Hydraulic Shaper</h3><p>इसमें हाइड्रोलिक व्यवस्था द्वारा रैम की गति प्राप्त होती है।</p>
-</section>
+    <h3>1. बेस (Base)</h3>
+    <p>
+      यह मशीन का सबसे निचला और मजबूत भाग होता है।
+      यह मशीन के अन्य भागों को सहारा देता है।
+    </p>
 
-<section>
-<h2>6. शेपर मशीन के ऑपरेशन</h2>
-<ul>
-<li><strong>Horizontal Cutting:</strong> क्षैतिज समतल सतह बनाना।</li>
-<li><strong>Vertical Cutting:</strong> ऊर्ध्वाधर सतह बनाना।</li>
-<li><strong>Angular Cutting:</strong> कोणीय सतह बनाना।</li>
-<li><strong>Slotting:</strong> जॉब में खाँचा बनाना।</li>
-<li><strong>Keyway Cutting:</strong> की-वे बनाना।</li>
-<li><strong>Dovetail Cutting:</strong> डवटेल आकार की सतह बनाना।</li>
-<li><strong>Contouring:</strong> घुमावदार या विशेष आकार की सतह बनाना।</li>
-</ul>
-</section>
+    <h3>2. कॉलम (Column)</h3>
+    <p>
+      यह बेस के ऊपर लगा होता है। इसके अंदर मशीन का
+      ड्राइव मैकेनिज्म और अन्य यांत्रिक भाग होते हैं।
+    </p>
 
-<section>
-<h2>7. शेपर मशीन के उपयोग</h2>
-<ul>
-<li>समतल सतह बनाने में।</li>
-<li>खाँचे और स्लॉट बनाने में।</li>
-<li>की-वे बनाने में।</li>
-<li>कोणीय सतह बनाने में।</li>
-<li>मशीन के विभिन्न पुर्जे बनाने में।</li>
-<li>छोटे और मध्यम आकार के जॉब की मशीनिंग में।</li>
-</ul>
-</section>
+    <h3>3. रैम (Ram)</h3>
+    <p>
+      रैम मशीन का चलने वाला भाग है। यह आगे-पीछे गति करता है
+      और अपने साथ टूल हेड को ले जाता है।
+    </p>
 
-<section>
-<h2>8. शेपर मशीन के लाभ</h2>
-<ul>
-<li>मशीन की बनावट अपेक्षाकृत सरल होती है।</li>
-<li>समतल और कोणीय सतहें बनाई जा सकती हैं।</li>
-<li>विभिन्न प्रकार के स्लॉट बनाए जा सकते हैं।</li>
-<li>वर्कशॉप में छोटे बैच के कार्यों के लिए उपयोगी है।</li>
-</ul>
-</section>
+    <h3>4. टूल हेड (Tool Head)</h3>
+    <p>
+      यह कटिंग टूल को पकड़ता है। इसमें टूल की स्थिति और
+      कटिंग व्यवस्था को नियंत्रित करने वाले भाग होते हैं।
+    </p>
 
-<section>
-<h2>9. शेपर मशीन की सीमाएँ</h2>
-<ul>
-<li>वापसी की चाल में सामान्यतः कटिंग नहीं होती।</li>
-<li>उत्पादन की गति कई आधुनिक मशीनों से कम होती है।</li>
-<li>बहुत बड़े जॉब के लिए यह हमेशा उपयुक्त नहीं होती।</li>
-</ul>
-</section>
+    <h3>5. क्लैपर बॉक्स (Clapper Box)</h3>
+    <p>
+      यह रिटर्न स्ट्रोक के समय टूल को जॉब से ऊपर उठने
+      की अनुमति देता है, जिससे टूल और जॉब के बीच घर्षण कम होता है।
+    </p>
 
-<section>
-<h2>10. सुरक्षा सावधानियाँ</h2>
-<ul>
-<li>मशीन चलाने से पहले प्रशिक्षक के निर्देशों का पालन करें।</li>
-<li>जॉब को सही तरीके से सुरक्षित पकड़ें।</li>
-<li>चलती रैम और कटिंग टूल से दूरी रखें।</li>
-<li>मशीन चलते समय चिप्स हाथ से न हटाएँ।</li>
-<li>सेफ्टी गॉगल्स पहनें।</li>
-<li>ढीले कपड़े और खुले बाल मशीन से दूर रखें।</li>
-<li>सफाई या समायोजन से पहले मशीन बंद करें।</li>
-</ul>
-</section>
+    <h3>6. टेबल (Table)</h3>
+    <p>
+      इस पर जॉब को रखा और क्लैंप किया जाता है।
+    </p>
 
-<section>
-<h2>11. महत्वपूर्ण प्रश्न एवं उत्तर</h2>
+    <h3>7. क्रॉस रेल (Cross Rail)</h3>
+    <p>
+      यह टेबल को सहारा देती है और उसकी ऊँचाई समायोजित
+      करने में मदद करती है।
+    </p>
 
-<div class="question"><strong>प्रश्न 1. शेपर मशीन क्या है?</strong><p>उत्तर: यह मशीन सिंगल पॉइंट कटिंग टूल की सहायता से धातु काटती है।</p></div>
-<div class="question"><strong>प्रश्न 2. शेपर मशीन में कौन-सा टूल प्रयोग होता है?</strong><p>उत्तर: सिंगल पॉइंट कटिंग टूल।</p></div>
-<div class="question"><strong>प्रश्न 3. रैम का क्या कार्य है?</strong><p>उत्तर: टूल को आगे-पीछे चलाना।</p></div>
-<div class="question"><strong>प्रश्न 4. कटिंग किस स्ट्रोक में होती है?</strong><p>उत्तर: फॉरवर्ड स्ट्रोक में।</p></div>
-<div class="question"><strong>प्रश्न 5. क्लैपर बॉक्स का क्या कार्य है?</strong><p>उत्तर: वापसी की चाल में टूल को जॉब से ऊपर उठने देना।</p></div>
-<div class="question"><strong>प्रश्न 6. जॉब कहाँ पकड़ा जाता है?</strong><p>उत्तर: टेबल पर लगी वाइस या क्लैंप में।</p></div>
-<div class="question"><strong>प्रश्न 7. शेपर मशीन का आधार क्या कहलाता है?</strong><p>उत्तर: बेस।</p></div>
-<div class="question"><strong>प्रश्न 8. कॉलम का क्या कार्य है?</strong><p>उत्तर: मशीन के मुख्य भागों को सहारा देना।</p></div>
-<div class="question"><strong>प्रश्न 9. वर्टिकल शेपर में रैम किस दिशा में चलता है?</strong><p>उत्तर: ऊर्ध्वाधर दिशा में।</p></div>
-<div class="question"><strong>प्रश्न 10. हाइड्रोलिक शेपर में किसका उपयोग होता है?</strong><p>उत्तर: हाइड्रोलिक व्यवस्था का।</p></div>
-<div class="question"><strong>प्रश्न 11. शेपर मशीन में कौन-सी सतह बनाई जा सकती है?</strong><p>उत्तर: समतल, कोणीय और विभिन्न आकार की सतह।</p></div>
-<div class="question"><strong>प्रश्न 12. की-वे बनाने के लिए कौन-सी मशीन उपयोगी है?</strong><p>उत्तर: शेपर मशीन, विशेषकर वर्टिकल शेपर।</p></div>
-<div class="question"><strong>प्रश्न 13. क्रैंक टाइप शेपर में रैम को गति कौन देता है?</strong><p>उत्तर: क्रैंक मैकेनिज्म।</p></div>
-<div class="question"><strong>प्रश्न 14. रिटर्न स्ट्रोक क्या है?</strong><p>उत्तर: रैम की वापस आने वाली चाल।</p></div>
-<div class="question"><strong>प्रश्न 15. शेपर मशीन में सामान्यतः कितने पॉइंट वाला टूल प्रयोग होता है?</strong><p>उत्तर: एक पॉइंट वाला।</p></div>
-<div class="question"><strong>प्रश्न 16. क्रॉस रेल का क्या कार्य है?</strong><p>उत्तर: टेबल की ऊँचाई समायोजित करने में सहायता करना।</p></div>
-<div class="question"><strong>प्रश्न 17. टूल हेड का क्या कार्य है?</strong><p>उत्तर: कटिंग टूल को पकड़ना और समायोजित करना।</p></div>
-<div class="question"><strong>प्रश्न 18. शेपर मशीन में फीड किसे दिया जाता है?</strong><p>उत्तर: सामान्यतः जॉब को, टेबल की गति द्वारा।</p></div>
-<div class="question"><strong>प्रश्न 19. शेपर मशीन का एक उपयोग बताइए।</strong><p>उत्तर: समतल सतह और स्लॉट बनाना।</p></div>
-<div class="question"><strong>प्रश्न 20. शेपर मशीन में आँखों की सुरक्षा के लिए क्या पहनते हैं?</strong><p>उत्तर: सेफ्टी गॉगल्स।</p></div>
-</section>
+    <h3>8. वाइस (Vice)</h3>
+    <p>
+      छोटे जॉब को पकड़ने के लिए वाइस का उपयोग किया जाता है।
+    </p>
 
-<a href="notes.html" class="back">← वापस Notes पर जाएँ</a>
+    <h3>9. ड्राइव मैकेनिज्म (Drive Mechanism)</h3>
+    <p>
+      यह मोटर की घूर्णन गति को रैम की आगे-पीछे गति में
+      बदलने का कार्य करता है।
+    </p>
+  </section>
 
-<footer>
-© Machinist First Year Notes
+  <!-- TYPES -->
+  <section class="topic-card glass">
+    <h2>04. शेपर मशीन के प्रकार (Types)</h2>
+
+    <h3>1. क्रैंक टाइप शेपर (Crank Type)</h3>
+    <p>
+      इसमें क्रैंक मैकेनिज्म की सहायता से रैम को
+      आगे-पीछे चलाया जाता है।
+    </p>
+
+    <h3>2. गियर टाइप शेपर (Geared Type)</h3>
+    <p>
+      इसमें गियर व्यवस्था के द्वारा रैम की गति
+      नियंत्रित की जाती है।
+    </p>
+
+    <h3>3. हाइड्रोलिक शेपर (Hydraulic Shaper)</h3>
+    <p>
+      इसमें हाइड्रोलिक दबाव की सहायता से रैम की गति
+      उत्पन्न और नियंत्रित की जाती है।
+    </p>
+
+    <h3>4. हॉरिजॉन्टल शेपर (Horizontal Shaper)</h3>
+    <p>
+      इसमें रैम क्षैतिज दिशा में आगे-पीछे चलता है।
+    </p>
+
+    <h3>5. वर्टिकल शेपर (Vertical Shaper)</h3>
+    <p>
+      इसमें रैम ऊर्ध्वाधर दिशा में चलता है।
+      इसका उपयोग आंतरिक स्लॉट और की-वे बनाने में किया जाता है।
+    </p>
+  </section>
+
+  <!-- OPERATIONS -->
+  <section class="topic-card glass">
+    <h2>05. शेपर मशीन के मुख्य ऑपरेशन</h2>
+
+    <h3>1. प्लेन सरफेसिंग (Plane Surfacing)</h3>
+    <p>जॉब की समतल सतह बनाने के लिए।</p>
+
+    <h3>2. वर्टिकल सरफेसिंग (Vertical Surfacing)</h3>
+    <p>खड़ी सतह को मशीन करने के लिए।</p>
+
+    <h3>3. एंगल सरफेसिंग (Angular Surfacing)</h3>
+    <p>कोणीय सतह बनाने के लिए।</p>
+
+    <h3>4. स्लॉटिंग (Slotting)</h3>
+    <p>जॉब पर स्लॉट या खाँचा बनाने के लिए।</p>
+
+    <h3>5. की-वे कटिंग (Keyway Cutting)</h3>
+    <p>शाफ्ट या अन्य जॉब में की-वे बनाने के लिए।</p>
+
+    <h3>6. डवटेल कटिंग (Dovetail Cutting)</h3>
+    <p>विशेष डवटेल आकार की सतह बनाने के लिए।</p>
+  </section>
+
+  <!-- CUTTING STROKE -->
+  <section class="topic-card glass">
+    <h2>06. कटिंग स्ट्रोक और रिटर्न स्ट्रोक</h2>
+
+    <h3>कटिंग स्ट्रोक (Cutting Stroke)</h3>
+    <p>
+      रैम की वह गति जिसमें कटिंग टूल जॉब से धातु हटाता है,
+      कटिंग स्ट्रोक कहलाती है।
+    </p>
+
+    <h3>रिटर्न स्ट्रोक (Return Stroke)</h3>
+    <p>
+      रैम की वापस आने वाली गति को रिटर्न स्ट्रोक कहते हैं।
+      सामान्य शेपर में इस समय कटिंग नहीं होती।
+    </p>
+
+    <h3>क्विक रिटर्न मैकेनिज्म (Quick Return Mechanism)</h3>
+    <p>
+      इस व्यवस्था में रिटर्न स्ट्रोक, कटिंग स्ट्रोक की तुलना में
+      कम समय में पूरा होता है। इससे मशीनिंग का समय बचता है।
+    </p>
+  </section>
+
+  <!-- CUTTING TOOLS -->
+  <section class="topic-card glass">
+    <h2>07. शेपर मशीन में उपयोग होने वाले कटिंग टूल</h2>
+    <ul>
+      <li>सिंगल पॉइंट कटिंग टूल (Single Point Tool)</li>
+      <li>राइट हैंड टूल (Right Hand Tool)</li>
+      <li>लेफ्ट हैंड टूल (Left Hand Tool)</li>
+      <li>स्ट्रेट टूल (Straight Tool)</li>
+      <li>साइड कटिंग टूल (Side Cutting Tool)</li>
+      <li>फॉर्म टूल (Form Tool)</li>
+    </ul>
+    <p>
+      कटिंग टूल सामान्यतः HSS या उपयुक्त कार्बाइड जैसी
+      टूल सामग्री से बनाए जा सकते हैं।
+    </p>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section class="topic-card glass">
+    <h2>08. शेपर मशीन के लाभ</h2>
+    <ul>
+      <li>सरल मशीनिंग कार्यों के लिए उपयोगी।</li>
+      <li>समतल सतह बनाने में सहायक।</li>
+      <li>स्लॉट और की-वे बनाए जा सकते हैं।</li>
+      <li>मशीन की संरचना अपेक्षाकृत सरल होती है।</li>
+      <li>छोटे बैच के काम में उपयोगी होती है।</li>
+    </ul>
+  </section>
+
+  <!-- LIMITATIONS -->
+  <section class="topic-card glass">
+    <h2>09. शेपर मशीन की सीमाएँ</h2>
+    <ul>
+      <li>उत्पादन की गति सामान्यतः कम होती है।</li>
+      <li>यह मुख्य रूप से सीमित प्रकार की सतहों के लिए उपयोगी है।</li>
+      <li>बड़े पैमाने के उत्पादन में अन्य मशीनें अधिक उपयुक्त हो सकती हैं।</li>
+      <li>कटिंग के दौरान रेसिप्रोकेटिंग गति के कारण समय लगता है।</li>
+    </ul>
+  </section>
+
+  <!-- USES -->
+  <section class="topic-card glass">
+    <h2>10. शेपर मशीन के उपयोग (Applications)</h2>
+    <ul>
+      <li>समतल सतह बनाने में।</li>
+      <li>स्लॉट और खाँचे बनाने में।</li>
+      <li>की-वे बनाने में।</li>
+      <li>कोणीय सतह बनाने में।</li>
+      <li>छोटे मशीन पार्ट्स की मशीनिंग में।</li>
+      <li>वर्कशॉप और टूल रूम में।</li>
+    </ul>
+  </section>
+
+  <!-- SAFETY -->
+  <section class="topic-card glass">
+    <h2>11. सुरक्षा सावधानियाँ (Safety Precautions)</h2>
+    <ul>
+      <li>मशीन चलाते समय सुरक्षा चश्मा पहनें।</li>
+      <li>जॉब को सही तरीके से क्लैंप करना आवश्यक है।</li>
+      <li>चलती मशीन के पास हाथ न ले जाएँ।</li>
+      <li>मशीन के पास ढीले कपड़े या खुले बाल न रखें।</li>
+      <li>मशीन की सफाई या समायोजन से पहले उसे बंद करें।</li>
+      <li>चिप्स को हाथ से न हटाएँ; उचित ब्रश या उपकरण का उपयोग करें।</li>
+      <li>मशीन का संचालन प्रशिक्षक की देखरेख में करें।</li>
+    </ul>
+  </section>
+
+  <!-- QUESTIONS -->
+  <section class="topic-card glass">
+    <h2>12. महत्वपूर्ण प्रश्न और उत्तर</h2>
+
+    <div class="qa">
+      <strong>प्रश्न 1. शेपर मशीन क्या है?</strong>
+      <p>उत्तर: यह एक मशीन टूल है जिसमें कटिंग टूल आगे-पीछे गति करके धातु हटाता है।</p>
+    </div>
+
+    <div class="qa">
+      <strong>प्रश्न 2. शेपर मशीन किस सिद्धांत पर कार्य करती है?</strong>
+      <p>उत्तर: रेसिप्रोकेटिंग मोशन के सिद्धांत पर।</p>
+    </div>
+
+    <div class="qa">
+      <strong>प्रश्न 3. रैम का क्या कार्य है?</strong>
+      <p>उत्तर: रैम टूल हेड को आगे-पीछे गति प्रदान करता है।</p>
+    </div>
+
+    <div class="qa">
+      <strong>प्रश्न 4. क्लैपर बॉक्स का क्या कार्य है?</strong>
+      <p>उत्तर: रिटर्न स्ट्रोक में टूल को जॉब से ऊपर उठने में सहायता करता है।</p>
+    </div>
+
+    <div class="qa">
+      <strong>प्रश्न 5. कटिंग स्ट्रोक क्या है?</strong>
+      <p>उत्तर: वह स्ट्रोक जिसमें टूल जॉब से धातु हटाता है।</p>
+    </div>
+
+    <div class="qa">
+      <strong>प्रश्न 6. रिटर्न स्ट्रोक क्या है?</strong>
+      <p>उत्तर: कटिंग स्ट्रोक के बाद रैम की वापस आने वाली गति।</p>
+    </div>
+
+    <div class="qa">
+      <strong>प्रश्न 7. शेपर मशीन में कौन-सा टूल प्रयोग होता है?</strong>
+      <p>उत्तर: सामान्यतः सिंगल पॉइंट कटिंग टूल।</p>
+    </div>
+
+    <div class="qa">
+      <strong>प्रश्न 8. क्विक रिटर्न मैकेनिज्म का क्या लाभ है?</strong>
+      <p>उत्तर: यह रिटर्न स्ट्रोक में लगने वाला समय कम करता है।</p>
+    </div>
+
+    <div class="qa">
+      <strong>प्रश्न 9. शेपर मशीन में जॉब कहाँ रखा जाता है?</strong>
+      <p>उत्तर: मशीन की टेबल पर।</p>
+    </div>
+
+    <div class="qa">
+      <strong>प्रश्न 10. शेपर मशीन का एक उपयोग बताइए।</strong>
+      <p>उत्तर: समतल सतह और स्लॉट बनाने में।</p>
+    </div>
+  </section>
+
+  <!-- GLOSSARY -->
+  <section class="topic-card glass">
+    <h2>13. महत्वपूर्ण तकनीकी शब्द</h2>
+    <ul>
+      <li>Shaper - शेपर मशीन</li>
+      <li>Ram - रैम</li>
+      <li>Tool Head - टूल हेड</li>
+      <li>Clapper Box - क्लैपर बॉक्स</li>
+      <li>Stroke - स्ट्रोक</li>
+      <li>Feed - फीड</li>
+      <li>Cutting Tool - कटिंग टूल</li>
+      <li>Workpiece - जॉब</li>
+      <li>Quick Return - क्विक रिटर्न</li>
+      <li>Reciprocating Motion - आगे-पीछे की गति</li>
+    </ul>
+  </section>
+
+  <a href="machines.html" class="back-link">← मशीन लाइब्रेरी पर वापस जाएँ</a>
+  <br>
+  <a href="notes.html" class="back-link">← सभी नोट्स पर वापस जाएँ</a>
+
+</main>
+
+<footer class="footer">
+  <p>⚙ MACHINIST PRO</p>
+  <p>ITI Machinist Digital Learning Platform</p>
 </footer>
 
-</div>
+<script src="../script.js"></script>
+
 </body>
 </html>

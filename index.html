@@ -222,6 +222,11 @@
       display: block;
     }
 
+    .module-card.featured {
+      border-color: rgba(0,217,255,.35);
+      background: linear-gradient(135deg,rgba(0,217,255,.12),rgba(255,255,255,.035));
+    }
+
     .notice {
       padding: 20px;
       margin: 35px 0;
@@ -263,6 +268,7 @@
       .module-card { padding: 15px; min-height: 165px; }
       .module-card h3 { font-size: 15px; }
       .module-card p { font-size: 12px; }
+
       .bottom-nav {
         display: flex;
         position: fixed;
@@ -276,16 +282,19 @@
         backdrop-filter: blur(18px);
         border-top: 1px solid var(--border);
       }
+
       .bottom-nav a {
         text-align: center;
         font-size: 11px;
         color: var(--muted);
       }
+
       .bottom-nav span {
         display: block;
         font-size: 19px;
         margin-bottom: 4px;
       }
+
       body { padding-bottom: 75px; }
     }
   </style>
@@ -319,7 +328,7 @@
 
   <section class="stats">
     <div class="stat">
-      <strong>09</strong>
+      <strong>10</strong>
       <span>Learning Modules</span>
     </div>
     <div class="stat">
@@ -360,8 +369,8 @@
       <a class="module-card" href="pages/machines.html">
         <div class="module-icon">⚙️</div>
         <h3>Machine Library</h3>
-        <p>Lathe, Milling, Grinding और CNC मशीनों का परिचय।</p>
-        <span class="open">Open Module →</span>
+        <p>15 मशीनों के मुख्य भाग, कार्यप्रणाली और उपयोग हिंदी में पढ़ें।</p>
+        <span class="open">Explore Machines →</span>
       </a>
 
       <a class="module-card" href="pages/calculator.html">
@@ -376,6 +385,13 @@
         <h3>Online Tests</h3>
         <p>अपनी तैयारी जाँचें और प्रश्नों का अभ्यास करें।</p>
         <span class="open">Start Test →</span>
+      </a>
+
+      <a class="module-card featured" href="pages/online-test.html">
+        <div class="module-icon">🎯</div>
+        <h3>Random Online Test</h3>
+        <p>हर बार नए 20 सवालों के साथ अपना अभ्यास करें और स्कोर देखें।</p>
+        <span class="open">Start Random Test →</span>
       </a>
 
       <a class="module-card" href="pages/tools.html">

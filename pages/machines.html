@@ -88,15 +88,21 @@
     }
 
     .machine-notes-link {
-      display: inline-block;
+      display: block;
       margin-top: 16px;
+      padding: 11px 13px;
+      border: 1px solid rgba(100,230,165,.25);
+      border-radius: 12px;
+      background: rgba(100,230,165,.07);
       color: var(--green);
       font-weight: bold;
       text-decoration: none;
+      transition: .2s ease;
     }
 
     .machine-notes-link:hover {
-      text-decoration: underline;
+      background: rgba(100,230,165,.15);
+      border-color: var(--green);
     }
 
     .back-link {
@@ -185,10 +191,7 @@
       <article class="machine-card glass">
         <div class="machine-icon">⚙️</div>
         <h2>01. लेथ मशीन (Lathe Machine)</h2>
-        <p>
-          लेथ मशीन में जॉब को चक में पकड़कर घुमाया जाता है।
-          कटिंग टूल की सहायता से धातु हटाकर आवश्यक आकार दिया जाता है।
-        </p>
+        <p>लेथ मशीन में जॉब को चक में पकड़कर घुमाया जाता है। कटिंग टूल से धातु हटाकर आवश्यक आकार दिया जाता है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
           <li>बेड (Bed)</li>
@@ -196,63 +199,54 @@
           <li>टेल स्टॉक (Tailstock)</li>
           <li>चक (Chuck)</li>
           <li>कैरिज (Carriage)</li>
-          <li>लीड स्क्रू (Lead Screw)</li>
-          <li>फीड रॉड (Feed Rod)</li>
+          <li>लीड स्क्रू और फीड रॉड</li>
         </ul>
         <h3>मुख्य कार्य</h3>
         <ul>
-          <li>टर्निंग (Turning)</li>
-          <li>फेसिंग (Facing)</li>
-          <li>ड्रिलिंग (Drilling)</li>
-          <li>थ्रेडिंग (Threading)</li>
-          <li>नर्लिंग (Knurling)</li>
+          <li>टर्निंग और फेसिंग</li>
+          <li>ड्रिलिंग और थ्रेडिंग</li>
+          <li>नर्लिंग</li>
         </ul>
         <h3>उपयोग</h3>
         <p>शाफ्ट, बुश, बोल्ट, पिन और बेलनाकार पुर्जे बनाने में।</p>
         <span class="machine-tag">मुख्य मशीन</span>
+        <a href="lathe-machine.html" class="machine-notes-link">📖 लेथ मशीन के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 02 DRILLING -->
       <article class="machine-card glass">
         <div class="machine-icon">🔩</div>
         <h2>02. ड्रिलिंग मशीन (Drilling Machine)</h2>
-        <p>
-          ड्रिलिंग मशीन का उपयोग धातु या अन्य सामग्री में
-          गोल छेद बनाने के लिए किया जाता है।
-        </p>
+        <p>ड्रिलिंग मशीन का उपयोग धातु या अन्य सामग्री में गोल छेद बनाने के लिए किया जाता है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
           <li>बेस (Base)</li>
           <li>कॉलम (Column)</li>
           <li>टेबल (Table)</li>
           <li>स्पिंडल (Spindle)</li>
-          <li>चक (Chuck)</li>
-          <li>ड्रिल बिट (Drill Bit)</li>
+          <li>चक और ड्रिल बिट</li>
         </ul>
         <h3>मुख्य कार्य</h3>
         <ul>
-          <li>ड्रिलिंग (Drilling)</li>
-          <li>रीमिंग (Reaming)</li>
-          <li>काउंटरसिंकिंग (Countersinking)</li>
-          <li>टैपिंग (Tapping)</li>
+          <li>ड्रिलिंग</li>
+          <li>रीमिंग</li>
+          <li>काउंटरसिंकिंग</li>
+          <li>टैपिंग</li>
         </ul>
         <h3>उपयोग</h3>
         <p>धातु में छेद बनाने और छेद की फिनिशिंग करने में।</p>
         <span class="machine-tag">छेद बनाने वाली मशीन</span>
+        <a href="drilling-machine.html" class="machine-notes-link">📖 ड्रिलिंग मशीन के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 03 MILLING -->
       <article class="machine-card glass">
         <div class="machine-icon">🛠️</div>
         <h2>03. मिलिंग मशीन (Milling Machine)</h2>
-        <p>
-          इसमें घूमने वाले मल्टी-पॉइंट कटिंग टूल की सहायता से
-          जॉब से धातु हटाई जाती है।
-        </p>
+        <p>इसमें घूमने वाले मल्टी-पॉइंट कटिंग टूल की सहायता से जॉब से धातु हटाई जाती है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
-          <li>बेस (Base)</li>
-          <li>कॉलम (Column)</li>
+          <li>बेस और कॉलम</li>
           <li>नी (Knee)</li>
           <li>टेबल (Table)</li>
           <li>स्पिंडल (Spindle)</li>
@@ -268,176 +262,152 @@
         <h3>उपयोग</h3>
         <p>स्लॉट, खाँचे, गियर दाँत और समतल सतह बनाने में।</p>
         <span class="machine-tag">मल्टी-पॉइंट कटिंग</span>
+        <a href="milling-machine.html" class="machine-notes-link">📖 मिलिंग मशीन के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 04 SLOTTER -->
       <article class="machine-card glass">
         <div class="machine-icon">🔧</div>
         <h2>04. स्लॉटिंग मशीन (Slotting Machine)</h2>
-        <p>
-          यह एक रेसिप्रोकेटिंग मशीन है। इसमें कटिंग टूल
-          ऊपर-नीचे चलता है और जॉब से धातु हटाता है।
-        </p>
+        <p>यह एक रेसिप्रोकेटिंग मशीन है। इसमें कटिंग टूल ऊपर-नीचे चलता है और जॉब से धातु हटाता है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
           <li>बेस (Base)</li>
           <li>कॉलम (Column)</li>
           <li>रैम (Ram)</li>
           <li>टूल हेड (Tool Head)</li>
-          <li>टेबल (Table)</li>
-          <li>क्रॉस स्लाइड (Cross Slide)</li>
+          <li>टेबल और क्रॉस स्लाइड</li>
         </ul>
         <h3>उपयोग</h3>
         <p>आंतरिक स्लॉट, की-वे और खाँचे बनाने में।</p>
         <span class="machine-tag">रेसिप्रोकेटिंग मशीन</span>
+        <a href="slotting-machine.html" class="machine-notes-link">📖 स्लॉटिंग मशीन के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 05 PEDESTAL GRINDER -->
       <article class="machine-card glass">
         <div class="machine-icon">⚙️</div>
         <h2>05. पेडेस्टल ग्राइंडर (Pedestal Grinder)</h2>
-        <p>
-          यह एक स्थिर ग्राइंडिंग मशीन है। इसमें घूमने वाले
-          ग्राइंडिंग व्हील से धातु घिसी जाती है।
-        </p>
+        <p>यह एक स्थिर ग्राइंडिंग मशीन है। इसमें घूमने वाले ग्राइंडिंग व्हील से धातु घिसी जाती है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
           <li>पेडेस्टल (Pedestal)</li>
-          <li>इलेक्ट्रिक मोटर (Electric Motor)</li>
-          <li>ग्राइंडिंग व्हील (Grinding Wheel)</li>
-          <li>टूल रेस्ट (Tool Rest)</li>
-          <li>आई शील्ड (Eye Shield)</li>
+          <li>इलेक्ट्रिक मोटर</li>
+          <li>ग्राइंडिंग व्हील</li>
+          <li>टूल रेस्ट</li>
+          <li>आई शील्ड</li>
         </ul>
         <h3>उपयोग</h3>
         <p>औजारों की धार तेज करने और बुर्र हटाने में।</p>
         <span class="machine-tag">ग्राइंडिंग मशीन</span>
+        <a href="pedestal-grinder.html" class="machine-notes-link">📖 पेडेस्टल ग्राइंडर के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 06 SURFACE GRINDER -->
       <article class="machine-card glass">
         <div class="machine-icon">📐</div>
         <h2>06. सरफेस ग्राइंडर (Surface Grinder)</h2>
-        <p>
-          सरफेस ग्राइंडर का उपयोग जॉब की सतह को चिकना
-          और सटीक बनाने के लिए किया जाता है।
-        </p>
+        <p>सरफेस ग्राइंडर का उपयोग जॉब की सतह को चिकना और सटीक बनाने के लिए किया जाता है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
           <li>बेस (Base)</li>
           <li>कॉलम (Column)</li>
           <li>टेबल (Table)</li>
-          <li>ग्राइंडिंग व्हील (Grinding Wheel)</li>
+          <li>ग्राइंडिंग व्हील</li>
           <li>स्पिंडल (Spindle)</li>
-          <li>मैग्नेटिक चक (Magnetic Chuck)</li>
+          <li>मैग्नेटिक चक</li>
         </ul>
         <h3>उपयोग</h3>
         <p>समतल सतह की फिनिशिंग और सटीक माप प्राप्त करने में।</p>
         <span class="machine-tag">फिनिशिंग मशीन</span>
+        <a href="surface-grinder.html" class="machine-notes-link">📖 सरफेस ग्राइंडर के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 07 CNC LATHE -->
       <article class="machine-card glass">
         <div class="machine-icon">💻</div>
         <h2>07. CNC लेथ मशीन (CNC Lathe Machine)</h2>
-        <p>
-          यह कंप्यूटर न्यूमेरिकल कंट्रोल द्वारा नियंत्रित मशीन है।
-          इसमें प्रोग्राम के अनुसार मशीनिंग की जाती है।
-        </p>
+        <p>यह कंप्यूटर न्यूमेरिकल कंट्रोल द्वारा नियंत्रित मशीन है। इसमें प्रोग्राम के अनुसार मशीनिंग की जाती है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
-          <li>कंट्रोल पैनल (Control Panel)</li>
-          <li>स्पिंडल (Spindle)</li>
-          <li>चक (Chuck)</li>
+          <li>कंट्रोल पैनल</li>
+          <li>स्पिंडल और चक</li>
           <li>टरेट (Turret)</li>
           <li>बेड (Bed)</li>
-          <li>टूल पोस्ट (Tool Post)</li>
+          <li>टूल पोस्ट</li>
         </ul>
         <h3>उपयोग</h3>
         <p>सटीक और एक जैसे पुर्जों का उत्पादन करने में।</p>
         <span class="machine-tag">कंप्यूटर नियंत्रित मशीन</span>
+        <a href="cnc-lathe.html" class="machine-notes-link">📖 CNC लेथ के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 08 TOOL AND CUTTER GRINDER -->
       <article class="machine-card glass">
         <div class="machine-icon">🔨</div>
         <h2>08. टूल एंड कटर ग्राइंडर</h2>
-        <p>
-          इस मशीन का उपयोग विभिन्न कटिंग टूल और कटरों को
-          तेज करने तथा उनके कोण और आकार सुधारने में होता है।
-        </p>
+        <p>इस मशीन का उपयोग विभिन्न कटिंग टूल और कटरों को तेज करने तथा उनके कोण और आकार सुधारने में होता है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
           <li>बेस (Base)</li>
           <li>टेबल (Table)</li>
-          <li>ग्राइंडिंग हेड (Grinding Head)</li>
+          <li>ग्राइंडिंग हेड</li>
           <li>स्पिंडल (Spindle)</li>
-          <li>टूल होल्डर (Tool Holder)</li>
+          <li>टूल होल्डर</li>
         </ul>
         <h3>उपयोग</h3>
         <p>मिलिंग कटर, ड्रिल और अन्य कटिंग टूल की धार सुधारने में।</p>
         <span class="machine-tag">टूल ग्राइंडिंग मशीन</span>
+        <a href="tool-cutter-grinder.html" class="machine-notes-link">📖 टूल एंड कटर ग्राइंडर के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 09 SHAPER -->
       <article class="machine-card glass">
         <div class="machine-icon">🔩</div>
         <h2>09. शेपर मशीन (Shaper Machine)</h2>
-        <p>
-          शेपर मशीन में रैम के साथ कटिंग टूल आगे-पीछे चलता है।
-          यह जॉब की सतह से धातु हटाता है।
-        </p>
+        <p>शेपर मशीन में रैम के साथ कटिंग टूल आगे-पीछे चलता है। यह जॉब की सतह से धातु हटाता है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
-          <li>बेस (Base)</li>
-          <li>कॉलम (Column)</li>
+          <li>बेस और कॉलम</li>
           <li>रैम (Ram)</li>
-          <li>टूल हेड (Tool Head)</li>
+          <li>टूल हेड</li>
           <li>टेबल (Table)</li>
-          <li>क्रॉस रेल (Cross Rail)</li>
+          <li>क्रॉस रेल</li>
         </ul>
         <h3>उपयोग</h3>
         <p>समतल सतह, स्लॉट, खाँचे और कोणीय सतह बनाने में।</p>
         <span class="machine-tag">रेसिप्रोकेटिंग मशीन</span>
-
-        <a href="shaper-machine.html" class="machine-notes-link">
-          📖 शेपर मशीन के पूरे नोट्स पढ़ें →
-        </a>
+        <a href="shaper-machine.html" class="machine-notes-link">📖 शेपर मशीन के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 10 PLANER -->
       <article class="machine-card glass">
         <div class="machine-icon">⚙️</div>
         <h2>10. प्लेनर मशीन (Planer Machine)</h2>
-        <p>
-          प्लेनर मशीन में सामान्यतः जॉब टेबल के साथ आगे-पीछे
-          चलता है और कटिंग टूल धातु हटाता है।
-        </p>
+        <p>प्लेनर मशीन में सामान्यतः जॉब टेबल के साथ आगे-पीछे चलता है और कटिंग टूल धातु हटाता है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
-          <li>बेड (Bed)</li>
-          <li>टेबल (Table)</li>
+          <li>बेड और टेबल</li>
           <li>कॉलम (Column)</li>
-          <li>क्रॉस रेल (Cross Rail)</li>
-          <li>टूल हेड (Tool Head)</li>
+          <li>क्रॉस रेल</li>
+          <li>टूल हेड</li>
           <li>ड्राइव मैकेनिज्म</li>
         </ul>
         <h3>उपयोग</h3>
         <p>बड़े और भारी जॉब की समतल तथा कोणीय सतह बनाने में।</p>
         <span class="machine-tag">बड़ी जॉब की मशीनिंग</span>
+        <a href="planer-machine.html" class="machine-notes-link">📖 प्लेनर मशीन के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 11 POWER HACKSAW -->
       <article class="machine-card glass">
         <div class="machine-icon">🪚</div>
         <h2>11. पावर हैक्सॉ मशीन (Power Hacksaw)</h2>
-        <p>
-          इस मशीन का उपयोग धातु की छड़ों, पाइपों और अन्य
-          सामग्री को आवश्यक लंबाई में काटने के लिए होता है।
-        </p>
+        <p>इस मशीन का उपयोग धातु की छड़ों, पाइपों और अन्य सामग्री को आवश्यक लंबाई में काटने के लिए होता है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
           <li>फ्रेम (Frame)</li>
-          <li>हैक्सॉ ब्लेड (Hacksaw Blade)</li>
+          <li>हैक्सॉ ब्लेड</li>
           <li>वाइस (Vice)</li>
           <li>मोटर (Motor)</li>
           <li>ड्राइव मैकेनिज्म</li>
@@ -446,94 +416,87 @@
         <h3>उपयोग</h3>
         <p>धातु की छड़, पाइप और सेक्शन काटने में।</p>
         <span class="machine-tag">कटिंग मशीन</span>
+        <a href="power-hacksaw.html" class="machine-notes-link">📖 पावर हैक्सॉ के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 12 BANDSAW -->
       <article class="machine-card glass">
         <div class="machine-icon">🔧</div>
         <h2>12. बैंडसॉ मशीन (Bandsaw Machine)</h2>
-        <p>
-          इसमें लगातार घूमने वाली लंबी दाँतेदार ब्लेड की
-          सहायता से धातु या अन्य सामग्री काटी जाती है।
-        </p>
+        <p>इसमें लगातार घूमने वाली लंबी दाँतेदार ब्लेड की सहायता से धातु या अन्य सामग्री काटी जाती है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
-          <li>बैंड ब्लेड (Band Blade)</li>
-          <li>ड्राइव व्हील (Drive Wheel)</li>
-          <li>आइडलर व्हील (Idler Wheel)</li>
+          <li>बैंड ब्लेड</li>
+          <li>ड्राइव व्हील</li>
+          <li>आइडलर व्हील</li>
           <li>मोटर (Motor)</li>
           <li>वाइस (Vice)</li>
-          <li>ब्लेड गाइड (Blade Guide)</li>
+          <li>ब्लेड गाइड</li>
         </ul>
         <h3>उपयोग</h3>
         <p>धातु की छड़, पाइप और विभिन्न सेक्शन काटने में।</p>
         <span class="machine-tag">कंटीन्यूअस कटिंग मशीन</span>
+        <a href="bandsaw-machine.html" class="machine-notes-link">📖 बैंडसॉ मशीन के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 13 HYDRAULIC PRESS -->
       <article class="machine-card glass">
         <div class="machine-icon">🏭</div>
         <h2>13. हाइड्रोलिक प्रेस (Hydraulic Press)</h2>
-        <p>
-          हाइड्रोलिक प्रेस पास्कल के नियम पर काम करती है।
-          इसमें द्रव के दबाव से बल प्राप्त किया जाता है।
-        </p>
+        <p>हाइड्रोलिक प्रेस पास्कल के नियम पर काम करती है। इसमें द्रव के दबाव से बल प्राप्त किया जाता है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
-          <li>हाइड्रोलिक सिलेंडर (Hydraulic Cylinder)</li>
+          <li>हाइड्रोलिक सिलेंडर</li>
           <li>पिस्टन (Piston)</li>
-          <li>हाइड्रोलिक पंप (Hydraulic Pump)</li>
-          <li>ऑयल टैंक (Oil Tank)</li>
-          <li>कंट्रोल वाल्व (Control Valve)</li>
-          <li>प्रेस फ्रेम (Press Frame)</li>
+          <li>हाइड्रोलिक पंप</li>
+          <li>ऑयल टैंक</li>
+          <li>कंट्रोल वाल्व</li>
+          <li>प्रेस फ्रेम</li>
         </ul>
         <h3>उपयोग</h3>
         <p>धातु को दबाने, मोड़ने, आकार देने और प्रेस फिटिंग में।</p>
         <span class="machine-tag">हाइड्रोलिक मशीन</span>
+        <a href="hydraulic-press.html" class="machine-notes-link">📖 हाइड्रोलिक प्रेस के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 14 CNC MILLING -->
       <article class="machine-card glass">
         <div class="machine-icon">💻</div>
         <h2>14. CNC मिलिंग मशीन (CNC Milling Machine)</h2>
-        <p>
-          CNC मिलिंग मशीन कंप्यूटर प्रोग्राम द्वारा नियंत्रित होती है।
-          इससे सटीक और जटिल आकार की मशीनिंग की जाती है।
-        </p>
+        <p>CNC मिलिंग मशीन कंप्यूटर प्रोग्राम द्वारा नियंत्रित होती है। इससे सटीक और जटिल आकार की मशीनिंग की जाती है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
-          <li>मशीन कॉलम (Machine Column)</li>
+          <li>मशीन कॉलम</li>
           <li>स्पिंडल (Spindle)</li>
           <li>टेबल (Table)</li>
-          <li>टूल मैगजीन (Tool Magazine)</li>
-          <li>ATC सिस्टम (Automatic Tool Changer)</li>
+          <li>टूल मैगजीन</li>
+          <li>ATC सिस्टम</li>
           <li>CNC कंट्रोल पैनल</li>
         </ul>
         <h3>उपयोग</h3>
         <p>जटिल आकार, स्लॉट, पॉकेट और सटीक पुर्जे बनाने में।</p>
         <span class="machine-tag">कंप्यूटर नियंत्रित मशीन</span>
+        <a href="cnc-milling-machine.html" class="machine-notes-link">📖 CNC मिलिंग के पूरे नोट्स पढ़ें →</a>
       </article>
 
       <!-- 15 BENCH GRINDER -->
       <article class="machine-card glass">
         <div class="machine-icon">⚙️</div>
         <h2>15. बेंच ग्राइंडर (Bench Grinder)</h2>
-        <p>
-          बेंच ग्राइंडर को कार्य-बेंच पर लगाया जाता है।
-          इसमें घूमने वाले ग्राइंडिंग व्हील से धातु घिसी जाती है।
-        </p>
+        <p>बेंच ग्राइंडर को कार्य-बेंच पर लगाया जाता है। इसमें घूमने वाले ग्राइंडिंग व्हील से धातु घिसी जाती है।</p>
         <h3>मुख्य भाग</h3>
         <ul>
-          <li>इलेक्ट्रिक मोटर (Electric Motor)</li>
-          <li>ग्राइंडिंग व्हील (Grinding Wheel)</li>
-          <li>व्हील गार्ड (Wheel Guard)</li>
-          <li>टूल रेस्ट (Tool Rest)</li>
-          <li>आई शील्ड (Eye Shield)</li>
-          <li>माउंटिंग बेस (Mounting Base)</li>
+          <li>इलेक्ट्रिक मोटर</li>
+          <li>ग्राइंडिंग व्हील</li>
+          <li>व्हील गार्ड</li>
+          <li>टूल रेस्ट</li>
+          <li>आई शील्ड</li>
+          <li>माउंटिंग बेस</li>
         </ul>
         <h3>उपयोग</h3>
         <p>छोटे औजारों की धार तेज करने और बुर्र हटाने में।</p>
         <span class="machine-tag">ग्राइंडिंग मशीन</span>
+        <a href="bench-grinder.html" class="machine-notes-link">📖 बेंच ग्राइंडर के पूरे नोट्स पढ़ें →</a>
       </article>
 
     </div>

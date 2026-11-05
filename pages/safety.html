@@ -77,6 +77,7 @@
   border-collapse:collapse;
   margin-top:12px;
   font-size:13px;
+  min-width:440px;
 }
 .safety-table th,.safety-table td {
   border:1px solid var(--border);
@@ -84,6 +85,61 @@
   text-align:left;
 }
 .safety-table th { color:var(--cyan); }
+.table-wrap {
+  overflow-x:auto;
+  width:100%;
+}
+.question {
+  border:1px solid var(--border);
+  padding:15px;
+  border-radius:13px;
+  margin:12px 0;
+  background:rgba(255,255,255,.025);
+}
+.question p {
+  color:var(--text);
+  font-weight:600;
+}
+.answer {
+  display:none;
+  color:var(--muted);
+  line-height:1.8;
+  padding-top:10px;
+}
+.answer.show { display:block; }
+.show-btn {
+  background:rgba(0,217,255,.1);
+  color:var(--cyan);
+  border:1px solid var(--border);
+  border-radius:9px;
+  padding:9px 13px;
+  margin-top:10px;
+  cursor:pointer;
+}
+.mcq-option {
+  display:block;
+  padding:9px 12px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  margin:7px 0;
+  color:var(--muted);
+}
+.mcq-answer {
+  display:none;
+  color:#64e6a5;
+  margin-top:10px;
+  line-height:1.7;
+}
+.mcq-answer.show { display:block; }
+.notice {
+  border-left:3px solid var(--cyan);
+  background:rgba(0,217,255,.05);
+  border-radius:8px;
+  padding:12px;
+  color:var(--muted);
+  line-height:1.8;
+  margin:12px 0;
+}
 </style>
 </head>
 
@@ -102,10 +158,11 @@
   <small style="color:#00d9ff;">ITI MACHINIST FIRST YEAR</small>
   <h1>🦺 कार्यशाला सुरक्षा</h1>
   <p>
-    वर्कशॉप में काम करते समय दुर्घटनाओं से बचने,
-    मशीनों का सुरक्षित उपयोग करने और कार्यस्थल को
-    साफ-सुथरा रखने के नियम हिंदी में सीखें।
+    वर्कशॉप में दुर्घटनाओं से बचने, मशीनों का सुरक्षित उपयोग
+    करने और कार्यस्थल को साफ-सुथरा रखने के नियम आसान
+    हिंदी भाषा में सीखें।
   </p>
+  <p><b>इस पेज पर:</b> Safety Notes + Fire Safety + 5S + Question Answers + MCQ</p>
 </section>
 
 <input
@@ -130,6 +187,7 @@
     <li>मशीन और उपकरणों की सुरक्षा करना।</li>
     <li>स्वच्छ और सुरक्षित वातावरण बनाए रखना।</li>
     <li>काम करने वाले व्यक्तियों की सुरक्षा करना।</li>
+    <li>कार्यस्थल पर अनुशासन बनाए रखना।</li>
   </ul>
 </section>
 
@@ -142,14 +200,20 @@
   </p>
   <h3>PPE के प्रमुख प्रकार</h3>
   <ul>
-    <li>Safety Goggles – आँखों की सुरक्षा।</li>
-    <li>Safety Shoes – पैरों की सुरक्षा।</li>
-    <li>Helmet – सिर की सुरक्षा।</li>
-    <li>Ear Plug – कानों की सुरक्षा।</li>
-    <li>Face Shield – चेहरे की सुरक्षा।</li>
-    <li>Apron – शरीर और कपड़ों की सुरक्षा।</li>
-    <li>Respirator – उपयुक्त प्रकार के धूल या धुएँ से श्वसन सुरक्षा।</li>
+    <li><b>Safety Goggles:</b> आँखों की सुरक्षा।</li>
+    <li><b>Safety Shoes:</b> पैरों की सुरक्षा।</li>
+    <li><b>Helmet:</b> सिर की सुरक्षा।</li>
+    <li><b>Ear Plug:</b> कानों की सुरक्षा।</li>
+    <li><b>Face Shield:</b> चेहरे की सुरक्षा।</li>
+    <li><b>Apron:</b> शरीर और कपड़ों की सुरक्षा।</li>
+    <li><b>Respirator:</b> उपयुक्त धूल या धुएँ से श्वसन सुरक्षा।</li>
+    <li><b>Hand Gloves:</b> कार्य के अनुसार हाथों की सुरक्षा।</li>
   </ul>
+  <div class="notice">
+    ध्यान दें: घूमने वाली मशीनों के पास ढीले दस्ताने, ढीले कपड़े,
+    टाई या आभूषण फँस सकते हैं। PPE का चयन प्रशिक्षक और
+    कार्यस्थल के सुरक्षा नियमों के अनुसार करें।
+  </div>
 </section>
 
 <section class="safety-card glass searchable">
@@ -158,12 +222,14 @@
   <ul>
     <li>काम के अनुसार PPE पहनें।</li>
     <li>मशीन चलाने से पहले उसकी स्थिति जाँचें।</li>
-    <li>मशीन चलने पर जॉब को हाथ से न पकड़ें।</li>
-    <li>चलती मशीन से चिप्स हाथ से न हटाएँ।</li>
-    <li>मशीन बंद होने के बाद ही सफाई और समायोजन करें।</li>
-    <li>फर्श पर तेल और पानी न फैलने दें।</li>
     <li>बिना प्रशिक्षण के मशीन न चलाएँ।</li>
-    <li>ढीले कपड़े, टाई और आभूषण मशीन के पास न पहनें।</li>
+    <li>चलती मशीन से चिप्स हाथ से न हटाएँ।</li>
+    <li>मशीन चालू रहने पर सफाई या समायोजन न करें।</li>
+    <li>फर्श पर तेल और पानी न फैलने दें।</li>
+    <li>ढीले कपड़े, टाई और आभूषण मशीन से दूर रखें।</li>
+    <li>खराब औजारों का उपयोग न करें।</li>
+    <li>आपातकालीन निकास का रास्ता खुला रखें।</li>
+    <li>दुर्घटना या खराबी की सूचना प्रशिक्षक को दें।</li>
   </ul>
 </section>
 
@@ -172,84 +238,99 @@
   <h2>04. आग के प्रकार (Classes of Fire)</h2>
   <p>आग को जलने वाले पदार्थ के आधार पर अलग-अलग वर्गों में बाँटा जाता है।</p>
 
-  <table class="safety-table">
-    <tr>
-      <th>वर्ग</th>
-      <th>आग का पदार्थ</th>
-      <th>उदाहरण</th>
-    </tr>
-    <tr>
-      <td>A</td>
-      <td>ठोस ज्वलनशील पदार्थ</td>
-      <td>लकड़ी, कागज, कपड़ा</td>
-    </tr>
-    <tr>
-      <td>B</td>
-      <td>ज्वलनशील तरल पदार्थ</td>
-      <td>पेट्रोल, पेंट, तेल</td>
-    </tr>
-    <tr>
-      <td>C</td>
-      <td>ज्वलनशील गैस</td>
-      <td>एलपीजी, प्रोपेन</td>
-    </tr>
-    <tr>
-      <td>D</td>
-      <td>ज्वलनशील धातु</td>
-      <td>मैग्नीशियम, सोडियम</td>
-    </tr>
-    <tr>
-      <td>Electrical</td>
-      <td>विद्युत उपकरणों में लगी आग</td>
-      <td>विद्युत पैनल, मोटर</td>
-    </tr>
-    <tr>
-      <td>F / K</td>
-      <td>खाना पकाने का तेल और वसा</td>
-      <td>डीप फ्रायर का तेल</td>
-    </tr>
-  </table>
+  <div class="table-wrap">
+    <table class="safety-table">
+      <tr>
+        <th>वर्ग</th>
+        <th>आग का पदार्थ</th>
+        <th>उदाहरण</th>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>सामान्य ठोस ज्वलनशील पदार्थ</td>
+        <td>लकड़ी, कागज, कपड़ा</td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td>ज्वलनशील तरल पदार्थ</td>
+        <td>पेट्रोल, पेंट, तेल</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>ज्वलनशील गैस</td>
+        <td>एलपीजी, प्रोपेन</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>ज्वलनशील धातु</td>
+        <td>मैग्नीशियम, सोडियम</td>
+      </tr>
+      <tr>
+        <td>Electrical</td>
+        <td>विद्युत उपकरणों में लगी आग</td>
+        <td>विद्युत पैनल, मोटर</td>
+      </tr>
+      <tr>
+        <td>F / K</td>
+        <td>खाना पकाने का तेल और वसा</td>
+        <td>डीप फ्रायर का तेल</td>
+      </tr>
+    </table>
+  </div>
 
-  <p style="margin-top:12px;">
-    ध्यान दें: आग के वर्गों के नाम और वर्गीकरण देश के मानक के अनुसार अलग हो सकते हैं।
-    भारत में विद्युत आग को प्रायः Class E के रूप में भी पढ़ाया जाता है।
-  </p>
+  <div class="notice">
+    आग के वर्गों के नाम और वर्गीकरण अलग-अलग मानकों में
+    अलग हो सकते हैं। भारत में कुछ पुराने पाठ्यक्रमों में
+    विद्युत आग को Class E भी बताया जाता है। हमेशा लागू
+    स्थानीय मानक और अग्निशामक के लेबल को देखें।
+  </div>
 </section>
 
 <section class="safety-card glass searchable">
   <span class="safety-tag">अग्निशामक यंत्र</span>
   <h2>05. अग्निशामक यंत्र (Fire Extinguisher)</h2>
-  <p>आग बुझाने के लिए अलग-अलग प्रकार के अग्निशामक यंत्र उपयोग किए जाते हैं।</p>
+  <p>आग बुझाने के लिए अलग-अलग प्रकार के अग्निशामक यंत्र बनाए जाते हैं।</p>
 
   <h3>1. Water Extinguisher</h3>
-  <p>मुख्यतः Class A की आग के लिए। विद्युत या ज्वलनशील तरल की आग पर उपयोग नहीं करना चाहिए।</p>
+  <p>मुख्यतः Class A की आग के लिए उपयोग किया जाता है। विद्युत या ज्वलनशील तरल की आग के लिए उपयुक्त नहीं है।</p>
 
   <h3>2. Foam Extinguisher</h3>
-  <p>उपयुक्त Class A और Class B की आग के लिए।</p>
+  <p>उपयुक्त रेटिंग वाले फोम यंत्र का उपयोग Class A और Class B की आग में किया जा सकता है।</p>
 
   <h3>3. CO₂ Extinguisher</h3>
-  <p>उपयुक्त विद्युत उपकरणों और Class B की आग के लिए।</p>
+  <p>उपयुक्त विद्युत उपकरणों और Class B की आग के लिए उपयोग किया जाता है।</p>
 
   <h3>4. ABC Dry Powder</h3>
-  <p>Class A, B और C की आग के लिए उपयुक्त रेटिंग वाला ABC पाउडर इस्तेमाल किया जाता है।</p>
+  <p>उपयुक्त रेटिंग वाला ABC पाउडर Class A, B और C की आग के लिए बनाया जाता है।</p>
 
   <h3>5. D Class Powder</h3>
-  <p>विशेष ज्वलनशील धातुओं की आग के लिए विशेष पाउडर इस्तेमाल होता है।</p>
+  <p>विशेष ज्वलनशील धातुओं की आग के लिए विशेष प्रकार का पाउडर उपयोग किया जाता है।</p>
 
   <h3>6. Wet Chemical</h3>
-  <p>खाना पकाने के तेल और वसा की आग के लिए।</p>
+  <p>खाना पकाने के तेल और वसा की आग के लिए उपयुक्त होता है।</p>
+
+  <div class="notice">
+    हर अग्निशामक हर प्रकार की आग के लिए उपयुक्त नहीं होता।
+    यंत्र का उपयोग केवल तभी करें जब आप प्रशिक्षित हों,
+    आग छोटी हो और बाहर निकलने का रास्ता सुरक्षित हो।
+  </div>
 </section>
 
 <section class="safety-card glass searchable warning">
   <span class="safety-tag">महत्वपूर्ण चेतावनी</span>
   <h2>06. विद्युत आग लगने पर क्या करें?</h2>
   <ul>
-    <li>सुरक्षित हो तो मुख्य बिजली सप्लाई बंद करवाएँ।</li>
-    <li>विद्युत आग पर पानी का उपयोग न करें।</li>
-    <li>उपयुक्त रेटिंग वाले CO₂ या अन्य स्वीकृत अग्निशामक का उपयोग केवल प्रशिक्षित व्यक्ति करे।</li>
-    <li>आग फैलने पर तुरंत बाहर निकलें और आपातकालीन सहायता बुलाएँ।</li>
+    <li>सबसे पहले लोगों को सुरक्षित दूरी पर ले जाएँ।</li>
+    <li>सुरक्षित हो तो प्रशिक्षित व्यक्ति से मुख्य बिजली सप्लाई बंद करवाएँ।</li>
+    <li>विद्युत उपकरणों में लगी आग पर पानी का उपयोग न करें।</li>
+    <li>उपयुक्त रेटिंग वाला अग्निशामक ही इस्तेमाल किया जाना चाहिए।</li>
+    <li>आग फैलने पर तुरंत बाहर निकलें।</li>
     <li>भारत में अग्निशमन सहायता के लिए 101 या एकीकृत आपातकालीन नंबर 112 पर संपर्क करें।</li>
   </ul>
+  <div class="notice">
+    अपनी सुरक्षा को प्राथमिकता दें। आग बुझाने की कोशिश में
+    जोखिम न लें। प्रशिक्षित सहायता आने दें।
+  </div>
 </section>
 
 <section class="safety-card glass searchable">
@@ -272,7 +353,7 @@
   <ul>
     <li>सबसे पहले अपनी और घायल व्यक्ति की सुरक्षा सुनिश्चित करें।</li>
     <li>गंभीर दुर्घटना में तुरंत 112 पर सहायता बुलाएँ।</li>
-    <li>रक्तस्राव होने पर साफ कपड़े या ड्रेसिंग से दबाव दें।</li>
+    <li>रक्तस्राव होने पर साफ ड्रेसिंग से दबाव दें और चिकित्सा सहायता लें।</li>
     <li>जलने पर प्रभावित स्थान को साफ, ठंडे बहते पानी से ठंडा करें।</li>
     <li>गंभीर चोट वाले व्यक्ति को अनावश्यक रूप से न हिलाएँ।</li>
     <li>प्रशिक्षण के बिना चिकित्सा प्रक्रिया न करें।</li>
@@ -287,7 +368,8 @@
     <li>मशीन शुरू करने से पहले आसपास की जगह साफ रखें।</li>
     <li>चलती मशीन के पास हाथ न ले जाएँ।</li>
     <li>मशीन में खराबी होने पर उसे बंद करके प्रशिक्षक को बताएँ।</li>
-    <li>सफाई और रखरखाव से पहले मशीन को सुरक्षित रूप से अलग करें।</li>
+    <li>सफाई और रखरखाव से पहले मशीन को सुरक्षित रूप से अलग किया जाना चाहिए।</li>
+    <li>मशीन के पास ध्यान भटकाने वाली गतिविधियाँ न करें।</li>
   </ul>
 </section>
 
@@ -295,30 +377,264 @@
   <span class="safety-tag">सुरक्षा संकेत</span>
   <h2>10. सुरक्षा संकेतों के प्रकार</h2>
   <ul>
-    <li>लाल – निषेध और अग्निशमन उपकरण।</li>
-    <li>पीला – चेतावनी और खतरे का संकेत।</li>
-    <li>नीला – अनिवार्य निर्देश।</li>
-    <li>हरा – सुरक्षित रास्ता और प्राथमिक उपचार।</li>
+    <li><b>लाल:</b> निषेध और अग्निशमन उपकरण।</li>
+    <li><b>पीला:</b> चेतावनी और खतरे का संकेत।</li>
+    <li><b>नीला:</b> अनिवार्य निर्देश।</li>
+    <li><b>हरा:</b> सुरक्षित रास्ता और प्राथमिक उपचार।</li>
   </ul>
 </section>
 
 <section class="safety-card glass searchable">
-  <span class="safety-tag">याद रखने योग्य बातें</span>
-  <h2>11. परीक्षा के महत्वपूर्ण प्रश्न</h2>
+  <span class="safety-tag">प्रदूषण और स्वच्छता</span>
+  <h2>11. कार्यशाला में साफ-सफाई का महत्व</h2>
   <ul>
-    <li>PPE का पूरा नाम क्या है?</li>
-    <li>5S के पाँच चरण कौन-कौन से हैं?</li>
-    <li>Class A आग किन पदार्थों से लगती है?</li>
-    <li>CO₂ अग्निशामक का उपयोग कहाँ होता है?</li>
-    <li>विद्युत आग पर पानी क्यों नहीं डालना चाहिए?</li>
-    <li>वर्कशॉप में Safety Shoes क्यों पहनते हैं?</li>
+    <li>औजारों को उपयोग के बाद निर्धारित स्थान पर रखें।</li>
+    <li>फर्श को तेल, पानी और कचरे से मुक्त रखें।</li>
+    <li>कचरे को निर्धारित डिब्बे में डालें।</li>
+    <li>मशीन के आसपास रास्ता खुला रखें।</li>
+    <li>धूल और धुएँ के लिए उचित वेंटिलेशन की व्यवस्था रखें।</li>
   </ul>
+</section>
+
+<!-- QUESTION ANSWERS -->
+<section class="safety-card glass searchable">
+  <span class="safety-tag">लिखित अभ्यास</span>
+  <h2>12. महत्वपूर्ण प्रश्न और उत्तर</h2>
+
+  <div class="question">
+    <p>प्रश्न 1. कार्यशाला सुरक्षा क्या है?</p>
+    <div class="answer">उत्तर: कार्यशाला में काम करते समय दुर्घटनाओं से स्वयं और दूसरों को सुरक्षित रखने के नियमों को कार्यशाला सुरक्षा कहते हैं।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 2. PPE का पूरा नाम क्या है?</p>
+    <div class="answer">उत्तर: Personal Protective Equipment। हिंदी में व्यक्तिगत सुरक्षा उपकरण।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 3. Safety Goggles का क्या उपयोग है?</p>
+    <div class="answer">उत्तर: आँखों को धूल, कणों और कार्य के दौरान उत्पन्न होने वाले खतरों से बचाने के लिए।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 4. Safety Shoes क्यों पहने जाते हैं?</p>
+    <div class="answer">उत्तर: पैरों को भारी वस्तुओं, गिरने वाली चीजों और कार्यस्थल के अन्य खतरों से बचाने के लिए।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 5. Class A आग किन पदार्थों से लगती है?</p>
+    <div class="answer">उत्तर: लकड़ी, कागज और कपड़े जैसे सामान्य ठोस ज्वलनशील पदार्थों से।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 6. Class B आग किस प्रकार की होती है?</p>
+    <div class="answer">उत्तर: ज्वलनशील तरल पदार्थों जैसे पेट्रोल और पेंट से लगने वाली आग।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 7. Class C आग किससे संबंधित है?</p>
+    <div class="answer">उत्तर: ज्वलनशील गैसों जैसे LPG और प्रोपेन से संबंधित आग।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 8. Class D आग किससे लगती है?</p>
+    <div class="answer">उत्तर: मैग्नीशियम और सोडियम जैसी ज्वलनशील धातुओं से।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 9. CO₂ अग्निशामक का उपयोग कहाँ होता है?</p>
+    <div class="answer">उत्तर: उपयुक्त रेटिंग के अनुसार विद्युत उपकरणों और Class B आग में।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 10. ABC Powder का उपयोग किन आगों में होता है?</p>
+    <div class="answer">उत्तर: उपयुक्त रेटिंग वाला ABC पाउडर Class A, B और C आग के लिए उपयोग किया जाता है।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 11. 5S क्या है?</p>
+    <div class="answer">उत्तर: कार्यस्थल को साफ, व्यवस्थित और सुरक्षित रखने की जापानी पद्धति को 5S कहते हैं।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 12. Seiri का क्या अर्थ है?</p>
+    <div class="answer">उत्तर: Seiri का अर्थ छँटाई करना और जरूरी तथा गैर-जरूरी वस्तुओं को अलग करना है।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 13. Seiton का क्या अर्थ है?</p>
+    <div class="answer">उत्तर: प्रत्येक वस्तु को व्यवस्थित करके उसका निश्चित स्थान तय करना।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 14. Seiso का क्या अर्थ है?</p>
+    <div class="answer">उत्तर: कार्यस्थल और उपकरणों की सफाई करना।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 15. First Aid क्या है?</p>
+    <div class="answer">उत्तर: चिकित्सा सहायता मिलने से पहले घायल व्यक्ति को दी जाने वाली शुरुआती सहायता First Aid कहलाती है।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 16. विद्युत आग पर पानी क्यों नहीं डालना चाहिए?</p>
+    <div class="answer">उत्तर: पानी से विद्युत धारा का खतरा उत्पन्न हो सकता है, जिससे बिजली का झटका लग सकता है।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 17. Fire Extinguisher क्या है?</p>
+    <div class="answer">उत्तर: आग बुझाने के लिए उपयोग किए जाने वाले उपकरण को अग्निशामक यंत्र कहते हैं।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 18. कार्यशाला में Ear Plug क्यों पहनते हैं?</p>
+    <div class="answer">उत्तर: अधिक शोर से कानों की सुरक्षा के लिए।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 19. मशीन गार्ड का क्या काम है?</p>
+    <div class="answer">उत्तर: मशीन के खतरनाक चलने वाले भागों से व्यक्ति को सुरक्षित दूरी पर रखने में मदद करना।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 20. आपातकालीन सहायता के लिए भारत में कौन-सा नंबर है?</p>
+    <div class="answer">उत्तर: एकीकृत आपातकालीन सहायता नंबर 112 है। अग्निशमन सेवा के लिए 101 भी उपलब्ध है।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+</section>
+
+<!-- MCQ -->
+<section class="safety-card glass searchable">
+  <span class="safety-tag">MCQ PRACTICE</span>
+  <h2>13. कार्यशाला सुरक्षा – 10 बहुविकल्पीय प्रश्न</h2>
+  <p>पहले उत्तर सोचें, फिर उत्तर देखें पर क्लिक करें।</p>
+
+  <div class="question">
+    <p>1. PPE का पूरा नाम क्या है?</p>
+    <span class="mcq-option">A. Personal Protective Equipment</span>
+    <span class="mcq-option">B. Personal Power Equipment</span>
+    <span class="mcq-option">C. Public Protection Equipment</span>
+    <span class="mcq-option">D. इनमें से कोई नहीं</span>
+    <div class="mcq-answer">सही उत्तर: A. Personal Protective Equipment</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>2. आँखों की सुरक्षा के लिए क्या पहनते हैं?</p>
+    <span class="mcq-option">A. Safety Shoes</span>
+    <span class="mcq-option">B. Safety Goggles</span>
+    <span class="mcq-option">C. Ear Plug</span>
+    <span class="mcq-option">D. Helmet</span>
+    <div class="mcq-answer">सही उत्तर: B. Safety Goggles</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>3. लकड़ी और कागज की आग किस वर्ग में आती है?</p>
+    <span class="mcq-option">A. Class A</span>
+    <span class="mcq-option">B. Class B</span>
+    <span class="mcq-option">C. Class C</span>
+    <span class="mcq-option">D. Class D</span>
+    <div class="mcq-answer">सही उत्तर: A. Class A</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>4. पेट्रोल की आग किस वर्ग में आती है?</p>
+    <span class="mcq-option">A. Class A</span>
+    <span class="mcq-option">B. Class B</span>
+    <span class="mcq-option">C. Class C</span>
+    <span class="mcq-option">D. Class D</span>
+    <div class="mcq-answer">सही उत्तर: B. Class B</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>5. LPG की आग किस वर्ग से संबंधित है?</p>
+    <span class="mcq-option">A. Class A</span>
+    <span class="mcq-option">B. Class B</span>
+    <span class="mcq-option">C. Class C</span>
+    <span class="mcq-option">D. Class D</span>
+    <div class="mcq-answer">सही उत्तर: C. Class C</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>6. 5S में Seiso का अर्थ क्या है?</p>
+    <span class="mcq-option">A. छँटाई</span>
+    <span class="mcq-option">B. सफाई</span>
+    <span class="mcq-option">C. अनुशासन</span>
+    <span class="mcq-option">D. व्यवस्था</span>
+    <div class="mcq-answer">सही उत्तर: B. सफाई</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>7. विद्युत उपकरणों की आग में कौन-सा यंत्र उपयुक्त हो सकता है?</p>
+    <span class="mcq-option">A. Water Extinguisher</span>
+    <span class="mcq-option">B. उपयुक्त रेटिंग वाला CO₂ Extinguisher</span>
+    <span class="mcq-option">C. सामान्य पानी</span>
+    <span class="mcq-option">D. इनमें से कोई नहीं</span>
+    <div class="mcq-answer">सही उत्तर: B. उपयुक्त रेटिंग वाला CO₂ Extinguisher</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>8. कानों की सुरक्षा के लिए क्या उपयोग होता है?</p>
+    <span class="mcq-option">A. Ear Plug</span>
+    <span class="mcq-option">B. Helmet</span>
+    <span class="mcq-option">C. Apron</span>
+    <span class="mcq-option">D. Safety Shoes</span>
+    <div class="mcq-answer">सही उत्तर: A. Ear Plug</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>9. ज्वलनशील धातुओं की आग किस वर्ग में आती है?</p>
+    <span class="mcq-option">A. Class A</span>
+    <span class="mcq-option">B. Class B</span>
+    <span class="mcq-option">C. Class C</span>
+    <span class="mcq-option">D. Class D</span>
+    <div class="mcq-answer">सही उत्तर: D. Class D</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>10. भारत का एकीकृत आपातकालीन नंबर कौन-सा है?</p>
+    <span class="mcq-option">A. 100</span>
+    <span class="mcq-option">B. 101</span>
+    <span class="mcq-option">C. 108</span>
+    <span class="mcq-option">D. 112</span>
+    <div class="mcq-answer">सही उत्तर: D. 112</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
 </section>
 
 <p class="no-result" id="noResult">
   कोई विषय नहीं मिला। दूसरा शब्द खोजें।
 </p>
 
+<a href="notes.html" class="back-link">← Digital Notes पर जाएँ</a>
+<br>
 <a href="../index.html" class="back-link">← मुख्य पेज पर जाएँ</a>
 
 </main>
@@ -329,6 +645,15 @@
 </footer>
 
 <script>
+function toggleAnswer(button) {
+  const answer = button.previousElementSibling;
+  answer.classList.toggle("show");
+
+  button.textContent = answer.classList.contains("show")
+    ? "उत्तर छिपाएँ"
+    : "उत्तर देखें";
+}
+
 const searchInput = document.getElementById("safetySearch");
 const cards = document.querySelectorAll(".searchable");
 const noResult = document.getElementById("noResult");

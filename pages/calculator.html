@@ -2,385 +2,615 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#070b14">
-  <title>Formula Calculator | MACHINIST PRO</title>
-  <link rel="stylesheet" href="../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formula Calculator | MACHINIST PRO</title>
 
-  <style>
-    .page-intro {
-      padding: 24px;
-      margin: 25px 0;
-      border-radius: 22px;
-    }
-
-    .page-intro h1 {
-      margin: 12px 0;
-      font-size: 26px;
-    }
-
-    .page-intro p,
-    .formula-card p {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .formula-card {
-      padding: 20px;
-      border-radius: 19px;
-      margin-bottom: 16px;
-    }
-
-    .formula-card h2 {
-      color: var(--cyan);
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
-
-    .formula {
-      background: rgba(0, 217, 255, 0.08);
-      border: 1px solid var(--border);
-      padding: 14px;
-      border-radius: 12px;
-      margin: 12px 0;
-      color: var(--green);
-      font-weight: 700;
-      text-align: center;
-      line-height: 1.8;
-    }
-
-    .calculator-input {
-      display: block;
-      width: 100%;
-      margin: 12px 0;
-      padding: 13px;
-      border: 1px solid var(--border);
-      border-radius: 11px;
-      background: rgba(255,255,255,0.06);
-      color: white;
-      outline: none;
-    }
-
-    .calculator-input:focus {
-      border-color: var(--cyan);
-    }
-
-    .calculator-input::placeholder {
-      color: var(--muted);
-    }
-
-    .calc-button {
-      width: 100%;
-      padding: 13px;
-      border: 0;
-      border-radius: 11px;
-      background: linear-gradient(100deg, #00d9ff, #66aaff);
-      color: #001018;
-      font-weight: 800;
-      margin-top: 8px;
-    }
-
-    .result {
-      display: none;
-      margin-top: 14px;
-      padding: 15px;
-      border-radius: 12px;
-      background: rgba(37, 230, 162, 0.09);
-      border: 1px solid rgba(37, 230, 162, 0.35);
-      color: var(--green);
-      line-height: 1.7;
-    }
-
-    .formula-list {
-      padding-left: 20px;
-      color: var(--muted);
-      line-height: 2;
-      font-size: 14px;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin: 20px 0;
-      color: var(--cyan);
-    }
-  </style>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+ background:#080f1c;color:#eaf2ff;
+ font-family:Arial,sans-serif;padding:18px;
+}
+.container{max-width:1000px;margin:auto}
+header{
+ text-align:center;padding:25px 10px;
+ background:linear-gradient(135deg,#102c35,#10213a);
+ border:1px solid #23434d;border-radius:18px;margin-bottom:20px;
+}
+header h1{color:#64e6a5;font-size:27px}
+header p{color:#a8bdcc;margin-top:9px}
+nav{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:20px}
+nav button{
+ flex:1;min-width:100px;padding:13px 8px;
+ border:1px solid #263d50;border-radius:10px;
+ background:#101d2d;color:#dcecff;font-weight:bold;
+ cursor:pointer;
+}
+nav button.active{background:#64e6a5;color:#07130e}
+.section{display:none}
+.section.active{display:block}
+.section-title{margin:20px 0 14px}
+.section-title h2{font-size:22px;color:#64e6a5}
+.section-title p{color:#91a5b9;font-size:13px;margin-top:6px}
+.search{
+ width:100%;padding:14px;border-radius:10px;
+ background:#101d2d;border:1px solid #294158;
+ color:white;margin-bottom:15px;font-size:15px;outline:none;
+}
+.formula-grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ gap:14px;
+}
+.card{
+ background:#101c2b;border:1px solid #263b50;
+ border-radius:14px;padding:17px;
+}
+.card h3{font-size:17px;color:#fff;margin-bottom:7px}
+.formula{
+ background:#0a1422;padding:10px;border-radius:8px;
+ color:#64e6a5;font-size:13px;margin:10px 0;
+ line-height:1.6;word-break:break-word;
+}
+.card label{display:block;color:#b9c9d8;font-size:13px;margin:12px 0 5px}
+.card input{
+ width:100%;padding:11px;background:#081321;
+ border:1px solid #30445a;border-radius:8px;
+ color:white;font-size:15px;outline:none;
+}
+.card input:focus{border-color:#64e6a5}
+.card button{
+ width:100%;padding:12px;margin-top:14px;
+ border:0;border-radius:8px;background:#64e6a5;
+ color:#07130e;font-weight:bold;font-size:14px;cursor:pointer;
+}
+.result{
+ display:none;margin-top:13px;padding:12px;
+ background:#0a2822;border:1px solid #23634b;
+ border-radius:9px;line-height:1.6;
+}
+.result strong{color:#64e6a5}
+.steps{font-size:12px;color:#c0d4ca;margin-top:7px;white-space:pre-line}
+.empty{color:#93a7ba;text-align:center;padding:25px;display:none}
+footer{text-align:center;color:#72879b;padding:25px 5px;font-size:12px}
+.back{display:inline-block;color:#64e6a5;text-decoration:none;margin-bottom:15px}
+@media(max-width:500px){
+ body{padding:12px}
+ header h1{font-size:23px}
+ .formula-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
+<div class="container">
 
-<header class="header">
-  <div class="container header-content">
-    <a href="../index.html" class="logo">
-      ⚙ MACHINIST <span>PRO</span>
-    </a>
-    <div class="header-tag">FORMULA CALCULATOR</div>
-  </div>
+<a class="back" href="../index.html">← Back to Home</a>
+
+<header>
+<h1>⚙️ FORMULA CALCULATOR</h1>
+<p>MACHINIST PRO | Technical Formula Library</p>
 </header>
 
-<main class="container">
+<nav>
+<button class="active" onclick="showSection('machinist',this)">⚙️ Machinist</button>
+<button onclick="showSection('electrician',this)">⚡ Electrician</button>
+<button onclick="showSection('workshop',this)">📐 Workshop</button>
+</nav>
 
-  <section class="page-intro glass">
-    <small style="color:#00d9ff;">ITI MACHINIST FIRST YEAR</small>
-    <h1>🧮 सूत्र एवं गणना</h1>
-    <p>
-      मशीनिस्ट ट्रेड में उपयोग होने वाले महत्वपूर्ण
-      गणितीय और मशीनिंग सूत्र यहाँ सीखें और कैलकुलेटर
-      की सहायता से उदाहरण हल करें।
-    </p>
-  </section>
+<!-- MACHINIST -->
+<section id="machinist" class="section active">
+<div class="section-title">
+<h2>⚙️ Machinist Formulas</h2>
+<p>Machine tools और machining calculations</p>
+</div>
+<input class="search" placeholder="Machinist formula खोजें..." oninput="searchCards(this,'machinistGrid')">
+<div class="formula-grid" id="machinistGrid">
 
-  <!-- CUTTING SPEED -->
-  <section class="formula-card glass">
-    <h2>01. कटिंग स्पीड (Cutting Speed)</h2>
+<div class="card" data-name="rpm spindle speed">
+<h3>01. Spindle Speed (RPM)</h3>
+<div class="formula">N = (1000 × V) / (π × D)</div>
+<label>Cutting Speed V (m/min)</label><input id="rpmV" type="number" step="any">
+<label>Workpiece Diameter D (mm)</label><input id="rpmD" type="number" step="any">
+<button onclick="calc('rpm')">Calculate RPM</button>
+<div class="result" id="rpmR"></div>
+</div>
 
-    <p>
-      कटिंग स्पीड वह गति है जिससे कटिंग टूल के संपर्क
-      में जॉब की सतह घूमती या आगे बढ़ती है।
-    </p>
+<div class="card" data-name="cutting speed">
+<h3>02. Cutting Speed</h3>
+<div class="formula">V = (π × D × N) / 1000</div>
+<label>Diameter D (mm)</label><input id="cvD" type="number" step="any">
+<label>RPM (N)</label><input id="cvN" type="number" step="any">
+<button onclick="calc('cv')">Calculate</button>
+<div class="result" id="cvR"></div>
+</div>
 
-    <div class="formula">
-      V = (π × D × N) / 1000
-    </div>
+<div class="card" data-name="feed rate">
+<h3>03. Feed Rate</h3>
+<div class="formula">F = f × N</div>
+<label>Feed per revolution f (mm/rev)</label><input id="feedF" type="number" step="any">
+<label>RPM (N)</label><input id="feedN" type="number" step="any">
+<button onclick="calc('feed')">Calculate</button>
+<div class="result" id="feedR"></div>
+</div>
 
-    <p>
-      V = कटिंग स्पीड (मीटर/मिनट)<br>
-      D = जॉब का व्यास (मिलीमीटर)<br>
-      N = स्पिंडल की गति (RPM)
-    </p>
-  </section>
+<div class="card" data-name="machining time turning time">
+<h3>04. Machining Time</h3>
+<div class="formula">T = L / (f × N)</div>
+<label>Length of cut L (mm)</label><input id="timeL" type="number" step="any">
+<label>Feed f (mm/rev)</label><input id="timeF" type="number" step="any">
+<label>RPM (N)</label><input id="timeN" type="number" step="any">
+<button onclick="calc('time')">Calculate</button>
+<div class="result" id="timeR"></div>
+</div>
 
-  <!-- RPM CALCULATOR -->
-  <section class="formula-card glass">
-    <h2>02. स्पिंडल स्पीड (RPM Calculator)</h2>
+<div class="card" data-name="depth of cut">
+<h3>05. Depth of Cut</h3>
+<div class="formula">d = (D₁ − D₂) / 2</div>
+<label>Initial Diameter D₁ (mm)</label><input id="depthD1" type="number" step="any">
+<label>Final Diameter D₂ (mm)</label><input id="depthD2" type="number" step="any">
+<button onclick="calc('depth')">Calculate</button>
+<div class="result" id="depthR"></div>
+</div>
 
-    <p>
-      कटिंग स्पीड और जॉब का व्यास डालकर RPM निकालें।
-    </p>
+<div class="card" data-name="material removal rate mrr">
+<h3>06. Material Removal Rate</h3>
+<div class="formula">MRR = V × f × d</div>
+<label>Cutting Speed V (mm/min)</label><input id="mrrV" type="number" step="any">
+<label>Feed f (mm/rev)</label><input id="mrrF" type="number" step="any">
+<label>Depth of Cut d (mm)</label><input id="mrrD" type="number" step="any">
+<button onclick="calc('mrr')">Calculate</button>
+<div class="result" id="mrrR"></div>
+</div>
 
-    <div class="formula">
-      N = (1000 × V) / (π × D)
-    </div>
+<div class="card" data-name="taper ratio">
+<h3>07. Taper Ratio</h3>
+<div class="formula">Taper = (D − d) / L</div>
+<label>Major Diameter D (mm)</label><input id="taperD" type="number" step="any">
+<label>Minor Diameter d (mm)</label><input id="taperd" type="number" step="any">
+<label>Taper Length L (mm)</label><input id="taperL" type="number" step="any">
+<button onclick="calc('taper')">Calculate</button>
+<div class="result" id="taperR"></div>
+</div>
 
-    <input
-      class="calculator-input"
-      type="number"
-      id="cuttingSpeed"
-      placeholder="कटिंग स्पीड V (मीटर/मिनट)"
-      min="0"
-      step="any"
-    >
+<div class="card" data-name="gear ratio">
+<h3>08. Gear Ratio</h3>
+<div class="formula">Ratio = Teeth of Driven / Teeth of Driver</div>
+<label>Driven Gear Teeth</label><input id="gearDriven" type="number" step="1">
+<label>Driver Gear Teeth</label><input id="gearDriver" type="number" step="1">
+<button onclick="calc('gear')">Calculate</button>
+<div class="result" id="gearR"></div>
+</div>
 
-    <input
-      class="calculator-input"
-      type="number"
-      id="diameter"
-      placeholder="जॉब का व्यास D (मिलीमीटर)"
-      min="0"
-      step="any"
-    >
+</div>
+<div class="empty" id="machinistEmpty">कोई Formula नहीं मिला।</div>
+</section>
 
-    <button class="calc-button" onclick="calculateRPM()">
-      RPM निकालें
-    </button>
+<!-- ELECTRICIAN -->
+<section id="electrician" class="section">
+<div class="section-title">
+<h2>⚡ Electrician Formulas</h2>
+<p>Basic Electrical और Ohm's Law calculations</p>
+</div>
+<input class="search" placeholder="Electrician formula खोजें..." oninput="searchCards(this,'electricianGrid')">
+<div class="formula-grid" id="electricianGrid">
 
-    <div class="result" id="rpmResult" aria-live="polite"></div>
-  </section>
+<div class="card" data-name="ohm law voltage current resistance">
+<h3>01. Ohm's Law</h3>
+<div class="formula">V = I × R</div>
+<label>Current I (Ampere)</label><input id="ohmI" type="number" step="any">
+<label>Resistance R (Ohm)</label><input id="ohmR" type="number" step="any">
+<button onclick="calc('ohm')">Calculate Voltage</button>
+<div class="result" id="ohmResult"></div>
+</div>
 
-  <!-- FEED RATE -->
-  <section class="formula-card glass">
-    <h2>03. फीड रेट (Feed Rate)</h2>
+<div class="card" data-name="current">
+<h3>02. Electric Current</h3>
+<div class="formula">I = V / R</div>
+<label>Voltage V (Volt)</label><input id="currentV" type="number" step="any">
+<label>Resistance R (Ohm)</label><input id="currentR" type="number" step="any">
+<button onclick="calc('current')">Calculate</button>
+<div class="result" id="currentResult"></div>
+</div>
 
-    <p>
-      फीड रेट वह दूरी है जो कटिंग टूल या जॉब
-      एक मिनट में तय करता है।
-    </p>
+<div class="card" data-name="resistance">
+<h3>03. Resistance</h3>
+<div class="formula">R = V / I</div>
+<label>Voltage V (Volt)</label><input id="resV" type="number" step="any">
+<label>Current I (Ampere)</label><input id="resI" type="number" step="any">
+<button onclick="calc('resistance')">Calculate</button>
+<div class="result" id="resistanceResult"></div>
+</div>
 
-    <div class="formula">
-      F = f × N
-    </div>
+<div class="card" data-name="electrical power">
+<h3>04. Electrical Power</h3>
+<div class="formula">P = V × I</div>
+<label>Voltage V (Volt)</label><input id="powerV" type="number" step="any">
+<label>Current I (Ampere)</label><input id="powerI" type="number" step="any">
+<button onclick="calc('power')">Calculate</button>
+<div class="result" id="powerResult"></div>
+</div>
 
-    <p>
-      F = फीड रेट (मिलीमीटर/मिनट)<br>
-      f = फीड (मिलीमीटर/चक्कर)<br>
-      N = RPM
-    </p>
+<div class="card" data-name="electrical energy unit">
+<h3>05. Electrical Energy</h3>
+<div class="formula">E = P × t</div>
+<label>Power P (Watt)</label><input id="energyP" type="number" step="any">
+<label>Time t (Hours)</label><input id="energyT" type="number" step="any">
+<button onclick="calc('energy')">Calculate</button>
+<div class="result" id="energyResult"></div>
+</div>
 
-    <input
-      class="calculator-input"
-      type="number"
-      id="feed"
-      placeholder="फीड f (मिलीमीटर/चक्कर)"
-      min="0"
-      step="any"
-    >
+<div class="card" data-name="series resistance">
+<h3>06. Series Resistance</h3>
+<div class="formula">R = R₁ + R₂ + R₃</div>
+<label>Resistance R₁ (Ohm)</label><input id="series1" type="number" step="any">
+<label>Resistance R₂ (Ohm)</label><input id="series2" type="number" step="any">
+<label>Resistance R₃ (Ohm)</label><input id="series3" type="number" step="any">
+<button onclick="calc('series')">Calculate</button>
+<div class="result" id="seriesResult"></div>
+</div>
 
-    <input
-      class="calculator-input"
-      type="number"
-      id="feedRPM"
-      placeholder="RPM"
-      min="0"
-      step="any"
-    >
+<div class="card" data-name="parallel resistance">
+<h3>07. Parallel Resistance (2 Resistors)</h3>
+<div class="formula">R = (R₁ × R₂) / (R₁ + R₂)</div>
+<label>Resistance R₁ (Ohm)</label><input id="parallel1" type="number" step="any">
+<label>Resistance R₂ (Ohm)</label><input id="parallel2" type="number" step="any">
+<button onclick="calc('parallel')">Calculate</button>
+<div class="result" id="parallelResult"></div>
+</div>
 
-    <button class="calc-button" onclick="calculateFeed()">
-      फीड रेट निकालें
-    </button>
+<div class="card" data-name="power energy kilowatt hour">
+<h3>08. Power in Kilowatt</h3>
+<div class="formula">kW = W / 1000</div>
+<label>Power (Watt)</label><input id="kwW" type="number" step="any">
+<button onclick="calc('kw')">Calculate</button>
+<div class="result" id="kwResult"></div>
+</div>
 
-    <div class="result" id="feedResult" aria-live="polite"></div>
-  </section>
+</div>
+<div class="empty" id="electricianEmpty">कोई Formula नहीं मिला।</div>
+</section>
 
-  <!-- MACHINING TIME -->
-  <section class="formula-card glass">
-    <h2>04. मशीनिंग समय (Machining Time)</h2>
+<!-- WORKSHOP -->
+<section id="workshop" class="section">
+<div class="section-title">
+<h2>📐 Workshop Calculation & Science</h2>
+<p>Mathematics, Geometry और Basic Science</p>
+</div>
+<input class="search" placeholder="Workshop formula खोजें..." oninput="searchCards(this,'workshopGrid')">
+<div class="formula-grid" id="workshopGrid">
 
-    <p>
-      किसी मशीनिंग कार्य को पूरा करने में लगने वाले
-      समय को मशीनिंग समय कहते हैं।
-    </p>
+<div class="card" data-name="circle area">
+<h3>01. Circle Area</h3>
+<div class="formula">A = π × r²</div>
+<label>Radius r (mm)</label><input id="circleR" type="number" step="any">
+<button onclick="calc('circle')">Calculate</button>
+<div class="result" id="circleResult"></div>
+</div>
 
-    <div class="formula">
-      T = L / (f × N)
-    </div>
+<div class="card" data-name="circle circumference perimeter">
+<h3>02. Circle Circumference</h3>
+<div class="formula">C = 2 × π × r</div>
+<label>Radius r (mm)</label><input id="circR" type="number" step="any">
+<button onclick="calc('circ')">Calculate</button>
+<div class="result" id="circResult"></div>
+</div>
 
-    <p>
-      T = समय (मिनट)<br>
-      L = मशीनिंग लंबाई (मिलीमीटर)<br>
-      f = फीड (मिलीमीटर/चक्कर)<br>
-      N = RPM
-    </p>
+<div class="card" data-name="rectangle area">
+<h3>03. Rectangle Area</h3>
+<div class="formula">A = Length × Breadth</div>
+<label>Length (mm)</label><input id="rectL" type="number" step="any">
+<label>Breadth (mm)</label><input id="rectB" type="number" step="any">
+<button onclick="calc('rectangle')">Calculate</button>
+<div class="result" id="rectangleResult"></div>
+</div>
 
-    <input
-      class="calculator-input"
-      type="number"
-      id="length"
-      placeholder="मशीनिंग लंबाई L (मिलीमीटर)"
-      min="0"
-      step="any"
-    >
+<div class="card" data-name="square area">
+<h3>04. Square Area</h3>
+<div class="formula">A = Side²</div>
+<label>Side (mm)</label><input id="squareS" type="number" step="any">
+<button onclick="calc('square')">Calculate</button>
+<div class="result" id="squareResult"></div>
+</div>
 
-    <input
-      class="calculator-input"
-      type="number"
-      id="timeFeed"
-      placeholder="फीड f (मिलीमीटर/चक्कर)"
-      min="0"
-      step="any"
-    >
+<div class="card" data-name="triangle area">
+<h3>05. Triangle Area</h3>
+<div class="formula">A = ½ × Base × Height</div>
+<label>Base (mm)</label><input id="triB" type="number" step="any">
+<label>Height (mm)</label><input id="triH" type="number" step="any">
+<button onclick="calc('triangle')">Calculate</button>
+<div class="result" id="triangleResult"></div>
+</div>
 
-    <input
-      class="calculator-input"
-      type="number"
-      id="timeRPM"
-      placeholder="RPM"
-      min="0"
-      step="any"
-    >
+<div class="card" data-name="cylinder volume">
+<h3>06. Cylinder Volume</h3>
+<div class="formula">V = π × r² × h</div>
+<label>Radius r (mm)</label><input id="cylR" type="number" step="any">
+<label>Height h (mm)</label><input id="cylH" type="number" step="any">
+<button onclick="calc('cylinder')">Calculate</button>
+<div class="result" id="cylinderResult"></div>
+</div>
 
-    <button class="calc-button" onclick="calculateTime()">
-      समय निकालें
-    </button>
+<div class="card" data-name="percentage">
+<h3>07. Percentage</h3>
+<div class="formula">Percentage = (Part / Total) × 100</div>
+<label>Part</label><input id="percentP" type="number" step="any">
+<label>Total</label><input id="percentT" type="number" step="any">
+<button onclick="calc('percentage')">Calculate</button>
+<div class="result" id="percentageResult"></div>
+</div>
 
-    <div class="result" id="timeResult" aria-live="polite"></div>
-  </section>
+<div class="card" data-name="speed distance time">
+<h3>08. Speed</h3>
+<div class="formula">Speed = Distance / Time</div>
+<label>Distance (km)</label><input id="speedD" type="number" step="any">
+<label>Time (hours)</label><input id="speedT" type="number" step="any">
+<button onclick="calc('speed')">Calculate</button>
+<div class="result" id="speedResult"></div>
+</div>
 
-  <!-- OTHER FORMULAS -->
-  <section class="formula-card glass">
-    <h2>05. महत्वपूर्ण गणितीय सूत्र</h2>
+<div class="card" data-name="density">
+<h3>09. Density</h3>
+<div class="formula">Density = Mass / Volume</div>
+<label>Mass (kg)</label><input id="densityM" type="number" step="any">
+<label>Volume (m³)</label><input id="densityV" type="number" step="any">
+<button onclick="calc('density')">Calculate</button>
+<div class="result" id="densityResult"></div>
+</div>
 
-    <ul class="formula-list">
-      <li>आयत का क्षेत्रफल = लंबाई × चौड़ाई</li>
-      <li>वर्ग का क्षेत्रफल = भुजा × भुजा</li>
-      <li>त्रिभुज का क्षेत्रफल = ½ × आधार × ऊँचाई</li>
-      <li>वृत्त का क्षेत्रफल = π × r²</li>
-      <li>वृत्त की परिधि = 2 × π × r</li>
-      <li>घन का आयतन = भुजा³</li>
-      <li>बेलन का आयतन = π × r² × h</li>
-      <li>प्रतिशत = (प्राप्त मान / कुल मान) × 100</li>
-    </ul>
-  </section>
+<div class="card" data-name="work physics">
+<h3>10. Work</h3>
+<div class="formula">W = Force × Distance</div>
+<label>Force (Newton)</label><input id="workF" type="number" step="any">
+<label>Distance (Meter)</label><input id="workD" type="number" step="any">
+<button onclick="calc('work')">Calculate</button>
+<div class="result" id="workResult"></div>
+</div>
 
-  <a href="../index.html" class="back-link">
-    ← मुख्य पेज पर जाएँ
-  </a>
+<div class="card" data-name="power physics">
+<h3>11. Mechanical Power</h3>
+<div class="formula">P = Work / Time</div>
+<label>Work (Joule)</label><input id="mechW" type="number" step="any">
+<label>Time (Seconds)</label><input id="mechT" type="number" step="any">
+<button onclick="calc('mechpower')">Calculate</button>
+<div class="result" id="mechpowerResult"></div>
+</div>
 
-</main>
+<div class="card" data-name="average">
+<h3>12. Average</h3>
+<div class="formula">Average = Sum / Number of Values</div>
+<label>First Number</label><input id="avg1" type="number" step="any">
+<label>Second Number</label><input id="avg2" type="number" step="any">
+<label>Third Number</label><input id="avg3" type="number" step="any">
+<button onclick="calc('average')">Calculate</button>
+<div class="result" id="averageResult"></div>
+</div>
 
-<footer class="footer">
-  <p>⚙ MACHINIST PRO</p>
-  <p>ITI Machinist Digital Learning Platform</p>
+<div class="card" data-name="unit conversion millimeter inch">
+<h3>13. Millimeter to Inch</h3>
+<div class="formula">Inch = mm / 25.4</div>
+<label>Length (mm)</label><input id="mmValue" type="number" step="any">
+<button onclick="calc('mm')">Convert</button>
+<div class="result" id="mmResult"></div>
+</div>
+
+<div class="card" data-name="inch to millimeter conversion">
+<h3>14. Inch to Millimeter</h3>
+<div class="formula">mm = Inch × 25.4</div>
+<label>Length (Inch)</label><input id="inchValue" type="number" step="any">
+<button onclick="calc('inch')">Convert</button>
+<div class="result" id="inchResult"></div>
+</div>
+
+</div>
+<div class="empty" id="workshopEmpty">कोई Formula नहीं मिला।</div>
+</section>
+
+<footer>
+MACHINIST PRO © 2026 | Learn • Calculate • Improve
+<br><br>
+सभी परिणाम दिए गए इनपुट और दिखाई गई इकाइयों पर आधारित हैं।
 </footer>
-
-<script src="../script.js"></script>
+</div>
 
 <script>
-  function getNumber(id) {
-    return Number(document.getElementById(id).value);
-  }
+function showSection(id,btn){
+ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ btn.classList.add('active');
+}
 
-  function showResult(id, message) {
-    const box = document.getElementById(id);
-    box.style.display = "block";
-    box.textContent = message;
-  }
+function value(id){
+ const el=document.getElementById(id);
+ if(!el || el.value.trim()==='') throw new Error('कृपया सभी जरूरी मान भरें।');
+ const n=Number(el.value);
+ if(!Number.isFinite(n)) throw new Error('मान सही दर्ज करें।');
+ return n;
+}
 
-  function validPositive(...values) {
-    return values.every(value => Number.isFinite(value) && value > 0);
-  }
+function positive(n){
+ if(n<=0) throw new Error('मान शून्य से अधिक होना चाहिए।');
+ return n;
+}
 
-  function calculateRPM() {
-    const speed = getNumber("cuttingSpeed");
-    const diameter = getNumber("diameter");
+function display(id,answer,unit,steps){
+ const box=document.getElementById(id);
+ box.style.display='block';
+ box.innerHTML='<strong>उत्तर: '+answer.toLocaleString('en-IN',{maximumFractionDigits:4})+' '+unit+
+ '</strong><div class="steps">'+steps+'</div>';
+}
 
-    if (!validPositive(speed, diameter)) {
-      showResult("rpmResult", "कृपया दोनों मान शून्य से अधिक दर्ज करें।");
-      return;
-    }
+function calc(type){
+ try{
+ let a,b,c,r,s,u;
+ switch(type){
 
-    const rpm = (1000 * speed) / (Math.PI * diameter);
+ case 'rpm':
+ a=positive(value('rpmV'));b=positive(value('rpmD'));
+ r=1000*a/(Math.PI*b);s='N = (1000 × V) / (π × D)\n= (1000 × '+a+') / (π × '+b+')';
+ display('rpmR',r,'RPM',s);break;
 
-    showResult(
-      "rpmResult",
-      "उत्तर: " + rpm.toFixed(2) + " RPM"
-    );
-  }
+ case 'cv':
+ a=positive(value('cvD'));b=positive(value('cvN'));
+ r=Math.PI*a*b/1000;s='V = (π × D × N) / 1000\n= (π × '+a+' × '+b+') / 1000';
+ display('cvR',r,'m/min',s);break;
 
-  function calculateFeed() {
-    const feed = getNumber("feed");
-    const rpm = getNumber("feedRPM");
+ case 'feed':
+ a=positive(value('feedF'));b=positive(value('feedN'));
+ r=a*b;s='F = f × N\n= '+a+' × '+b;
+ display('feedR',r,'mm/min',s);break;
 
-    if (!validPositive(feed, rpm)) {
-      showResult("feedResult", "कृपया दोनों मान शून्य से अधिक दर्ज करें।");
-      return;
-    }
+ case 'time':
+ a=positive(value('timeL'));b=positive(value('timeF'));c=positive(value('timeN'));
+ r=a/(b*c);s='T = L / (f × N)\n= '+a+' / ('+b+' × '+c+')';
+ display('timeR',r,'Minutes',s);break;
 
-    const result = feed * rpm;
+ case 'depth':
+ a=positive(value('depthD1'));b=positive(value('depthD2'));
+ if(a<=b)throw new Error('Initial diameter, final diameter से बड़ा होना चाहिए।');
+ r=(a-b)/2;s='d = (D₁ − D₂) / 2\n= ('+a+' − '+b+') / 2';
+ display('depthR',r,'mm',s);break;
 
-    showResult(
-      "feedResult",
-      "उत्तर: " + result.toFixed(2) + " मिलीमीटर/मिनट"
-    );
-  }
+ case 'mrr':
+ a=positive(value('mrrV'));b=positive(value('mrrF'));c=positive(value('mrrD'));
+ r=a*b*c;s='MRR = V × f × d\n= '+a+' × '+b+' × '+c;
+ display('mrrR',r,'mm³/min (अनुमानित)',s);break;
 
-  function calculateTime() {
-    const length = getNumber("length");
-    const feed = getNumber("timeFeed");
-    const rpm = getNumber("timeRPM");
+ case 'taper':
+ a=positive(value('taperD'));b=positive(value('taperd'));c=positive(value('taperL'));
+ if(a<=b)throw new Error('Major diameter, minor diameter से बड़ा होना चाहिए।');
+ r=(a-b)/c;s='Taper = (D − d) / L\n= ('+a+' − '+b+') / '+c;
+ display('taperR',r,'Taper per unit length',s);break;
 
-    if (!validPositive(length, feed, rpm)) {
-      showResult("timeResult", "कृपया सभी मान शून्य से अधिक दर्ज करें।");
-      return;
-    }
+ case 'gear':
+ a=positive(value('gearDriven'));b=positive(value('gearDriver'));
+ r=a/b;s='Gear Ratio = Driven Teeth / Driver Teeth\n= '+a+' / '+b;
+ display('gearR',r,': 1',s);break;
 
-    const time = length / (feed * rpm);
+ case 'ohm':
+ a=positive(value('ohmI'));b=positive(value('ohmR'));
+ r=a*b;s='V = I × R\n= '+a+' × '+b;
+ display('ohmResult',r,'Volt',s);break;
 
-    showResult(
-      "timeResult",
-      "उत्तर: " + time.toFixed(3) + " मिनट"
-    );
-  }
+ case 'current':
+ a=positive(value('currentV'));b=positive(value('currentR'));
+ r=a/b;s='I = V / R\n= '+a+' / '+b;
+ display('currentResult',r,'Ampere',s);break;
+
+ case 'resistance':
+ a=positive(value('resV'));b=positive(value('resI'));
+ r=a/b;s='R = V / I\n= '+a+' / '+b;
+ display('resistanceResult',r,'Ohm',s);break;
+
+ case 'power':
+ a=positive(value('powerV'));b=positive(value('powerI'));
+ r=a*b;s='P = V × I\n= '+a+' × '+b;
+ display('powerResult',r,'Watt',s);break;
+
+ case 'energy':
+ a=positive(value('energyP'));b=positive(value('energyT'));
+ r=a*b/1000;s='Energy (kWh) = P × t / 1000\n= '+a+' × '+b+' / 1000';
+ display('energyResult',r,'kWh (यूनिट)',s);break;
+
+ case 'series':
+ a=positive(value('series1'));b=positive(value('series2'));c=positive(value('series3'));
+ r=a+b+c;s='R = R₁ + R₂ + R₃\n= '+a+' + '+b+' + '+c;
+ display('seriesResult',r,'Ohm',s);break;
+
+ case 'parallel':
+ a=positive(value('parallel1'));b=positive(value('parallel2'));
+ r=(a*b)/(a+b);s='R = (R₁ × R₂) / (R₁ + R₂)\n= ('+a+' × '+b+') / ('+a+' + '+b+')';
+ display('parallelResult',r,'Ohm',s);break;
+
+ case 'kw':
+ a=positive(value('kwW'));r=a/1000;s='kW = W / 1000\n= '+a+' / 1000';
+ display('kwResult',r,'kW',s);break;
+
+ case 'circle':
+ a=positive(value('circleR'));r=Math.PI*a*a;s='A = π × r²\n= π × '+a+'²';
+ display('circleResult',r,'mm²',s);break;
+
+ case 'circ':
+ a=positive(value('circR'));r=2*Math.PI*a;s='C = 2 × π × r\n= 2 × π × '+a;
+ display('circResult',r,'mm',s);break;
+
+ case 'rectangle':
+ a=positive(value('rectL'));b=positive(value('rectB'));r=a*b;
+ s='A = Length × Breadth\n= '+a+' × '+b;
+ display('rectangleResult',r,'mm²',s);break;
+
+ case 'square':
+ a=positive(value('squareS'));r=a*a;s='A = Side²\n= '+a+' × '+a;
+ display('squareResult',r,'mm²',s);break;
+
+ case 'triangle':
+ a=positive(value('triB'));b=positive(value('triH'));r=a*b/2;
+ s='A = ½ × Base × Height\n= ½ × '+a+' × '+b;
+ display('triangleResult',r,'mm²',s);break;
+
+ case 'cylinder':
+ a=positive(value('cylR'));b=positive(value('cylH'));r=Math.PI*a*a*b;
+ s='V = π × r² × h\n= π × '+a+'² × '+b;
+ display('cylinderResult',r,'mm³',s);break;
+
+ case 'percentage':
+ a=value('percentP');b=positive(value('percentT'));r=a/b*100;
+ s='Percentage = (Part / Total) × 100\n= ('+a+' / '+b+') × 100';
+ display('percentageResult',r,'%',s);break;
+
+ case 'speed':
+ a=value('speedD');b=positive(value('speedT'));r=a/b;
+ s='Speed = Distance / Time\n= '+a+' / '+b;
+ display('speedResult',r,'km/h',s);break;
+
+ case 'density':
+ a=positive(value('densityM'));b=positive(value('densityV'));r=a/b;
+ s='Density = Mass / Volume\n= '+a+' / '+b;
+ display('densityResult',r,'kg/m³',s);break;
+
+ case 'work':
+ a=value('workF');b=value('workD');r=a*b;
+ s='Work = Force × Distance\n= '+a+' × '+b;
+ display('workResult',r,'Joule',s);break;
+
+ case 'mechpower':
+ a=value('mechW');b=positive(value('mechT'));r=a/b;
+ s='Power = Work / Time\n= '+a+' / '+b;
+ display('mechpowerResult',r,'Watt',s);break;
+
+ case 'average':
+ a=value('avg1');b=value('avg2');c=value('avg3');r=(a+b+c)/3;
+ s='Average = (a + b + c) / 3\n= ('+a+' + '+b+' + '+c+') / 3';
+ display('averageResult',r,'',s);break;
+
+ case 'mm':
+ a=value('mmValue');r=a/25.4;s='Inch = mm / 25.4\n= '+a+' / 25.4';
+ display('mmResult',r,'Inch',s);break;
+
+ case 'inch':
+ a=value('inchValue');r=a*25.4;s='mm = Inch × 25.4\n= '+a+' × 25.4';
+ display('inchResult',r,'mm',s);break;
+ }
+ }catch(e){
+ alert(e.message);
+ }
+}
+
+function searchCards(input,gridId){
+ const query=input.value.toLowerCase().trim();
+ const grid=document.getElementById(gridId);
+ const cards=grid.querySelectorAll('.card');
+ let visible=0;
+ cards.forEach(card=>{
+ const match=card.dataset.name.toLowerCase().includes(query) ||
+ card.innerText.toLowerCase().includes(query);
+ card.style.display=match?'block':'none';
+ if(match)visible++;
+ });
+ const empty=document.getElementById(gridId.replace('Grid','Empty'));
+ empty.style.display=visible===0?'block':'none';
+}
 </script>
-
 </body>
 </html>

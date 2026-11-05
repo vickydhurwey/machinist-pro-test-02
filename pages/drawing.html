@@ -29,7 +29,7 @@
 }
 .drawing-card h3 {
   font-size:15px;
-  margin:14px 0 7px;
+  margin:15px 0 7px;
 }
 .drawing-card ul {
   padding-left:20px;
@@ -73,7 +73,11 @@
   fill:#dcecff;
   font-size:12px;
 }
-.drawing-visual line,.drawing-visual rect,.drawing-visual circle,.drawing-visual path {
+.drawing-visual line,
+.drawing-visual rect,
+.drawing-visual circle,
+.drawing-visual path,
+.drawing-visual polygon {
   stroke:#00d9ff;
   stroke-width:2;
   fill:none;
@@ -87,6 +91,48 @@
   stroke-width:1.5;
   stroke-dasharray:5 4;
 }
+.question {
+  border:1px solid var(--border);
+  padding:15px;
+  border-radius:13px;
+  margin:12px 0;
+  background:rgba(255,255,255,.025);
+}
+.question p {
+  color:var(--text);
+  font-weight:600;
+}
+.answer {
+  display:none;
+  color:var(--muted);
+  line-height:1.8;
+  padding:10px 0 0;
+}
+.answer.show { display:block; }
+.show-btn {
+  background:rgba(0,217,255,.1);
+  color:var(--cyan);
+  border:1px solid var(--border);
+  border-radius:9px;
+  padding:9px 13px;
+  margin-top:10px;
+  cursor:pointer;
+}
+.mcq-option {
+  display:block;
+  padding:9px 12px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  margin:7px 0;
+  color:var(--muted);
+}
+.mcq-answer {
+  display:none;
+  color:#64e6a5;
+  margin-top:10px;
+  line-height:1.7;
+}
+.mcq-answer.show { display:block; }
 .no-result {
   display:none;
   text-align:center;
@@ -97,6 +143,15 @@
   display:inline-block;
   margin:20px 0;
   color:var(--cyan);
+}
+.section-note {
+  border-left:3px solid var(--cyan);
+  padding:10px 13px;
+  background:rgba(0,217,255,.05);
+  border-radius:8px;
+  color:var(--muted);
+  line-height:1.8;
+  margin:12px 0;
 }
 </style>
 </head>
@@ -117,9 +172,10 @@
   <h1>📐 तकनीकी चित्रकला</h1>
   <p>
     इंजीनियरिंग ड्राइंग के मूल सिद्धांत, रेखाओं के प्रकार,
-    ज्यामितीय आकृतियाँ, प्रोजेक्शन और डायमेंशन की जानकारी
-    आसान हिंदी भाषा में सीखें।
+    ज्यामितीय आकृतियाँ, स्केल, प्रोजेक्शन और डायमेंशन की
+    जानकारी आसान हिंदी भाषा में सीखें।
   </p>
+  <p><b>इस पेज पर:</b> Notes + Diagrams + Question Answers + MCQ</p>
 </section>
 
 <input
@@ -130,63 +186,69 @@
   aria-label="ड्राइंग विषय खोजें"
 >
 
+<!-- 01 INTRODUCTION -->
 <section class="drawing-card glass searchable">
   <span class="drawing-tag">परिचय</span>
   <h2>01. इंजीनियरिंग ड्राइंग क्या है?</h2>
   <p>
-    इंजीनियरिंग ड्राइंग एक ऐसी तकनीकी भाषा है जिसके माध्यम
-    से किसी मशीन, पार्ट या वस्तु का आकार, माप और बनावट
+    इंजीनियरिंग ड्राइंग एक तकनीकी भाषा है जिसके माध्यम से
+    किसी मशीन, पार्ट या वस्तु का आकार, माप और बनावट
     चित्र द्वारा दर्शाई जाती है।
   </p>
-  <h3>इसके मुख्य उपयोग</h3>
+  <h3>मुख्य उपयोग</h3>
   <ul>
     <li>मशीन के पार्ट का आकार समझना।</li>
     <li>पार्ट की लंबाई, चौड़ाई और ऊँचाई जानना।</li>
     <li>निर्माण कार्य से पहले डिजाइन तैयार करना।</li>
     <li>वर्कशॉप में सही माप के अनुसार काम करना।</li>
+    <li>तकनीकी जानकारी को दूसरे व्यक्ति तक पहुँचाना।</li>
   </ul>
 </section>
 
+<!-- 02 LINES -->
 <section class="drawing-card glass searchable">
   <span class="drawing-tag">रेखाएँ</span>
   <h2>02. रेखाओं के प्रकार (Types of Lines)</h2>
-  <p>इंजीनियरिंग ड्राइंग में अलग-अलग उद्देश्य के लिए अलग-अलग रेखाओं का उपयोग किया जाता है।</p>
+  <p>इंजीनियरिंग ड्राइंग में अलग-अलग उद्देश्यों के लिए अलग-अलग रेखाओं का उपयोग किया जाता है।</p>
 
   <div class="drawing-visual">
-    <svg viewBox="0 0 320 190" role="img" aria-label="रेखाओं के प्रकार का उदाहरण">
-      <text x="8" y="18">1. Continuous line</text>
+    <svg viewBox="0 0 320 205" role="img" aria-label="रेखाओं के प्रकार">
+      <text x="8" y="18">1. Continuous Thick Line</text>
       <line x1="10" y1="30" x2="300" y2="30"/>
-      <text x="8" y="65">2. Dashed line</text>
-      <line class="hidden-line" x1="10" y1="77" x2="300" y2="77"/>
-      <text x="8" y="112">3. Centre line</text>
-      <path class="thin" stroke-dasharray="14 4 3 4" d="M10 124 H300"/>
-      <text x="8" y="159">4. Dimension line</text>
-      <path class="thin" d="M10 172 H300 M10 167 L10 177 M300 167 L300 177"/>
+      <text x="8" y="65">2. Continuous Thin Line</text>
+      <line class="thin" x1="10" y1="77" x2="300" y2="77"/>
+      <text x="8" y="112">3. Dashed Line</text>
+      <line class="hidden-line" x1="10" y1="124" x2="300" y2="124"/>
+      <text x="8" y="159">4. Centre Line</text>
+      <path class="thin" stroke-dasharray="14 4 3 4" d="M10 171 H300"/>
+      <text x="8" y="198">5. Dimension Line</text>
     </svg>
   </div>
 
   <ul>
-    <li><b>Continuous Thick Line:</b> वस्तु की दिखाई देने वाली बाहरी सीमा।</li>
-    <li><b>Continuous Thin Line:</b> माप और प्रोजेक्शन रेखाएँ।</li>
+    <li><b>Continuous Thick Line:</b> दिखाई देने वाली बाहरी सीमा।</li>
+    <li><b>Continuous Thin Line:</b> माप, प्रोजेक्शन और हैचिंग रेखाएँ।</li>
     <li><b>Dashed Line:</b> छिपे हुए किनारे दर्शाने के लिए।</li>
     <li><b>Centre Line:</b> वृत्त या बेलन की केंद्र रेखा।</li>
-    <li><b>Dimension Line:</b> माप दर्शाने के लिए।</li>
+    <li><b>Dimension Line:</b> वस्तु का माप दर्शाने के लिए।</li>
+    <li><b>Cutting Plane Line:</b> कटे हुए भाग का स्थान दिखाने के लिए।</li>
   </ul>
 </section>
 
+<!-- 03 GEOMETRY -->
 <section class="drawing-card glass searchable">
   <span class="drawing-tag">ज्यामिति</span>
   <h2>03. ज्यामितीय आकृतियाँ (Geometrical Shapes)</h2>
-  <p>ड्राइंग में विभिन्न आकृतियों को समझना बहुत आवश्यक है।</p>
+  <p>ड्राइंग में विभिन्न आकृतियों को समझना आवश्यक है।</p>
 
   <div class="drawing-visual">
-    <svg viewBox="0 0 320 140" role="img" aria-label="ज्यामितीय आकृतियाँ">
-      <rect x="15" y="25" width="65" height="65"/>
-      <circle cx="160" cy="57" r="33"/>
-      <path d="M240 90 L275 25 L310 90 Z"/>
-      <text x="22" y="115">वर्ग</text>
-      <text x="139" y="115">वृत्त</text>
-      <text x="260" y="115">त्रिभुज</text>
+    <svg viewBox="0 0 320 145" role="img" aria-label="ज्यामितीय आकृतियाँ">
+      <rect x="12" y="20" width="60" height="60"/>
+      <circle cx="155" cy="50" r="30"/>
+      <path d="M240 80 L275 20 L310 80 Z"/>
+      <text x="23" y="110">वर्ग</text>
+      <text x="135" y="110">वृत्त</text>
+      <text x="260" y="110">त्रिभुज</text>
     </svg>
   </div>
 
@@ -200,6 +262,7 @@
   </ul>
 </section>
 
+<!-- 04 SCALE -->
 <section class="drawing-card glass searchable">
   <span class="drawing-tag">स्केल</span>
   <h2>04. स्केल (Scale)</h2>
@@ -215,17 +278,22 @@
     <li><b>Enlarging Scale (2:1):</b> ड्राइंग वास्तविक आकार से बड़ी।</li>
   </ul>
   <div class="drawing-visual">
-    <svg viewBox="0 0 320 125" role="img" aria-label="स्केल के उदाहरण">
+    <svg viewBox="0 0 320 130" role="img" aria-label="स्केल के उदाहरण">
       <text x="8" y="17">Full Scale 1:1</text>
-      <rect x="8" y="25" width="100" height="20"/>
-      <text x="135" y="17">Reducing 1:2</text>
-      <rect x="135" y="25" width="50" height="20"/>
-      <text x="8" y="75">Enlarging 2:1</text>
-      <rect x="8" y="83" width="200" height="20"/>
+      <rect x="8" y="25" width="100" height="18"/>
+      <text x="135" y="17">Reducing Scale 1:2</text>
+      <rect x="135" y="25" width="50" height="18"/>
+      <text x="8" y="75">Enlarging Scale 2:1</text>
+      <rect x="8" y="83" width="200" height="18"/>
     </svg>
+  </div>
+  <div class="section-note">
+    <b>उदाहरण:</b> यदि वास्तविक लंबाई 100 mm है और स्केल 1:2 है,
+    तो ड्राइंग में लंबाई 50 mm होगी।
   </div>
 </section>
 
+<!-- 05 PROJECTION -->
 <section class="drawing-card glass searchable">
   <span class="drawing-tag">प्रोजेक्शन</span>
   <h2>05. प्रोजेक्शन (Projection)</h2>
@@ -233,15 +301,39 @@
     किसी त्रि-आयामी वस्तु को दो-आयामी ड्राइंग शीट पर
     दिखाने की विधि को प्रोजेक्शन कहते हैं।
   </p>
+
   <h3>मुख्य प्रकार</h3>
   <ul>
     <li><b>First Angle Projection:</b> प्रथम कोण प्रक्षेपण।</li>
     <li><b>Third Angle Projection:</b> तृतीय कोण प्रक्षेपण।</li>
-    <li><b>Isometric Projection:</b> वस्तु को तीन दिशाओं में दिखाने की विधि।</li>
-    <li><b>Orthographic Projection:</b> अलग-अलग सामने, ऊपर और साइड के दृश्य।</li>
+    <li><b>Orthographic Projection:</b> अलग-अलग दिशाओं से दृश्य।</li>
+    <li><b>Isometric Projection:</b> तीन आयामों को एक चित्र में दिखाना।</li>
   </ul>
+
+  <h3>First Angle और Third Angle में अंतर</h3>
+  <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;color:var(--muted);">
+      <tr>
+        <th style="padding:10px;border:1px solid var(--border);">First Angle</th>
+        <th style="padding:10px;border:1px solid var(--border);">Third Angle</th>
+      </tr>
+      <tr>
+        <td style="padding:10px;border:1px solid var(--border);">वस्तु प्रेक्षक और तल के बीच होती है।</td>
+        <td style="padding:10px;border:1px solid var(--border);">प्रक्षेपण तल प्रेक्षक और वस्तु के बीच होता है।</td>
+      </tr>
+      <tr>
+        <td style="padding:10px;border:1px solid var(--border);">ऊपर का दृश्य सामने के दृश्य के नीचे रखा जाता है।</td>
+        <td style="padding:10px;border:1px solid var(--border);">ऊपर का दृश्य सामने के दृश्य के ऊपर रखा जाता है।</td>
+      </tr>
+      <tr>
+        <td style="padding:10px;border:1px solid var(--border);">दायाँ दृश्य सामने के दृश्य के बाईं ओर।</td>
+        <td style="padding:10px;border:1px solid var(--border);">दायाँ दृश्य सामने के दृश्य के दाईं ओर।</td>
+      </tr>
+    </table>
+  </div>
+
   <div class="drawing-visual">
-    <svg viewBox="0 0 320 150" role="img" aria-label="ऑर्थोग्राफिक दृश्य का उदाहरण">
+    <svg viewBox="0 0 320 150" role="img" aria-label="ऑर्थोग्राफिक दृश्य">
       <rect x="10" y="12" width="90" height="48"/>
       <text x="28" y="42">ऊपर</text>
       <rect x="10" y="78" width="90" height="48"/>
@@ -250,8 +342,10 @@
       <text x="180" y="108">साइड</text>
     </svg>
   </div>
+  <p>दृश्यों की वास्तविक स्थिति चुने गए प्रोजेक्शन सिस्टम के अनुसार तय होती है।</p>
 </section>
 
+<!-- 06 ISOMETRIC -->
 <section class="drawing-card glass searchable">
   <span class="drawing-tag">आइसोमेट्रिक</span>
   <h2>06. आइसोमेट्रिक ड्राइंग (Isometric Drawing)</h2>
@@ -264,9 +358,10 @@
     <li>तीन मुख्य अक्ष होते हैं।</li>
     <li>तीनों अक्षों के बीच 120° का कोण होता है।</li>
     <li>लंबाई, चौड़ाई और ऊँचाई एक ही चित्र में दिखाई जाती है।</li>
+    <li>वस्तु को तीन दिशाओं में समझना आसान होता है।</li>
   </ul>
   <div class="drawing-visual">
-    <svg viewBox="0 0 320 180" role="img" aria-label="आइसोमेट्रिक घन का उदाहरण">
+    <svg viewBox="0 0 320 180" role="img" aria-label="आइसोमेट्रिक घन">
       <path d="M160 15 L245 60 L160 105 L75 60 Z"/>
       <path d="M75 60 V145 L160 175 V105"/>
       <path d="M245 60 V145 L160 175"/>
@@ -275,6 +370,7 @@
   </div>
 </section>
 
+<!-- 07 DIMENSIONING -->
 <section class="drawing-card glass searchable">
   <span class="drawing-tag">डायमेंशन</span>
   <h2>07. डायमेंशन (Dimensioning)</h2>
@@ -285,43 +381,286 @@
   </p>
   <h3>मुख्य भाग</h3>
   <ul>
-    <li>Dimension Line – माप रेखा।</li>
-    <li>Extension Line – विस्तार रेखा।</li>
-    <li>Arrow Head – तीर का निशान।</li>
-    <li>Dimension Figure – माप की संख्या।</li>
+    <li><b>Dimension Line:</b> माप रेखा।</li>
+    <li><b>Extension Line:</b> विस्तार रेखा।</li>
+    <li><b>Arrow Head:</b> तीर का निशान।</li>
+    <li><b>Dimension Figure:</b> माप की संख्या।</li>
+    <li><b>Leader Line:</b> किसी विशेष भाग की ओर संकेत करने वाली रेखा।</li>
+  </ul>
+  <h3>डायमेंशन के नियम</h3>
+  <ul>
+    <li>माप स्पष्ट और पढ़ने योग्य होना चाहिए।</li>
+    <li>एक ही माप को अनावश्यक रूप से दोहराना नहीं चाहिए।</li>
+    <li>जहाँ संभव हो, माप वस्तु के बाहर देना चाहिए।</li>
+    <li>माप की इकाई ड्राइंग के अनुसार स्पष्ट होनी चाहिए।</li>
   </ul>
 </section>
 
+<!-- 08 SHEET -->
 <section class="drawing-card glass searchable">
   <span class="drawing-tag">ड्राइंग शीट</span>
   <h2>08. ड्राइंग शीट और बॉर्डर</h2>
   <p>तकनीकी ड्राइंग बनाने के लिए निर्धारित आकार की शीट का उपयोग किया जाता है।</p>
   <ul>
-    <li>A0 – 841 × 1189 mm</li>
-    <li>A1 – 594 × 841 mm</li>
-    <li>A2 – 420 × 594 mm</li>
-    <li>A3 – 297 × 420 mm</li>
-    <li>A4 – 210 × 297 mm</li>
+    <li><b>A0:</b> 841 × 1189 mm</li>
+    <li><b>A1:</b> 594 × 841 mm</li>
+    <li><b>A2:</b> 420 × 594 mm</li>
+    <li><b>A3:</b> 297 × 420 mm</li>
+    <li><b>A4:</b> 210 × 297 mm</li>
   </ul>
   <p>शीट पर बॉर्डर और टाइटल ब्लॉक निर्धारित प्रारूप के अनुसार बनाए जाते हैं।</p>
+  <h3>टाइटल ब्लॉक में सामान्य जानकारी</h3>
+  <ul>
+    <li>ड्राइंग का नाम।</li>
+    <li>ड्राइंग नंबर।</li>
+    <li>स्केल।</li>
+    <li>तारीख।</li>
+    <li>ड्राइंग बनाने वाले का नाम।</li>
+  </ul>
 </section>
 
+<!-- 09 INSTRUMENTS -->
 <section class="drawing-card glass searchable">
-  <span class="drawing-tag">सुरक्षा और नियम</span>
-  <h2>09. ड्राइंग बनाते समय ध्यान रखें</h2>
+  <span class="drawing-tag">ड्राइंग उपकरण</span>
+  <h2>09. ड्राइंग में उपयोग होने वाले उपकरण</h2>
+  <ul>
+    <li><b>Drawing Board:</b> ड्राइंग शीट रखने के लिए।</li>
+    <li><b>T-Square:</b> क्षैतिज रेखाएँ बनाने के लिए।</li>
+    <li><b>Set Square:</b> निश्चित कोणों की रेखाएँ बनाने के लिए।</li>
+    <li><b>Compass:</b> वृत्त और चाप बनाने के लिए।</li>
+    <li><b>Divider:</b> दूरी मापने और स्थानांतरित करने के लिए।</li>
+    <li><b>Protractor:</b> कोण मापने के लिए।</li>
+    <li><b>Scale:</b> लंबाई मापने के लिए।</li>
+    <li><b>Pencil:</b> रेखाएँ और चित्र बनाने के लिए।</li>
+    <li><b>Eraser:</b> अनावश्यक रेखाएँ मिटाने के लिए।</li>
+  </ul>
+</section>
+
+<!-- 10 PENCIL -->
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">पेंसिल</span>
+  <h2>10. पेंसिल के प्रकार (Pencil Grades)</h2>
+  <p>ड्राइंग में अलग-अलग मोटाई और गहरेपन की रेखाएँ बनाने के लिए पेंसिल ग्रेड का उपयोग किया जाता है।</p>
+  <ul>
+    <li><b>H:</b> कठोर पेंसिल, हल्की रेखाएँ।</li>
+    <li><b>2H:</b> अधिक कठोर, पतली और हल्की रेखाएँ।</li>
+    <li><b>HB:</b> सामान्य लेखन और ड्राइंग के लिए।</li>
+    <li><b>B:</b> अपेक्षाकृत मुलायम और गहरी रेखाएँ।</li>
+    <li><b>2B:</b> अधिक मुलायम और गहरी रेखाएँ।</li>
+  </ul>
+  <div class="section-note">
+    सामान्यतः H ग्रेड कठोर और B ग्रेड मुलायम होता है।
+  </div>
+</section>
+
+<!-- 11 SYMBOLS -->
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">प्रतीक</span>
+  <h2>11. ड्राइंग में उपयोग होने वाले सामान्य प्रतीक</h2>
+  <ul>
+    <li><b>Ø:</b> व्यास (Diameter)</li>
+    <li><b>R:</b> त्रिज्या (Radius)</li>
+    <li><b>°:</b> कोण (Angle)</li>
+    <li><b>□:</b> वर्गाकार (Square)</li>
+    <li><b>±:</b> धनात्मक या ऋणात्मक सहनशीलता</li>
+    <li><b>⌖:</b> केंद्र स्थिति का संकेत (संदर्भ के अनुसार)</li>
+  </ul>
+</section>
+
+<!-- 12 PRACTICE -->
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">अभ्यास</span>
+  <h2>12. ड्राइंग बनाते समय ध्यान रखें</h2>
   <ul>
     <li>ड्राइंग शीट साफ रखें।</li>
     <li>सही स्केल और पेंसिल का उपयोग करें।</li>
     <li>माप स्पष्ट और सही लिखें।</li>
     <li>अलग-अलग रेखाओं के लिए निर्धारित लाइन प्रकार अपनाएँ।</li>
     <li>ड्राइंग में अनावश्यक रेखाएँ न बनाएँ।</li>
+    <li>टाइटल ब्लॉक पूरा भरें।</li>
+    <li>ड्राइंग पूरी होने पर सभी माप जाँचें।</li>
   </ul>
+</section>
+
+<!-- QUESTION ANSWERS -->
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">लिखित अभ्यास</span>
+  <h2>13. महत्वपूर्ण प्रश्न और उत्तर</h2>
+
+  <div class="question">
+    <p>प्रश्न 1. इंजीनियरिंग ड्राइंग क्या है?</p>
+    <div class="answer">उत्तर: किसी वस्तु का आकार, माप और बनावट चित्र द्वारा दर्शाने की तकनीकी भाषा को इंजीनियरिंग ड्राइंग कहते हैं।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 2. ड्राइंग में Centre Line का क्या उपयोग है?</p>
+    <div class="answer">उत्तर: वृत्त, छेद और बेलनाकार वस्तुओं के केंद्र या अक्ष को दर्शाने के लिए Centre Line का उपयोग होता है।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 3. Hidden Line किसे कहते हैं?</p>
+    <div class="answer">उत्तर: वस्तु के दिखाई न देने वाले किनारों को दर्शाने वाली छोटी डैश वाली रेखा Hidden Line कहलाती है।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 4. Scale क्या है?</p>
+    <div class="answer">उत्तर: वास्तविक वस्तु के आकार और ड्राइंग में दिखाए गए आकार के अनुपात को स्केल कहते हैं।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 5. Full Scale का अनुपात क्या होता है?</p>
+    <div class="answer">उत्तर: Full Scale का अनुपात 1:1 होता है।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 6. Projection किसे कहते हैं?</p>
+    <div class="answer">उत्तर: त्रि-आयामी वस्तु को दो-आयामी सतह पर दिखाने की विधि को Projection कहते हैं।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 7. Orthographic Projection क्या है?</p>
+    <div class="answer">उत्तर: किसी वस्तु के सामने, ऊपर और साइड जैसे अलग-अलग दृश्य दिखाने की विधि Orthographic Projection कहलाती है।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 8. Isometric Drawing में कितने मुख्य अक्ष होते हैं?</p>
+    <div class="answer">उत्तर: इसमें तीन मुख्य अक्ष होते हैं। इनके बीच 120° का कोण होता है।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 9. Dimensioning क्या है?</p>
+    <div class="answer">उत्तर: किसी वस्तु की लंबाई, चौड़ाई, ऊँचाई, व्यास और कोण को माप के रूप में दर्शाने की प्रक्रिया Dimensioning कहलाती है।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>प्रश्न 10. Drawing Board का क्या उपयोग है?</p>
+    <div class="answer">उत्तर: ड्राइंग शीट को सही स्थिति में रखकर ड्राइंग बनाने के लिए Drawing Board का उपयोग किया जाता है।</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+</section>
+
+<!-- MCQ -->
+<section class="drawing-card glass searchable">
+  <span class="drawing-tag">MCQ PRACTICE</span>
+  <h2>14. तकनीकी चित्रकला – 10 बहुविकल्पीय प्रश्न</h2>
+  <p>पहले उत्तर सोचें, फिर Show Answer पर क्लिक करके सही उत्तर देखें।</p>
+
+  <div class="question">
+    <p>1. इंजीनियरिंग ड्राइंग किसकी भाषा है?</p>
+    <span class="mcq-option">A. तकनीकी भाषा</span>
+    <span class="mcq-option">B. संगीत भाषा</span>
+    <span class="mcq-option">C. सामान्य भाषा</span>
+    <span class="mcq-option">D. इनमें से कोई नहीं</span>
+    <div class="mcq-answer">सही उत्तर: A. तकनीकी भाषा</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>2. Full Scale का अनुपात क्या है?</p>
+    <span class="mcq-option">A. 1:2</span>
+    <span class="mcq-option">B. 2:1</span>
+    <span class="mcq-option">C. 1:1</span>
+    <span class="mcq-option">D. 1:5</span>
+    <div class="mcq-answer">सही उत्तर: C. 1:1</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>3. वृत्त का केंद्र दिखाने के लिए कौन-सी रेखा उपयोग होती है?</p>
+    <span class="mcq-option">A. Hidden Line</span>
+    <span class="mcq-option">B. Centre Line</span>
+    <span class="mcq-option">C. Dimension Line</span>
+    <span class="mcq-option">D. Border Line</span>
+    <div class="mcq-answer">सही उत्तर: B. Centre Line</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>4. Hidden Line सामान्यतः कैसी होती है?</p>
+    <span class="mcq-option">A. लगातार मोटी</span>
+    <span class="mcq-option">B. छोटी डैश वाली</span>
+    <span class="mcq-option">C. लहरदार</span>
+    <span class="mcq-option">D. दोहरी मोटी</span>
+    <div class="mcq-answer">सही उत्तर: B. छोटी डैश वाली</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>5. वृत्त बनाने के लिए किस उपकरण का उपयोग होता है?</p>
+    <span class="mcq-option">A. Divider</span>
+    <span class="mcq-option">B. Compass</span>
+    <span class="mcq-option">C. T-Square</span>
+    <span class="mcq-option">D. Scale</span>
+    <div class="mcq-answer">सही उत्तर: B. Compass</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>6. Isometric Drawing में अक्षों के बीच कितना कोण होता है?</p>
+    <span class="mcq-option">A. 30°</span>
+    <span class="mcq-option">B. 45°</span>
+    <span class="mcq-option">C. 90°</span>
+    <span class="mcq-option">D. 120°</span>
+    <div class="mcq-answer">सही उत्तर: D. 120°</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>7. A4 शीट का आकार क्या है?</p>
+    <span class="mcq-option">A. 210 × 297 mm</span>
+    <span class="mcq-option">B. 297 × 420 mm</span>
+    <span class="mcq-option">C. 420 × 594 mm</span>
+    <span class="mcq-option">D. 841 × 1189 mm</span>
+    <div class="mcq-answer">सही उत्तर: A. 210 × 297 mm</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>8. कोण मापने के लिए किस उपकरण का उपयोग होता है?</p>
+    <span class="mcq-option">A. Compass</span>
+    <span class="mcq-option">B. Protractor</span>
+    <span class="mcq-option">C. Eraser</span>
+    <span class="mcq-option">D. Divider</span>
+    <div class="mcq-answer">सही उत्तर: B. Protractor</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>9. व्यास का प्रतीक कौन-सा है?</p>
+    <span class="mcq-option">A. R</span>
+    <span class="mcq-option">B. Ø</span>
+    <span class="mcq-option">C. °</span>
+    <span class="mcq-option">D. ±</span>
+    <div class="mcq-answer">सही उत्तर: B. Ø</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
+
+  <div class="question">
+    <p>10. ड्राइंग शीट पर जानकारी देने वाले बॉक्स को क्या कहते हैं?</p>
+    <span class="mcq-option">A. Centre Box</span>
+    <span class="mcq-option">B. Title Block</span>
+    <span class="mcq-option">C. Scale Box</span>
+    <span class="mcq-option">D. Drawing Circle</span>
+    <div class="mcq-answer">सही उत्तर: B. Title Block</div>
+    <button class="show-btn" onclick="toggleAnswer(this)">उत्तर देखें</button>
+  </div>
 </section>
 
 <p class="no-result" id="noResult">
   कोई विषय नहीं मिला। दूसरा शब्द खोजें।
 </p>
 
+<a href="notes.html" class="back-link">← Digital Notes पर जाएँ</a>
+<br>
 <a href="../index.html" class="back-link">← मुख्य पेज पर जाएँ</a>
 
 </main>
@@ -332,6 +671,17 @@
 </footer>
 
 <script>
+function toggleAnswer(button) {
+  const answer = button.previousElementSibling;
+  answer.classList.toggle("show");
+
+  if(answer.classList.contains("show")) {
+    button.textContent = "उत्तर छिपाएँ";
+  } else {
+    button.textContent = "उत्तर देखें";
+  }
+}
+
 const searchInput = document.getElementById("drawingSearch");
 const cards = document.querySelectorAll(".searchable");
 const noResult = document.getElementById("noResult");

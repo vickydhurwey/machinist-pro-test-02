@@ -4,114 +4,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Online Test | MACHINIST PRO</title>
+<meta name="theme-color" content="#08111f">
+<title>Machinist Online Test | MACHINIST PRO</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:#08111f;
-  color:#f1f5f9;
-  font-family:Arial,sans-serif;
-  padding:16px;
-}
-.container{max-width:800px;margin:auto}
+body{background:#08111f;color:#f1f5f9;font-family:Arial,sans-serif;padding:15px}
+.container{max-width:850px;margin:auto}
 header{text-align:center;padding:25px 10px}
 header h1{color:#64e6a5;font-size:28px}
-header p{color:#aab7c8;margin-top:10px;line-height:1.6}
-.info{
-  background:#111e30;
-  border:1px solid #263a50;
-  padding:16px;
-  border-radius:12px;
-  line-height:1.8;
-  margin-bottom:20px;
+header p{color:#aab7c8;margin-top:9px;line-height:1.6}
+.panel,.question-card,.result{
+ background:#111e30;border:1px solid #263a50;
+ border-radius:14px;padding:18px;margin:15px 0
 }
-.stats{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:15px;
+.panel h2{color:#64e6a5;margin-bottom:10px;font-size:19px}
+.muted{color:#aab7c8;line-height:1.7}
+.mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}
+.mode{
+ background:#19283b;color:#e2e8f0;border:1px solid #34465d;
+ border-radius:10px;padding:14px 7px;cursor:pointer;font-weight:bold
 }
-.stat{
-  background:#111e30;
-  border:1px solid #263a50;
-  border-radius:9px;
-  padding:12px;
-  flex:1;
-  text-align:center;
-}
-.stat span{display:block;color:#64e6a5;font-size:20px;font-weight:bold}
-.stat small{color:#aab7c8}
-.question-card{
-  background:#111e30;
-  border:1px solid #263a50;
-  border-radius:13px;
-  padding:18px;
-  margin-bottom:15px;
-}
-.q-number{color:#64e6a5;font-size:12px;font-weight:bold;margin-bottom:10px}
-.question-card h3{font-size:16px;line-height:1.7;margin-bottom:15px}
-.option{
-  display:block;
-  background:#19283b;
-  border:1px solid #34465d;
-  color:#e2e8f0;
-  padding:12px;
-  border-radius:8px;
-  margin:9px 0;
-  cursor:pointer;
-  line-height:1.5;
-}
-.option.selected{
-  border-color:#64e6a5;
-  background:#183a35;
-  color:#b9f7d6;
-}
-.option input{margin-right:8px}
-button{
-  border:none;
-  border-radius:8px;
-  padding:12px 17px;
-  font-weight:bold;
-  cursor:pointer;
-  font-size:14px;
-}
+.mode.active{border-color:#64e6a5;background:#183a35;color:#b9f7d6}
+button{border:0;border-radius:9px;padding:12px 16px;font-weight:bold;cursor:pointer}
 .primary{background:#64e6a5;color:#08111f}
 .secondary{background:#263a50;color:#f1f5f9}
-.actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin:20px 0;
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
+.stat{background:#111e30;border:1px solid #263a50;border-radius:10px;padding:12px;text-align:center}
+.stat span{display:block;color:#64e6a5;font-size:21px;font-weight:bold}
+.stat small{color:#aab7c8}
+.question-card{padding:18px}
+.q-number{color:#64e6a5;font-size:12px;font-weight:bold;margin-bottom:10px}
+.q-tag{font-size:11px;color:#aab7c8;margin-bottom:8px}
+.question-card h3{font-size:16px;line-height:1.7;margin-bottom:14px}
+.option{
+ display:block;background:#19283b;border:1px solid #34465d;
+ color:#e2e8f0;padding:12px;border-radius:9px;margin:9px 0;
+ cursor:pointer;line-height:1.5
 }
-.result{
-  display:none;
-  background:#111e30;
-  border:1px solid #64e6a5;
-  border-radius:14px;
-  padding:22px;
-  text-align:center;
-  margin-top:20px;
-}
+.option.selected{border-color:#64e6a5;background:#183a35;color:#b9f7d6}
+.option input{margin-right:8px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.result{display:none;border-color:#64e6a5;padding:22px}
 .result h2{color:#64e6a5;margin-bottom:15px}
 .score{font-size:38px;color:#64e6a5;font-weight:bold;margin:12px}
-.result p{line-height:1.8;color:#cbd5e1}
-.review{
-  text-align:left;
-  margin-top:20px;
-}
-.review-item{
-  background:#19283b;
-  padding:13px;
-  border-radius:8px;
-  margin:10px 0;
-  line-height:1.7;
-}
+.review-item{background:#19283b;padding:13px;border-radius:9px;margin:10px 0;line-height:1.7}
 .correct{color:#64e6a5}
 .wrong{color:#ff9999}
-footer{text-align:center;color:#8090a5;margin:30px 0 15px;font-size:13px}
-.back{color:#64e6a5;text-decoration:none;display:inline-block;margin-top:12px}
+.review-item p{margin-top:6px}
+.progress{height:8px;background:#263a50;border-radius:10px;overflow:hidden;margin:12px 0}
+.progress-bar{height:100%;width:0;background:#64e6a5;transition:width .2s}
+.source-link{color:#64e6a5;text-decoration:none;display:inline-block;margin:7px 0}
+.badge{display:inline-block;background:#183a35;color:#b9f7d6;padding:5px 9px;border-radius:20px;font-size:11px}
+footer{text-align:center;color:#8090a5;margin:30px 0 15px;font-size:13px;line-height:1.8}
+.back{color:#64e6a5;text-decoration:none}
 .hidden{display:none}
+@media(max-width:520px){
+ body{padding:10px}
+ .mode-grid{grid-template-columns:1fr}
+ .stats{gap:6px}
+ .stat{padding:9px 4px}
+ .stat span{font-size:18px}
+ .question-card{padding:14px}
+}
 </style>
 </head>
 
@@ -120,56 +75,78 @@ footer{text-align:center;color:#8090a5;margin:30px 0 15px;font-size:13px}
 
 <header>
 <h1>🎯 MACHINIST PRO</h1>
-<p>ITI Machinist – 1st Year Online Test</p>
-<p>अपनी तैयारी को परखें और अपना स्कोर जानें।</p>
+<p>ITI Machinist – 1st Year Online Examination</p>
+<p>Theory • Practical • Important Questions</p>
 </header>
 
-<div class="info">
-<b>📚 Test Instructions</b><br>
-• हर टेस्ट में 20 Random Questions आएँगे।<br>
-• हर प्रश्न का केवल एक सही उत्तर है।<br>
-• प्रत्येक सही उत्तर के 1 अंक मिलेंगे।<br>
-• हर नए टेस्ट में प्रश्न और विकल्पों का क्रम बदलेगा।<br>
-• सभी प्रश्न हल करने के बाद Submit Test दबाएँ।
+<section class="panel">
+<h2>📚 अपना टेस्ट चुनें</h2>
+<p class="muted">हर टेस्ट में 20 प्रश्न होंगे। प्रश्नों और विकल्पों का क्रम हर बार बदलेगा।</p>
+
+<div class="mode-grid">
+<button class="mode active" data-mode="theory" onclick="selectMode('theory',this)">📘 Trade Theory</button>
+<button class="mode" data-mode="practical" onclick="selectMode('practical',this)">⚙️ Trade Practical</button>
+<button class="mode" data-mode="mixed" onclick="selectMode('mixed',this)">🎯 Mixed Test</button>
 </div>
 
+<p class="muted" id="modeDescription" style="margin-top:13px">
+Theory टेस्ट: मशीन, टूल, मापन, ड्रॉइंग, गणना और सुरक्षा।
+</p>
+</section>
+
+<section class="panel">
+<h2>📋 Test Instructions</h2>
+<p class="muted">
+• हर टेस्ट में 20 प्रश्न।<br>
+• हर सही उत्तर का 1 अंक।<br>
+• गलत उत्तर पर कोई अंक नहीं कटेगा।<br>
+• प्रश्न और विकल्प Random होंगे।<br>
+• टेस्ट के बाद सही उत्तर और Explanation देखें।<br>
+• यह अभ्यास टेस्ट है, आधिकारिक परीक्षा नहीं।
+</p>
+</section>
+
 <div class="stats">
-  <div class="stat">
-    <span id="total">20</span>
-    <small>Total Questions</small>
-  </div>
-  <div class="stat">
-    <span id="attempted">0</span>
-    <small>Attempted</small>
-  </div>
-  <div class="stat">
-    <span id="remaining">20</span>
-    <small>Remaining</small>
-  </div>
+<div class="stat"><span id="total">20</span><small>Total Questions</small></div>
+<div class="stat"><span id="attempted">0</span><small>Attempted</small></div>
+<div class="stat"><span id="remaining">20</span><small>Remaining</small></div>
 </div>
+
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
 
 <div id="testArea"></div>
 
 <div class="actions" id="testActions">
 <button class="primary" onclick="submitTest()">Submit Test</button>
-<button class="secondary" onclick="newTest()">Restart / New Test</button>
+<button class="secondary" onclick="newTest()">🔄 New Test</button>
 </div>
 
-<div class="result" id="result">
+<section class="result" id="result">
 <h2>🏆 Test Result</h2>
 <div class="score" id="score">0/20</div>
-<p id="percentage"></p>
-<p id="message"></p>
-
+<p class="muted" id="percentage"></p>
+<p class="muted" id="message" style="margin-top:10px"></p>
 <div class="review">
-<h3 style="color:#64e6a5;margin-bottom:12px">Answer Review</h3>
+<h3 style="color:#64e6a5;margin:20px 0 12px">📝 Answer Review</h3>
 <div id="reviewList"></div>
 </div>
-
 <div class="actions">
-<button class="primary" onclick="newTest()">🔄 Try Another Test</button>
+<button class="primary" onclick="newTest()">🔄 अगला टेस्ट दें</button>
 </div>
-</div>
+</section>
+
+<section class="panel">
+<h2>📖 Official Study Material</h2>
+<p class="muted">
+आधिकारिक BharatSkills पोर्टल पर Machinist के Study Material और Question Bank देखें।
+</p>
+<a class="source-link" href="https://bharatskills.gov.in/Home/StudyMaterial?Default=YES" target="_blank" rel="noopener">
+BharatSkills – Official Question Bank ↗
+</a>
+<p class="muted" style="margin-top:8px;font-size:12px">
+नोट: इस वेबसाइट के अभ्यास प्रश्नों को किसी खास परीक्षा-वर्ष का प्रश्न तभी माना जाएगा जब उसका मूल पेपर सत्यापित हो।
+</p>
+</section>
 
 <footer>
 <p>© 2026 MACHINIST PRO</p>
@@ -181,248 +158,352 @@ footer{text-align:center;color:#8090a5;margin:30px 0 15px;font-size:13px}
 
 <script>
 
-// QUESTION BANK
-// हर प्रश्न में चार विकल्प और सही उत्तर दिया गया है।
+// ======================================
+// MACHINIST TRADE THEORY QUESTION BANK
+// ======================================
 
-const bank = [
+const theoryBank = [
 
-{q:"वर्नियर कैलिपर का उपयोग किसके लिए होता है?",o:["तापमान मापने","लंबाई और व्यास मापने","वजन मापने","दाब मापने"],a:1},
-{q:"माइक्रोमीटर किस सिद्धांत पर कार्य करता है?",o:["लीवर सिद्धांत","स्क्रू सिद्धांत","चुंबकीय सिद्धांत","हाइड्रोलिक सिद्धांत"],a:1},
-{q:"स्टील रूल का उपयोग किसके लिए होता है?",o:["सामान्य लंबाई मापने","तापमान मापने","कठोरता मापने","गति मापने"],a:0},
-{q:"डायल टेस्ट इंडिकेटर का उपयोग किसके लिए होता है?",o:["छोटे विस्थापन की जाँच","वजन मापने","तापमान मापने","बिजली मापने"],a:0},
-{q:"Outside Micrometer किसे मापता है?",o:["बाहरी माप","अंदरूनी तापमान","दाब","समय"],a:0},
-
-{q:"लेथ मशीन में मुख्य गति किसकी होती है?",o:["टूल की","वर्कपीस की","कूलेंट की","टेलस्टॉक की"],a:1},
-{q:"लेथ मशीन का मुख्य कार्य क्या है?",o:["टर्निंग","वेल्डिंग","कास्टिंग","फोर्जिंग"],a:0},
-{q:"लेथ मशीन में वर्कपीस को कौन पकड़ता है?",o:["चक","ड्रिल","रीमर","स्पैनर"],a:0},
-{q:"लेथ मशीन में टूल किस भाग में लगाया जाता है?",o:["टूल पोस्ट","हेडस्टॉक","फुटस्टॉक","बेड"],a:0},
-{q:"लेथ मशीन का बेड किसका आधार होता है?",o:["मशीन का","केवल मोटर का","केवल चक का","केवल टूल का"],a:0},
-{q:"Facing ऑपरेशन का उद्देश्य क्या है?",o:["सिरे को समतल करना","छेद बनाना","थ्रेड बनाना","धातु जोड़ना"],a:0},
-{q:"Knurling का उपयोग किसके लिए होता है?",o:["सतह पर पकड़ वाली बनावट बनाना","छेद करना","कटिंग फ्लूइड बनाना","वजन मापना"],a:0},
-{q:"Tailstock का उपयोग किसमें किया जा सकता है?",o:["ड्रिल पकड़ने","वर्कपीस को रंगने","मशीन साफ करने","बिजली मापने"],a:0},
-
-{q:"ड्रिलिंग मशीन का मुख्य कार्य क्या है?",o:["गोल छेद बनाना","सतह चमकाना","धातु पिघलाना","थ्रेड काटना"],a:0},
-{q:"Twist Drill में कितने मुख्य फ्लूट होते हैं?",o:["एक","दो","तीन","चार"],a:1},
-{q:"Drill Chuck का उपयोग किसके लिए होता है?",o:["ड्रिल पकड़ने","वर्कपीस गर्म करने","तेल भरने","मापने"],a:0},
-{q:"Reaming का उद्देश्य क्या है?",o:["छेद को सही माप और फिनिश देना","धातु जोड़ना","बाहरी थ्रेड बनाना","सतह रंगना"],a:0},
-{q:"Countersinking का उपयोग किसके लिए होता है?",o:["छेद के मुहाने पर शंक्वाकार जगह बनाना","गोल रॉड बनाना","धातु काटना","मशीन ठंडी करना"],a:0},
-
-{q:"Grinding Machine में किसका उपयोग होता है?",o:["Grinding Wheel","Hammer","Wood Saw","Chisel"],a:0},
-{q:"Grinding Wheel का मुख्य कार्य क्या है?",o:["घिसकर पदार्थ हटाना","वेल्डिंग करना","छेद मापना","धातु जोड़ना"],a:0},
-{q:"Grinding Wheel में Abrasive का क्या काम है?",o:["कटिंग करना","रंग करना","ठंडा करना","पकड़ना"],a:0},
-{q:"Aluminium Oxide Wheel सामान्यतः किसके लिए उपयोगी है?",o:["स्टील की ग्राइंडिंग","लकड़ी काटना","काँच जोड़ना","प्लास्टिक पिघलाना"],a:0},
-{q:"Grinding Wheel में Bond का कार्य क्या है?",o:["Abrasive grains को बाँधना","मशीन चलाना","गति मापना","तेल देना"],a:0},
-
-{q:"Engineering Drawing का मुख्य उद्देश्य क्या है?",o:["तकनीकी जानकारी दिखाना","खाना बनाना","वजन मापना","बिजली बनाना"],a:0},
-{q:"Visible Line सामान्यतः कैसी होती है?",o:["मोटी Continuous Line","पतली Dashed Line","लहरदार लाइन","डॉटेड लाइन"],a:0},
-{q:"Hidden Line किससे दिखाई जाती है?",o:["Dashed Line","मोटी Continuous Line","Center Line","Freehand Line"],a:0},
-{q:"Isometric Drawing में कितनी मुख्य अक्ष दिशाएँ होती हैं?",o:["दो","तीन","चार","पाँच"],a:1},
-{q:"Dimensioning का उद्देश्य क्या है?",o:["माप बताना","रंग बताना","वजन बताना","तापमान बताना"],a:0},
-
-{q:"क्षेत्रफल की SI इकाई क्या है?",o:["वर्ग मीटर","मीटर","किलोग्राम","न्यूटन"],a:0},
-{q:"आयत का क्षेत्रफल क्या होता है?",o:["लंबाई × चौड़ाई","लंबाई + चौड़ाई","2 × लंबाई","लंबाई ÷ चौड़ाई"],a:0},
-{q:"घन का आयतन क्या होता है?",o:["a³","a²","4a","2a"],a:0},
-{q:"बल की SI इकाई क्या है?",o:["न्यूटन","वाट","जूल","पास्कल"],a:0},
-{q:"शक्ति की SI इकाई क्या है?",o:["वाट","न्यूटन","मीटर","किलोग्राम"],a:0},
-{q:"दाब का सूत्र क्या है?",o:["बल ÷ क्षेत्रफल","बल × दूरी","दूरी ÷ समय","कार्य ÷ समय"],a:0},
-{q:"चाल का सूत्र क्या है?",o:["दूरी ÷ समय","समय ÷ दूरी","बल ÷ क्षेत्रफल","द्रव्यमान ÷ आयतन"],a:0},
-{q:"घनत्व का सूत्र क्या है?",o:["द्रव्यमान ÷ आयतन","आयतन ÷ द्रव्यमान","बल ÷ क्षेत्रफल","दूरी ÷ समय"],a:0},
-
-{q:"PPE का पूरा नाम क्या है?",o:["Personal Protective Equipment","Power Plant Equipment","Personal Power Engine","Public Protection Engine"],a:0},
-{q:"5S पद्धति का संबंध किससे है?",o:["कार्यस्थल व्यवस्था","वेल्डिंग","कास्टिंग","मापन"],a:0},
-{q:"Class A आग सामान्यतः किसमें लगती है?",o:["लकड़ी और कागज","पेट्रोल","गैस","धातु"],a:0},
-{q:"Class B आग किससे संबंधित है?",o:["ज्वलनशील तरल","लकड़ी","कागज","साधारण कपड़ा"],a:0},
-{q:"वर्कशॉप में सुरक्षा चश्मा क्यों पहना जाता है?",o:["आँखों की सुरक्षा","पैरों की सुरक्षा","आवाज कम करने","वजन मापने"],a:0},
-{q:"Machine Guard का उद्देश्य क्या है?",o:["चलते खतरनाक भागों से सुरक्षा","गति बढ़ाना","रंग करना","तेल भरना"],a:0},
-{q:"Emergency Stop का उपयोग कब होता है?",o:["आपात स्थिति में मशीन रोकने","मशीन रंगने","माप लेने","लाइट जलाने"],a:0},
-
-{q:"Tap का उपयोग किसके लिए होता है?",o:["Internal Thread","External Thread","छेद बड़ा करने","सतह पीसने"],a:0},
-{q:"Die का उपयोग किसके लिए होता है?",o:["External Thread","Internal Thread","छेद करने","सतह चमकाने"],a:0},
-{q:"HSS का पूरा नाम क्या है?",o:["High Speed Steel","High Strength Stone","Hard Surface Steel","High System Speed"],a:0},
-{q:"Reamer किस प्रकार का टूल है?",o:["Finishing Tool","Welding Tool","Holding Tool","Measuring Tool"],a:0},
-{q:"Milling Cutter सामान्यतः कैसा टूल है?",o:["Multi Point","Single Point","Non Cutting","Measuring"],a:0},
-{q:"Cutting Speed की सामान्य इकाई क्या है?",o:["m/min","kg","watt","pascal"],a:0},
-{q:"Feed का अर्थ क्या है?",o:["टूल की आगे बढ़ने की दूरी","मशीन का वजन","टूल का रंग","वर्कपीस का तापमान"],a:0},
-{q:"Depth of Cut क्या बताता है?",o:["एक कट में हटाई जाने वाली गहराई","मशीन की ऊँचाई","टूल की लंबाई","मोटर की गति"],a:0},
-
-{q:"फाइल का उपयोग किसके लिए होता है?",o:["धातु की सतह से थोड़ा पदार्थ हटाने","छेद में थ्रेड बनाने","धातु पिघलाने","बिजली मापने"],a:0},
-{q:"Bench Vice का उपयोग किसके लिए होता है?",o:["वर्कपीस पकड़ने","लंबाई मापने","छेद करने","सतह पीसने"],a:0},
-{q:"Hacksaw का उपयोग किसके लिए होता है?",o:["धातु काटने","थ्रेड बनाने","मापने","वेल्डिंग करने"],a:0},
-{q:"Scriber का उपयोग किसके लिए होता है?",o:["धातु पर रेखा खींचने","छेद करने","पीसने","वजन मापने"],a:0},
-{q:"Centre Punch का उपयोग किसके लिए होता है?",o:["ड्रिलिंग से पहले निशान बनाने","सतह पॉलिश करने","थ्रेड काटने","धातु जोड़ने"],a:0},
-{q:"Surface Plate का उपयोग किसके लिए होता है?",o:["सटीक जाँच और मार्किंग के आधार के रूप में","धातु गर्म करने","छेद करने","वेल्डिंग करने"],a:0},
-{q:"Vernier Caliper का Least Count किस पर निर्भर करता है?",o:["मुख्य स्केल और वर्नियर स्केल के विभाजनों पर","मशीन के रंग पर","वर्कपीस के वजन पर","तापमान पर"],a:0}
+{q:"वर्नियर कैलिपर का उपयोग किसके लिए होता है?",o:["तापमान मापने","बाहरी, भीतरी और गहराई मापने","वजन मापने","दाब मापने"],a:1,e:"वर्नियर कैलिपर से बाहरी माप, भीतरी माप और गहराई मापी जाती है।"},
+{q:"माइक्रोमीटर किस सिद्धांत पर कार्य करता है?",o:["लीवर सिद्धांत","स्क्रू सिद्धांत","हाइड्रोलिक सिद्धांत","चुंबकीय सिद्धांत"],a:1,e:"माइक्रोमीटर में स्क्रू और नट सिद्धांत का उपयोग होता है।"},
+{q:"स्टील रूल का उपयोग किसके लिए होता है?",o:["सामान्य लंबाई मापने","तापमान मापने","कठोरता मापने","गति मापने"],a:0,e:"स्टील रूल सामान्य रैखिक माप लेने के लिए प्रयोग होता है।"},
+{q:"डायल टेस्ट इंडिकेटर का उपयोग किसके लिए होता है?",o:["छोटे विस्थापन की जाँच","वजन मापने","तापमान मापने","बिजली मापने"],a:0,e:"यह छोटे विस्थापन, रन आउट और अलाइनमेंट की जाँच में उपयोगी है।"},
+{q:"Outside Micrometer किसे मापता है?",o:["बाहरी माप","भीतरी तापमान","दाब","समय"],a:0,e:"Outside Micrometer से बाहरी व्यास या मोटाई मापी जाती है।"},
+{q:"लेथ मशीन में मुख्य कटिंग गति किसकी होती है?",o:["टूल की","वर्कपीस की","टेलस्टॉक की","कूलेंट की"],a:1,e:"लेथ में वर्कपीस घूमता है और टूल फीड के साथ कटिंग करता है।"},
+{q:"लेथ मशीन का मुख्य कार्य क्या है?",o:["टर्निंग","वेल्डिंग","कास्टिंग","फोर्जिंग"],a:0,e:"लेथ मशीन पर मुख्य रूप से Turning सहित कई ऑपरेशन किए जाते हैं।"},
+{q:"लेथ मशीन में वर्कपीस को सामान्यतः कौन पकड़ता है?",o:["चक","ड्रिल","रीमर","स्पैनर"],a:0,e:"चक वर्कपीस को पकड़ने का एक प्रमुख साधन है।"},
+{q:"लेथ मशीन में कटिंग टूल किस भाग में लगाया जाता है?",o:["टूल पोस्ट","हेडस्टॉक","टेलस्टॉक","बेड"],a:0,e:"टूल पोस्ट में कटिंग टूल को पकड़ा जाता है।"},
+{q:"लेथ मशीन का बेड किसका आधार होता है?",o:["मशीन का","केवल मोटर का","केवल चक का","केवल टूल का"],a:0,e:"बेड मशीन के मुख्य भागों को सहारा देता है और गाइडवे प्रदान करता है।"},
+{q:"Facing ऑपरेशन का उद्देश्य क्या है?",o:["सिरे को समतल करना","छेद बनाना","थ्रेड बनाना","धातु जोड़ना"],a:0,e:"Facing से जॉब के अंतिम सिरे को समतल किया जाता है।"},
+{q:"Knurling का उपयोग किसके लिए होता है?",o:["सतह पर पकड़ वाली बनावट बनाना","छेद करना","धातु पिघलाना","वजन मापना"],a:0,e:"Knurling से सतह पर पकड़ के लिए पैटर्न बनाया जाता है।"},
+{q:"Tailstock का उपयोग किसमें किया जा सकता है?",o:["ड्रिल पकड़ने","वर्कपीस रंगने","मशीन साफ करने","बिजली मापने"],a:0,e:"टेलस्टॉक में ड्रिल और अन्य सहायक टूल पकड़े जा सकते हैं।"},
+{q:"ड्रिलिंग मशीन का मुख्य कार्य क्या है?",o:["गोल छेद बनाना","सतह चमकाना","धातु पिघलाना","थ्रेड काटना"],a:0,e:"ड्रिलिंग मशीन का मुख्य काम छेद बनाना है।"},
+{q:"Twist Drill में सामान्यतः कितने मुख्य फ्लूट होते हैं?",o:["एक","दो","तीन","चार"],a:1,e:"सामान्य ट्विस्ट ड्रिल में दो हेलिकल फ्लूट होते हैं।"},
+{q:"Drill Chuck का उपयोग किसके लिए होता है?",o:["ड्रिल पकड़ने","वर्कपीस गर्म करने","तेल भरने","मापने"],a:0,e:"ड्रिल चक ड्रिल को पकड़ता है।"},
+{q:"Reaming का उद्देश्य क्या है?",o:["छेद को सही माप और फिनिश देना","धातु जोड़ना","बाहरी थ्रेड बनाना","सतह रंगना"],a:0,e:"रीमिंग पहले से बने छेद को अधिक सटीक और चिकना बनाती है।"},
+{q:"Countersinking का उपयोग किसके लिए होता है?",o:["छेद के मुहाने पर शंक्वाकार जगह बनाना","गोल रॉड बनाना","धातु काटना","मशीन ठंडी करना"],a:0,e:"Countersinking से स्क्रू हेड के लिए शंक्वाकार सीट बनाई जाती है।"},
+{q:"Grinding Machine में किसका उपयोग होता है?",o:["Grinding Wheel","Hammer","Wood Saw","Chisel"],a:0,e:"ग्राइंडिंग व्हील अपघर्षक कणों से पदार्थ हटाता है।"},
+{q:"Grinding Wheel का मुख्य कार्य क्या है?",o:["घिसकर पदार्थ हटाना","वेल्डिंग करना","छेद मापना","धातु जोड़ना"],a:0,e:"ग्राइंडिंग में Abrasive grains पदार्थ हटाते हैं।"},
+{q:"Grinding Wheel में Abrasive का क्या काम है?",o:["कटिंग करना","रंग करना","ठंडा करना","पकड़ना"],a:0,e:"Abrasive grains कटिंग एज का कार्य करते हैं।"},
+{q:"Aluminium Oxide Wheel सामान्यतः किसके लिए उपयोगी है?",o:["स्टील की ग्राइंडिंग","लकड़ी काटना","काँच जोड़ना","प्लास्टिक पिघलाना"],a:0,e:"Aluminium Oxide का उपयोग सामान्यतः स्टील जैसे लौह धातुओं की ग्राइंडिंग में होता है।"},
+{q:"Grinding Wheel में Bond का कार्य क्या है?",o:["Abrasive grains को बाँधना","मशीन चलाना","गति मापना","तेल देना"],a:0,e:"Bond abrasive grains को व्हील में बाँधकर रखता है।"},
+{q:"Engineering Drawing का मुख्य उद्देश्य क्या है?",o:["तकनीकी जानकारी दिखाना","खाना बनाना","वजन मापना","बिजली बनाना"],a:0,e:"ड्रॉइंग से पार्ट का आकार, माप और निर्माण संबंधी जानकारी मिलती है।"},
+{q:"Visible Line सामान्यतः कैसी होती है?",o:["मोटी Continuous Line","पतली Dashed Line","लहरदार लाइन","डॉटेड लाइन"],a:0,e:"Visible edges को मोटी Continuous line से दिखाया जाता है।"},
+{q:"Hidden Line किससे दिखाई जाती है?",o:["Dashed Line","मोटी Continuous Line","Center Line","Freehand Line"],a:0,e:"छिपे हुए किनारों को सामान्यतः dashed line से दिखाते हैं।"},
+{q:"Isometric Drawing में कितनी मुख्य अक्ष दिशाएँ होती हैं?",o:["दो","तीन","चार","पाँच"],a:1,e:"Isometric drawing में तीन मुख्य अक्ष दिशाएँ होती हैं।"},
+{q:"Dimensioning का उद्देश्य क्या है?",o:["माप बताना","रंग बताना","वजन बताना","तापमान बताना"],a:0,e:"Dimensioning से पार्ट की आवश्यक माप बताई जाती है।"},
+{q:"क्षेत्रफल की SI इकाई क्या है?",o:["वर्ग मीटर","मीटर","किलोग्राम","न्यूटन"],a:0,e:"क्षेत्रफल की SI इकाई square metre (m²) है।"},
+{q:"आयत का क्षेत्रफल क्या होता है?",o:["लंबाई × चौड़ाई","लंबाई + चौड़ाई","2 × लंबाई","लंबाई ÷ चौड़ाई"],a:0,e:"आयत का क्षेत्रफल = लंबाई × चौड़ाई।"},
+{q:"बल की SI इकाई क्या है?",o:["न्यूटन","वाट","जूल","पास्कल"],a:0,e:"बल की SI इकाई न्यूटन है।"},
+{q:"शक्ति की SI इकाई क्या है?",o:["वाट","न्यूटन","मीटर","किलोग्राम"],a:0,e:"शक्ति की SI इकाई वाट है।"},
+{q:"दाब का सूत्र क्या है?",o:["बल ÷ क्षेत्रफल","बल × दूरी","दूरी ÷ समय","कार्य ÷ समय"],a:0,e:"दाब = बल / क्षेत्रफल।"},
+{q:"चाल का सूत्र क्या है?",o:["दूरी ÷ समय","समय ÷ दूरी","बल ÷ क्षेत्रफल","द्रव्यमान ÷ आयतन"],a:0,e:"चाल = तय की गई दूरी / लगा हुआ समय।"},
+{q:"घनत्व का सूत्र क्या है?",o:["द्रव्यमान ÷ आयतन","आयतन ÷ द्रव्यमान","बल ÷ क्षेत्रफल","दूरी ÷ समय"],a:0,e:"घनत्व = द्रव्यमान / आयतन।"},
+{q:"PPE का पूरा नाम क्या है?",o:["Personal Protective Equipment","Power Plant Equipment","Personal Power Engine","Public Protection Engine"],a:0,e:"PPE का अर्थ Personal Protective Equipment है।"},
+{q:"5S पद्धति का संबंध किससे है?",o:["कार्यस्थल व्यवस्था","वेल्डिंग","कास्टिंग","मापन"],a:0,e:"5S कार्यस्थल को व्यवस्थित, साफ और बेहतर बनाने की पद्धति है।"},
+{q:"Class A आग सामान्यतः किसमें लगती है?",o:["लकड़ी और कागज","पेट्रोल","गैस","धातु"],a:0,e:"Class A में सामान्य ठोस ज्वलनशील पदार्थ जैसे लकड़ी और कागज आते हैं।"},
+{q:"Class B आग किससे संबंधित है?",o:["ज्वलनशील तरल","लकड़ी","कागज","साधारण कपड़ा"],a:0,e:"Class B में ज्वलनशील तरल पदार्थों की आग शामिल होती है।"},
+{q:"वर्कशॉप में सुरक्षा चश्मा क्यों पहना जाता है?",o:["आँखों की सुरक्षा","पैरों की सुरक्षा","आवाज कम करने","वजन मापने"],a:0,e:"Safety goggles आँखों को उड़ते कणों और छींटों से बचाते हैं।"},
+{q:"Machine Guard का उद्देश्य क्या है?",o:["चलते खतरनाक भागों से सुरक्षा","गति बढ़ाना","रंग करना","तेल भरना"],a:0,e:"Machine guard ऑपरेटर को खतरनाक moving parts से बचाता है।"},
+{q:"Emergency Stop का उपयोग कब होता है?",o:["आपात स्थिति में मशीन रोकने","मशीन रंगने","माप लेने","लाइट जलाने"],a:0,e:"आपात स्थिति में मशीन को रोकने के लिए Emergency Stop प्रयोग होता है।"},
+{q:"Tap का उपयोग किसके लिए होता है?",o:["Internal Thread","External Thread","छेद बड़ा करने","सतह पीसने"],a:0,e:"Tap से छेद के अंदरूनी भाग में चूड़ी बनाई जाती है।"},
+{q:"Die का उपयोग किसके लिए होता है?",o:["External Thread","Internal Thread","छेद करने","सतह चमकाने"],a:0,e:"Die से रॉड या बेलनाकार जॉब पर बाहरी चूड़ी बनाई जाती है।"},
+{q:"HSS का पूरा नाम क्या है?",o:["High Speed Steel","High Strength Stone","Hard Surface Steel","High System Speed"],a:0,e:"HSS का पूरा नाम High Speed Steel है।"},
+{q:"Reamer किस प्रकार का टूल है?",o:["Finishing Tool","Welding Tool","Holding Tool","Measuring Tool"],a:0,e:"रीमर छेद की finishing और accuracy सुधारने के लिए उपयोग होता है।"},
+{q:"Milling Cutter सामान्यतः कैसा टूल है?",o:["Multi Point","Single Point","Non Cutting","Measuring"],a:0,e:"Milling cutter में कई cutting edges होते हैं।"},
+{q:"Cutting Speed की सामान्य इकाई क्या है?",o:["m/min","kg","watt","pascal"],a:0,e:"Cutting speed सामान्यतः metre per minute में व्यक्त की जाती है।"},
+{q:"Feed का अर्थ क्या है?",o:["टूल की आगे बढ़ने की दर या दूरी","मशीन का वजन","टूल का रंग","वर्कपीस का तापमान"],a:0,e:"Feed मशीनिंग में टूल की आगे बढ़ने की मात्रा या दर है।"},
+{q:"Depth of Cut क्या बताता है?",o:["एक कट में हटाई जाने वाली गहराई","मशीन की ऊँचाई","टूल की लंबाई","मोटर की गति"],a:0,e:"Depth of cut कटिंग में हटाई जाने वाली परत की गहराई बताता है।"},
+{q:"फाइल का उपयोग किसके लिए होता है?",o:["धातु की सतह से पदार्थ हटाने","छेद में थ्रेड बनाने","धातु पिघलाने","बिजली मापने"],a:0,e:"फाइलिंग से धातु की सतह पर थोड़ा पदार्थ हटाया जाता है।"},
+{q:"Bench Vice का उपयोग किसके लिए होता है?",o:["वर्कपीस पकड़ने","लंबाई मापने","छेद करने","सतह पीसने"],a:0,e:"Bench vice जॉब को मजबूती से पकड़ता है।"},
+{q:"Hacksaw का उपयोग किसके लिए होता है?",o:["धातु काटने","थ्रेड बनाने","मापने","वेल्डिंग करने"],a:0,e:"Hacksaw का उपयोग धातु काटने में होता है।"},
+{q:"Scriber का उपयोग किसके लिए होता है?",o:["धातु पर रेखा खींचने","छेद करने","पीसने","वजन मापने"],a:0,e:"Scriber मार्किंग के लिए धातु पर रेखा खींचता है।"},
+{q:"Centre Punch का उपयोग किसके लिए होता है?",o:["ड्रिलिंग से पहले निशान बनाने","सतह पॉलिश करने","थ्रेड काटने","धातु जोड़ने"],a:0,e:"Centre punch ड्रिल के शुरुआती स्थान पर निशान बनाता है।"},
+{q:"Surface Plate का उपयोग किसके लिए होता है?",o:["सटीक जाँच और मार्किंग के आधार के रूप में","धातु गर्म करने","छेद करने","वेल्डिंग करने"],a:0,e:"Surface plate निरीक्षण और marking के लिए समतल आधार देती है।"},
+{q:"Vernier Caliper का Least Count किस पर निर्भर करता है?",o:["मुख्य स्केल और वर्नियर स्केल के विभाजनों पर","मशीन के रंग पर","वर्कपीस के वजन पर","तापमान पर"],a:0,e:"Least count मुख्य स्केल के एक division और वर्नियर division के अंतर से निर्धारित होता है।"}
 ];
 
-// RANDOM SHUFFLE FUNCTION
-function shuffle(array){
-  const arr=[...array];
-  for(let i=arr.length-1;i>0;i--){
-    const j=Math.floor(Math.random()*(i+1));
-    [arr[i],arr[j]]=[arr[j],arr[i]];
-  }
-  return arr;
-}
+// ======================================
+// MACHINIST TRADE PRACTICAL QUESTION BANK
+// ======================================
 
+const practicalBank = [
+
+{q:"लेथ मशीन पर जॉब लगाने से पहले सबसे पहले क्या जाँचना चाहिए?",o:["जॉब की सही पकड़ और सेटिंग","केवल मशीन का रंग","केवल कमरे की लाइट","केवल फर्श"],a:0,e:"जॉब की सही पकड़ और सुरक्षित सेटिंग बहुत जरूरी है।"},
+{q:"लेथ मशीन पर Facing करने के लिए टूल किस दिशा में फीड किया जाता है?",o:["जॉब के केंद्र की ओर","केवल ऊपर की ओर","केवल पीछे की ओर","किसी भी दिशा में"],a:0,e:"Facing में टूल को जॉब के बाहरी किनारे से केंद्र की ओर फीड किया जाता है।"},
+{q:"Turning ऑपरेशन में मुख्य उद्देश्य क्या होता है?",o:["बाहरी व्यास कम करना","भीतरी थ्रेड बनाना","रंग करना","वजन बढ़ाना"],a:0,e:"Turning से बेलनाकार जॉब का बाहरी व्यास कम किया जाता है।"},
+{q:"लेथ मशीन पर Taper Turning का परिणाम क्या होता है?",o:["शंक्वाकार सतह","समतल सतह","चौकोर छेद","गोलाकार छेद"],a:0,e:"Taper turning से शंक्वाकार सतह बनती है।"},
+{q:"लेथ पर Thread Cutting के लिए किसकी आवश्यकता होती है?",o:["उपयुक्त थ्रेडिंग टूल और सही लीड सेटिंग","केवल हथौड़ा","केवल फाइल","केवल स्टील रूल"],a:0,e:"Thread cutting में सही टूल और लीड/फीड संबंध जरूरी होता है।"},
+{q:"ड्रिलिंग से पहले जॉब पर Centre Punch क्यों लगाया जाता है?",o:["ड्रिल को सही स्थान पर शुरू कराने के लिए","जॉब को गर्म करने के लिए","जॉब का वजन बढ़ाने के लिए","जॉब को रंगने के लिए"],a:0,e:"Centre punch ड्रिल के शुरुआती स्थान को चिन्हित करता है।"},
+{q:"Drilling के बाद छेद की finishing के लिए कौन-सा टूल उपयोग होता है?",o:["Reamer","Hammer","Scriber","Divider"],a:0,e:"Reamer छेद की finishing और accuracy सुधारता है।"},
+{q:"Tap चलाने से पहले छेद किस आकार का होना चाहिए?",o:["उचित Tap Drill Size का","हमेशा थ्रेड से बड़ा","हमेशा शून्य आकार का","बिना माप का"],a:0,e:"Tap के लिए उचित tap drill size का छेद बनाया जाता है।"},
+{q:"External Thread बनाने के लिए किस टूल का उपयोग होता है?",o:["Die","Tap","Reamer","Drill"],a:0,e:"Die से बाहरी चूड़ी बनाई जाती है।"},
+{q:"Internal Thread बनाने के लिए किस टूल का उपयोग होता है?",o:["Tap","Die","File","Punch"],a:0,e:"Tap से छेद के अंदरूनी भाग में चूड़ी बनाई जाती है।"},
+{q:"Milling मशीन में जॉब को पकड़ने के लिए सामान्यतः क्या उपयोग होता है?",o:["Machine Vice","Scriber","Steel Rule","Centre Punch"],a:0,e:"Machine vice जॉब को टेबल पर पकड़ने का सामान्य साधन है।"},
+{q:"Milling में Cutter का मुख्य कार्य क्या है?",o:["घूमकर पदार्थ हटाना","माप लेना","जॉब गर्म करना","रंग करना"],a:0,e:"Milling cutter के दाँत घूमकर जॉब से पदार्थ हटाते हैं।"},
+{q:"Shaper मशीन में कटिंग गति किसकी होती है?",o:["Reciprocating Ram और टूल की","केवल जॉब की घूमने की","केवल टेबल की","केवल मोटर के पंखे की"],a:0,e:"Shaper में ram के साथ टूल आगे-पीछे चलता है।"},
+{q:"Slotter मशीन का मुख्य उपयोग क्या है?",o:["अंदरूनी स्लॉट और की-वे बनाना","केवल बाहरी थ्रेड बनाना","धातु पिघलाना","वेल्डिंग करना"],a:0,e:"Slotter का उपयोग internal slots, keyways और अन्य आकार बनाने में होता है।"},
+{q:"Grinding से पहले Grinding Wheel की कौन-सी जाँच जरूरी होती है?",o:["उपयुक्त स्थिति और सुरक्षा की जाँच","केवल रंग की जाँच","केवल वजन की जाँच","केवल पैकिंग की जाँच"],a:0,e:"व्हील में नुकसान और सही mounting की जाँच प्रशिक्षित व्यक्ति द्वारा की जाती है।"},
+{q:"Grinding Wheel को मशीन पर लगाने के बाद क्या जरूरी है?",o:["निर्माता के निर्देशों के अनुसार सुरक्षित जाँच","तुरंत हाथ से छूना","गार्ड हटाना","मशीन को तेज धक्का देना"],a:0,e:"व्हील की mounting, guard और सुरक्षा जाँच आवश्यक है।"},
+{q:"Surface Grinding का मुख्य उद्देश्य क्या है?",o:["समतल सतह को सटीक finish देना","गहरा छेद बनाना","थ्रेड काटना","जॉब जोड़ना"],a:0,e:"Surface grinder समतल सतह की finishing और accuracy के लिए है।"},
+{q:"Pedestal Grinder पर काम करते समय क्या पहनना चाहिए?",o:["उचित सुरक्षा चश्मा","ढीले कपड़े","खुले जूते","लटकती हुई वस्तुएँ"],a:0,e:"आँखों की सुरक्षा के लिए उचित eye protection जरूरी है।"},
+{q:"Vernier Caliper से माप लेते समय क्या करना चाहिए?",o:["जॉब और जबड़ों को सही तरह संपर्क में रखना","जॉब को तिरछा पकड़ना","बहुत अधिक दबाव लगाना","स्केल को मोड़ना"],a:0,e:"सही माप के लिए caliper को सही alignment में रखना चाहिए।"},
+{q:"Micrometer से माप लेते समय Ratchet का उपयोग क्यों किया जाता है?",o:["लगभग समान माप दबाव बनाए रखने के लिए","माप को दोगुना करने के लिए","जॉब काटने के लिए","स्केल साफ करने के लिए"],a:0,e:"Ratchet माप लेते समय नियंत्रित दबाव देने में मदद करता है।"},
+{q:"जॉब की ऊँचाई मार्क करने के लिए कौन-सा उपकरण उपयोगी है?",o:["Vernier Height Gauge","Tap Wrench","Hacksaw","Drill Chuck"],a:0,e:"Height gauge surface plate पर ऊँचाई और marking के लिए उपयोगी है।"},
+{q:"जॉब की समतलता जाँचने के लिए कौन-सा उपकरण उपयोगी है?",o:["Straight Edge","Die","Tap","Hammer"],a:0,e:"Straight edge से सतह की सीध और समतलता की प्रारंभिक जाँच की जाती है।"},
+{q:"दो सतहों के बीच छोटे Gap की जाँच किससे की जाती है?",o:["Feeler Gauge","Scriber","Tap","Hacksaw"],a:0,e:"Feeler gauge पतले पत्तों से clearance या gap मापता है।"},
+{q:"Thread Pitch जाँचने के लिए किसका उपयोग होता है?",o:["Thread Pitch Gauge","Try Square","Divider","Surface Plate"],a:0,e:"Thread pitch gauge से चूड़ी की pitch जाँची जाती है।"},
+{q:"Try Square का उपयोग किसकी जाँच के लिए किया जाता है?",o:["90° कोण","तापमान","वजन","गति"],a:0,e:"Try square से समकोण की जाँच की जाती है।"},
+{q:"Marking करते समय Datum Surface का क्या महत्व है?",o:["माप और marking का संदर्भ आधार","जॉब का रंग","मशीन की गति","टूल की कठोरता"],a:0,e:"Datum surface से माप और marking के लिए reference मिलता है।"},
+{q:"वर्कशॉप में मशीन चलाने से पहले क्या करना चाहिए?",o:["सुरक्षा और मशीन की स्थिति जाँचना","गार्ड हटाना","ढीले कपड़े पहनना","चलते टूल को हाथ लगाना"],a:0,e:"काम शुरू करने से पहले मशीन, टूल और सुरक्षा व्यवस्था जाँचें।"},
+{q:"मशीन पर घूमते जॉब के पास क्या नहीं पहनना चाहिए?",o:["ढीले कपड़े और लटकती वस्तुएँ","सुरक्षा चश्मा","सुरक्षा जूते","उचित PPE"],a:0,e:"ढीले कपड़े घूमते भागों में फँस सकते हैं।"},
+{q:"मशीन की सफाई कब करनी चाहिए?",o:["मशीन बंद करके सुरक्षित स्थिति में","चलती मशीन पर हाथ डालकर","घूमते चक के पास","बिना अनुमति"],a:0,e:"सफाई से पहले मशीन बंद और सुरक्षित होनी चाहिए।"},
+{q:"वर्कशॉप में जॉब का Burr हटाने के लिए क्या उपयोग किया जा सकता है?",o:["उपयुक्त Deburring Tool या File","नंगे हाथ","कपड़ा खींचकर","बिना जाँच हथौड़ा"],a:0,e:"Burr हटाने के लिए उपयुक्त deburring tool या file का उपयोग किया जाता है।"},
+{q:"Practical Job पूरा होने पर सबसे पहले क्या जाँचना चाहिए?",o:["Drawing के अनुसार माप और गुणवत्ता","केवल जॉब का रंग","केवल जॉब का वजन","केवल मशीन का नाम"],a:0,e:"तैयार जॉब को drawing और निर्धारित tolerance के अनुसार जाँचना चाहिए।"},
+{q:"Job Drawing में Tolerance का क्या अर्थ है?",o:["स्वीकार्य माप की सीमा","जॉब का रंग","मशीन की ऊँचाई","टूल का वजन"],a:0,e:"Tolerance माप में स्वीकार्य अधिकतम और न्यूनतम अंतर की सीमा है।"},
+{q:"एक ही आकार के कई पार्ट बनाने में क्या जरूरी है?",o:["समान सेटिंग और नियमित निरीक्षण","हर बार अनुमान लगाना","माप न लेना","टूल को बिना जाँच बदलना"],a:0,e:"एकसमान उत्पादन के लिए सही setup और नियमित inspection जरूरी हैं।"},
+{q:"Tool Wear का क्या प्रभाव हो सकता है?",o:["माप और surface finish खराब हो सकती है","जॉब अपने आप बड़ा हो जाता है","मशीन का रंग बदल जाता है","वजन हमेशा घटता है"],a:0,e:"घिसा हुआ टूल आकार, finish और machining quality प्रभावित कर सकता है।"},
+{q:"Cutting Fluid का एक प्रमुख कार्य क्या है?",o:["ठंडा करना और lubrication देना","जॉब का रंग बदलना","माप बढ़ाना","मशीन को रोकना"],a:0,e:"Cutting fluid heat और friction कम करने में मदद करता है।"},
+{q:"Machining में Chip का अर्थ क्या है?",o:["कटकर निकला पदार्थ","मशीन का तार","टूल का हैंडल","मापने का स्केल"],a:0,e:"Chip वह पदार्थ है जो machining के दौरान जॉब से कटकर निकलता है।"},
+{q:"Lathe पर Knurling के बाद सतह कैसी होती है?",o:["पैटर्न वाली खुरदरी पकड़दार सतह","हमेशा दर्पण जैसी","अंदरूनी छेद","चौकोर छेद"],a:0,e:"Knurling से पकड़ के लिए नियमित pattern बनता है।"},
+{q:"जॉब की concentricity जाँचने में कौन-सा उपकरण मदद करता है?",o:["Dial Indicator","Hacksaw","Tap","Hammer"],a:0,e:"Dial indicator से runout और concentricity संबंधी जाँच की जा सकती है।"},
+{q:"Grinding में Wheel Dressing का उद्देश्य क्या है?",o:["व्हील की cutting condition सुधारना","मशीन का वजन बढ़ाना","जॉब गर्म करना","टूल को मोड़ना"],a:0,e:"Dressing से व्हील की सतह पर सही cutting condition बहाल की जाती है।"},
+{q:"Grinding में Wheel Balancing क्यों जरूरी है?",o:["कंपन कम करने के लिए","मशीन का रंग बदलने के लिए","जॉब का वजन बढ़ाने के लिए","टूल की लंबाई बढ़ाने के लिए"],a:0,e:"असंतुलित व्हील कंपन और खराब finish का कारण बन सकता है।"},
+{q:"Drill में Point Angle किस भाग से संबंधित है?",o:["ड्रिल के कटिंग पॉइंट से","ड्रिल के हैंडल के रंग से","मशीन के बेड से","चक की लंबाई से"],a:0,e:"Point angle ड्रिल के cutting point पर बनने वाला कोण है।"},
+{q:"Drilling में Peck Drilling का उद्देश्य क्या हो सकता है?",o:["चिप निकालने और गहरे छेद में सहायता","जॉब का रंग बदलना","बाहरी थ्रेड बनाना","जॉब को पकड़ना"],a:0,e:"Peck drilling में बीच-बीच में ड्रिल वापस लाकर चिप निकालने में मदद मिलती है।"},
+{q:"Machine Vice में जॉब पकड़ते समय क्या ध्यान रखना चाहिए?",o:["जॉब सही और स्थिर पकड़ में हो","जॉब ढीला रहे","जॉब हवा में रहे","केवल एक कोने पर दबाव हो"],a:0,e:"सुरक्षित और स्थिर clamping जरूरी है।"},
+{q:"Workshop में 5S का Seiri क्या दर्शाता है?",o:["छँटाई करना","सफाई करना","मानकीकरण","अनुशासन"],a:0,e:"Seiri का अर्थ आवश्यक और अनावश्यक वस्तुओं को अलग करना है।"},
+{q:"5S में Seiton का अर्थ क्या है?",o:["व्यवस्थित रखना","छँटाई करना","सफाई करना","निरंतर सुधार"],a:0,e:"Seiton का अर्थ आवश्यक वस्तुओं को सही जगह व्यवस्थित रखना है।"},
+{q:"5S में Seiso का अर्थ क्या है?",o:["सफाई करना","छँटाई करना","मानकीकरण","अनुशासन"],a:0,e:"Seiso का अर्थ कार्यस्थल और उपकरणों की सफाई करना है।"},
+{q:"5S में Seiketsu का अर्थ क्या है?",o:["मानकीकरण","छँटाई","सफाई","व्यवस्था"],a:0,e:"Seiketsu का अर्थ अच्छी व्यवस्था को मानक रूप देना है।"},
+{q:"5S में Shitsuke का अर्थ क्या है?",o:["अनुशासन बनाए रखना","सामान हटाना","माप लेना","कटिंग करना"],a:0,e:"Shitsuke का अर्थ नियमों और अनुशासन की आदत बनाए रखना है।"},
+{q:"Practical परीक्षा में Job Sequence क्यों लिखा जाता है?",o:["कार्य के क्रम को बताने के लिए","केवल उपस्थिति के लिए","जॉब का रंग बताने के लिए","मशीन की कीमत बताने के लिए"],a:0,e:"Job sequence में काम करने के चरण सही क्रम में लिखे जाते हैं।"},
+{q:"Practical परीक्षा में Viva का उद्देश्य क्या है?",o:["कार्य और तकनीकी ज्ञान की समझ जाँचना","केवल लिखावट देखना","केवल उपस्थिति लेना","केवल जॉब का रंग देखना"],a:0,e:"Viva में काम की प्रक्रिया, टूल और सुरक्षा का ज्ञान जाँचा जाता है।"}
+];
+
+// ======================================
+// TEST ENGINE
+// ======================================
+
+let selectedMode="theory";
 let currentQuestions=[];
 let userAnswers=[];
 let submitted=false;
+let lastSignature="";
+
+function shuffle(array){
+ const arr=[...array];
+ for(let i=arr.length-1;i>0;i--){
+  const j=Math.floor(Math.random()*(i+1));
+  [arr[i],arr[j]]=[arr[j],arr[i]];
+ }
+ return arr;
+}
+
+function selectMode(mode,button){
+ if(submitted===false && currentQuestions.length && userAnswers.some(a=>a!==null)){
+  if(!confirm("Mode बदलने पर मौजूदा टेस्ट रीसेट होगा। जारी रखें?"))return;
+ }
+ selectedMode=mode;
+ document.querySelectorAll(".mode").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");
+
+ const descriptions={
+  theory:"Theory टेस्ट: मशीन, टूल, मापन, ड्रॉइंग, गणना और सुरक्षा।",
+  practical:"Practical टेस्ट: मशीन संचालन, Job Sequence, Tools, Measurement और Workshop Practice।",
+  mixed:"Mixed टेस्ट: Theory और Practical दोनों से प्रश्न।"
+ };
+ document.getElementById("modeDescription").textContent=descriptions[mode];
+ newTest();
+}
+
+function getQuestionPool(){
+ if(selectedMode==="theory")return theoryBank;
+ if(selectedMode==="practical")return practicalBank;
+ return [...theoryBank,...practicalBank];
+}
 
 function newTest(){
-  currentQuestions=shuffle(bank).slice(0,20).map(q=>{
-    const options=shuffle(q.o.map((text,index)=>({
-      text:text,
-      correct:index===q.a
-    })));
-    return {
-      q:q.q,
-      options:options
-    };
-  });
+ const pool=getQuestionPool();
 
-  userAnswers=Array(20).fill(null);
-  submitted=false;
+ if(pool.length<20){
+  alert("Question Bank में कम प्रश्न हैं।");
+  return;
+ }
 
-  document.getElementById("result").style.display="none";
-  document.getElementById("testActions").style.display="flex";
+ let selected=[];
+ let signature="";
 
-  renderTest();
-  updateStats();
+ // कोशिश करें कि लगातार दो टेस्ट का सेट एक जैसा न हो
+ for(let attempt=0;attempt<20;attempt++){
+  selected=shuffle(pool).slice(0,20);
+  signature=selected.map(q=>q.q).sort().join("|");
+  if(signature!==lastSignature)break;
+ }
 
-  window.scrollTo({top:0,behavior:"smooth"});
+ lastSignature=signature;
+
+ currentQuestions=selected.map(q=>{
+  const options=shuffle(q.o.map((text,index)=>({
+   text:text,
+   correct:index===q.a
+  })));
+
+  return {
+   q:q.q,
+   options:options,
+   explanation:q.e
+  };
+ });
+
+ userAnswers=Array(20).fill(null);
+ submitted=false;
+
+ document.getElementById("result").style.display="none";
+ document.getElementById("testActions").style.display="flex";
+ document.getElementById("total").textContent="20";
+
+ renderTest();
+ updateStats();
+ window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function renderTest(){
-  const area=document.getElementById("testArea");
-  area.innerHTML="";
+ const area=document.getElementById("testArea");
+ area.innerHTML="";
 
-  currentQuestions.forEach((q,index)=>{
-    const card=document.createElement("div");
-    card.className="question-card";
+ currentQuestions.forEach((q,index)=>{
+  const card=document.createElement("div");
+  card.className="question-card";
 
-    const number=document.createElement("div");
-    number.className="q-number";
-    number.textContent="QUESTION "+String(index+1).padStart(2,"0");
+  const number=document.createElement("div");
+  number.className="q-number";
+  number.textContent="QUESTION "+String(index+1).padStart(2,"0");
 
-    const heading=document.createElement("h3");
-    heading.textContent=(index+1)+". "+q.q;
+  const tag=document.createElement("div");
+  tag.className="q-tag";
+  tag.textContent=selectedMode==="theory"?"TRADE THEORY":
+   selectedMode==="practical"?"TRADE PRACTICAL":"MACHINIST MIXED";
 
-    card.append(number,heading);
+  const heading=document.createElement("h3");
+  heading.textContent=(index+1)+". "+q.q;
 
-    q.options.forEach((option,optIndex)=>{
-      const label=document.createElement("label");
-      label.className="option";
+  card.append(number,tag,heading);
 
-      const radio=document.createElement("input");
-      radio.type="radio";
-      radio.name="question"+index;
-      radio.value=optIndex;
+  q.options.forEach((option,optIndex)=>{
+   const label=document.createElement("label");
+   label.className="option";
 
-      radio.checked=userAnswers[index]===optIndex;
+   const radio=document.createElement("input");
+   radio.type="radio";
+   radio.name="question"+index;
+   radio.value=optIndex;
+   radio.checked=userAnswers[index]===optIndex;
+   radio.disabled=submitted;
 
-      radio.addEventListener("change",()=>{
-        if(submitted)return;
-        userAnswers[index]=optIndex;
-        updateStats();
-        renderSelection(index);
-      });
+   radio.addEventListener("change",()=>{
+    if(submitted)return;
+    userAnswers[index]=optIndex;
+    updateStats();
+    renderSelection(index);
+   });
 
-      label.append(radio,document.createTextNode(
-        " "+String.fromCharCode(65+optIndex)+". "+option.text
-      ));
+   label.append(radio,document.createTextNode(
+    " "+String.fromCharCode(65+optIndex)+". "+option.text
+   ));
 
-      if(userAnswers[index]===optIndex){
-        label.classList.add("selected");
-      }
-
-      card.appendChild(label);
-    });
-
-    area.appendChild(card);
+   if(userAnswers[index]===optIndex)label.classList.add("selected");
+   card.appendChild(label);
   });
+
+  area.appendChild(card);
+ });
 }
 
 function renderSelection(index){
-  const cards=document.querySelectorAll(".question-card");
-  const options=cards[index].querySelectorAll(".option");
-  options.forEach((option,i)=>{
-    option.classList.toggle("selected",userAnswers[index]===i);
-  });
+ const cards=document.querySelectorAll("#testArea .question-card");
+ const options=cards[index].querySelectorAll(".option");
+
+ options.forEach((option,i)=>{
+  option.classList.toggle("selected",userAnswers[index]===i);
+ });
 }
 
 function updateStats(){
-  const count=userAnswers.filter(a=>a!==null).length;
-  document.getElementById("attempted").textContent=count;
-  document.getElementById("remaining").textContent=20-count;
+ const count=userAnswers.filter(a=>a!==null).length;
+ document.getElementById("attempted").textContent=count;
+ document.getElementById("remaining").textContent=20-count;
+ document.getElementById("progressBar").style.width=(count/20*100)+"%";
 }
 
 function submitTest(){
-  if(submitted)return;
+ if(submitted)return;
 
-  const unanswered=userAnswers.filter(a=>a===null).length;
+ const unanswered=userAnswers.filter(a=>a===null).length;
 
-  if(unanswered>0){
-    const confirmSubmit=confirm(
-      unanswered+" प्रश्न अभी बाकी हैं। क्या फिर भी टेस्ट Submit करना चाहते हैं?"
-    );
-    if(!confirmSubmit)return;
-  }
+ if(unanswered>0){
+  if(!confirm(unanswered+" प्रश्न अभी बाकी हैं। क्या फिर भी Submit करना चाहते हैं?"))return;
+ }
 
-  submitted=true;
-  let score=0;
-  const review=document.getElementById("reviewList");
-  review.innerHTML="";
+ submitted=true;
+ let score=0;
+ const review=document.getElementById("reviewList");
+ review.innerHTML="";
 
-  currentQuestions.forEach((q,index)=>{
-    const correctIndex=q.options.findIndex(o=>o.correct);
-    const selected=userAnswers[index];
-    const isCorrect=selected===correctIndex;
+ currentQuestions.forEach((q,index)=>{
+  const correctIndex=q.options.findIndex(o=>o.correct);
+  const selected=userAnswers[index];
+  const isCorrect=selected===correctIndex;
 
-    if(isCorrect)score++;
+  if(isCorrect)score++;
 
-    const item=document.createElement("div");
-    item.className="review-item";
+  const item=document.createElement("div");
+  item.className="review-item";
 
-    const title=document.createElement("b");
-    title.textContent=(index+1)+". "+q.q;
-    item.appendChild(title);
+  const title=document.createElement("b");
+  title.textContent=(index+1)+". "+q.q;
+  item.appendChild(title);
 
-    const yourAnswer=document.createElement("p");
-    yourAnswer.textContent="आपका उत्तर: "+
-      (selected===null?"उत्तर नहीं दिया":q.options[selected].text);
-    yourAnswer.className=isCorrect?"correct":"wrong";
-    item.appendChild(yourAnswer);
+  const yourAnswer=document.createElement("p");
+  yourAnswer.textContent="आपका उत्तर: "+
+   (selected===null?"उत्तर नहीं दिया":q.options[selected].text);
+  yourAnswer.className=isCorrect?"correct":"wrong";
+  item.appendChild(yourAnswer);
 
-    const rightAnswer=document.createElement("p");
-    rightAnswer.textContent="सही उत्तर: "+q.options[correctIndex].text;
-    rightAnswer.className="correct";
-    item.appendChild(rightAnswer);
+  const rightAnswer=document.createElement("p");
+  rightAnswer.textContent="सही उत्तर: "+q.options[correctIndex].text;
+  rightAnswer.className="correct";
+  item.appendChild(rightAnswer);
 
-    review.appendChild(item);
-  });
+  const explanation=document.createElement("p");
+  explanation.textContent="समझें: "+q.explanation;
+  explanation.className="muted";
+  item.appendChild(explanation);
 
-  const percentage=score*5;
+  review.appendChild(item);
+ });
 
-  document.getElementById("score").textContent=score+"/20";
-  document.getElementById("percentage").textContent=
-    "आपका प्रतिशत: "+percentage+"%";
+ const percentage=score*5;
 
-  let message="";
-  if(score>=18)message="बहुत शानदार! आपकी तैयारी अच्छी है।";
-  else if(score>=14)message="बहुत अच्छा! थोड़ी और प्रैक्टिस करें।";
-  else if(score>=10)message="अच्छा प्रयास! Notes दोबारा पढ़ें।";
-  else message="अभी और अभ्यास की जरूरत है। हिम्मत रखें!";
+ document.getElementById("score").textContent=score+"/20";
+ document.getElementById("percentage").textContent="आपका प्रतिशत: "+percentage+"%";
 
-  document.getElementById("message").textContent=message;
+ let message="";
+ if(score>=18)message="बहुत शानदार! आपकी तैयारी मजबूत है।";
+ else if(score>=14)message="बहुत अच्छा! थोड़ी और प्रैक्टिस करें।";
+ else if(score>=10)message="अच्छा प्रयास! कमजोर टॉपिक्स दोबारा पढ़ें।";
+ else message="अभी और अभ्यास की जरूरत है। Notes पढ़कर फिर टेस्ट दें।";
 
-  document.getElementById("result").style.display="block";
-  document.getElementById("testActions").style.display="none";
+ document.getElementById("message").textContent=message;
 
-  renderTest();
-  window.scrollTo({top:0,behavior:"smooth"});
+ document.getElementById("result").style.display="block";
+ document.getElementById("testActions").style.display="none";
+
+ renderTest();
+ window.scrollTo({top:0,behavior:"smooth"});
 }
 
-// FIRST TEST AUTOMATICALLY START
+// START TEST
 newTest();
 
 </script>
